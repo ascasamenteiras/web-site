@@ -54,6 +54,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
             frontmatter {
               date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+              xmlDate: date
               topology
               title
               author
@@ -254,7 +255,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       const slug = node.fields.slug;
       const frontmatter = node.frontmatter;
-      const { date, title } = frontmatter;
+      const { xmlDate, title } = frontmatter;
       const imageSrc =
         businessInfos.siteUrl +
         node.frontmatter.featuredImage.childrenImageSharp[0].gatsbyImageData
@@ -270,7 +271,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       allFeed.push({
         slug: slug,
-        date: date,
+        date: xmlDate,
         title: title,
         imageSrc: imageSrc,
         excerpt: node.excerpt,

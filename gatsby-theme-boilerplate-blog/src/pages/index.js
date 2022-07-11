@@ -459,7 +459,7 @@ const IndexPage = props => {
             numColumns: 4,
           }}
         >
-          <div>
+          <Link to='/causas-apoiadas'>
             <GatsbyImage
               image={badgeFeminista}
               alt={"title"}
@@ -468,8 +468,8 @@ const IndexPage = props => {
               className={" footer-badges"}
             />
             <h3>Empreendedorismo Feminino</h3>
-          </div>
-          <div>
+          </Link>
+          <Link to='/causas-apoiadas'>
             <GatsbyImage
               image={badgeLgbtqia}
               alt={"title"}
@@ -478,8 +478,8 @@ const IndexPage = props => {
               className={" footer-badges"}
             />
             <h3>Amor LGBTQIA+</h3>
-          </div>
-          <div>
+          </Link>
+          <Link to='/causas-apoiadas'>
             <GatsbyImage
               image={badgeVidasNegras}
               alt={"title"}
@@ -488,8 +488,8 @@ const IndexPage = props => {
               className={" footer-badges"}
             />
             <h3>Vidas Negras Importam</h3>
-          </div>
-          <div>
+          </Link>
+          <Link to='/causas-apoiadas'>
             <GatsbyImage
               image={badgeRibeiraoPreto}
               alt={"title"}
@@ -498,7 +498,7 @@ const IndexPage = props => {
               className={" footer-badges"}
             />
             <h3>Comércio Local</h3>
-          </div>
+          </Link>
         </Row>
         <HeadingBlock classes='m30auto' importance={9} width={400}>
           Últimos Eventos
