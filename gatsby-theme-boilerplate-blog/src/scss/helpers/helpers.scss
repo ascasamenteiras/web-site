@@ -311,6 +311,9 @@ img{
 
 
 	.page-container{
+		h2{
+			text-align: center;
+		}
 		p{
 			margin: 10px auto;
 			font-family: $third__font;
@@ -646,9 +649,12 @@ img{
 color: #fff;
 	}
 .footer-badges-wrapper{
-	// justify-content: space-between;
-	// display: flex;
-	// flex-direction: row;
+	a{
+		text-align: center;
+		.footer-badges{
+			margin-bottom: 15px;
+		}
+	}
 	max-width: 720px;
 	margin: 30px auto;
 	h3{font-size: 16px; text-align: center; margin: 10px 0;}
@@ -701,4 +707,8 @@ p{
 	padding: 5px 10px;
 	border-radius: 3px;
 }
+}
+
+.highlight-img{
+	margin-bottom: 20px;
 }

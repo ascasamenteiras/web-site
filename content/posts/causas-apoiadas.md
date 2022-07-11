@@ -12,8 +12,8 @@ categories:
 featuredPost: true
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 homeHighlight: false
-homeHighlightRelated: true
-homeHighlightRelatedList: false
+homeHighlightRelated: false
+homeHighlightRelatedList: true
 ---
 
 Nós de As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
