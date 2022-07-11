@@ -1,0 +1,6 @@
+card:
+  status: true
+  type: POSTS
+  read_more_post_btn: Ler Mais
+  load_more_posts_btn: Ler Mais
+  post_header_type: 1

@@ -1,0 +1,8 @@
+topologia: Serviços
+estados: [Realizado, Em produção, Ao vivo]
+iterador: 
+  - principal: [Cerimonia, Cerimonias, Cerimonial, Cerimoniais]
+  - categorias: [Tradicional, Rústico, Em Casa, Na Praia, No Exterior, Simbólica, Temática, Ecolôgica, Retrô, Descolado, Clean, No Campo, Mini Wedding, Bar Wedding, Elopement Wedding, Destination Wedding]
+agente: 
+  - tipos: [Religioso, Civil]
+  - atributos: {"preco": float, "resumo": longString, "categorias": array, "servicos": array, "atos da cerimonia": integer, "casal": integer, "mes": integer, "ano": integer, "desafios": logString, "sumario": pdfFile, "degustação": mp4File, "tags": array }

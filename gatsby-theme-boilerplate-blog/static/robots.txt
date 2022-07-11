@@ -1,0 +1,8 @@
+#
+# robots.txt
+#
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ascasamenteiras.com.br/post-sitemap.xml

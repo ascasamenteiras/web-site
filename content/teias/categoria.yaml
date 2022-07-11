@@ -1,0 +1,7 @@
+topologia: Categoria
+estados: [Público, Privado, Secreto]
+iterador: 
+  - principal: [Categoria, Categorias]
+agente: 
+  - tipos: [Agronomia e ciências da vida, Arquitetura sustentável, Engenharia civil, Física, Engenharia elétrica, Geografia e meteorologia, Geologia e mineração, Geotecnologias e aplicações, Recursos hídricos e meio ambiente]
+  - atributos: {"slug": string, "preSlug": string}

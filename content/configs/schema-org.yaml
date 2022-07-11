@@ -1,0 +1,24 @@
+schema:
+  - card:
+      appName: As Casamenteiras Fans TESTE ISSO PODE IR EMBORA ?
+      version: "1.0.0"
+      brandDescription: "Serviços de assessoria e cerimonial para casamentos, eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor. A empresa oferece assessoria completa ou personalizada e consultorias avulsas. Priscilla Barbosa atua desde 2012, cursou gestão de eventos com grandes especialistas, é consultora na área. É formada em Gestão de Negócios pela USP-ESALQ. Atua em organização de casamentos ao ar livre conectados à natureza, na praia (com especialistas), igrejas, chácaras, residências, destination e elopement wedding. Organiza cerimônias tradicionais e modernas, tais como: religiosa diversa, civil, ecológica, cerimônias ecumênicas , Lgbtqia+ e temática."
+      brandurl: /
+      brandName: As Casamenteiras
+      keywords:
+        - key: As Casamenteiras
+        - key: assessoria em eventos
+        - key: cerimonialista
+        - key: casamentos
+        - key: cerimonial
+        - key: cerimonialista ribeirão preto
+        - key: casamenteiras
+      sameAs:
+        instagram: https://www.instagram.com/ascasamenteiras_
+      alternateName: AsCasamenteiras
+      potentialAction: ReadAction
+      telephone: "+5516992452437"
+      contactType: Serviço Ao Cliente
+      email: cerimonial@ascasamenteiras.com.br
+      inLanguage: 'pt-BR'
+      datePublished: 12 de junho de 2022

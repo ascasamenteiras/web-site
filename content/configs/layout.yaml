@@ -1,0 +1,52 @@
+layout01:
+  type: BODY
+  titleSeo: Boileplate
+  post_per_page: 9
+layout02:
+  type: HEADER
+  is_boxed: true
+  background: #fff
+  logo: svg
+  logo_url: /
+  main_menu: true
+  search_widget: true
+  link_01: /#login
+layout03:
+  type: MAIN
+  is_boxed: true
+  content: true
+layout04:
+  type: FOOTER
+  is_boxed: true
+  background: #000
+  footer:
+    col1:
+      status: true
+      col: 1
+      about_heading: Sobre a escola
+      about_widget: true
+      about_p:
+        - p: A Boileplate é uma escola de cursos online que cria grandes experiências de aprendizagem para transformar as pessoas ao longo de suas vidas. Selecionamos temas e professores e construímos conteúdos para que você desenvolva Power Skills.
+        - p: Boileplate Cursos Inovadores LTDA EPP 17.996.625/0001-58
+      about_phone: (11) 3042-0043
+      about_phone_prefix: "+55"
+      logo_widget: true
+      logo_widget_version: DARK
+    col2:
+      status: true
+      col: 2
+      social_media_widget: true
+      social_media_heading: Habilidades em Destaque
+      footer_tags_heading: Redes Sociais
+      footer_tags_widget: true
+    col3:
+      status: true
+      col: 3
+      featured_posts_heading: Blog da escola
+      featured_posts_widget: true
+      num_posts: 3
+    col4:
+      status: true
+      col: 4
+      footer_menu_heading: Navegue
+      footer_menu_widget: true

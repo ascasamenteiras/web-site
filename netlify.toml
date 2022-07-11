@@ -1,0 +1,12 @@
+[build]
+    command = "GATSBY_CONCURRENT_DOWNLOAD=25 yarn workspace engine build"
+    publish = "engine/public"
+
+[build.environment]
+  NODE_VERSION = "16.14.2"
+
+[[plugins]]
+  package = "@netlify/plugin-gatsby"
+
+[[plugins]]
+  package = "@netlify/plugin-local-install-core"

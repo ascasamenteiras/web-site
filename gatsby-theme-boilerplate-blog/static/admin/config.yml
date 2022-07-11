@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: miltonbolonha/as-casamenteiras
+  branch: master
+  site_domain: ascasamenteiras.com.br
+
+# local_backend: true
+publish_mode: editorial_workflow
+media_folder: content/posts/images
+public_folder: ../content/posts/images
+
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+
+collections:
+  - name: post
+    label: Posts
+    folder: content/posts
+    label_singular: Post
+    description: >
+      Posts em MD do blog Boileplate.
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime",
+          format: 'YYYY-MM-DDTHH:mm:00+00:00' }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Categories", name: "categories", widget: "list" }
+      - { label: "Featured Post", name: "featuredPost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: page
+    label: Pages
+    folder: content/pages
+    label_singular: Page
+    description: >
+      Página em MD do blog Boileplate.
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Status", name: "status", widget: "boolean" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

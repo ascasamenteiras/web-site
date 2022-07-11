@@ -1,0 +1,118 @@
+{
+  "name": "gatsby-theme-boilerplate-blog",
+  "version": "0.1.1",
+  "private": false,
+  "module": "index.js",
+  "keywords": [
+    "As Casamenteiras",
+    "assessoria em eventos",
+    "cerimonialista",
+    "casamentos",
+    "cerimonial",
+    "cerimonialista ribeirão preto",
+    "casamenteiras"
+  ],
+  "description": "Serviços de assessoria e cerimonial para casamentos, eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor. A empresa oferece assessoria completa ou personalizada e consultorias avulsas. Priscilla Barbosa atua desde 2012, cursou gestão de eventos com grandes especialistas, é consultora na área. É formada em Gestão de Negócios pela USP-ESALQ. Atua em organização de casamentos ao ar livre conectados à natureza, na praia (com especialistas), igrejas, chácaras, residências, destination e elopement wedding. Organiza cerimônias tradicionais e modernas, tais como: religiosa diversa, civil, ecológica, cerimônias ecumênicas , Lgbtqia+ e temática.",
+  "author": {
+    "name": "Milton Bolonha",
+    "email": "miltonbolonha@gmail.com"
+  },
+  "organization": {
+    "name": "As Casamenteiras",
+    "url": "https://ascasamenteiras.com.br/",
+    "email": "cerimonial@ascasamenteiras.com.br",
+    "logo": "logo-fundo-transparent-900-w.png",
+    "cardImage": "boilerplate-banner.jpg",
+    "phone": "+5516981061234"
+  },
+  "repository": "https://github.com/miltonbolonha/as-casamenteiras",
+  "urlPrefix": "/",
+  "appName": "As Casamenteiras",
+  "appLogic": "Blog",
+  "dateCreated": "05 de março de 2022",
+  "siteUrl": "https://ascasamenteiras.com.br",
+  "searchBaseUrl": "https://ascasamenteiras.com.br/cursos?search=",
+  "clientOrg": "As Casamenteiras",
+  "clientShortName": "AsCasamenteiras",
+  "clientSocial": {
+    "instagram": "https://www.instagram.com/ascasamenteirasperfil/",
+    "facebook": "https://www.facebook.com/ascasamenteirasperfil/",
+    "linkedIn": "https://br.linkedin.com/school/ascasamenteirasperfil",
+    "youtube": "https://www.youtube.com/c/ascasamenteirasperfil",
+    "twitter": "ascasamenteirasperfil"
+  },
+  "themeColor": "#fc4303",
+  "backgroundColor": "#fff",
+  "displayManifest": "fullscreen",
+  "iconManifest": "favicon-96px.png",
+  "importFont": {
+    "font01": "Bona Nova:400,700",
+    "font02": "Josefin Sans:100,300,500,600,900",
+    "font03": "Noto Serif:400,700",
+    "font04": "Open Sans:300,300i,500,i500,700,800"
+  },
+  "postsPerPage": 9,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "GATSBY_CONCURRENT_DOWNLOAD=25 gatsby build",
+    "develop": "gatsby develop"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "react-scripts": "^5.0.0",
+    "svg-react-loader": "^0.4.6"
+  },
+  "dependencies": {
+    "gatsby-layout-builder-cursor": "^0.1.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-anchor-links": "^1.2.1",
+    "gatsby-plugin-catch-links": "^4.11.0",
+    "gatsby-plugin-image": "^2.12.1",
+    "gatsby-plugin-netlify": "^4.2.0",
+    "gatsby-plugin-netlify-cms": "^6.11.0",
+    "gatsby-plugin-react-helmet-async": "^1.2.2",
+    "gatsby-plugin-react-svg": "^3.1.0",
+    "gatsby-plugin-sass": "^5.11.1",
+    "gatsby-plugin-sharp": "^4.12.1",
+    "gatsby-remark-images": "^6.11.1",
+    "gatsby-remark-lazy-load": "^1.0.2",
+    "gatsby-remark-relative-images": "^2.0.2",
+    "gatsby-source-filesystem": "^4.12.1",
+    "gatsby-transformer-remark": "^5.11.1",
+    "gatsby-transformer-sharp": "^4.12.1",
+    "gatsby-transformer-yaml": "^4.11.0",
+    "gatsby-transformer-yaml-full": "^4.0.5",
+    "gatsby-yaml-full-markdown": "^4.1.1",
+    "netlify-cms-app": "^2.15.70",
+    "react-helmet-async": "^1.3.0",
+    "react-icons": "^4.3.1",
+    "sass": "^1.50.0"
+  },
+  "peerDependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby-plugin-mdx": "^3.11.1",
+    "gatsby": "^4.12.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "@nuktpls:registry": "https://npm.pkg.github.com"
+  }
+}

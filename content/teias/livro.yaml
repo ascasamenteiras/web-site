@@ -1,0 +1,13 @@
+topologia: Livro
+estados: [Em estoque, Esgotado, Lançamento, Em breve, Público, Privado, Secreto]
+iterador: 
+  - principal: [Livro, Livros]
+  - categorias: ["categoria::agente::tipo"]
+agente: 
+  - tipos: [Impresso, E-Book]
+  - atributos: {"preco": float, "resumo": longString, "categorias": array, "autor": array, "formato": string, "organizador": array, "capitulos": integer, "paginas": integer, "ISBN": string, "ano": integer, "edicao": integer, "sumario": pdfFile, "degustação": pdfFile, "tags": array }
+  - clienteFeedback: 
+    - is: true
+    - tipo: [Comentário, Estrelas]
+subagente: 
+  - preco: [Impresso, E-Book, Capítulos, Pacote]

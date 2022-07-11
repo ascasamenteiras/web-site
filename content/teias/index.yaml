@@ -1,0 +1,3 @@
+topologia: "TE[i]As"
+estados: [Público, Privado, Secreto, Disponível, Planejados, Realizados]
+iteradores: [Serviços, Equipe, Portifólio]
