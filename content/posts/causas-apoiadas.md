@@ -1,21 +1,21 @@
 ---
-topology: posts
-title: Causas que apoiamos
-headline: Nós de As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
 date: 2022-07-10T19:50:00+00:00
-createdAt: 2022-07-10T22:17:20+00:00
-updatedAt: 2022-07-10T22:17:20+00:00
 author: Equipe As Casamenteiras
+featuredPost: true
+featuredImage: ../content/posts/images/orgulho-lgbtqia.jpg
+updatedAt: 2022-07-10T22:17:20+00:00
+topology: posts
+homeHighlightRelatedList: true
+headline: Nós de As Casamenteiras apoiamos as causas que são encontradas na
+  sociedade e vivem pulsantes em cada cidade do nosso país.
+homeHighlight: false
+homeHighlightRelated: false
+title: Causas que apoiamos
+createdAt: 2022-07-10T22:17:20+00:00
 categories:
   - causas
   - artigo
-featuredPost: true
-featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
-homeHighlight: false
-homeHighlightRelated: false
-homeHighlightRelatedList: true
 ---
-
 Nós de As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
 
 Condenamos veementemente qualquer tipo de ato discriminatório contra quaisquer bandeiras em especial discriminação contra empreendedoras, LGBTQIA+, afrodescendentes e entre fornecedores locais da mais diversas configurações sócio-econômicas.
@@ -45,7 +45,7 @@ Para quem se identifica, Priscilla Barbosa se compromete com a sua felicidade.
 
 Como mulher negra, Pri Barbosa sabe bem a dificuldade de concorrer em um país sem igualdade de oportunidades.
 
-Assim como a vida negra o amor negro também importa. Sintam-se seguros e abraçados, pois As Casamenteiras não faz distinção de casais de nenhuma etnia.
+Assim como a vida negra o amor negro também importa. Sintam-se segurxs e abraçadxs, pois As Casamenteiras não faz distinção de casais de nenhuma etnia.
 
 Nos comprometemos a excluir da nossa lista de indicações todos os fornecedores que não respeitam esse princípio.
 
