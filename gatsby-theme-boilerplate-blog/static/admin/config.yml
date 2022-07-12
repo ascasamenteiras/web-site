@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: miltonbolonha/as-casamenteiras
+  repo: ascasamenteiras/web-site
   branch: master
   site_domain: ascasamenteiras.com.br
 
