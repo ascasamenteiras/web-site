@@ -46,9 +46,9 @@
   "displayManifest": "fullscreen",
   "iconManifest": "favicon-96px.png",
   "importFont": {
-    "font01": "Bona Nova:400,700",
+    "font01": "IBM Plex Serif:400,500,600,700",
     "font02": "Josefin Sans:100,300,500,600,900",
-    "font03": "Noto Serif:400,700",
+    "font03": "Dancing Script:400,500,600,800",
     "font04": "Open Sans:300,300i,500,i500,700,800"
   },
   "postsPerPage": 9,

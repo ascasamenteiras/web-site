@@ -11,7 +11,7 @@ categories:
   - cerimonial
   - artigo
 featuredPost: true
-featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
+featuredImage: ../posts/images/jantar-luxo.jpg
 homeHighlight: false
 homeHighlightRelated: true
 homeHighlightRelatedList: true

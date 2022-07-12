@@ -199,7 +199,7 @@
 		max-width: $paragraph__size;
 		margin: 0 auto 50px;
 		p{
-		font-family: $fourth__font;
+		font-family: $main__font;
 		font-weight: 300;
 			color: $primary;
 			// line-height: 28px;
@@ -231,8 +231,8 @@
 		}
 		h1, h2, h3, h4, h5, h6{
 			margin: 35px 0;
-			font-family: $fourth__font;
-			text-transform: uppercase;
+			font-family: $second__font;
+			text-transform: capitalize;
 			font-weight: 700;
 			color: $primary;
 			& strong{
