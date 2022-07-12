@@ -6,7 +6,7 @@ backend:
 
 # local_backend: true
 publish_mode: editorial_workflow
-media_folder: content/posts/images
+media_folder: posts/images
 public_folder: ../content/posts/images
 
 slug:

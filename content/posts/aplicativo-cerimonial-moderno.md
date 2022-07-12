@@ -10,7 +10,7 @@ categories:
   - aplicativo
   - artigo
 featuredPost: true
-featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
+featuredImage: ../posts/images/mulher-negra-aplicativo.jpg
 homeHighlight: false
 homeHighlightRelated: true
 homeHighlightRelatedList: false
