@@ -4,5 +4,25 @@
 
 User-agent: *
 Allow: /
+Disallow: /contato/
+Disallow: /documentacao/
+Disallow: /3-usos-em-producao-para-o-nuktpls-boilerplate/
+Disallow: /corporativos/
+Disallow: /calculadora-eventos/
+Disallow: /depoimentos/
+Disallow: /casamentos/
+Disallow: /category/tas-one/
+Disallow: /o-pre-moldado-para-websitios/
+Disallow: /teste-de-post/
+Disallow: /category/tatwo/
+Disallow: /category/dicas/
+Disallow: /category/tagthree/
+Disallow: /outro-sim-aqui/
+Disallow: /mais-um/
+Disallow: /category/staff/
+Disallow: /biografia/
+Disallow: /portifolio/
+Disallow: /category/pain/
 
 Sitemap: https://ascasamenteiras.com.br/post-sitemap.xml
+Sitemap: https://ascasamenteiras.com.br/page-sitemap.xml

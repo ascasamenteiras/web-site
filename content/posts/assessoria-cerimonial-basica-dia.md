@@ -11,7 +11,7 @@ categories:
   - cerimonial
   - artigo
 featuredPost: true
-featuredImage: ../posts/images/jantar-luxo.jpg
+featuredImage: ../posts/images/larissa-renan-dia.jpg
 homeHighlight: false
 homeHighlightRelated: true
 homeHighlightRelatedList: true

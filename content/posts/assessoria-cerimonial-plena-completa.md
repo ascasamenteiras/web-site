@@ -11,7 +11,7 @@ categories:
   - cerimonial
   - artigo
 featuredPost: true
-featuredImage: ../posts/images/jantar-escuro.jpg
+featuredImage: ../posts/images/ana-caroline-rodrigo.jpg
 homeHighlight: false
 homeHighlightRelated: false
 homeHighlightRelatedList: true
