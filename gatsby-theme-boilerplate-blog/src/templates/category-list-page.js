@@ -48,7 +48,8 @@ const CategoryListPage = props => {
       `}
       render={data => {
         const categoriesList = data.allMarkdownRemark.edges;
-
+        console.log("data>>>>>>>");
+        console.log(data);
         const {
           site,
           bannerContent,
@@ -66,6 +67,23 @@ const CategoryListPage = props => {
         // const categoriesListFiltered = categoriesList.filter(item => {
         //   return item.node.frontmatter.categories.includes(categoriesContext);
         // });
+        console.log(
+          "categoriesContextcategoriesContextcategoriesContextcategoriesContext"
+        );
+        const myArticlesCategorized = [];
+        categoriesList.forEach(element => {
+          if (element.node.frontmatter.categories !== null) {
+            if (
+              element.node.frontmatter.categories.includes(categoriesContext)
+            ) {
+              myArticlesCategorized.push(element);
+            }
+          }
+        });
+        console.log(
+          "myArticlesCategorizedmyArticlesCategorizedmyArticlesCategorized"
+        );
+        console.log(myArticlesCategorized);
         return (
           <MainTemplateWrapper
             backgroundImage={{
@@ -113,15 +131,15 @@ const CategoryListPage = props => {
                 Posts da Categoria: {props.pageContext.categories}
               </HeadingBlock>
               <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
-                {/* <PostsBlock
-                  postList={categoriesListFiltered}
+                <PostsBlock
+                  postList={myArticlesCategorized}
                   postsPerPage={site.siteMetadata.postsPerPage}
                   readMoreText='Ler Mais'
                   pagination={{
                     loadMoreBtn: true,
                     loadMore: "Ler Mais",
                   }}
-                /> */}
+                />
               </Row>
             </main>
           </MainTemplateWrapper>

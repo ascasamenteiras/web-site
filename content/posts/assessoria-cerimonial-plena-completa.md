@@ -47,4 +47,8 @@ Reunião presencial final com noivos(as) 30 dias antes da data do casamento para
 
 ## O Cerimonial, A Festa e o Pós-Festa
 
-As Cerimonialistas estarão uniformizadas e equipadas com rádio comunicadores (até 3 pessoas) acompanhando a montagem, o cerimonial e o pós-festa.
+As Casamenteiras estarão uniformizadas e equipadas com rádio comunicadores (até 3 pessoas) acompanhando a montagem, o cerimonial e o pós-festa.
+
+Entrega de todos os ítens/ presentes/ outros recebidos para os noivos.
+Relatório de convidados presentes no casamento.
+Avaliação e feedback do casamento com noivos.

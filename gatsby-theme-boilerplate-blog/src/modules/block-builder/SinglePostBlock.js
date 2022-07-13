@@ -60,10 +60,10 @@ const SinglePostBlock = ({
                   </div>
                 </div>
                 <Row opt={{ classes: "editorial-infos", numColumns: 2 }}>
-                  <p className='timeToread'>{timeToRead} min. to read</p>
-                  <p className='wordCount'>{wordCount.paragraphs} paragraphs</p>
-                  <p className='wordCount'>{wordCount.sentences} sentences</p>
-                  <p className='wordCount'>{wordCount.words} words</p>
+                  <p className='timeToread'>{timeToRead} min. (leitura)</p>
+                  <p className='wordCount'>{wordCount.paragraphs} parágrafos</p>
+                  <p className='wordCount'>{wordCount.sentences} sentenças</p>
+                  <p className='wordCount'>{wordCount.words} palavras</p>
                 </Row>
               </Row>
             </div>

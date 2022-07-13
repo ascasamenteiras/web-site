@@ -39,7 +39,11 @@ A reunião on-line dos 30 dias antes da data do casamento marca o comece da cont
 
 ## O Cerimonial, A Festa e o Pós-Festa
 
-As Cerimonialistas estarão uniformizadas e equipadas com rádio comunicadores (2 pessoas) acompanhando a montagem, o cerimonial e o pós-festa.
+As Casamenteiras estarão uniformizadas e equipadas com rádio comunicadores (2 pessoas) acompanhando a montagem, o cerimonial e o pós-festa.
+
+Entrega de todos os ítens/ presentes/ outros recebidos para os noivos.
+Relatório de convidados presentes no casamento.
+Avaliação e feedback do casamento com noivos.
 
 Em cada uma das etapas do grande dia o foco é voltado para que a festa seja vivida plenamente, examente da forma sonhada.
 
