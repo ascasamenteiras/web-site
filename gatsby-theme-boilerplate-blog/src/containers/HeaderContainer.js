@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import Header from "../components/Header";
 
 const HeaderContainer = ({ mainMenu, opt }) => {
-  const [refState, setRefState] = useState(false);
+  const [refState, setRefState] = useState(true);
   const wrapperRef = useRef(null);
 
   function handleRefState() {
