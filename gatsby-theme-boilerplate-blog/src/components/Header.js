@@ -12,6 +12,7 @@ const Header = ({
   mainMenuItems,
   mainMenu,
   logo,
+  handleRefState,
 }) => {
   return (
     <header>
@@ -26,15 +27,31 @@ const Header = ({
         {mainMenuStatus === true ? (
           <>
             <div className={"mobile-only main-header-" + menuActive}>
-              <MainMenuContainer
+              {/* <MainMenuContainer
                 wrapperRef={wrapperRef}
                 refState={refState}
                 mainMenuStatus={mainMenuStatus}
                 isMobile={true}
                 mainMenuItems={mainMenuItems}
-              />
+              /> */}
+              <div className='header-columns toggle-menu'>
+                <button
+                  type='button'
+                  id='check-toggle-icon'
+                  onClick={handleRefState}
+                  aria-haspopup='true'
+                  aria-controls='mainmenu'
+                  aria-expanded={refState}
+                  aria-label='Alternar visibilidade do menu'
+                  className={`menu-wrapper menu-bar-icon  ${
+                    refState ? "active" : "not-active"
+                  }`}
+                >
+                  ...
+                </button>
+              </div>
             </div>
-            <div className='desktop-only'>
+            <div>
               <MainMenuContainer
                 wrapperRef={wrapperRef}
                 refState={refState}

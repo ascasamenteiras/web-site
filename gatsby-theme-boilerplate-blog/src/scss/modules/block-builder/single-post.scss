@@ -1,5 +1,6 @@
 
 .single-post{
+	
 	.header-logo-wrapper{
 		margin-bottom: 0;
 		padding: 0 20px;
@@ -10,6 +11,7 @@
 	}
 
 .post-header{
+	
 	&.full-width-row{
 		margin-bottom: 50px;
 	}
@@ -26,7 +28,7 @@
 	}
 	h1{
 		color: #fff;
-		font-family: $second__font;
+		// font-family: $second__font;
 		font-size: 36px;
 		font-weight: 500;
 		line-height: 40px;
@@ -34,6 +36,9 @@
 		@media (max-width:420px) {
 		font-size: 26px;
 		}
+	}
+	h1, h2, h3, h4, h5{
+		font-family: $fifth__font;
 	}
 	.boxed-column.post{
 		height: 100%;
@@ -123,7 +128,7 @@
 	}
 	.post-categories{
 		display: inline-block;
-		font-size: 18px;
+		font-size: 14px;
 		font-family: $second__font;
     padding: 4px;
 		color: $primary;
@@ -231,7 +236,8 @@
 		}
 		h1, h2, h3, h4, h5, h6{
 			margin: 35px 0;
-			font-family: $second__font;
+			font-family: $fifth__font;
+		// font-family: $second__font;
 			text-transform: capitalize;
 			font-weight: 700;
 			color: $primary;
@@ -241,9 +247,10 @@
 		}
 		h2{
 			font-size:26px;
+			line-height: 32px;
 		}
 		h3{
-			font-size:22px;
+			font-size:26px;
 		}
 		h4{
 			font-size:20px;

@@ -40,7 +40,7 @@ module.exports = async (graphql, actions) => {
   // Make category pages
   categories.forEach(category => {
     createPage({
-      path: `/category/${_.kebabCase(category.fieldValue)}/`,
+      path: `/trends/${_.kebabCase(category.fieldValue)}/`,
       component: path.resolve(rootDir, "src/templates/category-list-page.js"),
       context: {
         categories: category.fieldValue,

@@ -9,6 +9,7 @@ module.exports = {
           businessInfos.importFont.font02,
           businessInfos.importFont.font03,
           businessInfos.importFont.font04,
+          businessInfos.importFont.font05,
         ],
         display: "swap",
         preconnect: true,

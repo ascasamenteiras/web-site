@@ -72,7 +72,7 @@ const SinglePostBlock = ({
               {categories.map((e, i) => {
                 return (
                   <Link
-                    to={`/category/${_.kebabCase(e)}/`}
+                    to={`/trends/${_.kebabCase(e)}/`}
                     className='post-categories'
                     key={i}
                   >

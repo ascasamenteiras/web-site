@@ -41,13 +41,11 @@ A reunião on-line dos 30 dias antes da data do casamento marca o comece da cont
 
 As Casamenteiras estarão uniformizadas e equipadas com rádio comunicadores (2 pessoas) acompanhando a montagem, o cerimonial e o pós-festa.
 
-Entrega de todos os ítens/ presentes/ outros recebidos para os noivos.
-Relatório de convidados presentes no casamento.
-Avaliação e feedback do casamento com noivos.
+Tanto presente, como ítens do cerimonial e outros recebidos são devidamente zelados pelAs Casamenteiras. Além do relatório de convidados presentes, avaliação e feedback com os noivos.
 
 Em cada uma das etapas do grande dia o foco é voltado para que a festa seja vivida plenamente, examente da forma sonhada.
 
-Esse é um resumo pontuado de diversos dos serviços que As Casamenteiras presta no pacote básico, que possui maiores detalhes. Solicite um orçamento
+Esse é um resumo pontuado de diversos dos serviços que As Casamenteiras presta no pacote básico. Solicite um orçamento para maiores detalhes.
 
 ## Assessoria e Cerimonial Plena (completa)
 

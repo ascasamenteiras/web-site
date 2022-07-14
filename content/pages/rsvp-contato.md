@@ -8,6 +8,10 @@ featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 date: 2022-06-30T19:50:00+00:00
 ---
 
+Siga As Casamenteiras nas redes sociais.
+
+- [Instagram](https://instagram.com/ascasamenteiras_)
+
 Os formulários a seguir servem para contato geral e/ou pedido de orçamento para serviços de assessoria e cerimonial de casamentos e eventos em geral.
 
 Pri Barbosa é apaixonada por histórias românticas e casamentos, conte abaixo mais sobre o seu momento:

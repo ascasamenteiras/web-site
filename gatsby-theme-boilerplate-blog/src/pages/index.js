@@ -199,7 +199,7 @@ const IndexPage = props => {
                       return (
                         <Link
                           key={key}
-                          to={"/category/" + el}
+                          to={"/trends/" + el}
                           className='main-article-categories'
                         >
                           {el}
@@ -354,8 +354,11 @@ const IndexPage = props => {
                       />
                     </div>
                     <div className='home-profile-infos'>
-                      <Link to='/' className='profile-btn'>
-                        + Apoiar
+                      <Link
+                        to='/priscilla-barbosa-cerimonialista'
+                        className='profile-btn'
+                      >
+                        + Info
                       </Link>
                       <Link to='/' className='profile-btn'>
                         + Seguir

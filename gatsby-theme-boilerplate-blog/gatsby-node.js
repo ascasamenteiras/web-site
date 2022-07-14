@@ -234,7 +234,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Make category pages
     categories.forEach(category => {
       createPage({
-        path: `/category/${_.kebabCase(category.fieldValue)}/`,
+        path: `/trends/${_.kebabCase(category.fieldValue)}/`,
         component: path.resolve(
           rootDir,
           "gatsby-theme-boilerplate-blog/src/templates/category-list-page.js"

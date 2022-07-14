@@ -8,8 +8,6 @@ const FooterBlock = ({ githubImg, instaImg, twitterImg, whatsImg, logo }) => {
   const instaGetImg = getImage(instaImg.childrenImageSharp[0]);
   const twitterGetImg = getImage(twitterImg.childrenImageSharp[0]);
   const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
-  console.log("logo");
-  console.log(logo);
   return (
     <>
       <HeadingBlock classes='m30auto hack' importance={9} width={400}>

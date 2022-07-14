@@ -8,10 +8,9 @@ const MainMenuList = ({
   handleRefState,
   userIcon,
   refState,
-  bagIcon,
   hanburguerIcon,
 }) => {
-  if (list.item.href) {
+  if (list.item.href && isMobile !== true) {
     return (
       <li key={indx} role='none'>
         <a
@@ -26,7 +25,7 @@ const MainMenuList = ({
       </li>
     );
   }
-  if (list.item.to) {
+  if (list.item.to && isMobile !== true) {
     return (
       <li key={indx} role='none'>
         <Link
@@ -43,14 +42,8 @@ const MainMenuList = ({
       </li>
     );
   }
-  // if (list.item.icon) {
-  //   return (
-  //     <li className='menu-shop-bag' key={indx} role='none'>
-  //       {bagIcon}
-  //     </li>
-  //   );
-  // }
-  if (list.item.search_widget) {
+
+  if (list.item.search_widget && isMobile !== true) {
     return (
       <li className='main-menu-search' key={indx}>
         {/* <Layout
@@ -63,7 +56,9 @@ const MainMenuList = ({
       </li>
     );
   }
-  if (isMobile) {
+  console.log(isMobile);
+  if (isMobile === true) {
+    console.log("oi amigo");
     return (
       <div className='header-columns toggle-menu'>
         <p className='menu-shop-bag-mobile'>{userIcon}</p>

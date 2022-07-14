@@ -289,11 +289,30 @@ img{
 	margin: 30px auto;
 
 }
-
+.main-header-not-visible{
 	.main-ul{
+		// display: none;
+		position: absolute;
+		top: 36px;
+    display: flex;
+    flex-direction: column;
+    background: $primary_light;
+    height: auto;
+    overflow: auto;
+		z-index: 999;
+		border-bottom: 1px solid $cta__colorLink;
+		a{
+			color: $cta__color;
+		}
+	}
+}
+	.main-ul{
+		display: flex;
+		@media (max-width:$tabletHack__size) {
+			display: none;
+		}
 		height: 29px;
 		font-size: 14px;
-		display: flex;
 		max-width: $widescreen__size;
 		width: 100%;
 		margin: 0 auto;
@@ -712,4 +731,17 @@ p{
 
 .highlight-img{
 	margin-bottom: 20px;
+}
+
+.menu-bar-icon{
+	background-color: #999;
+	color: white;
+	border-radius: 50%;
+	width: 35px;
+	line-height: 21px;
+	height: 35px;
+	border: 0;
+	font-size: 29px;
+	display: flex;
+	margin-left: 10px;
 }
