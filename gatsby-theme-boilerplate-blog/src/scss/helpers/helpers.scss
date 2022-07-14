@@ -296,13 +296,13 @@ img{
 		top: 36px;
     display: flex;
     flex-direction: column;
-    background: $primary_light;
+    background: $cta__color;
     height: auto;
     overflow: auto;
 		z-index: 999;
 		border-bottom: 1px solid $cta__colorLink;
 		a{
-			color: $cta__color;
+			color: $primary_light;
 		}
 	}
 }
