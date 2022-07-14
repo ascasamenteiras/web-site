@@ -293,16 +293,18 @@ img{
 	.main-ul{
 		// display: none;
 		position: absolute;
-		top: 36px;
+		top: 45px;
     display: flex;
     flex-direction: column;
-    background: $cta__color;
+		padding-bottom: 10px;
+		font-size: 16px;
+    background: #262a33;
     height: auto;
     overflow: auto;
 		z-index: 999;
 		border-bottom: 1px solid $cta__colorLink;
 		a{
-			color: $primary_light;
+			color: #fff;
 		}
 	}
 }
@@ -735,6 +737,8 @@ p{
 
 .menu-bar-icon{
 	background-color: #999;
+	margin: 5px;
+
 	color: white;
 	border-radius: 50%;
 	width: 35px;
