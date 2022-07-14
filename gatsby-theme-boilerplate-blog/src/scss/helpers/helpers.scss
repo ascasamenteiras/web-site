@@ -296,18 +296,25 @@ img{
 		top: 45px;
     display: flex;
     flex-direction: column;
+		padding-top: 10px;
 		padding-bottom: 10px;
 		font-size: 16px;
-    background: #262a33;
+    background: #fff;
+		border-radius: 10px;
+		max-width: 400px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
     height: auto;
     overflow: auto;
 		z-index: 999;
 		border-bottom: 1px solid $cta__colorLink;
 		a{
-			color: #fff;
+			color: #262a33;
 		}
 	}
 }
+
 	.main-ul{
 		display: flex;
 		@media (max-width:$tabletHack__size) {
@@ -318,13 +325,21 @@ img{
 		max-width: $widescreen__size;
 		width: 100%;
 		margin: 0 auto;
-		li{ margin: 0 auto; a{
+		li{ margin: 0 auto; 
+			width: 100%;
+			text-align: center;
+			a{
 			color:white; font-family: $third__font; line-height: 33px;
 			&:hover{
 				color: $primary_light;
 			}
 			&.active{
-				color: $primary_light;
+				color: #1f98eb;
+				
+				@media (min-width: $boxedDesktop__maxWidth) {
+					color: $primary_light;
+				}
+				
 			}
 		}}
 	}
@@ -736,16 +751,34 @@ p{
 }
 
 .menu-bar-icon{
-	background-color: #999;
+	font-family: $main__font;
+	background-color: $cta__color;
 	margin: 5px;
-
-	color: white;
+	color: $cta__colorLink;
 	border-radius: 50%;
 	width: 35px;
-	line-height: 21px;
+	line-height: 16px;
+	text-align: center;
 	height: 35px;
 	border: 0;
 	font-size: 29px;
 	display: flex;
 	margin-left: 10px;
+	position: relative;
+	&::before{
+		content: "Menu";
+		display: block;
+		font-size: 24px;
+		position: absolute;
+		top: 10px;
+		right: -70px;
+		font-family: $fifth__font;
+	}
+	// &:hover{
+	// 	color: white
+	// }
+}
+
+.full-width-row.main-header{
+	background-color: transparent!important;
 }

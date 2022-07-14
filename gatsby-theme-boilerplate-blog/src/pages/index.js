@@ -183,6 +183,15 @@ const IndexPage = props => {
         mainLogo: imgHolder,
         cardImage: cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null,
         serverUrl: props.location.href,
+        badgesWhats: (
+          <GatsbyImage
+            image={badgeWhats}
+            alt={"title"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+          />
+        ),
       }}
     >
       <main className='main-container' id='site-content' role='list'>
@@ -520,36 +529,6 @@ const IndexPage = props => {
           />
         </Row>
       </main>
-      <div className='whatsMeWrapper'>
-        <a
-          href='https://web.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
-          rel='nofollow'
-          target={"_blank"}
-          className={"desktop-only"}
-        >
-          <GatsbyImage
-            image={badgeWhats}
-            alt={"title"}
-            placeholder={"NONE"}
-            critical='true'
-            className={"whatsMe"}
-          />
-        </a>
-        <a
-          href='https://api.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
-          rel='nofollow'
-          target={"_blank"}
-          className={"mobile-only"}
-        >
-          <GatsbyImage
-            image={badgeWhats}
-            alt={"title"}
-            placeholder={"NONE"}
-            critical='true'
-            className={"whatsMe"}
-          />
-        </a>
-      </div>
     </MainTemplateWrapper>
   );
 };

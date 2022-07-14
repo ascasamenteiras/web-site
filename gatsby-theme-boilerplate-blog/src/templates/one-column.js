@@ -13,7 +13,10 @@ const OneColumn = ({ location, pageContext }) => {
     boilerplateLogo,
     site,
     cardImage,
+    bandeiraWhats,
   } = useSiteMetadatas();
+  const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const { title, content, description } = pageContext;
@@ -42,6 +45,15 @@ const OneColumn = ({ location, pageContext }) => {
         schemaType: "article",
         description: description,
         social: site.siteMetadata.social.twitter,
+        badgesWhats: (
+          <GatsbyImage
+            image={badgeWhats}
+            alt={"title"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+          />
+        ),
       }}
     >
       <main>
