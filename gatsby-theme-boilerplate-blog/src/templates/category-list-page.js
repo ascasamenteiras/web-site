@@ -64,9 +64,6 @@ const CategoryListPage = props => {
         const categoriesContext = props.pageContext.categories;
 
         const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
-        // const categoriesListFiltered = categoriesList.filter(item => {
-        //   return item.node.frontmatter.categories.includes(categoriesContext);
-        // });
         console.log(
           "categoriesContextcategoriesContextcategoriesContextcategoriesContext"
         );
@@ -99,9 +96,8 @@ const CategoryListPage = props => {
               />
             }
             classes='blog-list'
-            // seoSchema={defaultSchema(props.location)}
             opt={{
-              titleSeo: `As Casamenteiras - Listagem de Postagens`,
+              titleSeo: `Trends: ${props.pageContext.categories}`,
               classes: "blog-list",
               schemaType: "blog",
               mainLogo: imgHolder,
