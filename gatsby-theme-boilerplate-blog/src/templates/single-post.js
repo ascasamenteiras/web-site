@@ -1,20 +1,22 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
-
 import SinglePostBlock from "@BlockBuilder/SinglePostBlock";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
-
-const SinglePost = ({ data, location, pageContext }) => {
-  const { imgHolder, bgPatternImg, boilerplateLogo, site } = useSiteMetadatas();
+const SinglePost = ({ location, pageContext }) => {
+  const {
+    imgHolder,
+    bgPatternImg,
+    boilerplateLogo,
+    site,
+    bandeiraWhats,
+  } = useSiteMetadatas();
+  const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
-  // console.log(pageContext.thePost);
   const post = pageContext.thePost;
-
   return (
     <MainTemplateWrapper
       backgroundImage={{
@@ -30,7 +32,6 @@ const SinglePost = ({ data, location, pageContext }) => {
         />
       }
       classes='single-post'
-      // seoSchema={articleSchema(data, location)}
       opt={{
         titleSeo: `${post.frontmatter.title}`,
         authorSeo: post.frontmatter.author,
@@ -50,6 +51,15 @@ const SinglePost = ({ data, location, pageContext }) => {
         serverUrl: location.origin || site.siteMetadata.siteUrl || "/",
         articleUrl: location.href,
         social: site.siteMetadata.social.twitter,
+        badgesWhats: (
+          <GatsbyImage
+            image={badgeWhats}
+            alt={"title"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+          />
+        ),
       }}
     >
       <main>

@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import { Row } from "../components/InsertRow";
-
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 import PostsBlock from "@BlockBuilder/PostsBlock";
 import HeadingBlock from "@BlockBuilder/HeadingBlock";
-
 import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 
 const IndexPage = props => {

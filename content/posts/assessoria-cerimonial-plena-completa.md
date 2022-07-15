@@ -17,21 +17,17 @@ homeHighlightRelated: false
 homeHighlightRelatedList: true
 ---
 
-Dentro da assessoria e cerimonial plena, todo o pacote básico estará contemplado. Para acessar a Assessoria e Cerimonial Do Dia (básica) [clique aqui](/assessoria-cerimonial-basica-dia).
+Dentro da assessoria e cerimonial plena todo o pacote básico estará contemplado. Para acessar saber mais sobre esses detalhes visite a página da Assessoria e Cerimonial Do Dia (básica) [clique aqui](/assessoria-cerimonial-basica-dia).
 
-Em cada uma das etapas do grande dia o foco é voltado para que a festa seja vivida plenamente, examente da forma sonhada.
+Em cada uma das etapas da Assessoria e Cerimonial Plena (completa) o foco é voltado para que a festa seja vivida plenamente, examente da forma sonhada e desde o começo. Planejar um casamento é viver o sonho antes de ele acontecer.
 
 ## Serviços básicos de assessoria e cerimonial
 
 A reunião inicial e o briefing/roteiro norteiam a organização do cerimonial. Atendimento virtual está contemplado.
 
-As Casamenteiras cria um grupo no WhatsApp com todos os fornecedores envolvidos para compartilhamento dos roteiros e cronograma. Além disso, estaremos em contato constante com cada fornecedor para construção do cronograma de chegada no local do casamento.
+As Casamenteiras cria um grupo no WhatsApp com todos os fornecedores envolvidos e faz o serviço de acompanhamento dos contratatos de perto e alinhamento do cronograma de chegada no local do casamento.
 
-Participação de reuniões online com fornecedores.
-
-Para reunião extra presencial com fornecedor verificar valores e disponibilidade à parte. Visita técnica no local do casamento com a presença de todos os fornecedores para alinhamento de detalhes finais. (Marcamos a reunião final e a visita técnica no mesmo dia).
-
-Agendamento de degustação com buffet.
+Ainda fazemos o agendamento de degustação com buffet, visita técnica e a reunião final.
 
 ## Diferenciais
 
@@ -39,16 +35,14 @@ Organização financeira via app e assinatura de todos os contratos digitalmente
 
 RSVP com tecnologia de ponta - enviamos um QR CODE com informações do casamento para cada convidado que deverá apresentar no dia do casamento.
 
-Site do casar.com incluso com domínio próprio do casal, exemplo: www.mafeesimon.com.br . (a personalização do site pode ser feita pelas As Casamenteiras, caso queiram).
-
-A reunião on-line dos 30 dias antes da data do casamento marca o comece da contagem regressiva. Os menores detalhes da cerimônia são acertados.
-
-Reunião presencial final com noivos(as) 30 dias antes da data do casamento para checagem dos fornecedores contratados, e elaboração do roteiro da cerimônia e da recepção .
+Checagem experiente e moderna dos fornecedores contratados, e elaboração do roteiro da cerimônia e da recepção .
 
 ## O Cerimonial, A Festa e o Pós-Festa
 
 As Casamenteiras estarão uniformizadas e equipadas com rádio comunicadores (até 3 pessoas) acompanhando a montagem, o cerimonial e o pós-festa.
 
-Entrega de todos os ítens/ presentes/ outros recebidos para os noivos.
-Relatório de convidados presentes no casamento.
-Avaliação e feedback do casamento com noivos.
+Tanto presente, como ítens do cerimonial e outros recebidos são devidamente zelados pelAs Casamenteiras e entregue aos noivos. Além do relatório de convidados presentes, avaliação e damos o feedback aos noivos ao final da festa.
+
+# RSVP - Responda Por Gentileza
+
+Você já pode começar o seu planejamento respondendo o questionário para elaboração do seu cerimonial. Visite a nossa página para esse contato [clicando aqui](/rsvp-contato).

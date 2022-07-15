@@ -1,10 +1,8 @@
 import React from "react";
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import MainPageWrapper from "@BlockBuilder/MainPageWrapper";
-
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
-
-import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 const OneColumn = ({ location, pageContext }) => {
   const {
@@ -16,7 +14,6 @@ const OneColumn = ({ location, pageContext }) => {
     bandeiraWhats,
   } = useSiteMetadatas();
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
-
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const { title, content, description } = pageContext;
@@ -38,7 +35,6 @@ const OneColumn = ({ location, pageContext }) => {
       opt={{
         titleSeo: `As Casamenteiras`,
         classes: "one-column",
-        // blogListing: posts.slice(0, 9),
         mainLogo: imgHolder,
         cardImage: cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null,
         serverUrl: location.href,

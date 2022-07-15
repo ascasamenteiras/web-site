@@ -1,7 +1,6 @@
 import React from "react";
 
 import { useSiteMetadatas } from "../../tools/useSiteMetadatas";
-
 import BodyBlock from "@BlockBuilder/BodyBlock";
 import HeaderBlock from "@BlockBuilder/HeaderBlock";
 import FooterBlock from "@BlockBuilder/FooterBlock";

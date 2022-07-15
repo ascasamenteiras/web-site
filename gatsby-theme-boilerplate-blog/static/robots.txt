@@ -26,3 +26,4 @@ Disallow: /category/pain/
 
 Sitemap: https://ascasamenteiras.com.br/post-sitemap.xml
 Sitemap: https://ascasamenteiras.com.br/page-sitemap.xml
+Sitemap: https://ascasamenteiras.com.br/sitemaps.xml

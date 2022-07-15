@@ -1,14 +1,11 @@
 import React from "react";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
-import { Row } from "../../components/InsertRow";
-
-import HeadingBlock from "@BlockBuilder/HeadingBlock";
 import { useSiteMetadatas } from "../../tools/useSiteMetadatas";
-
+import { Row } from "../../components/InsertRow";
+import HeadingBlock from "@BlockBuilder/HeadingBlock";
 import BodyBlock from "@BlockBuilder/BodyBlock";
 import HeaderBlock from "@BlockBuilder/HeaderBlock";
-
 import FooterBlock from "@BlockBuilder/FooterBlock";
 
 const MainPageWrapper = ({
@@ -23,10 +20,8 @@ const MainPageWrapper = ({
     instaImg,
     twitterImg,
     whatsImg,
-    bannerContent,
     boilerplateLogo,
   } = useSiteMetadatas();
-  // const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const logoQuerySrc = getSrc(boilerplateLogo.childrenImageSharp[0]);
   return (
