@@ -32,6 +32,8 @@ export default React.memo(
     const dateNow = Date.now();
     const authorType =
       author === "As Casamenteiras" ? "Organization" : "Person";
+    let socialValues = [];
+    Object.values(sameAs).forEach(social => socialValues.push(social));
     const orgSchema = [
       {
         "@type": ["Organization"],
@@ -40,7 +42,7 @@ export default React.memo(
         url: siteUrl,
         email: email,
         description: brandDescription,
-        sameAs: [sameAs.instagram],
+        sameAs: socialValues,
         logo: organizationLogo,
         contactPoint: [
           {
@@ -65,7 +67,7 @@ export default React.memo(
         datePublished: dateCreated,
         dateModified: dateNow,
         image: image || featuredImage,
-        sameAs: [sameAs.instagram],
+        sameAs: socialValues,
       },
     ];
 

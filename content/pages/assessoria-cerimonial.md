@@ -5,7 +5,7 @@ title: Assessoria e Cerimonial
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: assessoria-cerimonial
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
-date: 2022-03-30T19:50:00+00:00
+date: 2022-07-16T19:50:00+00:00
 ---
 
 As Casamenteiras oferece assessoria completa ou personalizada e consultorias avulsas.

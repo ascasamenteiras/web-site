@@ -2,7 +2,7 @@
 topology: posts
 title: Causas que apoiamos
 headline: Nós de As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
-date: 2022-07-10T19:50:00+00:00
+date: 2022-07-16T19:50:00+00:00
 updatedAt: 2022-07-10T22:17:20+00:00
 createdAt: 2022-07-10T22:17:20+00:00
 author: Equipe As Casamenteiras

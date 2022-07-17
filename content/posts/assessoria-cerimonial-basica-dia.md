@@ -2,7 +2,7 @@
 topology: posts
 title: Assessoria e Cerimonial Do Dia (básica)
 headline: O serviço de assessoria e cerimonial do dia é relativo ao pacote básico dos serviços dAs Casamenteiras.
-date: 2022-07-10T19:50:00+00:00
+date: 2022-07-16T19:50:00+00:00
 createdAt: 2022-07-10T22:17:20+00:00
 updatedAt: 2022-07-10T22:17:20+00:00
 author: Equipe As Casamenteiras

@@ -5,7 +5,7 @@ title: Cerimonialistas
 description: Nosso time de cerimonialistas é comandado por Pri Barbosa que possui mais de 10 anos de experiência na área.
 slug: cerimonialistas
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
-date: 2022-04-30T19:50:00+00:00
+date: 2022-07-16T19:50:00+00:00
 ---
 
 Nosso time de cerimonialistas:

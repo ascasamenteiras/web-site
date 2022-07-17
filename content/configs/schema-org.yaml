@@ -15,6 +15,9 @@ schema:
         - key: casamenteiras
       sameAs:
         instagram: https://www.instagram.com/ascasamenteiras_
+        zankyou: https://www.zankyou.com.br/f/as-casamenteiras-976737
+        casamentos: https://www.zankyou.com.br/f/as-casamenteiras-976737
+        facebook: https://www.facebook.com/profile.php?id=100016966816287
       alternateName: AsCasamenteiras
       potentialAction: ReadAction
       telephone: "+5516992452437"
