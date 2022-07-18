@@ -25,7 +25,7 @@ Condenamos veementemente qualquer tipo de ato discriminatório contra quaisquer 
 Acreditamos que ao dar importância e visibilidade para as minorias historicamente discriminadas estamos contribuindo midiaticamente com as causas, isso é importante para a nossa empresa pois aprendemos que “na frente de um ser humano, devemos ser humanos” e não apenas empresariais.
 “Notem as pessoas LGBTQIA+ que estão nas ruas, os homens e as mulheres que não tem acesso a segurança, higiene limpa, água.
 
-Há também os homens e mulheres trans que são rejeitados e abandonados. Se você for mais humano com os mais pobres, você será uma pessoa de verdade. Que ninguém rejeite os moradores de rua. Vida plena para todos.” - Padre Júlio Lancellotti.
+Há também os homens e mulheres trans que são rejeitados e abandonados. Se você for mais humano com os mais pobres, você será uma pessoa de verdade. Que ninguém rejeite os moradores de rua. Vida plena para todos.” - _Padre Júlio Lancellotti_.
 
 ## Empreendedorismo Feminino
 

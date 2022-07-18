@@ -212,9 +212,7 @@
 		}
 		a{
 			color: $cta__color;
-			&:hover{
-				text-decoration: underline;
-			}
+			text-decoration: underline;
 		}
 		strong{
 			font-weight: 400;

@@ -49,4 +49,4 @@ Esse é um resumo pontuado de diversos dos serviços que As Casamenteiras presta
 
 ## Assessoria e Cerimonial Plena (completa)
 
-Todos os serviços básicos acima apresentados estão contemplados também no pacote completo. Para conferir como funciona a [Assessoria e Cerimonial Plena, clique aqui!](/assessoria-cerimonial-plena-completa).
+Todos os serviços básicos acima apresentados estão contemplados também no pacote completo. Para conferir como funciona a [_Assessoria e Cerimonial Plena, clique aqui!_](/assessoria-cerimonial-plena-completa).
