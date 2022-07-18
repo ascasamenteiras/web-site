@@ -27,7 +27,7 @@ O primeiro passo para organizar o seu casamento é ter uma reunião com As Casam
 
 Essa reunião gerará o briefing/roteiro do casamento que será cadastrado no aplicativo. Ambos do casal terão perfis individuais no sistema de organização de cerimonial.
 
-Nessa fase inicial é liberado o site do casal para personalização, exemplo: www\.mafeesimon\.com\.br.
+Nessa fase inicial é liberado o site do casal para personalização, exemplo: mafeesimon.com.br.
 
 ## Como fazer a montagem do cerimonial e festa?
 
