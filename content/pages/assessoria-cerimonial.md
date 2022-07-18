@@ -27,7 +27,7 @@ Organizar casamento com a Pri é não ter estresse e sim alegria. Cada etapa do 
 
 As Casamenteiras utiliza tecnologia de ponta para planejamento moderno, manter as informações e alinhar os fornecedores, cronograma, roteiro da cerimônia e da festa. O casal terá acesso a todo o processo em tempo real, de forma individualizada. Poderão adicionar informações relevantes e manter boa comunicação durante todo o planejamento.
 
-Com a organização do grande dia do casal você aproveita ao máximo o seu casamento e tem toda a tranquilidade para realmente desfrutar de um dia que é sonhado há muito tempo. O seu grande dia deve ser inesquecível.
+Com a organização do grande dia, o casal aproveita ao máximo o casamento e tem toda a tranquilidade para realmente desfrutar de um dia que é sonhado há muito tempo. Um dia inesquecível!
 
 Reverberando boas energias, planejamos sucesso sem estresse e confiamos que tudo sairá como o sonhado!
 

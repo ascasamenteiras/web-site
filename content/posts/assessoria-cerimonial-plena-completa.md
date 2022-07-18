@@ -17,7 +17,7 @@ homeHighlightRelated: false
 homeHighlightRelatedList: true
 ---
 
-Dentro da assessoria e cerimonial plena (completa) todo o pacote básico está contemplado. Se você ainda não acessou a página do pacote básico, faça uma visita para saber mais sobre esses detalhes visitando a página da [Assessoria e Cerimonial Do Dia (básica)](/assessoria-cerimonial-basica-dia).
+Dentro da assessoria e cerimonial plena (completa) todo o pacote básico está contemplado. Se vocês ainda não acessaram a página do pacote básico, faça uma visita para saber mais sobre esses detalhes visitando a página da [Assessoria e Cerimonial Do Dia (básica)](/assessoria-cerimonial-basica-dia).
 
 Em cada uma das etapas da _Assessoria e Cerimonial Plena (completa)_ o foco está voltado para que a festa seja vivida desde o começo da organização, de forma plenamente e examente da forma sonhada. Planejar um casamento é viver o sonho antes de ele acontecer.
 
@@ -41,12 +41,12 @@ Checagem experiente e moderna dos fornecedores contratados. Elaboração do rote
 
 As Casamenteiras estarão uniformizadas e equipadas com rádio comunicadores (até 3 pessoas) acompanhando a montagem, o cerimonial e o pós-festa.
 
-Asseguraremos que ocasal receba os seus presente, bem como os ítens e lembranças do cerimonial. Outros recebidos são devidamente zelados pelAs Casamenteiras e entregue aos noivos.
+Asseguraremos que o casal receba os seus presente, bem como os ítens e lembranças do cerimonial. Outros recebidos são devidamente zelados pelAs Casamenteiras e entregue aos noivos.
 
 Por fim, fazemos o relatório de convidados presentes, avaliação e o feedback junto ao casal no final do evento.
 
 # RSVP - Responda Por Gentileza
 
-Você já pode começar o seu planejamento respondendo o questionário para elaboração do seu cerimonial. Visite a nossa página para esse contato [clicando aqui](/rsvp-contato).
+Começem o planejamento do seu casamento respondendo o questionário para elaboração do cerimonial. Visitem a nossa página para esse contato [clicando aqui](/rsvp-contato).
 
-Ou entre em contato pelo nosso What's App: [16 99245-2437](https://web.whatsapp.com/send?phone=5516992452437)
+Ou entrem em contato pelo nosso What's App: [16 99245-2437](https://web.whatsapp.com/send?phone=5516992452437)

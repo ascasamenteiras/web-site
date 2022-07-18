@@ -1,7 +1,7 @@
 ---
 topology: posts
 title: Aplicativo para cerimonial moderno
-headline: Com um aplicativo moderno você tem acesso a todas as informações do evento, centralizadas em um só lugar.
+headline: Com um aplicativo moderno o casal tem acesso a todas as informações do evento, centralizadas em um só lugar.
 date: 2022-07-18T08:47:00+00:00
 createdAt: 2022-07-10T22:17:20+00:00
 updatedAt: 2022-07-10T22:17:20+00:00
@@ -20,7 +20,7 @@ As Casamenteirasa usa tecnologia de ponta para ajudar na organização do seu ca
 
 Na tela inicial do aplicativo está o resumo do seu evento com atalhos para as próximas tarefas, fornecedores, convidados, contratos e mais.
 
-Com essa solução você tem acesso a todas as informações do evento, centralizadas em um só lugar. A sua participação é muito importante, o casal será atualizado de cada detalhe do seu grande momento.
+Com essa solução o casal tem acesso a todas as informações do evento, centralizadas em um só lugar. A sua participação é muito importante, o casal será atualizado de cada detalhe do seu grande momento.
 
 ## Como fazer um roteiro de cerimonial de casamento?
 
@@ -36,7 +36,7 @@ O painel da prova real ajuda o controle da sua carteira. São contas matemática
 
 ## Aplicativo Para Fornecedores de Casamento
 
-No aplicativo o casal poderá ver as estimativas de gastos, fornecedores recomendados, orçamentos e fornecedores contratados. O casal saberá quando fazer o pagamento de cada parcela, acessar os dados bancários e PIX do fornecedor. Você também tem a opção de selecionar métodos de pagamento e anexar comprovantes.
+No aplicativo o casal poderá ver as estimativas de gastos, fornecedores recomendados, orçamentos e fornecedores contratados. O casal saberá quando fazer o pagamento de cada parcela, acessar os dados bancários e PIX do fornecedor. O casal também tem a opção de selecionar métodos de pagamento e anexar comprovantes.
 
 Ainda poderão acessar o chat com o fornecedor, insirir observações e anexos nas propostas.
 
@@ -48,7 +48,7 @@ Essas informações podem ou não se tornar um contrato. O painel de solicitaç�
 
 ## Assinatura De Contrato Sem Sair de Casa
 
-Com os contratos eletrônicos você assina os seus contratos de onde estiver (com validade jurídica).
+Com os contratos eletrônicos o casal pode fazer a assinatura dos seus contratos de onde estiver (com validade jurídica).
 
 Assine os contratos na segurança do seu lar. As Casamenteiras envia os links para o casal fazer a sua assinatura com validação segura via SMS. E mantém um painel de controle desses contratos.
 
