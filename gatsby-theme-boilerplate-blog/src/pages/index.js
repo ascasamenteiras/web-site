@@ -19,7 +19,6 @@ const IndexPage = props => {
 
   const {
     site,
-    bannerContent,
     boilerplateLogo,
     profileOficial,
     diamond,
@@ -97,7 +96,6 @@ const IndexPage = props => {
   const homeHighlightPost = findItemhomeHighlight(posts);
   const homeHighlightRelatedPost = findItemhomeHighlightRelated(posts);
   const homeHighlightRelatedListPost = findItemhomeHighlightRelatedList(posts);
-  const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const badgeFeminista = getImage(bandeiraFeminista.childrenImageSharp[0]);
   const badgeLgbtqia = getImage(bandeiraLgbtqia.childrenImageSharp[0]);
   const badgeRibeiraoPreto = getImage(
@@ -116,34 +114,34 @@ const IndexPage = props => {
   const twitterGetImg = getImage(twitterImg.childrenImageSharp[0]);
   const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
 
-  var updatedDate = new Date(
+  const updatedDate = new Date(
     homeHighlightPost[0].node.frontmatter.updatedModified
   );
-  var now = new Date();
-  var diff = parseInt((now - updatedDate) / 1000);
-  var diffHours = parseInt(diff / 3600);
+  const now = new Date();
+  const diff = parseInt((now - updatedDate) / 1000);
+  const diffHours = parseInt(diff / 3600);
 
-  var difference_In_Time = now.getTime() - updatedDate.getTime();
-  var difference_In_Days = difference_In_Time / (1000 * 60 * 60 * 24);
-  var difference_In_Hours = difference_In_Time / (1000 * 60 * 60);
-  var countOneDay = difference_In_Days >= 1 ? true : false;
+  const difference_In_Time = now.getTime() - updatedDate.getTime();
+  const difference_In_Days = difference_In_Time / (1000 * 60 * 60 * 24);
+  const difference_In_Hours = difference_In_Time / (1000 * 60 * 60);
+  const countOneDay = difference_In_Days >= 1 ? true : false;
 
   function convertNumToTime(number, returnType) {
     // Check sign of given number
-    var sign = number >= 0 ? 1 : -1;
+    let sign = number >= 0 ? 1 : -1;
 
     // Set positive value of number of sign negative
     number = number * sign;
 
     // Separate the int from the decimal part
-    var hour = Math.floor(number);
-    var decpart = number - hour;
+    let hour = Math.floor(number);
+    let decpart = number - hour;
 
-    var min = 1 / 60;
+    let min = 1 / 60;
     // Round to nearest minute
     decpart = min * Math.round(decpart / min);
 
-    var minute = Math.floor(decpart * 60) + "";
+    let minute = Math.floor(decpart * 60) + "";
 
     // Add padding if need
     if (minute.length < 2) {
