@@ -303,6 +303,11 @@ export const useSiteMetadatas = () =>
             )
           }
         }
+        vaiCasarImg: file(relativePath: { eq: "video-vai-casar.jpg" }) {
+          childrenImageSharp {
+            gatsbyImageData(width: 250, placeholder: NONE, quality: 100)
+          }
+        }
       }
     `
   );

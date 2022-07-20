@@ -8,6 +8,8 @@ import PostsBlock from "@BlockBuilder/PostsBlock";
 import HeadingBlock from "@BlockBuilder/HeadingBlock";
 import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 
+import ABpopupcontainer from "../containers/ABpopupcontainer";
+
 const IndexPage = props => {
   const [btnRef, setBtnRef] = useState(1);
   const handleSetBtnRef = ref => {
@@ -33,6 +35,7 @@ const IndexPage = props => {
     imgHolder,
     casamentospontocomImg,
     cardImage,
+    vaiCasarImg,
     bandeiraFeminista,
     bandeiraLgbtqia,
     bandeiraRibeiraoPreto,
@@ -113,6 +116,7 @@ const IndexPage = props => {
 
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
+  const vaiCasarGetImg = getImage(vaiCasarImg.childrenImageSharp[0]);
   const profileQuery = getImage(profileOficial.childrenImageSharp[0]);
   const diamondQuery = getImage(diamond.childrenImageSharp[0]);
   const diamondBgQuery = getImage(diamondBg.childrenImageSharp[0]);
@@ -222,6 +226,7 @@ const IndexPage = props => {
         <HeadingBlock classes='m30auto hack' importance={10} width={300}>
           Assessoria e Cerimonial
         </HeadingBlock>
+
         <Row opt={{ classes: "home-infos", isBoxed: true, role: "something" }}>
           <section className='main-page-wrapper'>
             <Row opt={{ classes: "main-row", numColumns: 2 }}>
@@ -279,6 +284,18 @@ const IndexPage = props => {
                       );
                     })}
                   </ul>
+                  <ABpopupcontainer
+                    heading={`Vai Casar?`}
+                    buttonContent={
+                      <GatsbyImage
+                        image={vaiCasarGetImg}
+                        alt={"title"}
+                        placeholder={"NONE"}
+                        critical='true'
+                        className={"video-promo"}
+                      />
+                    }
+                  />
                 </div>
               </div>
               <div className='home-profile-wrapper'>
