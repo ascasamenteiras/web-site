@@ -11,7 +11,7 @@ categories:
   - artigo
 featuredPost: false
 featuredImage: ../posts/images/homem-computador.jpg
-homeHighlightRelatedList: true
+homeHighlightRelatedList: false
 homeHighlight: false
 homeHighlightRelated: false
 ---
