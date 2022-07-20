@@ -31,6 +31,7 @@ const IndexPage = props => {
     zankyouImg,
     bgPatternImg,
     imgHolder,
+    casamentospontocomImg,
     cardImage,
     bandeiraFeminista,
     bandeiraLgbtqia,
@@ -118,6 +119,9 @@ const IndexPage = props => {
   const githubGetImg = getImage(githubImg.childrenImageSharp[0]);
   const instaGetImg = getImage(instaImg.childrenImageSharp[0]);
   const zankyouGetImg = getImage(zankyouImg.childrenImageSharp[0]);
+  const casamentospontocomGetImg = getImage(
+    casamentospontocomImg.childrenImageSharp[0]
+  );
   const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
   const youTubeGetImg = getImage(youTubeImg.childrenImageSharp[0]);
   const facebookGetImg = getImage(faceImg.childrenImageSharp[0]);
@@ -303,6 +307,10 @@ const IndexPage = props => {
                     {printMySocial(
                       zankyouGetImg,
                       "https://www.zankyou.com.br/f/as-casamenteiras-976737"
+                    )}
+                    {printMySocial(
+                      casamentospontocomGetImg,
+                      "https://www.casamentos.com.br/cerimonialista/as-casamenteiras-de-ribeirao--e192771"
                     )}
                     {printMySocial(
                       whatsGetImg,

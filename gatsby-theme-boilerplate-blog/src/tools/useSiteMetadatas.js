@@ -188,6 +188,20 @@ export const useSiteMetadatas = () =>
             )
           }
         }
+        casamentospontocomImg: file(
+          relativePath: { eq: "casamentospontocom.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 120
+              height: 120
+              placeholder: NONE
+              quality: 100
+              backgroundColor: "transparent"
+            )
+          }
+        }
+
         faceImg: file(relativePath: { eq: "facebook.png" }) {
           childrenImageSharp {
             gatsbyImageData(

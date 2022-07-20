@@ -19,6 +19,7 @@ const MainTemplateWrapper = ({
     whatsImg,
     youTubeImg,
     faceImg,
+    casamentospontocomImg,
   } = useSiteMetadatas();
   return (
     <BodyBlock
@@ -49,6 +50,7 @@ const MainTemplateWrapper = ({
         githubImg={githubImg}
         instaImg={instaImg}
         zankyouImg={zankyouImg}
+        casamentospontocomImg={casamentospontocomImg}
         whatsImg={whatsImg}
         youTubeImg={youTubeImg}
         facebookImg={faceImg}

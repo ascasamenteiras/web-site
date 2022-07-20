@@ -10,6 +10,7 @@ const FooterBlock = ({
   zankyouImg,
   youTubeImg,
   facebookImg,
+  casamentospontocomImg,
   logo,
 }) => {
   const githubGetImg = getImage(githubImg.childrenImageSharp[0]);
@@ -18,6 +19,9 @@ const FooterBlock = ({
   const zankyouImgProp = getImage(zankyouImg.childrenImageSharp[0]);
   const youTubeGetImg = getImage(youTubeImg.childrenImageSharp[0]);
   const faceGetImg = getImage(facebookImg.childrenImageSharp[0]);
+  const casamentospontocomGetImg = getImage(
+    casamentospontocomImg.childrenImageSharp[0]
+  );
 
   function socialMe(img, link) {
     if (!img && !link) {
@@ -51,12 +55,17 @@ const FooterBlock = ({
             isBoxed: true,
             alignTo: "center",
             classes: "social-icons",
-            numColumns: 6,
+            numColumns: 5,
           }}
         >
+          {socialMe(instaGetImg, "https://www.instagram.com/ascasamenteiras_")}
           {socialMe(
-            githubGetImg,
-            "https://github.com/ascasamenteiras/web-site"
+            zankyouImgProp,
+            "https://www.zankyou.com.br/f/as-casamenteiras-976737"
+          )}
+          {socialMe(
+            casamentospontocomGetImg,
+            "https://www.casamentos.com.br/cerimonialista/as-casamenteiras-de-ribeirao--e192771"
           )}
           {socialMe(
             faceGetImg,
@@ -66,14 +75,13 @@ const FooterBlock = ({
             youTubeGetImg,
             "https://www.youtube.com/channel/UCa7WCZgri320eSCS-7rr38g"
           )}
-          {socialMe(instaGetImg, "https://www.instagram.com/ascasamenteiras_")}
-          {socialMe(
-            zankyouImgProp,
-            "https://www.zankyou.com.br/f/as-casamenteiras-976737"
-          )}
           {socialMe(
             whatsGetImg,
             "https://api.whatsapp.com/send?phone=5516992452437"
+          )}
+          {socialMe(
+            githubGetImg,
+            "https://github.com/ascasamenteiras/web-site"
           )}
         </Row>
         <Row opt={{ isBoxed: true, classes: "logo-bottom-wrapper" }}>

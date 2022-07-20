@@ -19,6 +19,7 @@ const MainPageWrapper = ({
     githubImg,
     instaImg,
     zankyouImg,
+    casamentospontocomImg,
     whatsImg,
     boilerplateLogo,
     youTubeImg,
@@ -68,7 +69,7 @@ const MainPageWrapper = ({
           {opt.badgesWhats}
         </a>
         <a
-          href='https://api.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
+          href={`https://api.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento`}
           rel='nofollow'
           target={"_blank"}
           className={"mobile-only"}
@@ -83,6 +84,7 @@ const MainPageWrapper = ({
         whatsImg={whatsImg}
         youTubeImg={youTubeImg}
         faceImg={facebookImg}
+        casamentospontocomImg={casamentospontocomImg}
         logo={
           <GatsbyImage
             image={logoQuery}
