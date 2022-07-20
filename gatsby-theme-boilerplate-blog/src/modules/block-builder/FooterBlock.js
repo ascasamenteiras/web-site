@@ -3,11 +3,43 @@ import { Row } from "../../components/InsertRow";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import HeadingBlock from "@BlockBuilder/HeadingBlock";
-const FooterBlock = ({ githubImg, instaImg, twitterImg, whatsImg, logo }) => {
+const FooterBlock = ({
+  githubImg,
+  instaImg,
+  whatsImg,
+  zankyouImg,
+  youTubeImg,
+  facebookImg,
+  logo,
+}) => {
   const githubGetImg = getImage(githubImg.childrenImageSharp[0]);
   const instaGetImg = getImage(instaImg.childrenImageSharp[0]);
-  const twitterGetImg = getImage(twitterImg.childrenImageSharp[0]);
   const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
+  const zankyouImgProp = getImage(zankyouImg.childrenImageSharp[0]);
+  const youTubeGetImg = getImage(youTubeImg.childrenImageSharp[0]);
+  const faceGetImg = getImage(facebookImg.childrenImageSharp[0]);
+
+  function socialMe(img, link) {
+    if (!img && !link) {
+      return null;
+    }
+    return (
+      <a
+        href={link}
+        className='social-icon-wrapper'
+        rel='nofollow'
+        target={"_blank"}
+      >
+        <GatsbyImage
+          image={img}
+          alt={"title"}
+          placeholder={"NONE"}
+          critical='true'
+          className={"colorME roundME bottom-social"}
+        />
+      </a>
+    );
+  }
   return (
     <>
       <HeadingBlock classes='m30auto hack' importance={9} width={400}>
@@ -19,46 +51,30 @@ const FooterBlock = ({ githubImg, instaImg, twitterImg, whatsImg, logo }) => {
             isBoxed: true,
             alignTo: "center",
             classes: "social-icons",
-            numColumns: 4,
+            numColumns: 6,
           }}
         >
-          <div className='social-icon-wrapper'>
-            <GatsbyImage
-              image={githubGetImg}
-              alt={"title"}
-              placeholder={"NONE"}
-              critical='true'
-              className={"colorME roundME bottom-social"}
-            />
-          </div>
-          <div className='social-icon-wrapper'>
-            <GatsbyImage
-              image={instaGetImg}
-              alt={"title"}
-              placeholder={"NONE"}
-              critical='true'
-              className={"colorME roundME bottom-social"}
-            />
-          </div>
-          <div className='social-icon-wrapper'>
-            {/* <FiTwitter /> */}
-            <GatsbyImage
-              image={twitterGetImg}
-              alt={"title"}
-              placeholder={"NONE"}
-              critical='true'
-              className={"colorME roundME bottom-social"}
-            />
-          </div>
-          <div className='social-icon-wrapper'>
-            <GatsbyImage
-              image={whatsGetImg}
-              alt={"title"}
-              placeholder={"NONE"}
-              critical='true'
-              className={"colorME roundME bottom-social"}
-            />
-          </div>
+          {socialMe(
+            githubGetImg,
+            "https://github.com/ascasamenteiras/web-site"
+          )}
+          {socialMe(
+            faceGetImg,
+            "https://www.facebook.com/profile.php?id=100016966816287"
+          )}
+          {socialMe(
+            youTubeGetImg,
+            "https://www.youtube.com/channel/UCa7WCZgri320eSCS-7rr38g"
+          )}
+          {socialMe(instaGetImg, "https://www.instagram.com/ascasamenteiras_")}
+          {socialMe(
+            zankyouImgProp,
+            "https://www.zankyou.com.br/f/as-casamenteiras-976737"
+          )}
+          {socialMe(
+            whatsGetImg,
+            "https://api.whatsapp.com/send?phone=5516992452437"
+          )}
         </Row>
         <Row opt={{ isBoxed: true, classes: "logo-bottom-wrapper" }}>
           <div className='footer-logo'>{logo}</div>

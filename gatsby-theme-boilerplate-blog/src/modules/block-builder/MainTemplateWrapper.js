@@ -12,7 +12,14 @@ const MainTemplateWrapper = ({
   backgroundImage,
   opt,
 }) => {
-  const { githubImg, instaImg, twitterImg, whatsImg } = useSiteMetadatas();
+  const {
+    githubImg,
+    instaImg,
+    zankyouImg,
+    whatsImg,
+    youTubeImg,
+    faceImg,
+  } = useSiteMetadatas();
   return (
     <BodyBlock
       opt={{ classes: classes, bgImg: backgroundImage.src, options: opt }}
@@ -41,8 +48,10 @@ const MainTemplateWrapper = ({
       <FooterBlock
         githubImg={githubImg}
         instaImg={instaImg}
-        twitterImg={twitterImg}
+        zankyouImg={zankyouImg}
         whatsImg={whatsImg}
+        youTubeImg={youTubeImg}
+        facebookImg={faceImg}
         logo={logo}
       />
     </BodyBlock>

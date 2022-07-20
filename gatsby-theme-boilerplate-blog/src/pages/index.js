@@ -23,10 +23,12 @@ const IndexPage = props => {
     profileOficial,
     diamond,
     diamondBg,
+    faceImg,
     githubImg,
     instaImg,
-    twitterImg,
+    youTubeImg,
     whatsImg,
+    zankyouImg,
     bgPatternImg,
     imgHolder,
     cardImage,
@@ -111,8 +113,10 @@ const IndexPage = props => {
   const diamondBgQuery = getImage(diamondBg.childrenImageSharp[0]);
   const githubGetImg = getImage(githubImg.childrenImageSharp[0]);
   const instaGetImg = getImage(instaImg.childrenImageSharp[0]);
-  const twitterGetImg = getImage(twitterImg.childrenImageSharp[0]);
+  const zankyouGetImg = getImage(zankyouImg.childrenImageSharp[0]);
   const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
+  const youTubeGetImg = getImage(youTubeImg.childrenImageSharp[0]);
+  const facebookGetImg = getImage(faceImg.childrenImageSharp[0]);
 
   const updatedDate = new Date(
     homeHighlightPost[0].node.frontmatter.updatedModified
@@ -157,6 +161,22 @@ const IndexPage = props => {
   const hourLegend = diffHours === 1 ? "hora e" : " horas e";
   const hoursCaption =
     diffHours === 0 ? "" : diffHours + " " + hourLegend + " ";
+  function printMySocial(img, link) {
+    if (!img && !link) {
+      return null;
+    }
+    return (
+      <a href={link} rel='nofollow' target={"_blank"}>
+        <GatsbyImage
+          image={img}
+          alt={"title"}
+          placeholder={"NONE"}
+          critical='true'
+          className={" profile-socials"}
+        />
+      </a>
+    );
+  }
   return (
     <MainTemplateWrapper
       backgroundImage={{
@@ -272,34 +292,28 @@ const IndexPage = props => {
                     <p>
                       <strong>Anos de Experiência: </strong>12 anos
                     </p>
-                    <GatsbyImage
-                      image={githubGetImg}
-                      alt={"title"}
-                      placeholder={"NONE"}
-                      critical='true'
-                      className={" profile-socials"}
-                    />
-                    <GatsbyImage
-                      image={instaGetImg}
-                      alt={"title"}
-                      placeholder={"NONE"}
-                      critical='true'
-                      className={" profile-socials"}
-                    />
-                    <GatsbyImage
-                      image={twitterGetImg}
-                      alt={"title"}
-                      placeholder={"NONE"}
-                      critical='true'
-                      className={" profile-socials"}
-                    />
-                    <GatsbyImage
-                      image={whatsGetImg}
-                      alt={"title"}
-                      placeholder={"NONE"}
-                      critical='true'
-                      className={" profile-socials"}
-                    />
+                    {printMySocial(
+                      instaGetImg,
+                      "https://instagram.com/ascasamenteiras_"
+                    )}
+                    {printMySocial(
+                      zankyouGetImg,
+                      "https://www.zankyou.com.br/f/as-casamenteiras-976737"
+                    )}
+                    {printMySocial(
+                      whatsGetImg,
+                      "https://web.whatsapp.com/send?phone=5516992452437"
+                    )}
+                    {printMySocial(youTubeGetImg, "https://as.com")}
+                    {printMySocial(
+                      githubGetImg,
+                      "https://github.com/ascasamenteiras/web-site"
+                    )}
+                    {printMySocial(
+                      facebookGetImg,
+                      "https://www.facebook.com/profile.php?id=100016966816287"
+                    )}
+
                     <span id='perfil' />
 
                     <div className='left-bottom'>

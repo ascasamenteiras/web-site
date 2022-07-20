@@ -18,9 +18,11 @@ const MainPageWrapper = ({
   const {
     githubImg,
     instaImg,
-    twitterImg,
+    zankyouImg,
     whatsImg,
     boilerplateLogo,
+    youTubeImg,
+    facebookImg,
   } = useSiteMetadatas();
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const logoQuerySrc = getSrc(boilerplateLogo.childrenImageSharp[0]);
@@ -77,8 +79,10 @@ const MainPageWrapper = ({
       <FooterBlock
         githubImg={githubImg}
         instaImg={instaImg}
-        twitterImg={twitterImg}
+        zankyouImg={zankyouImg}
         whatsImg={whatsImg}
+        youTubeImg={youTubeImg}
+        faceImg={facebookImg}
         logo={
           <GatsbyImage
             image={logoQuery}

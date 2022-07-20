@@ -163,7 +163,7 @@ footer{
 .social-icons{
 	&.boxed-column-child{
 		justify-items: center;
-    max-width: 320px;
+    max-width: 360px;
 	svg{
 		width: 40px;
 		height: 40px;
@@ -781,4 +781,7 @@ p{
 
 .full-width-row.main-header{
 	background-color: transparent!important;
+}
+.footer-logo .gatsby-image-wrapper [data-main-image]{
+	will-change: unset!important
 }

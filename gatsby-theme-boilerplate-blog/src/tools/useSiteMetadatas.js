@@ -166,6 +166,39 @@ export const useSiteMetadatas = () =>
             )
           }
         }
+        zankyouImg: file(relativePath: { eq: "zankyou.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 120
+              height: 120
+              placeholder: NONE
+              quality: 100
+              backgroundColor: "transparent"
+            )
+          }
+        }
+        youTubeImg: file(relativePath: { eq: "youtube.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 120
+              height: 120
+              placeholder: NONE
+              quality: 100
+              backgroundColor: "transparent"
+            )
+          }
+        }
+        faceImg: file(relativePath: { eq: "facebook.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 120
+              height: 120
+              placeholder: NONE
+              quality: 100
+              backgroundColor: "transparent"
+            )
+          }
+        }
         bannerContent: file(relativePath: { eq: "banner-content.png" }) {
           childrenImageSharp {
             gatsbyImageData(
