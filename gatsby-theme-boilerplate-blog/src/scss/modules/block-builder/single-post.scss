@@ -51,6 +51,8 @@
 
 }
 .boxed-column.main-post{
+
+	width: 70%;
 	max-width: $post_page__size;
 	margin: 0 auto 30px;
 	padding: 20px;
@@ -60,13 +62,11 @@
 	position: relative;
 	box-shadow: 0px 15px 15px 3px rgba(144, 144, 144, 0.05);
 	border: 2px solid transparent;
-	&:hover{
-	border: 2px solid $primary;
-	}
+	
 	.close-btn-single-post{
 		position: absolute;
-		top: -2px;
-		right: -2px;
+		top: -20px;
+		right: -20px;
 		width: 30px;
 		height: 30px;
 		font-size: 16px;
@@ -158,6 +158,7 @@
 		}
 	}
 	.editorial-infos{
+		display: none;
 		align-self: center;
 		&.full-width-row-child{
 			max-width: 300px;
@@ -186,6 +187,7 @@
 
 .author-img{
 	border: 2px solid $primary;
+	background: $primary;
     border-radius: 50%;
     margin-bottom: 10px;
     width: 74px;
@@ -298,8 +300,14 @@
 	.post-author-name{
 		color: $cta__color;
 		font-weight: 500;
-		font-size: 19px;
+		font-size: 23px;
 		font-family: $third__font;
 	}
 }
+}
+
+
+
+.single-post main article section{
+
 }

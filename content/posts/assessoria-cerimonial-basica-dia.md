@@ -13,7 +13,7 @@ categories:
 featuredPost: true
 featuredImage: ../posts/images/larissa-renan-dia.jpg
 homeHighlight: false
-homeHighlightRelated: true
+homeHighlightRelated: false
 homeHighlightRelatedList: true
 ---
 

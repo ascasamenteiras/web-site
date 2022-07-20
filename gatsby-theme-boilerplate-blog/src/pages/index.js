@@ -37,6 +37,7 @@ const IndexPage = props => {
     bandeiraRibeiraoPreto,
     bandeiraVidasNegras,
     bandeiraWhats,
+    bandeiraCodigoAberto,
   } = useSiteMetadatas();
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
@@ -98,6 +99,9 @@ const IndexPage = props => {
   const homeHighlightPost = findItemhomeHighlight(posts);
   const homeHighlightRelatedPost = findItemhomeHighlightRelated(posts);
   const homeHighlightRelatedListPost = findItemhomeHighlightRelatedList(posts);
+  const badgeCodigoAberto = getImage(
+    bandeiraCodigoAberto.childrenImageSharp[0]
+  );
   const badgeFeminista = getImage(bandeiraFeminista.childrenImageSharp[0]);
   const badgeLgbtqia = getImage(bandeiraLgbtqia.childrenImageSharp[0]);
   const badgeRibeiraoPreto = getImage(
@@ -304,14 +308,17 @@ const IndexPage = props => {
                       whatsGetImg,
                       "https://web.whatsapp.com/send?phone=5516992452437"
                     )}
-                    {printMySocial(youTubeGetImg, "https://as.com")}
                     {printMySocial(
-                      githubGetImg,
-                      "https://github.com/ascasamenteiras/web-site"
+                      youTubeGetImg,
+                      "https://www.youtube.com/channel/UCa7WCZgri320eSCS-7rr38g"
                     )}
                     {printMySocial(
                       facebookGetImg,
                       "https://www.facebook.com/profile.php?id=100016966816287"
+                    )}
+                    {printMySocial(
+                      githubGetImg,
+                      "https://github.com/ascasamenteiras/web-site"
                     )}
 
                     <span id='perfil' />
@@ -521,9 +528,19 @@ const IndexPage = props => {
             />
             <h3>Comércio Local</h3>
           </Link>
+          <Link to='/causas-apoiadas'>
+            <GatsbyImage
+              image={badgeCodigoAberto}
+              alt={"title"}
+              placeholder={"NONE"}
+              critical='true'
+              className={" footer-badges"}
+            />
+            <h3>Código Livre</h3>
+          </Link>
         </Row>
         <HeadingBlock classes='m30auto' importance={9} width={400}>
-          Últimos Eventos
+          Atualizações
         </HeadingBlock>
         <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
           <PostsBlock

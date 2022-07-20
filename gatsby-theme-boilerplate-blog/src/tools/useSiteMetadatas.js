@@ -277,6 +277,18 @@ export const useSiteMetadatas = () =>
             )
           }
         }
+        bandeiraCodigoAberto: file(
+          relativePath: { eq: "bandeira-codigo-aberto.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 300
+              height: 300
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
       }
     `
   );

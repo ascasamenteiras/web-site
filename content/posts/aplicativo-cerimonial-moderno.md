@@ -9,6 +9,7 @@ author: Equipe As Casamenteiras
 categories:
   - aplicativo
   - artigo
+  - tecnologia
 featuredPost: true
 featuredImage: ../posts/images/mulher-negra-aplicativo.jpg
 homeHighlight: false
