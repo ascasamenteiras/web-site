@@ -23,7 +23,7 @@ const MainPageWrapper = ({
     whatsImg,
     boilerplateLogo,
     youTubeImg,
-    facebookImg,
+    faceImg,
   } = useSiteMetadatas();
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const logoQuerySrc = getSrc(boilerplateLogo.childrenImageSharp[0]);
@@ -83,7 +83,7 @@ const MainPageWrapper = ({
         zankyouImg={zankyouImg}
         whatsImg={whatsImg}
         youTubeImg={youTubeImg}
-        facebookImg={facebookImg}
+        facebookImg={faceImg}
         casamentospontocomImg={casamentospontocomImg}
         logo={
           <GatsbyImage
