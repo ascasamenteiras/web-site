@@ -16,9 +16,9 @@ homeHighlight: false
 homeHighlightRelated: false
 ---
 
-Nós de As Casamenteiras apoiamos as causas do programadores de sistemas cibernetizados, sistemas web (on-line) e todos os tipos de trabalhadores e trabalhos sociais de código aberto.
+Patrocinamos tecnologia brasileira, livre e aberta em nosso web sítio.
 
-Estamos usandono nosso web sítio, servidores, serviços de mensageria e pretendemos no futuro usar 100% de tecnologia livre e aberta.
+Nós de As Casamenteiras apoiamos as causas do programadores de sistemas cibernetizados, sistemas web (on-line) e todos os tipos de trabalhadores e trabalhos sociais de código aberto.
 
 ## O Que É Um Sistema De Código Livre e Aberto
 
