@@ -83,7 +83,7 @@ const MainPageWrapper = ({
         zankyouImg={zankyouImg}
         whatsImg={whatsImg}
         youTubeImg={youTubeImg}
-        faceImg={facebookImg}
+        facebookImg={facebookImg}
         casamentospontocomImg={casamentospontocomImg}
         logo={
           <GatsbyImage
