@@ -2,9 +2,9 @@
 topology: posts
 title: Causas que apoiamos
 headline: Nós de As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
-date: 2022-07-20T12:19:00+00:00
+date: 2022-08-01T08:30:00+00:00
 updatedAt: 2022-07-10T22:17:20+00:00
-createdAt: 2022-07-10T22:17:20+00:00
+createdAt: 2022-08-01T08:30:00+00:00
 author: Equipe As Casamenteiras
 categories:
   - causas
@@ -55,8 +55,8 @@ Para saber orientar cada casal, As Casamenteiras conhece os grandes e pequenos f
 
 É comum que bons fornecedores sem grande expressão na área sintam dificuldades em abordar casais e oferecer os seus serviços. Por isso, estamos sempre dispostos a levar ao casal boas iniciativas do comércio local.
 
-## Código Aberto E Internet Descentralizada
+## Hackativismo
 
-Patrocinamos tecnologia brasileira, livre e aberta em nosso web sítio.
+Patrocinamos tecnologia brasileira, livre e aberta em nosso web sítio. Com isso estamos contribuindo com a sociedade para nos beneficiarmos do Código Aberto e da Internet Descentralizada.
 
-Nós de As Casamenteiras apoiamos as causas do programadores de sistemas cibernetizados, sistemas web (on-line) e todos os tipos de trabalhadores e trabalhos sociais de código aberto.
+Nós de As Casamenteiras apoiamos as causas dos programadores de sistemas cibernetizados que são voluntários e usam as suas atividades de escrita de código como forma de fazer política.

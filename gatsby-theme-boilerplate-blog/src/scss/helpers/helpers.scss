@@ -182,6 +182,7 @@ footer{
 }
 
 .logo-bottom-wrapper{
+	padding: 0 20px;
 	.footer-logo{
 		max-width: $logo__max-width;
 		margin: 40px auto;
@@ -833,7 +834,4 @@ p{
 
 .full-width-row.main-header{
 	background-color: transparent!important;
-}
-.footer-logo .gatsby-image-wrapper [data-main-image]{
-	will-change: unset!important
 }

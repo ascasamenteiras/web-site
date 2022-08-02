@@ -42,21 +42,22 @@ export default ({
           </button>
           <div className='popup-content'>
             <h2 className='popup-heading'>{heading}</h2>
+            <iframe
+              width='560'
+              height='315'
+              src='https://www.youtube.com/embed/07COygyW6W0'
+              title='YouTube video player'
+              frameborder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowfullscreen
+            ></iframe>
             {/* <div
               className='popup-text'
               dangerouslySetInnerHTML={{ __html: popupText }}
             ></div> */}
-            <div id='popup-code'>
-              <iframe
-                width='560'
-                height='315'
-                src='https://www.youtube.com/embed/07COygyW6W0'
-                title='YouTube video player'
-                frameborder='0'
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                allowfullscreen
-              ></iframe>
-            </div>
+            {/* <div id='popup-code'>
+              
+            </div> */}
           </div>
         </div>
       </div>

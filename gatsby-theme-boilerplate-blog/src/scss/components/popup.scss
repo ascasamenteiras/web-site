@@ -47,6 +47,7 @@
     color: white;
     flex-direction: column;
     max-width: 720px;
+    min-width: 320px;
     max-height: 600px;
     cursor: default;
     margin: auto;
@@ -68,7 +69,8 @@
       border: 0;
   }
   .popup-content{
-    padding: 30px 50px;
+    // padding: 30px 50px;
+    width: 100%;
 
     h2.popup-heading{
       font-size: 26px;
@@ -103,8 +105,13 @@
         }
       }
       #popup-code{
+        max-width: 560px;
         p{
           text-align: center;
+        }
+        video, iframe{
+          width: 100%    !important;
+          height: auto   !important;
         }
         form.popup-form{
           display: grid;
@@ -179,7 +186,7 @@
       max-width: 90%;
 
       .popup-content{
-        padding: 35px 25px;
+        // padding: 35px 25px;
 
         h2.popup-heading{
           font-size: 22px;

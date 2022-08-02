@@ -5,7 +5,7 @@ title: Assessoria e Cerimonial
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: assessoria-cerimonial
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
-date: 2022-07-16T19:50:00+00:00
+date: 2022-08-01T08:30:00+00:00
 ---
 
 As Casamenteiras oferece assessoria completa ou personalizada e consultorias avulsas.
@@ -33,7 +33,7 @@ Reverberando boas energias, planejamos sucesso sem estresse e confiamos que tudo
 
 ## A Cerimonialista Priscilla Barbosa
 
-Pri Barbosa é apaixonada por histórias românticas e casamentos conectados à natureza. Seu lema diz que cada casal representa uma singularidade, um sonho, que cada par tem o seu jeitinho especial de ser. As casamenteiras transforma essa identidade do casal em reflexos para o tão sonhado dia!
+Pri Barbosa é apaixonada por histórias românticas e casamentos conectados à natureza. Seu lema diz que cada casal representa uma singularidade, um sonho, que cada par tem o seu jeitinho especial de ser. As Casamenteiras transforma essa identidade do casal em reflexos para o tão sonhado dia!
 
 O casamento é uma data inesquecível na vida do casal e deve ser marcado por momentos que ficarão na memória do casal, dos familiares e dos amigos para sempre.
 

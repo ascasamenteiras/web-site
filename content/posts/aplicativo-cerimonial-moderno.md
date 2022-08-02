@@ -2,9 +2,9 @@
 topology: posts
 title: Aplicativo para cerimonial moderno
 headline: Com um aplicativo moderno o casal tem acesso a todas as informações do evento, centralizadas em um só lugar.
-date: 2022-07-18T08:47:00+00:00
+date: 2022-08-01T08:30:00+00:00
 createdAt: 2022-07-10T22:17:20+00:00
-updatedAt: 2022-07-10T22:17:20+00:00
+updatedAt: 2022-08-01T08:30:00+00:00
 author: Equipe As Casamenteiras
 categories:
   - aplicativo
@@ -17,7 +17,7 @@ homeHighlightRelated: true
 homeHighlightRelatedList: false
 ---
 
-As Casamenteirasa usa tecnologia de ponta para ajudar na organização do seu casamento. O aplicativo de planejamento é a forma mais inovadora de garantir a organização de cada detalhe do seu casamento.
+As Casamenteiras usa tecnologia de ponta para ajudar na organização do seu casamento. O aplicativo de planejamento é a forma mais inovadora de garantir a organização de cada detalhe do seu casamento.
 
 Na tela inicial do aplicativo está o resumo do seu evento com atalhos para as próximas tarefas, fornecedores, convidados, contratos e mais.
 
@@ -25,7 +25,7 @@ Com essa solução o casal tem acesso a todas as informações do evento, centra
 
 ## Como fazer um roteiro de cerimonial de casamento?
 
-Tudo começa pelo briefing ou roteiro que serve para todos os fornecedores estejam alinhados por dentro das informações e detalhes que envolvem o casal e o evento. Para isso, perguntas direcionadas e abertas são registradas dentro do seu roteiro.
+Tudo começa pelo briefing ou roteiro que serve para que todos os fornecedores estejam alinhados por dentro das informações e detalhes que envolvem o casal e o evento. Para isso, perguntas direcionadas e abertas são registradas dentro do seu roteiro.
 
 O seu casamento organizado conta com uma lista completa das tarefas mais importantes, lista essa aperfeiçoada ao longo desses mais de dez anos de atuação dAs Casamenteiras. O casal poderá interagir atualizando a situação da tarefa, adicionando comentários e anexos.
 
@@ -33,13 +33,13 @@ O seu casamento organizado conta com uma lista completa das tarefas mais importa
 
 O casal passará a acompanhar um painel com os valores da sua carteira virtual, onde poderá analisar custos estimados e contratados.
 
-O painel da prova real ajuda o controle da sua carteira. São contas matemáticas como o valor _total contratado_ somado ao _custo estimado total_ dos serviços que ainda não foram contratados. Bem como as estimativa de gasto por convidado no evento.
+O painel da prova real ajuda o controle da sua carteira. São contas matemáticas como o valor _total contratado_ somado ao _custo estimado total_ dos serviços que ainda não foram contratados. Bem como as estimativas de gasto por convidado no evento.
 
 ## Aplicativo Para Fornecedores de Casamento
 
 No aplicativo o casal poderá ver as estimativas de gastos, fornecedores recomendados, orçamentos e fornecedores contratados. O casal saberá quando fazer o pagamento de cada parcela, acessar os dados bancários e PIX do fornecedor. O casal também tem a opção de selecionar métodos de pagamento e anexar comprovantes.
 
-Ainda poderão acessar o chat com o fornecedor, insirir observações e anexos nas propostas.
+Ainda poderão acessar o chat com o fornecedor, inserir observações e anexos nas propostas.
 
 ## Solicitações
 
@@ -55,7 +55,7 @@ Assine os contratos na segurança do seu lar. As Casamenteiras envia os links pa
 
 ## RSVP On-line / Convidados / Confirmados
 
-A sua lista de convidados disposta de forma simples, com os convidados confirmados sendo atualizados de forma on-line.
+A sua lista de convidados será apresentada de forma simples, com os convidados confirmados sendo atualizados de forma on-line.
 
 O RSVP on-line pode ser automatizado via WhatsApp, defina as mesas e ainda use QR Code para a confirmação e recepção do evento.
 
@@ -69,7 +69,7 @@ Facilite o acesso e buscas diretas aos documentos do seu casamento.
 
 Recebam lembretes de pagamentos e tarefas que o casal precisa fazer diretamente no seu celular.
 
-Notificações sobre as movimentações dos fornecedores, convidades e novidades que acontecerão no decorrer da organização do seu evento.
+Notificações sobre as movimentações dos fornecedores, convidados e novidades que acontecerão no decorrer da organização do seu evento.
 
 ## Aplicativo Para Cerimonial de Casamento
 

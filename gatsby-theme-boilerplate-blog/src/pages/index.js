@@ -284,6 +284,14 @@ const IndexPage = props => {
                       );
                     })}
                   </ul>
+
+                  <GatsbyImage
+                    image={vaiCasarGetImg}
+                    alt={"title"}
+                    placeholder={"NONE"}
+                    critical='true'
+                    className={"video-promo"}
+                  />
                   <ABpopupcontainer
                     heading={`Vai Casar?`}
                     buttonContent={
@@ -561,7 +569,7 @@ const IndexPage = props => {
               critical='true'
               className={" footer-badges"}
             />
-            <h3>Código Livre</h3>
+            <h3>Hackativismo</h3>
           </Link>
         </Row>
         <HeadingBlock classes='m30auto' importance={9} width={400}>
