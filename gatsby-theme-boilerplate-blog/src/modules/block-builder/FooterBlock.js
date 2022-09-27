@@ -5,6 +5,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import HeadingBlock from "@BlockBuilder/HeadingBlock";
 const FooterBlock = ({
   githubImg,
+  deezerImg,
+  spotifyImg,
+  iTunesImg,
   instaImg,
   whatsImg,
   zankyouImg,
