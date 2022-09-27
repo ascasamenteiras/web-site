@@ -188,6 +188,40 @@ export const useSiteMetadatas = () =>
             )
           }
         }
+        deezerImg: file(relativePath: { eq: "deezer.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 120
+              height: 120
+              placeholder: NONE
+              quality: 100
+              backgroundColor: "transparent"
+            )
+          }
+        }
+        spotifyImg: file(relativePath: { eq: "spotify.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 120
+              height: 120
+              placeholder: NONE
+              quality: 100
+              backgroundColor: "transparent"
+            )
+          }
+        }
+
+        iTunesImg: file(relativePath: { eq: "iTunes.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 120
+              height: 120
+              placeholder: NONE
+              quality: 100
+              backgroundColor: "transparent"
+            )
+          }
+        }
         casamentospontocomImg: file(
           relativePath: { eq: "casamentospontocom.png" }
         ) {
