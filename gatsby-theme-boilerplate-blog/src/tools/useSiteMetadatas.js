@@ -211,7 +211,7 @@ export const useSiteMetadatas = () =>
           }
         }
 
-        iTunesImg: file(relativePath: { eq: "iTunes.png" }) {
+        iTunesImg: file(relativePath: { eq: "itunes.png" }) {
           childrenImageSharp {
             gatsbyImageData(
               width: 120
