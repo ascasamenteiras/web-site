@@ -17,6 +17,9 @@ const MainTemplateWrapper = ({
     instaImg,
     zankyouImg,
     whatsImg,
+    deezerImg,
+spotifyImg,
+iTunesImg,
     youTubeImg,
     faceImg,
     casamentospontocomImg,
@@ -52,6 +55,9 @@ const MainTemplateWrapper = ({
         zankyouImg={zankyouImg}
         casamentospontocomImg={casamentospontocomImg}
         whatsImg={whatsImg}
+        deezerImg={deezerImg}
+        spotifyImg={spotifyImg}
+        iTunesImg={iTunesImg}
         youTubeImg={youTubeImg}
         facebookImg={faceImg}
         logo={logo}
