@@ -5,6 +5,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import HeadingBlock from "@BlockBuilder/HeadingBlock";
 const FooterBlock = ({
   githubImg,
+  deezerImg,
+  spotifyImg,
+  iTunesImg,
   instaImg,
   whatsImg,
   zankyouImg,
@@ -14,6 +17,9 @@ const FooterBlock = ({
   logo,
 }) => {
   const githubGetImg = getImage(githubImg.childrenImageSharp[0]);
+  const deezerGetImg = getImage(deezerImg.childrenImageSharp[0]);
+  const spotifyGetImg = getImage(spotifyImg.childrenImageSharp[0]);
+  const iTunesGetImg = getImage(iTunesImg.childrenImageSharp[0]);
   const instaGetImg = getImage(instaImg.childrenImageSharp[0]);
   const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
   const zankyouImgProp = getImage(zankyouImg.childrenImageSharp[0]);
@@ -83,6 +89,19 @@ const FooterBlock = ({
             githubGetImg,
             "https://github.com/ascasamenteiras/web-site"
           )}
+          {socialMe(
+            spotifyGetImg,
+            "https://open.spotify.com/artist/5scJ7dkADVQQ52kLcRA1mV"
+          )}
+          {socialMe(
+            deezerGetImg,
+            "https://www.deezer.com/br/artist/181009227"
+          )}
+          {socialMe(
+            iTunesGetImg,
+            "https://music.apple.com/br/artist/priscilla-barbosa/1641419117"
+          )}
+          
         </Row>
         <Row opt={{ isBoxed: true, classes: "logo-bottom-wrapper" }}>
           <div className='footer-logo'>{logo}</div>

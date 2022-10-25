@@ -29,6 +29,9 @@ schema:
         facebook: https://www.facebook.com/profile.php?id=100016966816287
         youtube: https://www.youtube.com/channel/UCa7WCZgri320eSCS-7rr38g
         github: https://github.com/ascasamenteiras/web-site
+        deezer: https://www.deezer.com/br/artist/181009227
+        spotify: https://open.spotify.com/artist/5scJ7dkADVQQ52kLcRA1mV
+        itunes: https://music.apple.com/br/artist/priscilla-barbosa/1641419117
       alternateName: AsCasamenteiras
       potentialAction: ReadAction
       telephone: "+5516992452437"

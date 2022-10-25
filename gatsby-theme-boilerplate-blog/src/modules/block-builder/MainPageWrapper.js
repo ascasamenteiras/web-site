@@ -24,6 +24,9 @@ const MainPageWrapper = ({
     boilerplateLogo,
     youTubeImg,
     faceImg,
+    deezerImg,
+    iTunesImg,
+    spotifyImg,
   } = useSiteMetadatas();
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const logoQuerySrc = getSrc(boilerplateLogo.childrenImageSharp[0]);
@@ -85,6 +88,9 @@ const MainPageWrapper = ({
         youTubeImg={youTubeImg}
         facebookImg={faceImg}
         casamentospontocomImg={casamentospontocomImg}
+        deezerImg={deezerImg}
+        iTunesImg={iTunesImg}
+        spotifyImg={spotifyImg}
         logo={
           <GatsbyImage
             image={logoQuery}
