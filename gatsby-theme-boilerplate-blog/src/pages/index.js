@@ -285,13 +285,13 @@ const IndexPage = props => {
                     })}
                   </ul>
 
-                  <GatsbyImage
+                  {/* <GatsbyImage
                     image={vaiCasarGetImg}
                     alt={"title"}
                     placeholder={"NONE"}
                     critical='true'
                     className={"video-promo"}
-                  />
+                  /> */}
                   <ABpopupcontainer
                     heading={`Vai Casar?`}
                     buttonContent={
