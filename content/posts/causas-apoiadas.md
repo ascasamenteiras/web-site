@@ -14,6 +14,7 @@ featuredImage: ../posts/images/orgulho-lgbtqia.jpg
 homeHighlightRelatedList: true
 homeHighlight: false
 homeHighlightRelated: false
+questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 ---
 
 Nós de As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.

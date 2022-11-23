@@ -15,6 +15,7 @@ featuredImage: ../posts/images/larissa-renan-dia.jpg
 homeHighlight: false
 homeHighlightRelated: false
 homeHighlightRelatedList: true
+questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 ---
 
 O serviço de assessoria e cerimonial do dia é relativo ao pacote básico dos serviços dAs Casamenteiras. Abaixo um resumo dos principais pontos desse método de contratação.

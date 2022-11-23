@@ -21,6 +21,7 @@ const IndexPage = props => {
 
   const {
     site,
+    questions,
     boilerplateLogo,
     profileOficial,
     diamond,
@@ -205,6 +206,7 @@ const IndexPage = props => {
       }
       opt={{
         titleSeo: `Assessoria e Cerimonial`,
+        questions: questions,
         classes: "blog-list",
         schemaType: "blog",
         blogListing: posts.slice(0, 9),

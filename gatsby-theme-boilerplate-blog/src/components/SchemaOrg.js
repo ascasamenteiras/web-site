@@ -11,6 +11,7 @@ export default React.memo(
     image,
     schemaType,
     // organization,
+    questions,
     title,
     // url,
     // socialSameAs,
@@ -115,6 +116,30 @@ export default React.memo(
         datePublished: datePublished,
       },
     ];
+    let arrayQuestions = []
+    questions.forEach(question => {
+      return arrayQuestions.push(
+        {
+          "@type": "Question",
+          "name": question[0],
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `<p>${question[1]}</p>`
+          }
+        }
+      )
+    });
+    
+    
+   const questionSchema = [{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": 
+      [
+        arrayQuestions
+      ]
+    }];
+
     return (
       <Helmet>
         {/* Schema.org tags */}
@@ -128,6 +153,9 @@ export default React.memo(
         </script>
         <script type='application/ld+json' data-schema='Organization'>
           {JSON.stringify(orgSchema)}
+        </script>
+        <script type='application/ld+json'>
+          {JSON.stringify(questionSchema)}
         </script>
       </Helmet>
     );

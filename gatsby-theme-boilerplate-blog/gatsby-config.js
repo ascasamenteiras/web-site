@@ -8,6 +8,7 @@ module.exports = {
     title: businessInfos.appName,
     description: businessInfos.description,
     author: businessInfos.author,
+    questions: businessInfos.questions,
     siteUrl: businessInfos.siteUrl,
     searchBaseUrl: businessInfos.searchBaseUrl,
     keywords: businessInfos.keywords,

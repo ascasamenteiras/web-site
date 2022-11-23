@@ -10,6 +10,7 @@ export const useSiteMetadatas = () =>
             description
             siteUrl
             image
+            questions
             keywords
             themeColor
             dateCreated

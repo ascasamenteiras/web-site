@@ -6,6 +6,9 @@ description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eve
 slug: assessoria-cerimonial
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 date: 2022-08-01T08:30:00+00:00
+questions: ["As Casamenteiras realizam assessoria e cerimonal de casamentos?:Sim, nós fazemos.","O que é o cerimonial de um casamento?:pergunta","Como funciona a assessoria de casamento completa?
+:perguntas","Quais são os acessórios do cerimonial?
+:perguntas"]
 ---
 
 As Casamenteiras oferece assessoria completa ou personalizada e consultorias avulsas.

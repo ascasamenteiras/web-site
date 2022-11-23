@@ -20,6 +20,7 @@ const SchemaOrgContainer = ({
 	dateCreated,
 	organizationLogo,
 	serverUrl,
+	pageQuestions
 }) => {
 	const orgImageSrc = getSrc(organizationLogo?.childrenImageSharp[0])
 	const organizationLogoVar = siteUrl + orgImageSrc
@@ -39,6 +40,13 @@ const SchemaOrgContainer = ({
 		telephone,
 		version,
 	} = schemaYAML.schema[0].card
+
+
+	let questionsArray = []
+	pageQuestions.forEach(q => {
+		questionsArray.push( q.split(":") )
+	});
+
 
 	return (
 		<SchemaOrg
@@ -66,6 +74,7 @@ const SchemaOrgContainer = ({
 			articleBody={articleBody}
 			keywords={keywords}
 			dateCreated={dateCreated}
+			questions={questionsArray}
 			organizationLogo={organizationLogoVar}
 		/>
 	)

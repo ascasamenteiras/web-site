@@ -58,6 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
               topology
               title
               author
+              questions
               featuredPost
               homeHighlight
               homeHighlightRelated
@@ -116,6 +117,7 @@ exports.createPages = ({ graphql, actions }) => {
               title
               description
               slug
+              questions
               featuredImage {
                 childrenImageSharp {
                   gatsbyImageData(
@@ -156,6 +158,7 @@ exports.createPages = ({ graphql, actions }) => {
             title: node.frontmatter.title,
             content: node.html,
             description: node.frontmatter.description,
+            questions: node.frontmatter.questions
           },
         });
         node.htmlAst.children.map(child => {
@@ -225,6 +228,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             slug: node.fields.slug,
             thePost: node,
+            postQuestion: node.frontmatter.questions
           },
         });
       }

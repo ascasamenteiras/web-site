@@ -15,6 +15,7 @@ featuredImage: ../posts/images/ana-caroline-rodrigo.jpg
 homeHighlight: false
 homeHighlightRelated: false
 homeHighlightRelatedList: true
+questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 ---
 
 Dentro da assessoria e cerimonial plena (completa) todo o pacote básico está contemplado. Se vocês ainda não acessaram a página do pacote básico, façam uma visita para saber mais sobre esses detalhes visitando a página da [_Assessoria e Cerimonial Do Dia (básica)_](/assessoria-cerimonial-basica-dia).

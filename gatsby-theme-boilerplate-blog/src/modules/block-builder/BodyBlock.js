@@ -24,6 +24,7 @@ const BodyBlock = ({ children, opt }) => {
         cardImage={options.cardImage || null}
         serverUrl={options.serverUrl || null}
         articleUrl={options.articleUrl || null}
+        pageQuestions={options.pageQuestions}
       />
 
       {children}

@@ -14,6 +14,7 @@ featuredImage: ../posts/images/homem-computador.jpg
 homeHighlightRelatedList: false
 homeHighlight: false
 homeHighlightRelated: false
+questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 ---
 
 Patrocinamos tecnologia brasileira, livre e aberta em nosso web sítio.

@@ -14,6 +14,7 @@ featuredImage: ../posts/images/jantar-luxo.jpg
 homeHighlight: true
 homeHighlightRelated: false
 homeHighlightRelatedList: false
+questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 ---
 
 Fazer a assessoria de casamento com As Casamenteiras significa não ter estresse e sim alegria. Cada etapa do planejamento e cada decisão tomada é uma vitória. Esses momentos também fazem parte da grande festa.

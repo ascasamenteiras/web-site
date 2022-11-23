@@ -6,6 +6,7 @@ description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eve
 slug: rsvp-contato
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 date: 2022-06-30T19:50:00+00:00
+questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 ---
 
 Siga As Casamenteiras nas redes sociais.

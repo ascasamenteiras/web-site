@@ -15,6 +15,7 @@ featuredImage: ../posts/images/mulher-negra-aplicativo.jpg
 homeHighlight: false
 homeHighlightRelated: true
 homeHighlightRelatedList: false
+questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 ---
 
 As Casamenteiras usa tecnologia de ponta para ajudar na organização do seu casamento. O aplicativo de planejamento é a forma mais inovadora de garantir a organização de cada detalhe do seu casamento.

@@ -27,6 +27,7 @@ const Seo = ({
   cardImage,
   serverUrl,
   themeColor,
+  pageQuestions
   // articleUrl,
 }) => {
   const hasBar = serverUrl?.charAt(serverUrl.length - 1);
@@ -114,6 +115,7 @@ const Seo = ({
         keywords={keywords}
         dateCreated={dateCreated}
         organizationLogo={organizationLogo}
+        pageQuestions={pageQuestions}
         serverUrl={serverUrl}
       />
     </>

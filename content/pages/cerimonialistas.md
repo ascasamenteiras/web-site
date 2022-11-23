@@ -6,6 +6,7 @@ description: Nosso time de cerimonialistas é comandado por Pri Barbosa que poss
 slug: cerimonialistas
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 date: 2022-08-01T08:30:00+00:00
+questions: ["Nosso time de cerimonialistas é comandado por quem?:Pri Barbosa que possui mais de 10 anos de experiência na área.","duas:perguntas","novas:perguntas"]
 ---
 
 Nosso time de cerimonialistas:

@@ -21,9 +21,13 @@ function SeoContainer({
   cardImage,
   serverUrl,
   articleUrl,
+  pageQuestions
 }) {
   const { site } = useSiteMetadatas();
   const metaDescription = description || site.siteMetadata.description;
+  
+  const theQuestions = pageQuestions || site.siteMetadata.questions
+
   return (
     <Seo
       lang={lang}
@@ -49,6 +53,7 @@ function SeoContainer({
       cardImage={cardImage || null}
       serverUrl={site.siteMetadata.siteUrl || serverUrl}
       themeColor={site.siteMetadata.themeColor}
+      pageQuestions={theQuestions}
       articleUrl={articleUrl}
     />
   );

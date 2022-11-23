@@ -12,11 +12,14 @@ const SinglePost = ({ location, pageContext }) => {
     boilerplateLogo,
     site,
     bandeiraWhats,
+    questions
   } = useSiteMetadatas();
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const post = pageContext.thePost;
+  const theQuestion = pageContext.postQuestion
+
   return (
     <MainTemplateWrapper
       backgroundImage={{
@@ -36,6 +39,8 @@ const SinglePost = ({ location, pageContext }) => {
         titleSeo: `${post.frontmatter.title}`,
         authorSeo: post.frontmatter.author,
         classes: "single-post",
+        pageQuestions: theQuestion || questions,
+
         datePublished: post.frontmatter.date,
         schemaType: "article",
         featuredImage:

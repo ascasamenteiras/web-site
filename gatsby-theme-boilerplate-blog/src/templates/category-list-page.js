@@ -57,11 +57,13 @@ const CategoryListPage = props => {
           bgPatternImg,
           cardImage,
           imgHolder,
+          questions
         } = useSiteMetadatas();
 
         const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
         const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
         const categoriesContext = props.pageContext.categories;
+        
 
         const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
         console.log(
@@ -98,6 +100,7 @@ const CategoryListPage = props => {
             classes='blog-list'
             opt={{
               titleSeo: `Trends: ${props.pageContext.categories}`,
+              pageQuestions: questions,
               classes: "blog-list",
               schemaType: "blog",
               mainLogo: imgHolder,
