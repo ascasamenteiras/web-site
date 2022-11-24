@@ -21,7 +21,6 @@ const IndexPage = props => {
 
   const {
     site,
-    questions,
     boilerplateLogo,
     profileOficial,
     diamond,
@@ -42,12 +41,12 @@ const IndexPage = props => {
     bandeiraRibeiraoPreto,
     bandeiraVidasNegras,
     bandeiraWhats,
+    bandeiraQuestion,
     bandeiraCodigoAberto,
   } = useSiteMetadatas();
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
-  console.log("posts");
-  console.log(posts);
+  const defaultQuestions = site.siteMetadata.questions
   const findItemFeatured = postsList => {
     let x = null;
 
@@ -114,6 +113,7 @@ const IndexPage = props => {
   );
   const badgeVidasNegras = getImage(bandeiraVidasNegras.childrenImageSharp[0]);
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+  const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
 
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
@@ -206,7 +206,7 @@ const IndexPage = props => {
       }
       opt={{
         titleSeo: `Assessoria e Cerimonial`,
-        questions: questions,
+        pageQuestions: defaultQuestions,
         classes: "blog-list",
         schemaType: "blog",
         blogListing: posts.slice(0, 9),
@@ -216,6 +216,15 @@ const IndexPage = props => {
         badgesWhats: (
           <GatsbyImage
             image={badgeWhats}
+            alt={"title"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+          />
+        ),
+        badgesQuestion: (
+          <GatsbyImage
+            image={badgeQuestion}
             alt={"title"}
             placeholder={"NONE"}
             critical='true'

@@ -12,14 +12,16 @@ const OneColumn = ({ location, pageContext }) => {
     site,
     cardImage,
     bandeiraWhats,
+    bandeiraQuestion
   } = useSiteMetadatas();
-  const defaultQuestions = useSiteMetadatas().questions;
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+  const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
+
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const { title, content, description, questions } = pageContext;
-  console.log('questions questions questions')
-  console.log(questions)
+  const defaultQuestions = site.siteMetadata.questions
+
   return (
     <MainPageWrapper
       backgroundImage={{
@@ -48,6 +50,15 @@ const OneColumn = ({ location, pageContext }) => {
         badgesWhats: (
           <GatsbyImage
             image={badgeWhats}
+            alt={"title"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+          />
+        ),
+        badgesQuestion: (
+          <GatsbyImage
+            image={badgeQuestion}
             alt={"title"}
             placeholder={"NONE"}
             critical='true'

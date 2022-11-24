@@ -48,8 +48,6 @@ const CategoryListPage = props => {
       `}
       render={data => {
         const categoriesList = data.allMarkdownRemark.edges;
-        console.log("data>>>>>>>");
-        console.log(data);
         const {
           site,
           bannerContent,
@@ -57,18 +55,19 @@ const CategoryListPage = props => {
           bgPatternImg,
           cardImage,
           imgHolder,
-          questions
+          bandeiraWhats,
+          bandeiraQuestion
         } = useSiteMetadatas();
 
+        const defaultQuestions = site.siteMetadata.questions
         const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
         const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
         const categoriesContext = props.pageContext.categories;
         
+        const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+        const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
 
         const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
-        console.log(
-          "categoriesContextcategoriesContextcategoriesContextcategoriesContext"
-        );
         const myArticlesCategorized = [];
         categoriesList.forEach(element => {
           if (element.node.frontmatter.categories !== null) {
@@ -100,7 +99,7 @@ const CategoryListPage = props => {
             classes='blog-list'
             opt={{
               titleSeo: `Trends: ${props.pageContext.categories}`,
-              pageQuestions: questions,
+              pageQuestions: defaultQuestions,
               classes: "blog-list",
               schemaType: "blog",
               mainLogo: imgHolder,
@@ -108,6 +107,24 @@ const CategoryListPage = props => {
               blogListing: categoriesList.slice(0, 9),
               serverUrl:
                 props.location.origin || site.siteMetadata.siteUrl || "/",
+              badgesWhats: (
+                <GatsbyImage
+                  image={badgeWhats}
+                  alt={"title"}
+                  placeholder={"NONE"}
+                  critical='true'
+                  className={"whatsMe"}
+                />
+              ),
+              badgesQuestion: (
+                <GatsbyImage
+                  image={badgeQuestion}
+                  alt={"title"}
+                  placeholder={"NONE"}
+                  critical='true'
+                  className={"whatsMe"}
+                />
+              ),
             }}
           >
             <Row

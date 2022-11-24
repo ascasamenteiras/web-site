@@ -12,14 +12,17 @@ const SinglePost = ({ location, pageContext }) => {
     boilerplateLogo,
     site,
     bandeiraWhats,
-    questions
+    bandeiraQuestion
   } = useSiteMetadatas();
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+  const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
+
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const post = pageContext.thePost;
-  const theQuestion = pageContext.postQuestion
-
+  const questions = pageContext.postQuestion
+  const defaultQuestions = site.siteMetadata.questions
+console.log(questions)
   return (
     <MainTemplateWrapper
       backgroundImage={{
@@ -39,8 +42,7 @@ const SinglePost = ({ location, pageContext }) => {
         titleSeo: `${post.frontmatter.title}`,
         authorSeo: post.frontmatter.author,
         classes: "single-post",
-        pageQuestions: theQuestion || questions,
-
+        pageQuestions: questions || defaultQuestions,
         datePublished: post.frontmatter.date,
         schemaType: "article",
         featuredImage:
@@ -59,6 +61,15 @@ const SinglePost = ({ location, pageContext }) => {
         badgesWhats: (
           <GatsbyImage
             image={badgeWhats}
+            alt={"title"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+          />
+        ),
+        badgesQuestion: (
+          <GatsbyImage
+            image={badgeQuestion}
             alt={"title"}
             placeholder={"NONE"}
             critical='true'

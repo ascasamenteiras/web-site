@@ -270,6 +270,18 @@ export const useSiteMetadatas = () =>
             )
           }
         }
+        bandeiraQuestion: file(
+          relativePath: { eq: "bandeira-pergunta.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 300
+              height: 300
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
         bandeiraFeminista: file(
           relativePath: { eq: "bandeira-feminista.png" }
         ) {

@@ -4,6 +4,7 @@ import { useSiteMetadatas } from "../../tools/useSiteMetadatas";
 import BodyBlock from "@BlockBuilder/BodyBlock";
 import HeaderBlock from "@BlockBuilder/HeaderBlock";
 import FooterBlock from "@BlockBuilder/FooterBlock";
+import BadgesButtonsBlock from "@BlockBuilder/BadgesButtonsBlock";
 
 const MainTemplateWrapper = ({
   children,
@@ -18,8 +19,8 @@ const MainTemplateWrapper = ({
     zankyouImg,
     whatsImg,
     deezerImg,
-spotifyImg,
-iTunesImg,
+    spotifyImg,
+    iTunesImg,
     youTubeImg,
     faceImg,
     casamentospontocomImg,
@@ -30,44 +31,7 @@ iTunesImg,
     >
       <HeaderBlock logotipoSvg={logo} />
       {children}
-      
-      <div className='AskMeWrapper badgeClass'>
-        <a
-          href='https://web.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
-          rel='nofollow'
-          target={"_blank"}
-          className={"desktop-only"}
-        >
-          {opt.badgesWhats}
-        </a>
-        <a
-          href='https://api.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
-          rel='nofollow'
-          target={"_blank"}
-          className={"mobile-only"}
-        >
-          {opt.badgesWhats}
-        </a>
-      </div>
-      <div className='whatsMeWrapper badgeClass'>
-        <a
-          href='https://web.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
-          rel='nofollow'
-          target={"_blank"}
-          className={"desktop-only"}
-        >
-          {opt.badgesWhats}
-        </a>
-        <a
-          href='https://api.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
-          rel='nofollow'
-          target={"_blank"}
-          className={"mobile-only"}
-        >
-          {opt.badgesWhats}
-        </a>
-      </div>
-
+      <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} />
       <FooterBlock
         githubImg={githubImg}
         instaImg={instaImg}

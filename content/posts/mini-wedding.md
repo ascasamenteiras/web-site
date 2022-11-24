@@ -16,7 +16,7 @@ featuredImage: ../posts/images/tais-paulo-mini-wedding.jpg
 homeHighlightRelatedList: true
 homeHighlight: true
 homeHighlightRelated: false
-questions: ["Mini uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
+questions: ["Mini uma?:pergunta.","outra?:perguntass.","duas?:perguntas","novas:perguntas"]
 ---
 
 O mais completo **mini wedding** você encontra nAs Casamenteiras.
