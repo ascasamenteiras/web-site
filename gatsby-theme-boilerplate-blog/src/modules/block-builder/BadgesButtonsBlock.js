@@ -21,7 +21,8 @@ const questionAnswer = choosenAnswer ? <a className="chat-answer">{choosenAnswer
 console.log(opt.questions)
   return (
     <>
-    <div className={`chat-questions-wrapper badgeClass question-hide-${questionState} question-move-${questionState}`}>
+
+    {/* <div className={`chat-questions-wrapper badgeClass question-hide-${questionState} question-move-${questionState}`}>
       <p className="question-box-wrapper">
         {questionsArray.map((question,indx) => {
           return <a 
@@ -36,6 +37,7 @@ console.log(opt.questions)
         {questionAnswer || null}
       </p>
     </div>
+
      <div className={`AskMeWrapper badgeClass question-move-${questionState}`}>
         <a
           href='#'
@@ -56,6 +58,7 @@ console.log(opt.questions)
           {opt.badgesQuestion}
         </a>
       </div>
+       */}
       <div className={`whatsMeWrapper badgeClass whats-move-${questionState}`}>
         <a
           href='https://web.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
