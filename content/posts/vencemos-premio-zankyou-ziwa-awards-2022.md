@@ -1,7 +1,7 @@
 ---
 topology: posts
-title: Vencemos o Prêmio Zankyou ZIWA Awards 2022
-headline: As Casamenteiras é a vencedora do Prêmio Zankyou ZIWA Awards 2022, na categoria Assessoria e Cerimonial de casamentos.
+title: Vencemos o Prêmio Internacional Zankyou ZIWA Awards 2022
+headline: As Casamenteiras é a vencedora do Prêmio Internacional Zankyou ZIWA Awards 2022, na categoria Assessoria e Cerimonial de casamentos.
 date: 2022-11-27T03:36:00+00:00
 updatedAt: 2022-11-27T03:36:00+00:00
 createdAt: 2022-11-27T03:36:00+00:00
@@ -15,7 +15,7 @@ homeHighlight: true
 homeHighlightRelated: false
 ---
 
-Estamos imensamente animados e surpresos por termos sidos escolhidas como as melhores Casamenteiras do Estado de São Paulo e do Brasil.
+Estamos imensamente animados e surpresos por termos sidos escolhidas como as melhores Casamenteiras do Estado de São Paulo e do Brasil, nesse baladíssimo prêmio internacional.
 
 ## Prêmio Zankyou ZIWA Awards 2022
 
