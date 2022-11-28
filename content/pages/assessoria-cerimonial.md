@@ -5,10 +5,55 @@ title: Assessoria e Cerimonial
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: assessoria-cerimonial
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
-date: 2022-08-01T08:30:00+00:00
-questions: ["As Casamenteiras realizam assessoria e cerimonal de casamentos?:Sim, nós fazemos.","O que é o cerimonial de um casamento?:pergunta","Como funciona a assessoria de casamento completa?
-:perguntas","Quais são os acessórios do cerimonial?
-:perguntas"]
+date: 2022-11-25T08:30:00+00:00
+questions: [
+"As Casamenteiras realizam assessoria e cerimonal de casamentos?:Sim, As Casamenteiras oferece assessoria completa ou personalizada e consultorias avulsas. Também temos nosso pacote mini-wedding, além de uma gama completa de serviços para o casal",
+"O que é o cerimonial de casamento?:O cerimonial é uma atividade sócio-cultural, que reúne protocolos tanto por meio da tradição, quanto por meio de declarações públicas para consagrar ritos da lei e celebrar o amor.",
+"O que faz uma cerimonialista?:A cerimonialista é a profissional responsável por organizar os protocolos e atos da cerimônia do casamento, no caso de uma casamenteira. A profissional elabora previamente roteiros e cronogramas do evento. Ela é a responsável por conduzir o andamento do cortejo. É responsável pela direção geral, que envolve a acomodação, auxílio e orientação de todos os presentes.",
+"O que faz uma assessoria de casamento?:Resposta, tinguin din tim.",
+"Como organizar uma festa de casamento?:Resposta, tinguin din tim.",
+"Qual é a principal dificuldade na organização de um casamento?:Ser organizada e manter a calma. É importante usar a tecnologia também. Há uma infinidades de desafios, por isso talvez uma das principais dificuldades é a de não perceber que esse é um serviço para uma profissional casamenteira.",
+"Quanto cobra uma cerimonialista? Qual é o custo do cerimonial profissional?:Resposta, tinguin din tim.",
+"O que vai na lista de um cerimonial de casamento?:Resposta, tinguin din tim.",
+"Quais pacotes de serviço de uma cerimonialista?:Resposta, tinguin din tim.",
+"Onde encontrar uma cerimonialista em Ribeirão Preto?:Resposta, tinguin din tim.",
+"É estressante organizar um casamento sem ajuda?:Resposta, tinguin din tim.",
+"Está enfrentando dificuldades em organizar seu casamento?:Resposta, tinguin din tim.",
+"Você acredita que vai conseguir ter confiança para o grande dia depois de conhecer inúmeras problemáticas de organizar um casamento sem ajuda?:Resposta, tinguin din tim.",
+"Seria ruim ter reuniões exaustivas e entrevistar fornecedores, todos os meses que antecedem o grande dia?:Resposta, tinguin din tim.",
+"Como um casamento desorganizado pode atrapalhar o grande dia? O que pode dar de errado?:Resposta, tinguin din tim.",
+"O currículo pessoal e formação da cerimonialista é importante?:Resposta, tinguin din tim.",
+"Quais os riscos de não se ter uma cerimonialista?:Resposta, tinguin din tim.",
+"Contratar uma profissional que não possui experiência em organização de eventos dos mais diversos tipos, tamanhos e temáticas pode ser ruim? Por quê?:Resposta, tinguin din tim.",
+"Quais os pontos principais um casamento que não podem ser esquecidos?:Resposta, tinguin din tim.",
+"Quais os pontos principais um cerimonial que não podem ser esquecidos?:Resposta, tinguin din tim.",
+"O que mais pode dar errado no dia do casamento?:Resposta, tinguin din tim.",
+"O que não pode dar errado de jeito nenhum no dia do casamento?:Resposta, tinguin din tim.",
+"Seria ruim receber ajuda de uma cerimonialista que não realiza casamento afetivo? Se sim, por quê?:Resposta, tinguin din tim.",
+"O que pode dar de errado na festa sem o cerimonial presente?:Resposta, tinguin din tim.",
+"Quais os serviços inclusos em um cerimonial?:Resposta, tinguin din tim.",
+"Contratar uma casamenteira não profissional oferece quais riscos ao seu casamento?:Resposta, tinguin din tim.",
+"Sentir-se frustrada ao organizar um casamento, é normal?:Pessoas não profissionais e principalmente o casal",
+"Como convidado de uma festa, quais problemas o casal acha super incômodo?:Resposta, tinguin din tim.",
+"O casal já enfrentou algum desafio resolvendo problemas do casamento sem ajuda de uma cerimonialista?:Resposta, tinguin din tim.",
+"Escolhas ruins podem significar pagar mais por um evento?:Resposta, tinguin din tim.",
+"Quais tipo de situações de desrespeito podem ocorrer ao contratar cerimonialistas sem capacitação profissional?:Resposta, tinguin din tim.",
+"O que acontece se o cortejo não estiver pronto no início do casamento?:Resposta, tinguin din tim.",
+"A saúde mental do casal pode ser afetada de qual maneira se o casal não contratar assessoria completa?:Resposta, tinguin din tim.",
+"Como prejudicaria o seu casamento se o casal economizar na hora de contratar a organizadora do evento e não contratar uma especialista?:Resposta, tinguin din tim.",
+"Uma assessora de eventos profissional, consegue descontos na hora da negociação com os fornecedores?:Resposta, tinguin din tim.",
+"Na sua visa, você já teve problemas com o estresse? Como isso pode prejudicar na organização do seu grande dia?:Resposta, tinguin din tim.",
+"O que acontece se reduzirmos em 20% o custo total do evento?:Resposta, tinguin din tim.",
+"Como uma assessora ajuda na hora da contratação de fornecedores?:Resposta, tinguin din tim.",
+"Como o casal visualiza um casamento assessorado por uma especialista?:Resposta, tinguin din tim.",
+"O casal prefere um casamento com cores diversas ou monocromáticas?:Resposta, tinguin din tim.",
+"Já temos uma organização, você pode revisar meus contratos?:Resposta, tinguin din tim.",
+"Quanto custa o serviço de cerimonial/cerimonialista de As Casamenteiras?:Resposta, tinguin din tim.",
+"Quais as condições de pagamento de As Casamenteiras?:Resposta, tinguin din tim.",
+"Qual a faixa de preço de As Casamenteiras?:Resposta, tinguin din tim.",
+"As Casamenteiras trabalha para casamentos de quantos convidados?:Resposta, tinguin din tim.",
+"Quer enviar a sua pergunta?:Resposta, tinguin din tim."
+]
 ---
 
 As Casamenteiras oferece assessoria completa ou personalizada e consultorias avulsas.

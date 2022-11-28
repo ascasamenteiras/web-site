@@ -12,8 +12,8 @@ menu:
         label: Cerimonialistas
         to: /cerimonialistas/
     - item:
-        label: RSVP e Contato
-        to: /rsvp-contato/
+        label: Contato
+        to: /contato/
     - item:
         icon: bag
     - item:
