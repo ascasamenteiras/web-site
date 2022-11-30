@@ -10,7 +10,7 @@ categories:
   - premio
 featuredPost: true
 featuredImage: ../posts/images/ricardo-paulo-marli.jpg
-homeHighlightRelatedList: true
+homeHighlightRelatedList: false
 homeHighlight: true
 homeHighlightRelated: false
 ---

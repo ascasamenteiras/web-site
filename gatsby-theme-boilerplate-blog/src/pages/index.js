@@ -339,7 +339,7 @@ const IndexPage = props => {
                     )}
                     {printMySocial(
                       casamentospontocomGetImg,
-                      "https://www.casamentos.com.br/cerimonialista/as-casamenteiras-de-ribeirao--e192771"
+                      "https://www.casamentos.com.br/cerimonialista/as-casamenteiras--e192771"
                     )}
                     {printMySocial(
                       whatsGetImg,
