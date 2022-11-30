@@ -75,4 +75,6 @@ Visita também a página dos vencedores **ZIWA Awards 2022**, [clicando aqui](ht
 
 Desejamos só o melhor para vocês nesse momento tão especial. 
 
-As Casamenteiras - Todo Amor Importa! *#bóraCasarPovo* *#asCasamenteiras* *#casamentoDosSonhos*
+As Casamenteiras - Todo Amor Importa! 
+
+**_#bóraCasarMeuPovo_** **_#asCasamenteiras_** **_#casamentoDosSonhos_**

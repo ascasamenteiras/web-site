@@ -321,7 +321,7 @@ const IndexPage = props => {
                 >
                   <div className='home-profile-left-column'>
                     <p>
-                      <strong>Casamentos Realizados: </strong>51
+                      <strong>Casamentos Realizados: </strong>57
                     </p>
                     <p>
                       <strong>Casamentos em Andamento: </strong>17
