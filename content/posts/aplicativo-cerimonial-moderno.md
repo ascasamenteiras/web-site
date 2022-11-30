@@ -28,7 +28,7 @@ Com essa solução o casal tem acesso a todas as informações do evento, centra
 
 Tudo começa pelo briefing ou roteiro que serve para que todos os fornecedores estejam alinhados por dentro das informações e detalhes que envolvem o casal e o evento. Para isso, perguntas direcionadas e abertas são registradas dentro do seu roteiro.
 
-O seu casamento organizado conta com uma lista completa das tarefas mais importantes, lista essa aperfeiçoada ao longo desses mais de dez anos de atuação dAs Casamenteiras. O casal poderá interagir atualizando a situação da tarefa, adicionando comentários e anexos.
+O seu casamento organizado conta com uma lista completa das tarefas mais importantes, lista essa aperfeiçoada ao longo desses mais de dez anos de atuação d'As Casamenteiras. O casal poderá interagir atualizando a situação da tarefa, adicionando comentários e anexos.
 
 ## Budget / Carteira
 
@@ -74,6 +74,6 @@ Notificações sobre as movimentações dos fornecedores, convidados e novidades
 
 ## Aplicativo Para Cerimonial de Casamento
 
-O serviço de assessoria e cerimonial dAs Casamenteiras possui benefícios tais como roteiro do cerimonial, carteira virtual alinhada com os contratos assinados, interação com fornecedores, solicitações de orçamentos, assinatura de contratos on-line, RSVP moderno e on-line, pasta para gerenciamento de arquivos e contratos, notificações na tela do seu dispositivo móvel e muitas outras ferramentas indispensáveis para a organização do seu casamento.
+O serviço de assessoria e cerimonial d'As Casamenteiras possui benefícios tais como roteiro do cerimonial, carteira virtual alinhada com os contratos assinados, interação com fornecedores, solicitações de orçamentos, assinatura de contratos on-line, RSVP moderno e on-line, pasta para gerenciamento de arquivos e contratos, notificações na tela do seu dispositivo móvel e muitas outras ferramentas indispensáveis para a organização do seu casamento.
 
 Para saber mais sobre como usamos o aplicativo de organização de cerimonial e saber mais sobre os nossos parceiros fornecedores de casamento [clique aqui](/assessoria-cerimonial-plena-completa).

@@ -1,7 +1,7 @@
 ---
 topology: posts
 title: Assessoria e Cerimonial Plena (completa)
-headline: O serviço de assessoria e cerimonial plena é relativo ao pacote básico dos serviços dAs Casamenteiras.
+headline: O serviço de assessoria e cerimonial plena é relativo ao pacote básico dos serviços d'As Casamenteiras.
 date: 2022-08-01T08:30:00+00:00
 createdAt: 2022-07-11T22:17:20+00:00
 updatedAt: 2022-08-01T08:30:00+00:00
@@ -30,7 +30,7 @@ As Casamenteiras mantém contato frequente com todos os fornecedores envolvidos 
 
 Ainda fazemos o agendamento de degustação com buffet, visita técnica e a reunião final.
 
-## Diferenciais dAs Casamenteiras
+## Diferenciais d'As Casamenteiras
 
 Organização financeira via app e assinatura de todos os contratos digitalmente.
 

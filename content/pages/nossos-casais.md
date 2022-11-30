@@ -2,7 +2,7 @@
 topology: pages
 status: true
 title: Nossos Casais
-description: Depoimentos dos nossos casais sobre o cerimonial e assessoria dAs Casamenteiras.
+description: Depoimentos dos nossos casais sobre o cerimonial e assessoria d'As Casamenteiras.
 slug: nossos-casais
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 date: 2022-07-11T19:50:00+00:00

@@ -25,7 +25,7 @@ Fazemos a condução do casal para elaboração do roteiro do cerimonial e na co
 
 Todo cerimonial se inicia na contratação da assessoria. Seja para casamentos, cerimoniais, festas, eventos privados e governamentais, As Casamenteiras possui ampla experiência para te dar o suporte necessário.
 
-As Casamenteiras oferece os serviços de Assessoria e Cerimonial [_Plena (completa)_](/assessoria-cerimonial-plena-completa) e [_Do Dia (básica)_](/assessoria-cerimonial-basica-dia).
+As Casamenteiras oferece os serviços d'Assessoria e Cerimonial [_Plena (completa)_](/assessoria-cerimonial-plena-completa) e [_Do Dia (básica)_](/assessoria-cerimonial-basica-dia).
 
 As Casamenteiras utiliza tecnologia de ponta para planejamento moderno, manter as informações organizadas, alinhar fornecedores, cronogramas, roteiro da cerimônia e da festa.
 
@@ -57,7 +57,7 @@ O contato frequente da Pri com os fornecedores é indispensável para que esses 
 
 Chega-se então o momento planejado por meses, a finalidade das organizações e contratações: a cerimônia.
 
-Pri Barbosa e a equipe dAs Casamenteiras estão auxiliando a entrada planejada de cada momento. Cerimônias são atos sagrados que exigem um profissional para indicar de forma bondosa o momento exato de agir para cada componente da festa.
+Pri Barbosa e a equipe d'As Casamenteiras estão auxiliando a entrada planejada de cada momento. Cerimônias são atos sagrados que exigem um profissional para indicar de forma bondosa o momento exato de agir para cada componente da festa.
 
 O pajem, as alianças e os acessórios do cerimonial estarão sob a nossa responsabilidade e supervisão para garantir a sua tranquilidade.
 
@@ -87,4 +87,4 @@ Sim casal, são muitos pormenores, todos em sua maioria simples de resolver, mas
 
 Por isso, estamos aqui para vocês. As Casamenteiras que fazem parte do seu momento especial organizando lado a lado o casamento de vocês.
 
-Conheça os serviços detalhados dAs Casamenteiras que oferece os serviços de Assessoria e Cerimonial [_Plena (completa_)](/assessoria-cerimonial-plena-completa) e [_Do Dia (básica)_](/assessoria-cerimonial-basica-dia).
+Conheça os serviços detalhados d'As Casamenteiras que oferece os serviços d'Assessoria e Cerimonial [_Plena (completa_)](/assessoria-cerimonial-plena-completa) e [_Do Dia (básica)_](/assessoria-cerimonial-basica-dia).

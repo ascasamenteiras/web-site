@@ -27,7 +27,7 @@ Abaixo vamos listamos alguns dos serviços que contempla esse **serviço complet
 
 ## Gestão 360º
 
-A assessoria dAs Casamenteiras aos noivos se dá através de assessoria completa a qual chamamos de Gestão 360º
+A assessoria d'As Casamenteiras aos noivos se dá através de assessoria completa a qual chamamos de Gestão 360º
 
 O planejamento geral do casamento destaca o sonho do casal e todos os momentos e protocolos são impecavelmente organizados.
 

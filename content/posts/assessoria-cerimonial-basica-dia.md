@@ -1,7 +1,7 @@
 ---
 topology: posts
 title: Assessoria e Cerimonial Do Dia (básica)
-headline: O serviço de assessoria e cerimonial do dia é relativo ao pacote básico dos serviços dAs Casamenteiras.
+headline: O serviço de assessoria e cerimonial do dia é relativo ao pacote básico dos serviços d'As Casamenteiras.
 date: 2022-08-01T08:30:00+00:00
 createdAt: 2022-07-10T22:17:20+00:00
 updatedAt: 2022-08-01T08:30:00+00:00
@@ -18,13 +18,13 @@ homeHighlightRelatedList: true
 questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 ---
 
-O serviço de assessoria e cerimonial do dia é relativo ao pacote básico dos serviços dAs Casamenteiras. Abaixo um resumo dos principais pontos desse método de contratação.
+O serviço de assessoria e cerimonial do dia é relativo ao pacote básico dos serviços d'As Casamenteiras. Abaixo um resumo dos principais pontos desse método de contratação.
 
 As Casamenteiras presta serviços de assessoria e cerimonial para casamentos, eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor.
 
 ## Qual é o primeiro passo para um cerimonial perfeito?
 
-O primeiro passo para organizar o seu casamento é ter uma reunião com As Casamenteiras para debater o evento como um todo, fazer o briefing e explicar o método da assessoria dAs Casamenteiras.
+O primeiro passo para organizar o seu casamento é ter uma reunião com As Casamenteiras para debater o evento como um todo, fazer o briefing e explicar o método da assessoria d'As Casamenteiras.
 
 Essa reunião gerará o briefing/roteiro do casamento que será cadastrado no aplicativo. Ambos do casal terão perfis individuais no sistema de organização de cerimonial.
 

@@ -1,7 +1,7 @@
 ---
 topology: posts
 title: Hackativismo - o código aberto e a descentralização da internet
-headline: Nós de As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
+headline: Nós d'As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
 date: 2022-08-01T08:30:00+00:00
 updatedAt: 2022-07-20T09:50:00+00:00
 createdAt: 2022-08-01T08:30:00+00:00
@@ -19,7 +19,7 @@ questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 
 Patrocinamos tecnologia brasileira, livre e aberta em nosso web sítio.
 
-Nós de As Casamenteiras apoiamos as causas do programadores de sistemas cibernetizados, sistemas web (on-line) e todos os tipos de trabalhadores e trabalhos sociais de código aberto.
+Nós d'As Casamenteiras apoiamos as causas do programadores de sistemas cibernetizados, sistemas web (on-line) e todos os tipos de trabalhadores e trabalhos sociais de código aberto.
 
 ## O Que É Um Sistema De Código Livre e Aberto
 

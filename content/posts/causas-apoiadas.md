@@ -1,7 +1,7 @@
 ---
 topology: posts
 title: Causas que apoiamos
-headline: Nós de As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
+headline: Nós d'As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
 date: 2022-08-01T08:30:00+00:00
 updatedAt: 2022-07-10T22:17:20+00:00
 createdAt: 2022-08-01T08:30:00+00:00
@@ -17,7 +17,7 @@ homeHighlightRelated: false
 questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
 ---
 
-Nós de As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
+Nós d'As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
 
 Condenamos veementemente qualquer tipo de ato discriminatório contra quaisquer bandeiras em especial discriminação contra empreendedoras, LGBTQIA+, afrodescendentes e entre fornecedores locais da mais diversas configurações sócio-econômicas.
 
@@ -36,7 +36,7 @@ A equiparação salarial e de ganhos também é um importante meio de empoderame
 
 ## LGBTQIA+
 
-Como prestadoras de serviço e amantes de um bom casamento, repleto de amor e felicidade, nós dAs Casamenteiras realizamos cerimônias entre casais do mesmo gênero e demais configurações.
+Como prestadoras de serviço e amantes de um bom casamento, repleto de amor e felicidade, nós d'As Casamenteiras realizamos cerimônias entre casais do mesmo gênero e demais configurações.
 
 A vida amorosa diversa não é fácil e para ser feliz casais apaixonados precisam de aceitação, mesmo casais héteros que não recebem apoio da família sofrem, quanto mais aqueles que tem pouquíssimo apoio de toda a sociedade.
 
@@ -60,4 +60,4 @@ Para saber orientar cada casal, As Casamenteiras conhece os grandes e pequenos f
 
 Patrocinamos tecnologia brasileira, livre e aberta em nosso web sítio. Com isso estamos contribuindo com a sociedade para nos beneficiarmos do Código Aberto e da Internet Descentralizada.
 
-Nós de As Casamenteiras apoiamos as causas dos programadores de sistemas cibernetizados que são voluntários e usam as suas atividades de escrita de código como forma de fazer política.
+Nós d'As Casamenteiras apoiamos as causas dos programadores de sistemas cibernetizados que são voluntários e usam as suas atividades de escrita de código como forma de fazer política.

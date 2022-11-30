@@ -37,17 +37,17 @@ Quando olhamos para o currículo de **Priscilla Barbosa** vemos o seu diferencia
 
 Por que contratar uma assessora de casamento? Qual é a real importância de uma casamenteira?
 
-É comum após o casamento nós, como Equipe de As Casamenteiras, recebermos testemunhos públicos de gratidão por termos aliviado e assessorado o objetivo do casal e principalmente da noiva, de promover um evento dessa magnitude e importância. 
+É comum após o casamento nós, como Equipe d'As Casamenteiras, recebermos testemunhos públicos de gratidão por termos aliviado e assessorado o objetivo do casal e principalmente da noiva, ao promover um evento dessa magnitude e importância. 
 
 ![Certificado e Diplomação de Vencedora na Categoria Assessoria no Prêmio Internacional Zankyou ZIWA Awards 2022](./images/ziwa-diploma-as-casamenteiras.jpg)
 
-Nós sabemos como a organização, manutenção e desenvolvimento de um evento pode ser cansativo e até frustrante. Há uma infinidade de problemas fora do nosso alcance que enfrentaremos. Desde uma crise nacional, até mesmo a manutenção do sistema de rede elétrica no dia do casamento. Esses são alguns dos muitos casos inesperados que podem acontecer, além de todos os protocolos.
+Nós sabemos como a organização, manutenção e desenvolvimento de um evento pode ser cansativo e até frustrante. Há uma infinidade de problemas fora do nosso alcance que enfrentaremos. Desde uma crise nacional, até mesmo a manutenção do sistema da rede elétrica no dia do casamento. Esses são alguns dos muitos casos inesperados que podem acontecer, além de todos os protocolos.
 
-Assessoria não é só problemas, a escolha de uma assessora experiente em negociações, pode te render até 30% de desconto no valor dos contratos de todo o casamento. Seria bom ter essa economia? O que o casal faria com o dinheiro que Priscilla Barbosa conseguiria com seu poder de negociação? 
+Assessoria não é só problemas, a escolha de uma assessora experiente em negociações, pode te render até **30% de desconto** no valor dos contratos de todo o casamento. Seria bom ter essa economia? O que o casal faria com o dinheiro que Priscilla Barbosa conseguiria com seu poder de negociação? 
 
-## O Serviço Premiado Gestão 360 dAs Casamenteiras
+## O Serviço Premiado Gestão 360 d'As Casamenteiras
 
-Com a **Gestão 360 de As Casamenteiras** o casal está completamente amparado. Foi com esse serviço que vencemos o Prêmio Zankyou Internacional Ziwa Awards 2022. É com a Gestão 360 que a nossa equipe se destacou entre os fornecedores e nossos clientes. 
+Com a **Gestão 360 d'As Casamenteiras** o casal está completamente amparado. Foi com esse serviço que vencemos o **Prêmio Zankyou Internacional Ziwa Awards 2022**. É com a Gestão 360 que a nossa equipe se destacou entre os fornecedores e nossos clientes. 
 
 **O que é uma assessoria completa de casamento?**
 
@@ -57,19 +57,21 @@ Também disponibilizamos para cada um do casal um acesso ao melhor aplicativo de
 
 ![Casamento da Thais e do Paulo em Setembro de 2022](./images/tais-paulo-mini-wedding.jpg)
 
-Podemos fazer a **visita técnica especializada** que garante a *profissionalidade* do casamento. Na visita técnica a equipe dAs Casamenteiras vai garantir que as escolhas do casal sejam visualizadas no local da cerimônia e festa. É nesse momento onde o plano para cada fornecedor será montado.
+Podemos fazer a **visita técnica especializada** que garante a *profissionalidade* do casamento. Na visita técnica a Equipe d'As Casamenteiras vai garantir que as escolhas do casal sejam visualizadas no local da cerimônia e festa. É nesse momento onde o plano para cada fornecedor será montado.
 
 Fazemos a orquestração dos profissionais envolvidos de forma colaborativa para que todos possuam o cronograma do evento, com cada especificidade de cada serviço contratado.
 
-Dificuldades certamente virão, mas aqui nAs Casamenteiras nós abraçamos o seu evento de forma alegre, fornecendo somente as melhores energias para esse ambiente sagrado. Essa é uma jornada que se inicia, por que não caminhamos juntos?
+Dificuldades certamente virão, mas aqui nAs Casamenteiras nós abraçamos o seu evento de forma alegre, fornecendo somente as melhores energias para esse ambiente sagrado. 
 
-## Como faço para saber mais sobre esse serviço premiado dAs Casamenteiras?
+Essa é uma jornada que se inicia, por que não caminhamos juntos?
+
+## Como faço para saber mais sobre esse serviço premiado d'As Casamenteiras?
 
 Para saber mais sobre todos os nossos serviços, sinta-se à vontade em nos enviar a sua pergunta. Entre em contato com a nossa equipe pelo *Whats* 16 9 9245-2437 ou por [e-mail](mailto:cerimonial@ascasamenteiras.com.br).
 
 Nos siga também no [Instagram](https://instagram.com/ascasamenteiras_).
 
-Visita também a página dos vencedores ZIWA Awards 2022, [clicando aqui](https://www.zankyou.com.br/ziwa/assessorias-cerimonial).
+Visita também a página dos vencedores **ZIWA Awards 2022**, [clicando aqui](https://www.zankyou.com.br/ziwa/assessorias-cerimonial).
 
 Desejamos só o melhor para vocês nesse momento tão especial. 
 
