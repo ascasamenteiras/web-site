@@ -951,4 +951,7 @@ sup {
 			object-fit: contain;
 		}
 	}
+	.gatsby-resp-image-wrapper {
+		overflow: hidden;
+	}
 }
