@@ -942,3 +942,13 @@ sup {
 		cursor: pointer;
 	}
 }
+
+.main-post {
+	.gatsby-resp-image-wrapper {
+		max-width: 520px;
+		max-height: 400px;
+		img {
+			object-fit: contain;
+		}
+	}
+}

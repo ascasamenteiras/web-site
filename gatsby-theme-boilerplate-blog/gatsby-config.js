@@ -51,24 +51,9 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-image`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-remark-copy-linked-files",
       options: {
-        plugins: [
-          `gatsby-remark-lazy-load`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-              linkImagesToOriginal: false,
-            },
-          },
-          {
-            resolve: `gatsby-remark-relative-images`,
-            options: {
-              name: `images`,
-            },
-          },
-        ],
+        destinationDir: path.resolve(rootDir, "content/posts/images/"),
       },
     },
     {
@@ -97,6 +82,7 @@ module.exports = {
       options: {
         name: `posts`,
         path: path.resolve(rootDir, "content/posts/"),
+        ignore: [`**/\.jpg`,`**/\.png`], // ignore files starting with a dot
       },
     },
     {
@@ -106,7 +92,27 @@ module.exports = {
         path: path.resolve(rootDir, "content/pages"),
       },
     },
-
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 2200,
+              linkImagesToOriginal: false,
+            },
+          },
+          `gatsby-remark-lazy-load`,
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: `images`,
+            },
+          },
+        ],
+      },
+    },
     // {
     //   resolve: `@slixites/gatsby-plugin-google-fonts`,
     //   options: {
@@ -143,17 +149,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        mergeSecurityHeaders: true, // boolean to turn off the default security headers
-        mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
-        mergeCachingHeaders: true, // boolean to turn off the default caching headers
-        transformHeaders: headers => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
-        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
-      },
-    },
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
