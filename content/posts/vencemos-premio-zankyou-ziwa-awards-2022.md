@@ -55,6 +55,8 @@ Somos as responsáveis por abraçar, entender e resolver objetivos e problemas. 
 
 Também disponibilizamos para cada um do casal um acesso ao melhor aplicativo de organização de casamentos do Brasil.
 
+![Casamento da Thais e do Paulo em Setembro de 2022](./images/tais-paulo-mini-wedding.jpg)
+
 Podemos fazer a **visita técnica especializada** que garante a *profissionalidade* do casamento. Na visita técnica a equipe dAs Casamenteiras vai garantir que as escolhas do casal sejam visualizadas no local da cerimônia e festa. É nesse momento onde o plano para cada fornecedor será montado.
 
 Fazemos a orquestração dos profissionais envolvidos de forma colaborativa para que todos possuam o cronograma do evento, com cada especificidade de cada serviço contratado.
