@@ -110,6 +110,13 @@ module.exports = {
               name: `images`,
             },
           },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_self",
+              rel: "nofollow"
+            }
+          }
         ],
       },
     },
