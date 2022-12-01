@@ -198,12 +198,12 @@ const IndexPage = props => {
       logo={
         <GatsbyImage
           image={logoQuery}
-          alt={"Logotipo As Casamenteiras"}
+          alt={"Logotipo d'As Casamenteiras"}
+          width={450}
+          height={230}
           placeholder={"NONE"}
           critical='true'
           className={""}
-          width={450}
-          height={230}
         />
       }
       opt={{
@@ -218,7 +218,7 @@ const IndexPage = props => {
         badgesWhats: (
           <GatsbyImage
             image={badgeWhats}
-            alt={"title"}
+            alt={"Botão do Whats"}
             placeholder={"NONE"}
             critical='true'
             className={"whatsMe"}
@@ -229,7 +229,7 @@ const IndexPage = props => {
         badgesQuestion: (
           <GatsbyImage
             image={badgeQuestion}
-            alt={"title"}
+            alt={"Botão de Perguntas Frequentes"}
             placeholder={"NONE"}
             critical='true'
             className={"whatsMe"}
@@ -311,7 +311,7 @@ const IndexPage = props => {
                 <a className="home-video-button" href="https://www.youtube.com/watch?v=07COygyW6W0" target="_blank" rel="nofollow">
                   <GatsbyImage
                         image={vaiCasarGetImg}
-                        alt={"title"}
+                        alt={"Vídeo Promocional d'As Casamenteiras no YouTube"}
                         placeholder={"NONE"}
                         critical='true'
                         className={"video-promo"}
@@ -325,7 +325,6 @@ const IndexPage = props => {
                 <Row
                   opt={{
                     isBoxed: true,
-                    role: "something",
                     classes: "home-profile home-profile-width",
                     numColumns: 2,
                   }}
@@ -407,7 +406,7 @@ const IndexPage = props => {
                     <div className='diamond-profile'>
                       <GatsbyImage
                         image={profileQuery}
-                        alt={"title"}
+                        alt={"Imagem principal de perfil"}
                         placeholder={"NONE"}
                         critical='true'
                         className={"diamond-img"}
@@ -419,7 +418,7 @@ const IndexPage = props => {
                       />
                       <GatsbyImage
                         image={diamondBgQuery}
-                        alt={"title"}
+                        alt={"Imagem de fundo do perfil inicial"}
                         placeholder={"NONE"}
                         critical='true'
                         className={"diamond-background"}
@@ -543,7 +542,7 @@ const IndexPage = props => {
           <Link to='/causas-apoiadas'>
             <GatsbyImage
               image={badgeFeminista}
-              alt={"title"}
+              alt={"Empreendedorismo Feminino"}
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
@@ -555,19 +554,19 @@ const IndexPage = props => {
           <Link to='/causas-apoiadas'>
             <GatsbyImage
               image={badgeLgbtqia}
-              alt={"title"}
+              alt={"LGBTQIAP+"}
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
                width={90}
             height={90}
             />
-            <h3>Amor LGBTQIA+</h3>
+            <h3>Amor LGBTQIAP+</h3>
           </Link>
           <Link to='/causas-apoiadas'>
             <GatsbyImage
               image={badgeVidasNegras}
-              alt={"title"}
+              alt={"Vidas Negras Importam"}
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
@@ -579,7 +578,7 @@ const IndexPage = props => {
           <Link to='/causas-apoiadas'>
             <GatsbyImage
               image={badgeRibeiraoPreto}
-              alt={"title"}
+              alt={"Comércio Local"}
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
@@ -591,7 +590,7 @@ const IndexPage = props => {
           <Link to='/causas-apoiadas'>
             <GatsbyImage
               image={badgeCodigoAberto}
-              alt={"title"}
+              alt={"Hackativismo"}
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}

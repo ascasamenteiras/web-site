@@ -16,7 +16,7 @@ const PostCard = ({
       <Link to={linkUrl}>
         <GatsbyImage
           image={imageQuery}
-          alt={"title"}
+          alt={`Imagem em destaque da postagem: ${title}`}
           placeholder={"NONE"}
           critical='true'
           className={classes}

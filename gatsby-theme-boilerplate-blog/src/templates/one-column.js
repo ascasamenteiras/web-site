@@ -31,7 +31,9 @@ const OneColumn = ({ location, pageContext }) => {
       logo={
         <GatsbyImage
           image={logoQuery}
-          alt={"title"}
+          alt={"Logotipo d'As Casamenteiras"}
+          width={450}
+          height={230}
           placeholder={"NONE"}
           critical='true'
           className={""}
@@ -50,7 +52,9 @@ const OneColumn = ({ location, pageContext }) => {
         badgesWhats: (
           <GatsbyImage
             image={badgeWhats}
-            alt={"title"}
+            alt={"Botão do Whats"}
+            width={70}
+            height={70}
             placeholder={"NONE"}
             critical='true'
             className={"whatsMe"}
@@ -59,10 +63,12 @@ const OneColumn = ({ location, pageContext }) => {
         badgesQuestion: (
           <GatsbyImage
             image={badgeQuestion}
-            alt={"title"}
+            alt={"Botão de Perguntas Frequentes"}
             placeholder={"NONE"}
             critical='true'
             className={"whatsMe"}
+            width={70}
+            height={70}
           />
         ),
       }}

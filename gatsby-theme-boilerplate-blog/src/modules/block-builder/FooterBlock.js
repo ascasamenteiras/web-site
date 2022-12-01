@@ -42,7 +42,7 @@ const FooterBlock = ({
       >
         <GatsbyImage
           image={img}
-          alt={"title"}
+          alt={"Atalhos para redes sociais e outras ferramentas d'As Casamenteiras"}
           placeholder={"NONE"}
           critical='true'
           className={"colorME roundME bottom-social"}

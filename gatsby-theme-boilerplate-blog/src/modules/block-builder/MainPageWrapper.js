@@ -43,7 +43,7 @@ const MainPageWrapper = ({
         logotipoSvg={
           <GatsbyImage
             image={logoQuery}
-            alt={"title"}
+            alt={"Logotipo d'As Casamenteiras"}
             placeholder={"NONE"}
             critical='true'
             className={""}
@@ -81,7 +81,7 @@ const MainPageWrapper = ({
         logo={
           <GatsbyImage
             image={logoQuery}
-            alt={"title"}
+            alt={"Logotipo d'As Casamenteiras"}
             placeholder={"NONE"}
             critical='true'
             className={""}

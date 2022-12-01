@@ -9,6 +9,16 @@ import PostsBlock from "@BlockBuilder/PostsBlock";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 const CategoryListPage = props => {
+  const {
+    site,
+    bannerContent,
+    boilerplateLogo,
+    bgPatternImg,
+    cardImage,
+    imgHolder,
+    bandeiraWhats,
+    bandeiraQuestion
+  } = useSiteMetadatas();
   return (
     <StaticQuery
       query={graphql`
@@ -48,16 +58,7 @@ const CategoryListPage = props => {
       `}
       render={data => {
         const categoriesList = data.allMarkdownRemark.edges;
-        const {
-          site,
-          bannerContent,
-          boilerplateLogo,
-          bgPatternImg,
-          cardImage,
-          imgHolder,
-          bandeiraWhats,
-          bandeiraQuestion
-        } = useSiteMetadatas();
+        
 
         const defaultQuestions = site.siteMetadata.questions
         const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
@@ -90,7 +91,9 @@ const CategoryListPage = props => {
             logo={
               <GatsbyImage
                 image={logoQuery}
-                alt={"title"}
+                alt={"Logotipo d'As Casamenteiras"}
+                width={450}
+                height={230}
                 placeholder={"NONE"}
                 critical='true'
                 className={""}
@@ -110,7 +113,9 @@ const CategoryListPage = props => {
               badgesWhats: (
                 <GatsbyImage
                   image={badgeWhats}
-                  alt={"title"}
+                  alt={"Botão do Whats"}
+                  width={450}
+                  height={230}
                   placeholder={"NONE"}
                   critical='true'
                   className={"whatsMe"}
@@ -119,7 +124,9 @@ const CategoryListPage = props => {
               badgesQuestion: (
                 <GatsbyImage
                   image={badgeQuestion}
-                  alt={"title"}
+                  alt={"Botão do Whats"}       
+                  width={450}
+                  height={230}
                   placeholder={"NONE"}
                   critical='true'
                   className={"whatsMe"}
@@ -130,16 +137,17 @@ const CategoryListPage = props => {
             <Row
               opt={{
                 classes: "banner colorME",
-                isBoxed: true,
-                role: "something",
+                isBoxed: true
               }}
             >
               <GatsbyImage
                 image={imageQuery}
-                alt={"title"}
+                alt={"Crie a sua startup"}
                 placeholder={"NONE"}
                 critical='true'
                 className={" banner-img"}
+                width={720}
+                height={85}
               />
             </Row>
             <main className='main-container' role='list'>

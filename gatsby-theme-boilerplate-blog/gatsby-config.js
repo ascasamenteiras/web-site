@@ -43,7 +43,7 @@ module.exports = {
         defaults: {
           formats: [`webp`,`avif`],
           quality: 86,
-          breakpoints: [350, 450, 750, 1080, 1200, 1920],
+          breakpoints: [200, 350, 450, 750, 1080, 1200, 1920],
         },
       },
     },

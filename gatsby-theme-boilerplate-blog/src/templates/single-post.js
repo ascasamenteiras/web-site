@@ -31,7 +31,9 @@ console.log(questions)
       logo={
         <GatsbyImage
           image={logoQuery}
-          alt={"title"}
+          alt={"Logotipo d'As Casamenteiras"}
+          width={450}
+          height={230}
           placeholder={"NONE"}
           critical='true'
           className={""}
@@ -61,7 +63,9 @@ console.log(questions)
         badgesWhats: (
           <GatsbyImage
             image={badgeWhats}
-            alt={"title"}
+            alt={"Botão do Whats"}
+            width={70}
+            height={70}
             placeholder={"NONE"}
             critical='true'
             className={"whatsMe"}
@@ -70,7 +74,9 @@ console.log(questions)
         badgesQuestion: (
           <GatsbyImage
             image={badgeQuestion}
-            alt={"title"}
+            alt={"Botão de Perguntas Frequentes"}
+            width={70}
+            height={70}
             placeholder={"NONE"}
             critical='true'
             className={"whatsMe"}
