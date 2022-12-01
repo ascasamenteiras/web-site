@@ -5,7 +5,7 @@ title: Priscilla Barbosa Cerimonialista
 description: Foram mais de 50 casais felizes subindo ao altar junto com a Pri. É consultora na área de eventos. Formada em Gestão de Negócios pela USP-ESALQ, com título de MBA.
 slug: priscilla-barbosa-cerimonialista
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
-date: 2022-07-09T19:50:00+00:00
+date: 2022-12-01T08:30:00+00:00
 questions: [    "O currículo pessoal e formação da cerimonialista é importante?:Sim, pessoas com conhecimentos multidisciplinares tendem a gerir melhor seus trabalhos. E se tem uma mulher no Brasil que sabe lidar com organização é Priscilla Barbosa. A sua formação em Gestão de Negócios pela USP-ESALQ, com título de MBA faz toda a diferença na organização de eventos. Em sua história organizou de forma tranquila dezenas de casamentos, eventos sociais e solenidades públicas."]
 ---
 

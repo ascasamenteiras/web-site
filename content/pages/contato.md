@@ -5,7 +5,7 @@ title: RSVP e Contato
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: contato
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
-date: 2022-06-30T19:50:00+00:00
+date: 2022-12-01T08:30:00+00:00
 questions: ["Quer contratar uma assessora para o seu casamento?: Fale com As Casamenteiras. Entre em contato por nossos canais oficiais."]
 ---
 
