@@ -46,6 +46,8 @@ const FooterBlock = ({
           placeholder={"NONE"}
           critical='true'
           className={"colorME roundME bottom-social"}
+          width={44}
+          height={44}
         />
       </a>
     );

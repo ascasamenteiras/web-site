@@ -20,6 +20,8 @@ const PostCard = ({
           placeholder={"NONE"}
           critical='true'
           className={classes}
+          width={350}
+          height={175}
         />
       </Link>
       <div className='watch-later'>

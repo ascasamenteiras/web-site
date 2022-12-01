@@ -47,6 +47,8 @@ const MainPageWrapper = ({
             placeholder={"NONE"}
             critical='true'
             className={""}
+            width={450}
+            height={230}
           />
         }
       />
@@ -83,6 +85,8 @@ const MainPageWrapper = ({
             placeholder={"NONE"}
             critical='true'
             className={""}
+            width={450}
+            height={230}
           />
         }
       />

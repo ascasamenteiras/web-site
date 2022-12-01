@@ -45,10 +45,12 @@ const SinglePostBlock = ({
                 <div className='inner-post-author-infos'>
                   <GatsbyImage
                     image={imageQuery}
-                    alt={"Boileplate Holder"}
+                    alt={"Imagem do Perfil do Autor"}
                     placeholder={"NONE"}
                     critical='true'
                     className={"author-img"}
+                    width={74}
+                    height={74}
                   />
                   <div className='innerauthor-infos'>
                     <p className='post-author-name' rel='author'>
@@ -84,10 +86,12 @@ const SinglePostBlock = ({
             <div>
               <GatsbyImage
                 image={imageHighlightQuery}
-                alt={"Imagem em Destaque"}
+                alt={`Imagem em destaque da postagem: ${title}`}
                 placeholder={"NONE"}
                 critical='true'
                 className={"highlight-img"}
+                widht={925}
+                height={483}
               />
             </div>
             <div

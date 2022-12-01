@@ -8,8 +8,6 @@ import PostsBlock from "@BlockBuilder/PostsBlock";
 import HeadingBlock from "@BlockBuilder/HeadingBlock";
 import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 
-import ABpopupcontainer from "../containers/ABpopupcontainer";
-
 const IndexPage = props => {
   const [btnRef, setBtnRef] = useState(1);
   const handleSetBtnRef = ref => {
@@ -182,10 +180,12 @@ const IndexPage = props => {
       <a href={link} rel='nofollow' target={"_blank"}>
         <GatsbyImage
           image={img}
-          alt={"title"}
+          alt={"Ícone de Rede Social"}
           placeholder={"NONE"}
           critical='true'
           className={" profile-socials"}
+	        width={28}
+	        height={28}
         />
       </a>
     );
@@ -198,10 +198,12 @@ const IndexPage = props => {
       logo={
         <GatsbyImage
           image={logoQuery}
-          alt={"title"}
+          alt={"Logotipo As Casamenteiras"}
           placeholder={"NONE"}
           critical='true'
           className={""}
+          width={450}
+          height={230}
         />
       }
       opt={{
@@ -220,6 +222,8 @@ const IndexPage = props => {
             placeholder={"NONE"}
             critical='true'
             className={"whatsMe"}
+            width={70}
+            height={70}
           />
         ),
         badgesQuestion: (
@@ -229,6 +233,8 @@ const IndexPage = props => {
             placeholder={"NONE"}
             critical='true'
             className={"whatsMe"}
+            width={70}
+            height={70}
           />
         ),
       }}
@@ -309,6 +315,8 @@ const IndexPage = props => {
                         placeholder={"NONE"}
                         critical='true'
                         className={"video-promo"}
+                        width="250"
+                        height="167"
                       />
                       </a>
                 </div>
@@ -403,6 +411,8 @@ const IndexPage = props => {
                         placeholder={"NONE"}
                         critical='true'
                         className={"diamond-img"}
+                        width={160}
+                        height={160}
                         style={{
                           WebkitMaskImage: `url(${diamondQuery.images.fallback.src})`,
                         }}
@@ -413,6 +423,8 @@ const IndexPage = props => {
                         placeholder={"NONE"}
                         critical='true'
                         className={"diamond-background"}
+                        width={190}
+                        height={190}
                         style={{
                           width: "190px",
                           height: "190px",
@@ -535,6 +547,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
+               width={90}
+            height={90}
             />
             <h3>Empreendedorismo Feminino</h3>
           </Link>
@@ -545,6 +559,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
+               width={90}
+            height={90}
             />
             <h3>Amor LGBTQIA+</h3>
           </Link>
@@ -555,6 +571,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
+               width={90}
+            height={90}
             />
             <h3>Vidas Negras Importam</h3>
           </Link>
@@ -565,6 +583,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
+               width={90}
+            height={90}
             />
             <h3>Comércio Local</h3>
           </Link>
@@ -575,6 +595,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
+               width={90}
+            height={90}
             />
             <h3>Hackativismo</h3>
           </Link>
