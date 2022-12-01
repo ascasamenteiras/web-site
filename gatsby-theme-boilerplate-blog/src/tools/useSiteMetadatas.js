@@ -68,7 +68,7 @@ export const useSiteMetadatas = () =>
           relativePath: { eq: "logo-fundo-transparent-900-w.png" }
         ) {
           childrenImageSharp {
-            gatsbyImageData(width: 900, quality: 100)
+            gatsbyImageData(width: 450, quality: 100)
           }
         }
         profileOficial: file(
@@ -106,8 +106,8 @@ export const useSiteMetadatas = () =>
         imgHolder: file(relativePath: { eq: "oval-logo.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 600
-              height: 600
+              width: 160
+              height: 160
               placeholder: NONE
               quality: 100
             )
@@ -119,15 +119,15 @@ export const useSiteMetadatas = () =>
               width: 1200
               height: 627
               placeholder: NONE
-              quality: 90
+              quality: 85
             )
           }
         }
         githubImg: file(relativePath: { eq: "github.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -137,8 +137,8 @@ export const useSiteMetadatas = () =>
         instaImg: file(relativePath: { eq: "insta.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -148,8 +148,8 @@ export const useSiteMetadatas = () =>
         twitterImg: file(relativePath: { eq: "twitter.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -159,8 +159,8 @@ export const useSiteMetadatas = () =>
         whatsImg: file(relativePath: { eq: "whats.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -170,8 +170,8 @@ export const useSiteMetadatas = () =>
         zankyouImg: file(relativePath: { eq: "zankyou.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -181,8 +181,8 @@ export const useSiteMetadatas = () =>
         youTubeImg: file(relativePath: { eq: "youtube.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -192,8 +192,8 @@ export const useSiteMetadatas = () =>
         deezerImg: file(relativePath: { eq: "deezer.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -203,8 +203,8 @@ export const useSiteMetadatas = () =>
         spotifyImg: file(relativePath: { eq: "spotify.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -215,8 +215,8 @@ export const useSiteMetadatas = () =>
         iTunesImg: file(relativePath: { eq: "itunes.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -228,8 +228,8 @@ export const useSiteMetadatas = () =>
         ) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -240,8 +240,8 @@ export const useSiteMetadatas = () =>
         faceImg: file(relativePath: { eq: "facebook.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 120
-              height: 120
+              width: 44
+              height: 44
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
@@ -270,25 +270,13 @@ export const useSiteMetadatas = () =>
             )
           }
         }
-        bandeiraQuestion: file(
-          relativePath: { eq: "bandeira-pergunta.png" }
-        ) {
-          childrenImageSharp {
-            gatsbyImageData(
-              width: 300
-              height: 300
-              placeholder: NONE
-              quality: 100
-            )
-          }
-        }
         bandeiraFeminista: file(
           relativePath: { eq: "bandeira-feminista.png" }
         ) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 300
-              height: 300
+              width: 90
+              height: 90
               placeholder: NONE
               quality: 100
             )
@@ -297,8 +285,8 @@ export const useSiteMetadatas = () =>
         bandeiraLgbtqia: file(relativePath: { eq: "bandeira-lgbtqia+.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 300
-              height: 300
+              width: 90
+              height: 90
               placeholder: NONE
               quality: 100
             )
@@ -309,8 +297,8 @@ export const useSiteMetadatas = () =>
         ) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 300
-              height: 300
+              width: 90
+              height: 90
               placeholder: NONE
               quality: 100
             )
@@ -321,18 +309,8 @@ export const useSiteMetadatas = () =>
         ) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 300
-              height: 300
-              placeholder: NONE
-              quality: 100
-            )
-          }
-        }
-        bandeiraWhats: file(relativePath: { eq: "bandeira-whats.png" }) {
-          childrenImageSharp {
-            gatsbyImageData(
-              width: 300
-              height: 300
+              width: 90
+              height: 90
               placeholder: NONE
               quality: 100
             )
@@ -343,8 +321,30 @@ export const useSiteMetadatas = () =>
         ) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 300
-              height: 300
+              width: 90
+              height: 90
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
+        bandeiraQuestion: file(
+          relativePath: { eq: "bandeira-pergunta.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 70
+              height: 70
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
+        bandeiraWhats: file(relativePath: { eq: "bandeira-whats.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 70
+              height: 70
               placeholder: NONE
               quality: 100
             )
