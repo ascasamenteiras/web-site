@@ -15,7 +15,7 @@ featuredImage: ../posts/images/larissa-renan-dia.jpg
 homeHighlight: false
 homeHighlightRelated: false
 homeHighlightRelatedList: true
-questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
+questions: ["Qual é o primeiro passo para um cerimonial perfeito?:O primeiro passo para organizar o seu casamento é ter uma reunião com As Casamenteiras para debater o evento como um todo, fazer o briefing e explicar o método da assessoria d'As Casamenteiras." ]
 ---
 
 O serviço de assessoria e cerimonial do dia é relativo ao pacote básico dos serviços d'As Casamenteiras. Abaixo um resumo dos principais pontos desse método de contratação.
@@ -34,7 +34,7 @@ Nessa fase inicial é liberado o site do casal para personalização, exemplo: P
 
 O atendimento a distância via app para monitoramento do planejamento facilita o acompanhamento do andamento da organização. Pri Barbosa estará à disposição para todos os casos.
 
-As Casamenteiras cria um grupo no WhatsApp com todos os fornecedores envolvidos para compartilhamento dos roteiros e cronograma. Além disso, estaremos em contato constante com cada fornecedor para construção do cronograma de chegada e montagem do local do casamento e festa.
+As Casamenteiras cria um grupo no WhatsApp com todos os fornecedores envolvidos para compartilhamento dos roteiros e cronograma. Além disso, estaremos em contato constante com cada fornecedor para construção do cronograma de chegada e montagem no local do casamento e festa.
 
 A reunião on-line 30 dias antes do casamento marca o começo da contagem regressiva. Todos os detalhes da cerimônia são acertados.
 

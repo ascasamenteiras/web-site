@@ -14,7 +14,7 @@ featuredImage: ../posts/images/orgulho-lgbtqia.jpg
 homeHighlightRelatedList: true
 homeHighlight: false
 homeHighlightRelated: false
-questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
+questions: ["Qual a posição d'As Casamenteiras em relação as causas sociais?:Nós d'As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país. Condenamos veementemente qualquer tipo de ato discriminatório contra quaisquer bandeiras em especial discriminação contra empreendedoras, LGBTQIA+, afrodescendentes e entre fornecedores locais da mais diversas configurações sócio-econômicas.", "Quais as bandeiras defendidas pelAs Casamenteiras?:Empreendedorismo Feminino, LGBTQIAP+, Vidas Negras Importam, Comércio Local e Hackativismo."]
 ---
 
 Nós d'As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
@@ -34,7 +34,7 @@ O empreendedorismo feminino se entende como negócios idealizados e comandados p
 
 A equiparação salarial e de ganhos também é um importante meio de empoderamento e passa pelo mundo dos prestadores de serviços cerimoniais onde os casais têm a oportunidade de contratar uma empresa que possui não apenas uma finalidade capital, mas com valor social fortemente agregado às empreendedoras.
 
-## LGBTQIA+
+## LGBTQIAP+
 
 Como prestadoras de serviço e amantes de um bom casamento, repleto de amor e felicidade, nós d'As Casamenteiras realizamos cerimônias entre casais do mesmo gênero e demais configurações.
 

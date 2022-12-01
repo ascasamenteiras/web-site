@@ -6,7 +6,7 @@ description: Nosso time de cerimonialistas é comandado por Pri Barbosa que poss
 slug: cerimonialistas
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 date: 2022-08-01T08:30:00+00:00
-questions: ["Nosso time de cerimonialistas é comandado por quem?:Pri Barbosa que possui mais de 10 anos de experiência na área.","duas:perguntas","novas:perguntas"]
+questions: ["O que é o cerimonial de casamento?:O cerimonial é uma atividade sócio-cultural, que reúne protocolos tanto por meio da tradição, quanto por meio de declarações públicas para consagrar ritos da lei e celebrar o amor.","O que faz uma cerimonialista?:A cerimonialista é a profissional responsável por organizar os protocolos e atos da cerimônia do casamento, no caso de uma casamenteira. A profissional elabora previamente roteiros e cronogramas do evento. Ela é a responsável por conduzir o andamento do cortejo. É responsável pela direção geral, que envolve a acomodação, auxílio e orientação de todos os presentes."]
 ---
 
 Nosso time de cerimonialistas:

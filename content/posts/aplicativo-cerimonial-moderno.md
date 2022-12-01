@@ -15,7 +15,7 @@ featuredImage: ../posts/images/mulher-negra-aplicativo.jpg
 homeHighlight: false
 homeHighlightRelated: true
 homeHighlightRelatedList: false
-questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
+questions: [    "Qual é a principal dificuldade na organização de um casamento?:Ser organizada e manter a calma. É importante usar a tecnologia também. Há uma infinidades de desafios, por isso talvez uma das principais dificuldades é a de não perceber que esse é um serviço para uma profissional casamenteira. Alguns casais optam por deixar de lado esse que é o serviço mais importante da festa e fazendo assim pagam mais caro nos contratos fechados, que por sua vez não possuem uma mão organizadora em cima de cada detalhe de cada fornecimento dos serviços deste evento único."]
 ---
 
 As Casamenteiras usa tecnologia de ponta para ajudar na organização do seu casamento. O aplicativo de planejamento é a forma mais inovadora de garantir a organização de cada detalhe do seu casamento.

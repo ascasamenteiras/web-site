@@ -14,7 +14,8 @@ featuredImage: ../posts/images/jantar-luxo.jpg
 homeHighlight: true
 homeHighlightRelated: false
 homeHighlightRelatedList: false
-questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
+questions: ["Como um casamento desorganizado pode atrapalhar o grande dia? O que pode dar de errado?:Aqui n'As Casamenteiras nós sempre vamos perguntar se o noivo ou a noiva quer uma água, uma foto, pedidos simples na hora da celebração. Para garantir que tudo saia bem, é necessário planejamento e ensaio. Alguns exemplos do que pode dar errado são: convidado ser maltratado por fornecedor; fotos protocolares comprometidas por causa de layout não revisado; bolo sem decoração.",    "O que vai na lista de um cerimonial de casamento?:Existém diversas listas em um cerimonial. As listas podem ser feitas para o carro da noiva, a recepção, conferência da decoração do cortejo, o cortejo, noiva, noivo, celebração, entradas e saídas, músicas, fotos protocolares, discursos e brinde. O casal ainda pode escolher fazer uma dança. Mais vale lembrar que os momentos mais importantes são feitos de atenção aos protocolos e às pessoas do cortejo. Como costumamos a dizer aqui \"Lapelas e Sorrisos\". Tranquilidade e confiança também fazem parte dessa lista e são lembrados pela equipe d'As Casamenteiras no momento do casamento. ",
+]
 ---
 
 Fazer a assessoria de casamento com As Casamenteiras significa não ter estresse e sim alegria. Cada etapa do planejamento e cada decisão tomada é uma vitória. Esses momentos também fazem parte da grande festa.

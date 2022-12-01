@@ -6,7 +6,7 @@ description: Depoimentos dos nossos casais sobre o cerimonial e assessoria d'As 
 slug: nossos-casais
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 date: 2022-07-11T19:50:00+00:00
-questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
+questions: ["Quantos casamentos As Casamenteiras já realizaram?:Mais de 50."]
 ---
 
 Após anos de experiências maravilhosas, juntamos alguns dos tesouros mais sagrados em forma de gratidão e depoimento. Abaixo alguns poucos, e não os mais importantes, mas sim alguns depoimentos escolhidos aleatoriamente, uma vez que seria injusto escolher o mais lindo.

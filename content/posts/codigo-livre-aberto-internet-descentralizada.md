@@ -41,4 +41,6 @@ Não é pelo dinheiro, apesar de estar inserido em uma indústria multibilionár
 
 ## E O Trabalhador, Ganha O Quê?
 
-O programador que tem o seu código difundido
+O programador que tem o seu código difundido...
+
+Em desenvolvimento.

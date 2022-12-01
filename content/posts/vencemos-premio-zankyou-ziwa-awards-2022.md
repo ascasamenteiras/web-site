@@ -13,6 +13,7 @@ featuredImage: ../posts/images/ricardo-paulo-marli.jpg
 homeHighlightRelatedList: false
 homeHighlight: true
 homeHighlightRelated: false
+questions: ["Por que contratar uma assessora de casamento? Qual é a real importância de uma casamenteira?:Nós sabemos como a organização, manutenção e desenvolvimento de um evento pode ser cansativo e até frustrante. Há uma infinidade de problemas fora do nosso alcance que enfrentaremos. Desde uma crise nacional, até mesmo a manutenção do sistema da rede elétrica no dia do casamento. Esses são alguns dos muitos casos inesperados que podem acontecer, além de todos os protocolos."]
 ---
 
 Estamos imensamente animadas e surpresas por termos sidos escolhidas como as melhores Casamenteiras do Estado de São Paulo e do Brasil, nesse badaladíssimo prêmio internacional promovido pela [Zankyou](https://www.zankyou.com.br).
