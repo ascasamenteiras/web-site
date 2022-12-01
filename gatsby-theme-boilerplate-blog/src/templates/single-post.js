@@ -22,7 +22,6 @@ const SinglePost = ({ location, pageContext }) => {
   const post = pageContext.thePost;
   const questions = pageContext.postQuestion
   const defaultQuestions = site.siteMetadata.questions
-console.log(questions)
   return (
     <MainTemplateWrapper
       backgroundImage={{

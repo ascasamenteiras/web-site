@@ -12,8 +12,6 @@ const MainMenuContainer = ({
     ? "main-nav menu-state-" + isVisibleClass
     : "main-nav  main-header main-header-" + isVisibleClass;
   const labelledby = isMobile ? "check-toggle-icon" : null;
-  console.log("isMobileisMobile");
-  console.log(isMobile);
   return (
     <nav
       className={navClasses}

@@ -56,9 +56,7 @@ const MainMenuList = ({
       </li>
     );
   }
-  console.log(isMobile);
   if (isMobile === true) {
-    console.log("oi amigo");
     return (
       <div className='header-columns toggle-menu'>
         <p className='menu-shop-bag-mobile'>{userIcon}</p>

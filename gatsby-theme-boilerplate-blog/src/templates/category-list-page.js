@@ -79,10 +79,6 @@ const CategoryListPage = props => {
             }
           }
         });
-        console.log(
-          "myArticlesCategorizedmyArticlesCategorizedmyArticlesCategorized"
-        );
-        console.log(myArticlesCategorized);
         return (
           <MainTemplateWrapper
             backgroundImage={{

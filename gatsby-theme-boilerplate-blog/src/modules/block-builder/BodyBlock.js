@@ -3,7 +3,6 @@ import SeoContainer from "../../containers/SeoContainer";
 
 const BodyBlock = ({ children, opt }) => {
   const { options } = opt;
-  console.log(options);
   return (
     <div
       className={options.classes}

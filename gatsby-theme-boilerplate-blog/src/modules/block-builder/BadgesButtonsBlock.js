@@ -16,9 +16,8 @@ const BadgesButtonsBlock = ({opt, questions}) => {
 	});
 const choosenQuestion = questionsArray[choosedQuestionState][0]
 const choosenAnswer = questionsArray[choosedQuestionState][1]
-const questionElement = choosenQuestion ? <a className="chat-question">{choosenQuestion}</a> : ''
-const questionAnswer = choosenAnswer ? <a className="chat-answer">{choosenAnswer}</a> : ''
-console.log(opt.questions)
+const questionElement = choosenQuestion ? <div className="chat-question">{choosenQuestion}</div> : ''
+const questionAnswer = choosenAnswer ? <p className="chat-answer">{choosenAnswer}</p> : ''
   return (
     <>
 
