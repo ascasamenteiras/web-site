@@ -264,12 +264,9 @@ exports.createPages = ({ graphql, actions }) => {
         businessInfos.siteUrl +
         node.frontmatter.featuredImage.childrenImageSharp[0].gatsbyImageData
           .images.fallback.src;
-      console.log(node.htmlAst)
       node.htmlAst.children.map(child => {
         if (child.children && child.children[0]) {
           if (child.children[0].tagName === "img") {
-            console.log('child AQUIIII')
-            console.log(child)
             imgsObj.push(child.children[0].properties.src);
           }
         }

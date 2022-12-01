@@ -39,7 +39,7 @@ console.log(opt.questions)
     </div>
 
      <div className={`AskMeWrapper badgeClass question-move-${questionState}`}>
-        <a
+        <div
           href='#'
           rel='nofollow'
           target={"_blank"}
@@ -47,8 +47,8 @@ console.log(opt.questions)
           onClick={(e)=>handleQuestionBadgeClick(e)}
         >
           {opt.badgesQuestion}
-        </a>
-        <a
+        </div>
+        <div
           href='#'
           rel='nofollow'
           target={"_blank"}
@@ -56,7 +56,7 @@ console.log(opt.questions)
           onClick={(e)=>handleQuestionBadgeClick(e)}
         >
           {opt.badgesQuestion}
-        </a>
+        </div>
       </div>
        
       <div className={`whatsMeWrapper badgeClass whats-move-${questionState}`}>
