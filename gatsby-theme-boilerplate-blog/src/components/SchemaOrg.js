@@ -38,7 +38,7 @@ export default React.memo(
     const orgSchema = [
       {
         "@type": ["Organization"],
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         name: "As Casamenteiras",
         url: siteUrl,
         email: email,
@@ -58,7 +58,7 @@ export default React.memo(
     const webSiteSchema = [
       {
         "@type": "WebSite",
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         name: title,
         description: brandDescription,
         url: siteUrl,
@@ -85,7 +85,7 @@ export default React.memo(
 
     const articleSchema = [
       {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "NewsArticle",
         name: title,
         headline: description.substring(0, 130),
