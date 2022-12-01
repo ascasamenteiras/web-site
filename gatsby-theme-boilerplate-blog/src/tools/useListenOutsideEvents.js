@@ -35,16 +35,18 @@ const useListenOutsideEvents = ({
   };
 
   useEffect(() => {
-    if (mouseDown || outsideClick)
+
+    if (mouseDown || outsideClick && window !== "undefined")
       document.addEventListener("mousedown", handleClickOutside);
     if (resize) window.addEventListener("resize", handleWindowsEvent);
     if (scroll) window.addEventListener("scroll", handleWindowsEvent);
     return () => {
-      if (mouseDown || outsideClick)
+      if (mouseDown || outsideClick && window !== "undefined")
         document.removeEventListener("mousedown", handleClickOutside);
       if (resize) window.removeEventListener("resize", handleWindowsEvent);
       if (scroll) window.removeEventListener("scroll", handleWindowsEvent);
     };
+    
   });
 };
 
