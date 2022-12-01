@@ -2,9 +2,9 @@
 topology: posts
 title: Mini Wedding
 headline: Está pensando em realizar um casamento ao estilo mini wedding? As Casamenteiras tem o serviço perfeito para você.
-date: 2022-10-25T09:06:00+00:00
+date: 2022-12-01T08:30:00+00:00
 updatedAt: 2022-10-25T09:06:20+00:00
-createdAt: 2022-10-25T09:06:00+00:00
+createdAt: 2022-12-01T08:30:00+00:00
 author: Equipe As Casamenteiras
 categories:
   - mini wedding
