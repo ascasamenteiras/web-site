@@ -244,7 +244,7 @@ const IndexPage = props => {
           Assessoria e Cerimonial
         </HeadingBlock>
 
-        <Row opt={{ classes: "home-infos", isBoxed: true, role: "something" }}>
+        <Row opt={{ classes: "home-infos", isBoxed: true }}>
           <section className='main-page-wrapper'>
             <Row opt={{ classes: "main-row", numColumns: 2 }}>
               <div className='main-article'>
