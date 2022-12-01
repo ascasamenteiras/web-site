@@ -591,6 +591,10 @@ sup {
 }
 
 .main-article {
+	.main-headings {
+		display: flex;
+		flex-direction: column-reverse;
+	}
 	h4 {
 		a {
 			color: $primary_lightVar;

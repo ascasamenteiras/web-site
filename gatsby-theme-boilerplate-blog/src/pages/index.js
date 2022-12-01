@@ -248,6 +248,13 @@ const IndexPage = props => {
           <section className='main-page-wrapper'>
             <Row opt={{ classes: "main-row", numColumns: 2 }}>
               <div className='main-article'>
+<div className="main-headings">
+              <h1>
+                  <Link to={homeHighlightPost[0].node.fields.slug}>
+                    {homeHighlightPost[0].node.frontmatter.title}
+                  </Link>
+                </h1>
+                
                 <h4>
                   {homeHighlightPost[0].node.frontmatter.categories.map(
                     (el, key) => {
@@ -263,11 +270,7 @@ const IndexPage = props => {
                     }
                   )}
                 </h4>
-                <h1>
-                  <Link to={homeHighlightPost[0].node.fields.slug}>
-                    {homeHighlightPost[0].node.frontmatter.title}
-                  </Link>
-                </h1>
+                </div>
                 <Link
                   to={homeHighlightPost[0].node.fields.slug}
                   className='main-article-caption'
