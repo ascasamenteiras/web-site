@@ -25,12 +25,12 @@ console.log(opt.questions)
    <div className={`chat-questions-wrapper badgeClass question-hide-${questionState} question-move-${questionState}`}>
       <p className="question-box-wrapper">
         {questionsArray.map((question,indx) => {
-          return <a 
+          return <button 
             className="chat-question" 
             key={indx} 
             id={indx} 
             onClick={(event)=>handleQuestionLinkClick(event)} 
-          >{question[0]}</a>})}
+          >{question[0]}</button>})}
       </p>
       <p className="chat-box-wrapper">
         {questionElement || null}
