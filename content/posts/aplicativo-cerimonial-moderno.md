@@ -2,7 +2,7 @@
 topology: posts
 title: Aplicativo para cerimonial moderno
 headline: Com um aplicativo moderno o casal tem acesso a todas as informações do evento, centralizadas em um só lugar.
-date: 2022-12-01T08:30:00+00:00
+date: 2022-12-01T08:40:00+00:00
 createdAt: 2022-07-10T22:17:20+00:00
 updatedAt: 2022-12-01T08:30:00+00:00
 author: Equipe As Casamenteiras
