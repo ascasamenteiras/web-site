@@ -43,7 +43,7 @@ Por que contratar uma assessora de casamento? Qual é a real importância de uma
 
 Nós sabemos como a organização, manutenção e desenvolvimento de um evento pode ser cansativo e até frustrante. Há uma infinidade de problemas fora do nosso alcance que enfrentaremos. Desde uma crise nacional, até mesmo a manutenção do sistema da rede elétrica no dia do casamento. Esses são alguns dos muitos casos inesperados que podem acontecer, além de todos os protocolos.
 
-Assessoria não é só problemas, a escolha de uma assessora experiente em negociações, pode te render até **30% de desconto** no valor dos contratos de todo o casamento. Seria bom ter essa economia? O que o casal faria com o dinheiro que Priscilla Barbosa conseguiria com seu poder de negociação? 
+Assessoria não são só problemas, a escolha de uma assessora experiente em negociações, pode te render até **30% de desconto** no valor dos contratos de todo o casamento. Seria bom ter essa economia? O que o casal faria com o dinheiro que Priscilla Barbosa conseguiria com seu poder de negociação? 
 
 ## O Serviço Premiado Gestão 360 d'As Casamenteiras
 

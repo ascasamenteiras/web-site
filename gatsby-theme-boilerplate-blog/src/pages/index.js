@@ -296,18 +296,21 @@ const IndexPage = props => {
                     })}
                   </ul>
 
-                  <ABpopupcontainer
+                  {/* <ABpopupcontainer
                     heading={`Vai Casar?`}
                     buttonContent={
-                      <GatsbyImage
+                      
+                    }
+                  /> */}
+                <a className="home-video-button" href="https://www.youtube.com/watch?v=07COygyW6W0" target="_blank" rel="nofollow">
+                  <GatsbyImage
                         image={vaiCasarGetImg}
                         alt={"title"}
                         placeholder={"NONE"}
                         critical='true'
                         className={"video-promo"}
                       />
-                    }
-                  />
+                      </a>
                 </div>
               </div>
               <div className='home-profile-wrapper'>
