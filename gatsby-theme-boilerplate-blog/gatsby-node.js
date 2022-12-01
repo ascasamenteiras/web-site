@@ -70,7 +70,7 @@ exports.createPages = ({ graphql, actions }) => {
                     width: 1200
                     height: 627
                     placeholder: NONE
-                    quality: 90
+                    quality: 80
                   )
                 }
               }

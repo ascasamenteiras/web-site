@@ -653,10 +653,10 @@ export const queryAtividade = graphql`
             featuredImage {
               childrenImageSharp {
                 gatsbyImageData(
-                  width: 400
-                  height: 200
+                  width: 350
+                  height: 175
                   placeholder: DOMINANT_COLOR
-                  quality: 100
+                  quality: 80
                 )
               }
             }
