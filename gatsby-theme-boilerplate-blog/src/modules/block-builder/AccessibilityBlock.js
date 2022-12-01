@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 const AccessibilityBlock = () => (
   <>
+{/*   
     <Link
       data-trackable="a11y-skip-to-help"
       className="non-layout"
@@ -29,7 +30,8 @@ const AccessibilityBlock = () => (
       to="/#site-footer"
     >
       Ir para informações de rodapé
-    </Link>
+    </Link> */}
+
   </>
 )
 
