@@ -42,7 +42,7 @@ const Seo = ({
         titleTemplate={`%s - ${siteTitle}`}
       >
         <title>{title}</title>
-        <meta name="robots" content="follow" />
+        <meta name="robots" content="index, follow" />
         <meta name='description' content={metaDescription} />
         <meta name='image' content={cardImagesrc || featuredImage} />
         <meta name='keywords' content={keywords.map(e => e)} />

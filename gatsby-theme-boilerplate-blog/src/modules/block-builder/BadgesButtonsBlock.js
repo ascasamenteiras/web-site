@@ -22,7 +22,7 @@ const questionAnswer = choosenAnswer ? <p className="chat-answer">{choosenAnswer
     <>
 
    <div className={`chat-questions-wrapper badgeClass question-hide-${questionState} question-move-${questionState}`}>
-      <p className="question-box-wrapper">
+      <div className="question-box-wrapper">
         {questionsArray.map((question,indx) => {
           return <button 
             className="chat-question" 
@@ -30,11 +30,11 @@ const questionAnswer = choosenAnswer ? <p className="chat-answer">{choosenAnswer
             id={indx} 
             onClick={(event)=>handleQuestionLinkClick(event)} 
           >{question[0]}</button>})}
-      </p>
-      <p className="chat-box-wrapper">
+      </div>
+      <div className="chat-box-wrapper">
         {questionElement || null}
         {questionAnswer || null}
-      </p>
+      </div>
     </div>
 
      <div className={`AskMeWrapper badgeClass question-move-${questionState}`}>

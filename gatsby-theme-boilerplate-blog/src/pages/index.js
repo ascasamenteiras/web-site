@@ -255,7 +255,7 @@ const IndexPage = props => {
                   </Link>
                 </h1>
                 
-                <h4>
+                <span className="heading-categorie">
                   {homeHighlightPost[0].node.frontmatter.categories.map(
                     (el, key) => {
                       return (
@@ -269,7 +269,7 @@ const IndexPage = props => {
                       );
                     }
                   )}
-                </h4>
+                </span>
                 </div>
                 <Link
                   to={homeHighlightPost[0].node.fields.slug}

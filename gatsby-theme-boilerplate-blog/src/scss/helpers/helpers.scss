@@ -595,7 +595,7 @@ sup {
 		display: flex;
 		flex-direction: column-reverse;
 	}
-	h4 {
+	.heading-categorie {
 		a {
 			color: $primary_lightVar;
 			font-size: 20px;
@@ -909,6 +909,7 @@ sup {
 			border-radius: 5px;
 			font-size: 13px;
 			color: #085785;
+			font-family: $third__font;
 		}
 	}
 }

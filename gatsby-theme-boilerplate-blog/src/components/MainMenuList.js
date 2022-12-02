@@ -12,10 +12,10 @@ const MainMenuList = ({
 }) => {
   if (list.item.href && isMobile !== true) {
     return (
-      <li key={indx} role='none'>
+      <li key={indx} role='presentation'>
         <a
           href={list.item.href}
-          role={isMobile ? "menuitem" : null}
+          role={"menuitem"}
           itemProp='url'
           title={list.item.label}
           aria-label={`Acesso a página: ${list.item.label}, fora do websítio da EMPRESA`}
@@ -27,10 +27,10 @@ const MainMenuList = ({
   }
   if (list.item.to && isMobile !== true) {
     return (
-      <li key={indx} role='none'>
+      <li key={indx} role='presentation'>
         <Link
           to={list.item.to}
-          role={isMobile ? "menuitem" : null}
+          role={"menuitem"}
           itemProp='url'
           title={list.item.label}
           aria-label={`Acesso a página: ${list.item.label}, no websítio da EMPRESA`}
