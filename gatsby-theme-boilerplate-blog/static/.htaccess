@@ -73,9 +73,3 @@
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
   Header append Vary User-Agent
 </IfModule>
-
-<IfModule mod_rewrite.c>
-RewriteEngine On
-
-RedirectMatch 301 /vencemos-premio-zankyou-ziwa-awards-2022/ /vencemos-premio-zankyou-2022/
-</IfModule>

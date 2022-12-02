@@ -27,8 +27,19 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+  const { createRedirect } = actions;
+		
+	createRedirect({
+    fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
+    toPath: `/vencemos-premio-zankyou-2022`,
+  });
+
+	createRedirect({
+    fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
+    toPath: `/vencemos-premio-zankyou-2022/`,
+  });
 
   return graphql(`
     {

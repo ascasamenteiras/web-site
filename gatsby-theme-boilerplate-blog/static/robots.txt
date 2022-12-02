@@ -4,6 +4,8 @@
 
 User-agent: *
 Allow: /
+
+Disallow: /vencemos-premio-zankyou-ziwa-awards-2022/
 Disallow: /rsvp-contato/
 Disallow: /documentacao/
 Disallow: /3-usos-em-producao-para-o-nuktpls-boilerplate/
