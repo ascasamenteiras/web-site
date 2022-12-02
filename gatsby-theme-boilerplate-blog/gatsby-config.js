@@ -136,6 +136,7 @@ module.exports = {
     //     },
     //   },
     // },
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
