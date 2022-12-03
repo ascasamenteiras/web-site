@@ -30,6 +30,37 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const { createRedirect } = actions;
+
+  const redirectsArray = [
+    {
+      fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
+      toPath: `/vencemos-premio-zankyou-2022`
+    },
+    {
+      fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
+      toPath: `/vencemos-premio-zankyou-2022/`
+    },
+    {
+      fromPath: `/rsvp-contato`,
+      toPath: `/contato`
+  },
+    {
+      fromPath: `/rsvp-contato/`,
+      toPath: `/contato/`
+  }
+  ]
+
+  redirectsArray.forEach(redirect => {
+    createRedirect({
+      fromPath: redirect.fromPath,
+      toPath: redirect.toPath,
+    });
+    console.log("redirect criado com sucesso")
+    console.log('redirect.fromPath::::')
+    console.log(redirect.fromPath)
+    console.log('redirect.toPath::::')
+    console.log(redirect.toPath)
+  });
 		
 	createRedirect({
     fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
@@ -39,6 +70,16 @@ exports.createPages = async ({ graphql, actions }) => {
 	createRedirect({
     fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
     toPath: `/vencemos-premio-zankyou-2022/`,
+  });
+
+	createRedirect({
+    fromPath: `/rsvp-contato`,
+    toPath: `/contato`,
+  });
+
+	createRedirect({
+    fromPath: `/rsvp-contato/`,
+    toPath: `/contato/`,
   });
 
   return graphql(`
