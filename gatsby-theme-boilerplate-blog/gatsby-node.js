@@ -469,21 +469,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             </style>
           </noscript>
-          <style amp-custom>
-          .i-amphtml-element{
-            position: relative;
-          .i-amphtml-element:before{
-            background: rgb(0,0,0);
-            background: linear-gradient(90deg, rgba(0,0,0,0.5018382352941176) 0%, rgba(0,0,0,0) 30%);
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: absolute;
-            left:0;
-            top: 0;
-            content: '';
-          }}
-          </style>
+         
           <script async src="https://cdn.ampproject.org/v0.js"></script>
           <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
           <link rel="canonical" href="http://example.ampproject.org/my-story.html" />
