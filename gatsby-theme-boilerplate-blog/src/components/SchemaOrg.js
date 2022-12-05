@@ -140,6 +140,14 @@ export default React.memo(
       ]
     }];
 
+    // inserir imagens todas
+    // "image": 
+    //   "@type": "ImageObject",
+    //   "url": "http://cdn.ampproject.org/leader.jpg",
+    //   "height": 2000,
+    //   "width": 800
+    
+
     return (
       <Helmet>
         {/* Schema.org tags */}

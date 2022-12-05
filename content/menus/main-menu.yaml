@@ -1,22 +1,22 @@
 menu:
-  status: true
-  name: MAIN_MENU
-  items:
-    - item:
-        label: Nossos Casais
-        to: /nossos-casais/
-    - item:
-        label: Assessoria e Cerimonial
-        to: /assessoria-cerimonial/
-    - item:
-        label: Cerimonialistas
-        to: /cerimonialistas/
-    - item:
-        label: Contato
-        to: /contato/
-    - item:
-        icon: bag
-    - item:
-        search_widget: false
-        search_label: Procure um curso
-        search_url_prefix: /cursos?search=
+    status: true
+    name: MAIN_MENU
+    items:
+        - item:
+              label: Casamentos
+              to: /casamentos/
+        - item:
+              label: Assessoria e Cerimonial
+              to: /assessoria-cerimonial/
+        - item:
+              label: Cerimonialistas
+              to: /cerimonialistas/
+        - item:
+              label: Contato
+              to: /contato/
+        - item:
+              icon: bag
+        - item:
+              search_widget: false
+              search_label: Procure um curso
+              search_url_prefix: /cursos?search=

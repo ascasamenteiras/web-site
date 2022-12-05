@@ -481,7 +481,7 @@ const IndexPage = props => {
                       Negócios pela USP-ESALQ, com título de MBA.
                     </p>
                     <p>
-                      Atuou na organização de casamentos ao ar livre conectados
+                      Atua na organização de casamentos ao ar livre conectados
                       à natureza, miniwedding, praia, igrejas, chácaras,
                       residências, destination e elopement wedding. Organiza
                       cerimônias tradicionais e modernas, tais como: religiosa

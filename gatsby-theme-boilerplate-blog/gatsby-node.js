@@ -82,6 +82,16 @@ exports.createPages = async ({ graphql, actions }) => {
     toPath: `/contato/`,
   });
 
+	createRedirect({
+    fromPath: `/nossos-casais`,
+    toPath: `/casamentos`,
+  });
+
+	createRedirect({
+    fromPath: `/nossos-casais/`,
+    toPath: `/casamentos/`,
+  });
+  
   return graphql(`
     {
       site {
@@ -254,7 +264,7 @@ exports.createPages = async ({ graphql, actions }) => {
 											<image:loc>${
                         img.substring(0, 4) === "http"
                           ? img
-                          : businessInfos.siteUrl + img
+                          : businessInfos.siteUrl + img[0]
                       }</image:loc>
 										</image:image>`;
                   })
@@ -266,7 +276,7 @@ exports.createPages = async ({ graphql, actions }) => {
 		`;
     fs.writeFileSync(`./public/page-sitemap.xml`, theXMLpages);
 
-    // xml pages
+    // xml posts
 
     const posts = result.data.allMarkdownRemark.edges;
     posts.forEach(({ node }) => {
@@ -318,9 +328,22 @@ exports.createPages = async ({ graphql, actions }) => {
           .images.fallback.src;
       node.htmlAst.children.map(child => {
         if (child.children && child.children[0]) {
-          if (child.children[0].tagName === "img") {
-            imgsObj.push(child.children[0].properties.src);
-          }
+          child.children.map(eleChild=>{
+                      if (eleChild.tagName === "span") {
+                        eleChild.children.map(grandChildEle=>{
+                          if (grandChildEle.tagName==="img") {
+                            console.log(grandChildEle.properties.alt)
+                            console.log(grandChildEle.properties.dataSrc)
+                            console.log(grandChildEle.properties.title)
+                            imgsObj.push([grandChildEle.properties.dataSrc,grandChildEle.properties.alt]);
+                          }
+                        })
+
+                      }
+
+          })
+
+
         }
       });
 
@@ -346,23 +369,197 @@ exports.createPages = async ({ graphql, actions }) => {
 					<image:image>
 						<image:loc>${item.imageSrc}</image:loc>
 					</image:image>
-						${
-              item.insideImgs.length > 0
-                ? item.insideImgs.map(img => {
-                    return `<image:image>
-											<image:loc>${
-                        img.substring(0, 4) === "http"
-                          ? img
-                          : businessInfos.siteUrl + img
-                      }</image:loc>
-										</image:image>`;
-                  })
-                : ""
-            }
+
+          ${item.insideImgs ? item.insideImgs.map(img=>{return`<image:image>
+          <image:loc>${
+            img[0].substring(0, 4) === "http"
+              ? img[0]
+              : businessInfos.siteUrl + img[0]
+          }</image:loc>
+        </image:image>`}):''}
+
+
+
 				</url>`;
         })}
 		</urlset>
 		`;
     fs.writeFileSync(`./public/post-sitemap.xml`, theXML);
+
+    
+
+    const theAmpStorie = (title,      
+      key,
+      srcImg,
+      mainText,
+      postImages) => {
+        console.log("postImages postImages postImages")
+        console.log(postImages)
+      return `<!DOCTYPE html>
+      <html amp lang="pt-BR">
+      
+        <head>
+          <meta charset="utf-8" />
+          <title>${title}</title>
+          <style amp-boilerplate>
+            body {
+              -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+              -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+              -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+              animation: -amp-start 8s steps(1, end) 0s 1 normal both
+            }
+      
+            @-webkit-keyframes -amp-start {
+              from {
+                visibility: hidden
+              }
+      
+              to {
+                visibility: visible
+              }
+            }
+      
+            @-moz-keyframes -amp-start {
+              from {
+                visibility: hidden
+              }
+      
+              to {
+                visibility: visible
+              }
+            }
+      
+            @-ms-keyframes -amp-start {
+              from {
+                visibility: hidden
+              }
+      
+              to {
+                visibility: visible
+              }
+            }
+      
+            @-o-keyframes -amp-start {
+              from {
+                visibility: hidden
+              }
+      
+              to {
+                visibility: visible
+              }
+            }
+      
+            @keyframes -amp-start {
+              from {
+                visibility: hidden
+              }
+      
+              to {
+                visibility: visible
+              }
+            }
+          </style>
+          <noscript>
+            <style amp-boilerplate>
+              body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+              }
+            </style>
+          </noscript>
+          <style amp-custom>
+          .i-amphtml-element{
+            position: relative;
+          .i-amphtml-element:before{
+            background: rgb(0,0,0);
+            background: linear-gradient(90deg, rgba(0,0,0,0.5018382352941176) 0%, rgba(0,0,0,0) 30%);
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            left:0;
+            top: 0;
+            content: '';
+          }}
+          </style>
+          <script async src="https://cdn.ampproject.org/v0.js"></script>
+          <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+          <link rel="canonical" href="http://example.ampproject.org/my-story.html" />
+      
+          <link rel="modulepreload" href="https://cdn.ampproject.org/v0.mjs" as="script" crossorigin="anonymous">
+          <link rel="preconnect" href="https://cdn.ampproject.org">
+          <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-story-1.0.js">
+      
+      
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <meta name="amp-story-generator-name" content="Web Stories for GatsbyJS">
+          <meta name="amp-story-generator-version" content="1.0.0">
+          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+      
+      
+      
+      
+      
+        </head>
+      
+        <body>
+          <amp-story id="amp-story-id" standalone live-story title="${title}" publisher="As Casamenteiras"
+            publisher-logo-src="logo.png"
+            poster-portrait-src="logo3x4.png"
+            poster-square-src="logoSquare.png"
+            poster-landscape-src="logo4x3.png">
+
+
+            <amp-story-page id="page${key}">
+              <amp-story-grid-layer template="fill">
+                <amp-img alt="${title}" src="${srcImg}" width="900" height="675"
+                  layout="responsive">
+                </amp-img>
+              </amp-story-grid-layer>
+              <amp-story-grid-layer template="vertical">
+                <h1>${title}</h1>
+              </amp-story-grid-layer>
+            </amp-story-page>
+      
+
+            ${postImages.map((img,indx)=>{return`
+            <amp-story-page id="page${indx+1}">
+            <amp-story-grid-layer template="fill">
+              <amp-img alt="${img[1]}" src="${img[0]}" width="900" height="675"
+                layout="responsive">
+              </amp-img>
+            </amp-story-grid-layer>
+            <amp-story-grid-layer template="vertical">
+              <h1>${img[1]}</h1>
+            </amp-story-grid-layer>
+          </amp-story-page>
+            `})}
+
+
+
+          </amp-story>
+      
+        </body>
+      
+      </html>`
+    }
+
+    allFeed.map((item,key) => {
+
+      fs.writeFile(`./public/${item.slug.slice(1,-1)}.stories.amp.html`, theAmpStorie(
+        item.title,
+        key,
+        item.imageSrc,
+        'txt',
+        item.insideImgs
+        ), function (err) {
+          if (err) throw err;
+          console.log('File is created successfully.');
+        });
+
+    })
+
   });
 };

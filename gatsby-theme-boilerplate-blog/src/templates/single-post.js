@@ -6,6 +6,31 @@ import SinglePostBlock from "@BlockBuilder/SinglePostBlock";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 const SinglePost = ({ location, pageContext }) => {
+  console.log(pageContext.thePost.htmlAst.children[0])
+
+  pageContext.thePost.htmlAst.children.map(ele=>{
+    if (ele.children && ele.children[0]) {
+
+      ele.children.map(eleChild=>{
+        // console.log(eleChild)
+                  if (eleChild.tagName === "span") {
+                    // imgsObj.push(eleChild.properties.src);
+                    eleChild.children.map(grandChildEle=>{
+                      // console.log(grandChildEle.tagName)
+                      if (grandChildEle.tagName==="img") {
+                        console.log(grandChildEle.properties.alt)
+                        console.log(grandChildEle.properties.dataSrc)
+                        console.log(grandChildEle.properties.title)
+                      }
+                    })
+                  }
+
+      })
+
+
+    }
+  })
+
   const {
     imgHolder,
     bgPatternImg,
