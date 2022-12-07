@@ -403,7 +403,8 @@ exports.createPages = async ({ graphql, actions }) => {
       key,
       srcImg,
       mainText,
-      postImages) => {
+      postImages,
+      slug) => {
         console.log("postImages postImages postImages")
         console.log(postImages)
       return `<!DOCTYPE html>
@@ -483,7 +484,7 @@ exports.createPages = async ({ graphql, actions }) => {
          
           <script async src="https://cdn.ampproject.org/v0.js"></script>
           <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-          <link rel="canonical" href="https://example.ampproject.org/my-story.html" />
+          <link rel="canonical" href="${slug}" />
       
           <link rel="modulepreload" href="https://cdn.ampproject.org/v0.mjs" as="script" crossorigin="anonymous">
           <link rel="preconnect" href="https://cdn.ampproject.org">
@@ -550,7 +551,8 @@ exports.createPages = async ({ graphql, actions }) => {
         key,
         item.imageSrc,
         'txt',
-        item.insideImgs
+        item.insideImgs,
+        item.slug
         ), function (err) {
           if (err) throw err;
           console.log('File is created successfully.');
