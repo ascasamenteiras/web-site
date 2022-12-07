@@ -261,7 +261,7 @@ const IndexPage = props => {
                       return (
                         <Link
                           key={key}
-                          to={"/trends/" + el}
+                          to={"/trends/" + el + "/"}
                           className='main-article-categories'
                         >
                           {el}
