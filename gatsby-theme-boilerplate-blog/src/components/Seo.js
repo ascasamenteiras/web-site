@@ -27,8 +27,8 @@ const Seo = ({
   cardImage,
   serverUrl,
   themeColor,
-  pageQuestions
-  // articleUrl,
+  pageQuestions,
+  slug
 }) => {
   const hasBar = serverUrl?.charAt(serverUrl.length - 1);
   const servBar = hasBar === "/" ? serverUrl?.slice(0, -1) : serverUrl;
@@ -55,7 +55,7 @@ const Seo = ({
         <meta property='article:author' content={siteUrl} />
         <meta property='article:publisher' content={siteUrl} />
 
-        <meta property='og:url' content={siteUrl} />
+        <meta property='og:url' content={slug} />
         <meta property='og:site_name' content={title} />
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
