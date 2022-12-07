@@ -19,7 +19,7 @@ questions: ["Como fazer a montagem do cerimonial e festa?:As Casamenteiras cria 
 "]
 ---
 
-Dentro da assessoria e cerimonial plena (completa) todo o pacote básico está contemplado. Se vocês ainda não acessaram a página do pacote básico, façam uma visita para saber mais sobre esses detalhes visitando a página da [_Assessoria e Cerimonial Do Dia (básica)_](/assessoria-cerimonial-basica-dia).
+Dentro da assessoria e cerimonial plena (completa) todo o pacote básico está contemplado. Se vocês ainda não acessaram a página do pacote básico, façam uma visita para saber mais sobre esses detalhes visitando a página da [_Assessoria e Cerimonial Do Dia (básica)_](/assessoria-cerimonial-basica-dia/).
 
 Em cada uma das etapas da _Assessoria e Cerimonial Plena (completa)_ o foco está voltado para que a festa seja vivida desde o começo da organização, de forma plenamente e exatamente da forma sonhada. Planejar um casamento é viver o sonho antes de ele acontecer.
 

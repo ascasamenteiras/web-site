@@ -542,7 +542,7 @@ const IndexPage = props => {
             numColumns: 4,
           }}
         >
-          <Link to='/causas-apoiadas'>
+          <Link to='/causas-apoiadas/'>
             <GatsbyImage
               image={badgeFeminista}
               alt={"Empreendedorismo Feminino"}
