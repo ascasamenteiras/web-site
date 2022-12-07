@@ -12,7 +12,7 @@ Disallow: /3-usos-em-producao-para-o-nuktpls-boilerplate/
 Disallow: /corporativos/
 Disallow: /calculadora-eventos/
 Disallow: /depoimentos/
-Disallow: /casamentos/
+Disallow: /nossos-casais/
 Disallow: /category/tas-one/
 Disallow: /o-pre-moldado-para-websitios/
 Disallow: /teste-de-post/
