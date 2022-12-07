@@ -2,9 +2,9 @@ module.exports = () => {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/template.xsl"?>
   <urlset
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:image="https://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd https://www.google.com/schemas/sitemap-image/1.1 https://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
+    xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
     ${allFeed.map(item => {
       return `<url>
       <loc>${businessInfos.siteUrl}${item.slug}</loc>

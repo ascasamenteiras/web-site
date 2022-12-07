@@ -4,6 +4,8 @@ const _ = require("lodash");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const rootDir = path.join(__dirname, "../");
 const businessInfos = require("./package.json");
+// const redirectsYAML = require('../content/configs/redirects.yaml')
+
 // Adding slug field to each post
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -34,7 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const redirectsArray = [
     {
       fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
-      toPath: `/vencemos-premio-zankyou-2022`
+      toPath: `/vencemos-premio-zankyou-2022/`
     },
     {
       fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
@@ -42,12 +44,20 @@ exports.createPages = async ({ graphql, actions }) => {
     },
     {
       fromPath: `/rsvp-contato`,
-      toPath: `/contato`
-  },
+      toPath: `/contato/`
+    },
     {
       fromPath: `/rsvp-contato/`,
       toPath: `/contato/`
-  }
+    },
+    {
+      fromPath: `/nossos-casais`,
+      toPath: `/casamentos/`  
+    },
+    {
+      fromPath: `/nossos-casais/`,
+      toPath: `/casamentos/`,
+    }
   ]
 
   redirectsArray.forEach(redirect => {
@@ -60,37 +70,38 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log(redirect.fromPath)
     console.log('redirect.toPath::::')
     console.log(redirect.toPath)
+
   });
 		
-	createRedirect({
-    fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
-    toPath: `/vencemos-premio-zankyou-2022`,
-  });
+	// createRedirect({
+  //   fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
+  //   toPath: `/vencemos-premio-zankyou-2022`,
+  // });
 
-	createRedirect({
-    fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
-    toPath: `/vencemos-premio-zankyou-2022/`,
-  });
+	// createRedirect({
+  //   fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
+  //   toPath: `/vencemos-premio-zankyou-2022/`,
+  // });
 
-	createRedirect({
-    fromPath: `/rsvp-contato`,
-    toPath: `/contato`,
-  });
+	// createRedirect({
+  //   fromPath: `/rsvp-contato`,
+  //   toPath: `/contato/`,
+  // });
 
-	createRedirect({
-    fromPath: `/rsvp-contato/`,
-    toPath: `/contato/`,
-  });
+	// createRedirect({
+  //   fromPath: `/rsvp-contato/`,
+  //   toPath: `/contato/`,
+  // });
 
-	createRedirect({
-    fromPath: `/nossos-casais`,
-    toPath: `/casamentos`,
-  });
+	// createRedirect({
+  //   fromPath: `/nossos-casais`,
+  //   toPath: `/casamentos`,
+  // });
 
-	createRedirect({
-    fromPath: `/nossos-casais/`,
-    toPath: `/casamentos/`,
-  });
+	// createRedirect({
+  //   fromPath: `/nossos-casais/`,
+  //   toPath: `/casamentos/`,
+  // });
   
   return graphql(`
     {
@@ -247,9 +258,9 @@ exports.createPages = async ({ graphql, actions }) => {
     const theXMLpages = `<?xml version="1.0" encoding="UTF-8"?>
 		<?xml-stylesheet type="text/xsl" href="/template.xsl"?>
 			<urlset
-				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-				xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
-				xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+				xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+				xmlns:image="https://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd https://www.google.com/schemas/sitemap-image/1.1 https://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
+				xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 				${allPages.map(item => {
           return `<url>
 					<loc>${businessInfos.siteUrl}${item.slug}</loc>
@@ -359,9 +370,9 @@ exports.createPages = async ({ graphql, actions }) => {
     const theXML = `<?xml version="1.0" encoding="UTF-8"?>
 		<?xml-stylesheet type="text/xsl" href="/template.xsl"?>
 			<urlset
-				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-				xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
-				xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+				xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+				xmlns:image="https://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd https://www.google.com/schemas/sitemap-image/1.1 https://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
+				xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 				${allFeed.map(item => {
           return `<url>
 					<loc>${businessInfos.siteUrl}${item.slug}</loc>
@@ -472,7 +483,7 @@ exports.createPages = async ({ graphql, actions }) => {
          
           <script async src="https://cdn.ampproject.org/v0.js"></script>
           <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-          <link rel="canonical" href="http://example.ampproject.org/my-story.html" />
+          <link rel="canonical" href="https://example.ampproject.org/my-story.html" />
       
           <link rel="modulepreload" href="https://cdn.ampproject.org/v0.mjs" as="script" crossorigin="anonymous">
           <link rel="preconnect" href="https://cdn.ampproject.org">
@@ -505,7 +516,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 </amp-img>
               </amp-story-grid-layer>
               <amp-story-grid-layer template="vertical">
-                <h1>${title}</h1>
+                <h1 animate-in="fly-in-bottom">${title}</h1>
               </amp-story-grid-layer>
             </amp-story-page>
       
