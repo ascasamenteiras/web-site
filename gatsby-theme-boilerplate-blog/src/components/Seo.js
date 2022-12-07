@@ -55,6 +55,7 @@ const Seo = ({
         <meta property='article:author' content={siteUrl} />
         <meta property='article:publisher' content={siteUrl} />
 
+        <meta property='og:url' content={siteUrl} />
         <meta property='og:site_name' content={title} />
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
