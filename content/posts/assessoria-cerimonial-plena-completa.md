@@ -49,6 +49,6 @@ Por fim, fazemos o relatório de convidados presentes, avaliação e o feedback 
 
 # RSVP - Responda Por Gentileza
 
-Começem o planejamento do seu casamento respondendo o questionário para elaboração do cerimonial. Visitem a nossa página para esse contato [clicando aqui](/rsvp-contato).
+Começem o planejamento do seu casamento respondendo o questionário para elaboração do cerimonial. Visitem a nossa página para esse contato [clicando aqui](/contato/).
 
 Ou entrem em contato pelo nosso Whatsapp: [_16 99245-2437_](https://web.whatsapp.com/send?phone=5516992452437)

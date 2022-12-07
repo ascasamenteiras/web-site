@@ -1,29 +1,8 @@
 footer_menu:
-  - item: {
-      label: Cursos,
-      href: /cursos
-    }
-  - item: {
-      label: Para empresas,
-      href: /empresas
-    }
-  - item: {
-      label: FAQ,
-      href: /faq
-    }
-  - item: {
-      label: Termos de Uso,
-      href: /termos-de-uso
-    }
-  - item: {
-      label: Blog,
-      href: https://ascasamenteiras.com.br/
-    }
-  - item: {
-      label: Contato,
-      href: /contato
-    }
-  - item: {
-      label: Imprensa,
-      href: /imprensa
-    }
+  - item: { label: Cursos, href: /cursos/ }
+  - item: { label: Para empresas, href: /empresas/ }
+  - item: { label: FAQ, href: /faq/ }
+  - item: { label: Termos de Uso, href: /termos-de-uso/ }
+  - item: { label: Blog, href: https://ascasamenteiras.com.br/ }
+  - item: { label: Contato, href: /contato/ }
+  - item: { label: Imprensa, href: /imprensa/ }
