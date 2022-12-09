@@ -41,6 +41,13 @@ const SchemaOrgContainer = ({
 		version,
 	} = schemaYAML.schema[0].card
 
+	console.log('datePublished')
+	console.log(datePublished)
+	const dP = new Date(datePublished)
+	console.log('dP console !')
+	console.log(dP.setFullYear(dP.getFullYear() - 18))
+	console.log('datePublishedSchema')
+	console.log(datePublishedSchema)
 
 	let questionsArray = []
 	pageQuestions.forEach(q => {
