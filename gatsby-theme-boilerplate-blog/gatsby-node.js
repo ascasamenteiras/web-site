@@ -429,10 +429,10 @@ exports.createPages = async ({ graphql, actions }) => {
     fs.writeFileSync(`./public/webstories-sitemap.xml`, theStoriesXML);
     
 
-    const ampStoryPage = (srcImg, title,index) => `<amp-story-page id="page-${index}" auto-advance-after="7s" >
-           
+    const ampStoryPage = (srcImg, title,index) => `<amp-story-page id="page-${index}" auto-advance-after="7s" template="fill" >
   <amp-story-grid-layer template="vertical" >
-    <amp-img src="${srcImg}" alt="${title}" width="720" height="1280" layout="responsive">
+    <amp-img src="${srcImg}" alt="${title}" width="900" height="675"
+    layout="responsive">
     </amp-img>
   </amp-story-grid-layer>
     <amp-story-grid-layer class="story-page" template="vertical" >
@@ -541,10 +541,6 @@ exports.createPages = async ({ graphql, actions }) => {
           <meta name="amp-story-generator-version" content="1.0.0">
           <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
           
-
-      
-      
-      
       <style amp-custom="">
 .story-page{position:relative}
 .inner-page-wrapper{position:absolute; width: 100%; height: 40%;  
@@ -554,12 +550,30 @@ exports.createPages = async ({ graphql, actions }) => {
   bottom: 0;}
 .inner-page-wrapper h1, .inner-page-wrapper h2, .inner-page-wrapper p{color: #fff; width: 90%; margin-left: auto; margin-right: auto}
 .inner-page-wrapper h1{font-size:32px;font-weight:900;}
-.inner-page-wrapper h2{font-size:22px;font-weight:600;}
-.inner-page-wrapper p{font-size:16px;font-weight:400; width: 90%; margin-top: 20px;}
-.inner-page-wrapper h1{margin-top:50px;}
+.inner-page-wrapper h2{
+  font-size: 22px;
+    font-weight: 600;
+    background: white;
+    display: block;
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    width: 85%;
+    text-align: center;
+}
+.inner-page-wrapper p{font-size:16px;font-weight:400; width: 90%; margin-top: 20px; text-shadow: 1px 2px black;}
+.inner-page-wrapper h1{ margin-top: 50px;
+  background: white;
+  display: block;
+  color: black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  width: 85%;
+  text-align: center;}
 /*# sourceURL=amp-custom.css */</style>
         </head>
-      
         <body>
           <amp-story id="amp-story-id" standalone live-story title="${title}" publisher="As Casamenteiras"
             publisher-logo-src="logo.png"
@@ -567,42 +581,13 @@ exports.createPages = async ({ graphql, actions }) => {
             poster-square-src="logoSquare.png"
             poster-landscape-src="logo4x3.png"
             >
-
-
+                
+              ${ampStoryPage(srcImg,title,1)}
               
-            ${ampStoryPage(srcImg,title,1)}
-            
-            
-            
-
-            
-
-
-
-
-
-
-
-
-
-
-      
-
-            ${postImages.map((img,indx)=>{return ampStoryPage(img[0],img[1],indx+1)})}
-
-
-
-
-
-
-
-
-
+              ${postImages.map((img,indx)=>{return ampStoryPage(img[0],img[1],indx+2)})}
 
           </amp-story>
-      
         </body>
-      
       </html>`
     }
 
