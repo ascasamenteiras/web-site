@@ -65,12 +65,6 @@ exports.createPages = async ({ graphql, actions }) => {
       fromPath: redirect.fromPath,
       toPath: redirect.toPath,
     });
-    console.log("redirect criado com sucesso")
-    console.log('redirect.fromPath::::')
-    console.log(redirect.fromPath)
-    console.log('redirect.toPath::::')
-    console.log(redirect.toPath)
-
   });
 		
 	// createRedirect({
@@ -197,7 +191,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     width: 350
                     height: 224
                     placeholder: NONE
-                    quality: 100
+                    quality: 80
                   )
                 }
               }
@@ -207,6 +201,20 @@ exports.createPages = async ({ graphql, actions }) => {
             htmlAst
             excerpt(pruneLength: 200)
           }
+        }
+      }
+      storiesA: file(
+        relativePath: { eq: "as-casamenteiras-stories-ante-final.png" }
+      ) {
+        childrenImageSharp {
+          gatsbyImageData(width: 900, height: 675, quality: 80)
+        }
+      }
+      storiesZ: file(
+        relativePath: { eq: "as-casamenteiras-stories-final.png" }
+      ) {
+        childrenImageSharp {
+          gatsbyImageData(width: 900, height: 675, quality: 80)
         }
       }
     }
@@ -343,9 +351,7 @@ exports.createPages = async ({ graphql, actions }) => {
                       if (eleChild.tagName === "span") {
                         eleChild.children.map(grandChildEle=>{
                           if (grandChildEle.tagName==="img") {
-                            console.log(grandChildEle.properties.alt)
-                            console.log(grandChildEle.properties.dataSrc)
-                            console.log(grandChildEle.properties.title)
+                            
                             imgsObj.push([grandChildEle.properties.dataSrc,grandChildEle.properties.alt]);
                           }
                         })
@@ -450,8 +456,7 @@ exports.createPages = async ({ graphql, actions }) => {
       mainText,
       postImages,
       slug) => {
-        console.log("postImages postImages postImages")
-        console.log(postImages)
+        
       return `<!DOCTYPE html>
       <html amp lang="pt-BR">
       
@@ -586,8 +591,10 @@ exports.createPages = async ({ graphql, actions }) => {
               
               ${postImages.map((img,indx)=>{return ampStoryPage(img[0],img[1],indx+2)})}
 
-              ${ampStoryPage(businessInfos.siteUrl + '/as-casamenteiras-stories-ante-final.png','Fale com As Casamenteiras!',99)}
-              ${ampStoryPage(businessInfos.siteUrl + '/as-casamenteiras-stories-final.png',"Todo Amor Importa!",100)}
+              ${ampStoryPage(businessInfos.siteUrl + result.data.storiesA.childrenImageSharp[0].gatsbyImageData
+                .images.fallback.src,'Fale com As Casamenteiras!',99)}
+              ${ampStoryPage(businessInfos.siteUrl + result.data.storiesZ.childrenImageSharp[0].gatsbyImageData
+                .images.fallback.src,100)}
 
           </amp-story>
         </body>
