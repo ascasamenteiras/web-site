@@ -586,6 +586,9 @@ exports.createPages = async ({ graphql, actions }) => {
               
               ${postImages.map((img,indx)=>{return ampStoryPage(img[0],img[1],indx+2)})}
 
+              ${ampStoryPage(businessInfos.siteUrl + '/as-casamenteiras-stories-ante-final.png','Fale com As Casamenteiras!',99)}
+              ${ampStoryPage(businessInfos.siteUrl + '/as-casamenteiras-stories-final.png',"Todo Amor Importa!",100)}
+
           </amp-story>
         </body>
       </html>`
