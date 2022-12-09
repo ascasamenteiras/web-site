@@ -562,7 +562,7 @@ exports.createPages = async ({ graphql, actions }) => {
     width: 85%;
     text-align: center;
 }
-.inner-page-wrapper p{font-size:16px;font-weight:400; width: 90%; margin-top: 20px; text-shadow: 1px 2px black;}
+.inner-page-wrapper p{text-align:center; font-size:16px;font-weight:400; width: 90%; margin-top: 20px; text-shadow: 1px 2px black;}
 .inner-page-wrapper h1{ margin-top: 50px;
   background: white;
   display: block;
