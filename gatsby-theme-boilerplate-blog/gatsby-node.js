@@ -435,7 +435,7 @@ exports.createPages = async ({ graphql, actions }) => {
     fs.writeFileSync(`./public/webstories-sitemap.xml`, theStoriesXML);
     
 
-    const ampStoryPage = (srcImg, title,index) => `<amp-story-page id="page-${index}" auto-advance-after="7s" template="fill" >
+    const ampStoryPage = (srcImg, title,index) => `<amp-story-page id="page-${index}" auto-advance-after="7s" >
   <amp-story-grid-layer template="vertical" >
     <amp-img src="${srcImg}" alt="${title}" width="900" height="675"
     layout="responsive">
