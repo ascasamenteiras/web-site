@@ -432,14 +432,14 @@ exports.createPages = async ({ graphql, actions }) => {
     const ampStoryPage = (srcImg, title,index) => `<amp-story-page id="page-${index}" auto-advance-after="7s" >
            
   <amp-story-grid-layer template="vertical" >
-    <amp-img layout="fill" src="${srcImg}" alt="${title}" sizes="(min-width: 1024px) 64vh, 142vw" disable-inline-width="true" class="i-amphtml-layout-fill i-amphtml-layout-size-defined" i-amphtml-layout="fill">
+    <amp-img src="${srcImg}" alt="${title}" width="720" height="1280" layout="responsive">
     </amp-img>
   </amp-story-grid-layer>
     <amp-story-grid-layer class="story-page" template="vertical" >
       <div class="inner-page-wrapper">
-        <h1 class=" fill text-wrapper">As Casamenteiras</h1>
-        <h2 class=" fill text-wrapper">${title}</h2>
-        <p fill text-wrapper">@ascasamenteiras_</p>
+        <h1>As Casamenteiras</h1>
+        <h2>${title}</h2>
+        <p>@ascasamenteiras_</p>
       </div>
     </amp-story-grid-layer>
   </amp-story-page>`
@@ -547,15 +547,15 @@ exports.createPages = async ({ graphql, actions }) => {
       
       <style amp-custom="">
 .story-page{position:relative}
-.inner-page-wrapper{position:absolute; width: 100%; height: 50%; min-height: 200px;     
+.inner-page-wrapper{position:absolute; width: 100%; height: 40%;  
   background: rgb(0,0,0);
   background: linear-gradient(1deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0) 100%);
   display: block;
   bottom: 0;}
-.inner-page-wrapper h1, .inner-page-wrapper h2, .inner-page-wrapper p{color: #fff; width: 90%; margin: 0 auto}
+.inner-page-wrapper h1, .inner-page-wrapper h2, .inner-page-wrapper p{color: #fff; width: 90%; margin-left: auto; margin-right: auto}
 .inner-page-wrapper h1{font-size:32px;font-weight:900;}
 .inner-page-wrapper h2{font-size:22px;font-weight:600;}
-.inner-page-wrapper p{font-size:16px;font-weight:400; width: 90%; margin-left: auto; margin-right: auto; margin-top: 20px;}
+.inner-page-wrapper p{font-size:16px;font-weight:400; width: 90%; margin-top: 20px;}
 .inner-page-wrapper h1{margin-top:50px;}
 /*# sourceURL=amp-custom.css */</style>
         </head>
