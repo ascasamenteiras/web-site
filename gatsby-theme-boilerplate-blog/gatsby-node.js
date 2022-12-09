@@ -592,9 +592,9 @@ exports.createPages = async ({ graphql, actions }) => {
               ${postImages.map((img,indx)=>{return ampStoryPage(img[0],img[1],indx+2)})}
 
               ${ampStoryPage(businessInfos.siteUrl + result.data.storiesA.childrenImageSharp[0].gatsbyImageData
-                .images.fallback.src,'Fale com As Casamenteiras!',99)}
+                .images.fallback.src,'Fale com As Casamenteiras!', 99)}
               ${ampStoryPage(businessInfos.siteUrl + result.data.storiesZ.childrenImageSharp[0].gatsbyImageData
-                .images.fallback.src,100)}
+                .images.fallback.src, "Todo Amor Importa!",100)}
 
           </amp-story>
         </body>
