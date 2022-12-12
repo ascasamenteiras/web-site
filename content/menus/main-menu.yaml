@@ -7,7 +7,7 @@ menu:
               to: /casamentos/
         - item:
               label: Cerimonialista de Casamentos
-              to: /assessoria-cerimonial/
+              to: /cerimonialista-casamentos/
         - item:
               label: Cerimonialistas
               to: /cerimonialistas/
