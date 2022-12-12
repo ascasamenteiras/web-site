@@ -68,6 +68,14 @@ exports.createPages = async ({ graphql, actions }) => {
       fromPath: `/nossos-casais/`,
       toPath: `/casamentos/`,
     },
+    {
+      fromPath: `/assessoria-cerimonial`,
+      toPath: `/cerimonialista-casamentos/`,
+    },
+    {
+      fromPath: `/assessoria-cerimonial/`,
+      toPath: `/cerimonialista-casamentos/`,
+    },
   ];
 
   redirectsArray.forEach(redirect => {
