@@ -143,7 +143,7 @@ footer {
 	}
 	.boilerplate-heading {
 		text-align: center;
-		max-width: 40%;
+		max-width: 60%;
 		width: auto;
 		@media (max-width: 768px) {
 			font-size: 20px;
@@ -968,4 +968,113 @@ sup {
 	margin: 30px auto 0;
 	display: block;
 	width: 250px;
+}
+
+.half-div {
+	height: 100vh;
+	overflow: hidden;
+	main {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		.main-image,
+		.main-content {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-grow: 0;
+			flex-shrink: 1;
+			flex-basis: auto;
+			align-self: auto;
+			width: 50%;
+			flex-direction: column;
+			color: $cta__colorLink;
+			h3 {
+				width: 90%;
+				margin: 20px auto 0;
+				line-height: 22px;
+				font-size: 16px;
+				text-align: center;
+			}
+			p {
+				font-size: 12px;
+				width: 90%;
+				margin: 5px auto;
+				text-align: center;
+			}
+			form {
+				display: flex;
+				flex-direction: column;
+
+				.input-wrapper {
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					min-width: 120px;
+					label {
+						margin: 10px 5px 15px;
+						font-size: 16px;
+						font-weight: 900;
+						text-transform: uppercase;
+						line-height: 19px;
+						font-family: $third__font;
+					}
+					.image-button {
+						cursor: pointer;
+						width: 60px;
+						height: 60px;
+						margin: 0 auto;
+						position: relative;
+						border-radius: 5px;
+						&:before {
+							content: "";
+							display: block;
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							background-color: #011624;
+							mix-blend-mode: hue;
+							z-index: 5;
+						}
+					}
+					.success-color {
+						&:before {
+							background-color: #0b2401;
+						}
+					}
+					.error-color {
+						&:before {
+							background-color: #700000;
+						}
+					}
+				}
+				.grid-me-please {
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr;
+					width: 90%;
+					margin: 0 auto;
+				}
+			}
+		}
+		.main-image {
+			height: 100vh;
+			overflow: hidden;
+			.gatsby-image-wrapper-constrained {
+				height: 100vh;
+				background: #3387be;
+				img {
+					object-fit: contain !important;
+				}
+			}
+		}
+	}
+}
+
+.hidden {
+	display: none;
+}
+.full-width {
+	width: 100%;
 }

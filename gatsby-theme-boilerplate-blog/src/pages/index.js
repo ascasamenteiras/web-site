@@ -207,7 +207,7 @@ const IndexPage = props => {
         />
       }
       opt={{
-        titleSeo: `Assessoria e Cerimonial`,
+        titleSeo: `Cerimonialista de Casamentos`,
         pageQuestions: defaultQuestions,
         classes: "blog-list",
         schemaType: "blog",
@@ -240,8 +240,8 @@ const IndexPage = props => {
       }}
     >
       <main className='main-container' id='site-content' role='list'>
-        <HeadingBlock classes='m30auto hack' importance={10} width={300}>
-          Assessoria e Cerimonial
+        <HeadingBlock classes='m30auto hack' importance={10} width={350}>
+          Cerimonialista de Casamentos
         </HeadingBlock>
 
         <Row opt={{ classes: "home-infos", isBoxed: true }}>
@@ -608,7 +608,7 @@ const IndexPage = props => {
         </HeadingBlock>
         <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
           <PostsBlock
-            postsPerPage={site.siteMetadata.postsPerPage}
+            postsPerPage={site.siteMetadata.postsPerPage + 3}
             postList={posts}
             typeLoad={"push"} // or false
             // readMoreText="Ler Mais"

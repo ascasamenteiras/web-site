@@ -9,9 +9,9 @@ author: Equipe As Casamenteiras
 categories:
   - causas
   - artigo
-featuredPost: true
+featuredPost: false
 featuredImage: ../posts/images/orgulho-lgbtqia.jpg
-homeHighlightRelatedList: true
+homeHighlightRelatedList: false
 homeHighlight: false
 homeHighlightRelated: false
 questions: ["Qual a posição d'As Casamenteiras em relação as causas sociais?:Nós d'As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país. Condenamos veementemente qualquer tipo de ato discriminatório contra quaisquer bandeiras em especial discriminação contra empreendedoras, LGBTQIA+, afrodescendentes e entre fornecedores locais da mais diversas configurações sócio-econômicas.", "Quais as bandeiras defendidas pelAs Casamenteiras?:Empreendedorismo Feminino, LGBTQIAP+, Vidas Negras Importam, Comércio Local e Hackativismo."]

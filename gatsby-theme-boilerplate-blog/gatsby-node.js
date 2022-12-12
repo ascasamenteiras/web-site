@@ -10,10 +10,20 @@ const businessInfos = require("./package.json");
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   // Ensures we are processing only markdown files
+  function basePathFinder(nodeTopology) {
+    if (nodeTopology === "pages") {
+      return "pages";
+    }
+    if (nodeTopology === "posts") {
+      return "posts";
+    }
+    if (nodeTopology === "landing") {
+      return "landing";
+    }
+    return null;
+  }
   if (node.internal.type === "MarkdownRemark") {
-    const basePathLabel =
-      node.frontmatter.topology === "pages" ? "pages" : "posts";
-
+    const basePathLabel = basePathFinder(node.frontmatter.topology) || "posts";
     // Use `createFilePath` to turn markdown files in our `data/faqs` directory into `/faqs/slug`
     const slug = createFilePath({
       node,
@@ -36,29 +46,29 @@ exports.createPages = async ({ graphql, actions }) => {
   const redirectsArray = [
     {
       fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
-      toPath: `/vencemos-premio-zankyou-2022/`
+      toPath: `/vencemos-premio-zankyou-2022/`,
     },
     {
       fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
-      toPath: `/vencemos-premio-zankyou-2022/`
+      toPath: `/vencemos-premio-zankyou-2022/`,
     },
     {
       fromPath: `/rsvp-contato`,
-      toPath: `/contato/`
+      toPath: `/contato/`,
     },
     {
       fromPath: `/rsvp-contato/`,
-      toPath: `/contato/`
+      toPath: `/contato/`,
     },
     {
       fromPath: `/nossos-casais`,
-      toPath: `/casamentos/`  
+      toPath: `/casamentos/`,
     },
     {
       fromPath: `/nossos-casais/`,
       toPath: `/casamentos/`,
-    }
-  ]
+    },
+  ];
 
   redirectsArray.forEach(redirect => {
     createRedirect({
@@ -66,37 +76,37 @@ exports.createPages = async ({ graphql, actions }) => {
       toPath: redirect.toPath,
     });
   });
-		
-	// createRedirect({
+
+  // createRedirect({
   //   fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
   //   toPath: `/vencemos-premio-zankyou-2022`,
   // });
 
-	// createRedirect({
+  // createRedirect({
   //   fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
   //   toPath: `/vencemos-premio-zankyou-2022/`,
   // });
 
-	// createRedirect({
+  // createRedirect({
   //   fromPath: `/rsvp-contato`,
   //   toPath: `/contato/`,
   // });
 
-	// createRedirect({
+  // createRedirect({
   //   fromPath: `/rsvp-contato/`,
   //   toPath: `/contato/`,
   // });
 
-	// createRedirect({
+  // createRedirect({
   //   fromPath: `/nossos-casais`,
   //   toPath: `/casamentos`,
   // });
 
-	// createRedirect({
+  // createRedirect({
   //   fromPath: `/nossos-casais/`,
   //   toPath: `/casamentos/`,
   // });
-  
+
   return graphql(`
     {
       site {
@@ -172,7 +182,9 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
       allPages: allMarkdownRemark(
-        filter: { frontmatter: { status: { eq: true } } }
+        filter: {
+          frontmatter: { status: { eq: true }, topology: { ne: "landing" } }
+        }
       ) {
         edges {
           node {
@@ -203,6 +215,37 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      AllLandings: allMarkdownRemark(
+        filter: {
+          frontmatter: { status: { eq: true }, topology: { eq: "landing" } }
+        }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              status
+              questions
+              featuredImage {
+                childrenImageSharp {
+                  gatsbyImageData(
+                    width: 923
+                    height: 1050
+                    placeholder: NONE
+                    quality: 80
+                  )
+                }
+              }
+            }
+            excerpt(pruneLength: 200)
+            htmlAst
+            html
+          }
+        }
+      }
       storiesA: file(
         relativePath: { eq: "as-casamenteiras-stories-ante-final.png" }
       ) {
@@ -219,6 +262,28 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `).then(result => {
+    const landings = result.data.AllLandings.edges;
+
+    landings.forEach(({ node }) => {
+      if (node.frontmatter.status === true) {
+        createPage({
+          path: node.fields.slug,
+          component: path.resolve(
+            rootDir,
+            `gatsby-theme-boilerplate-blog/src/templates/half-div.js`
+          ),
+          context: {
+            title: node.frontmatter.title,
+            content: node.html,
+            headline: node.frontmatter.headline,
+            questions: node.frontmatter.questions,
+            excerpt: node.excerpt,
+            featureImage: node.frontmatter.featuredImage,
+          },
+        });
+      }
+    });
+
     const pages = result.data.allPages.edges;
     let allPages = [];
 
@@ -239,7 +304,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title: node.frontmatter.title,
             content: node.html,
             description: node.frontmatter.description,
-            questions: node.frontmatter.questions
+            questions: node.frontmatter.questions,
           },
         });
         node.htmlAst.children.map(child => {
@@ -309,7 +374,7 @@ exports.createPages = async ({ graphql, actions }) => {
           context: {
             slug: node.fields.slug,
             thePost: node,
-            postQuestion: node.frontmatter.questions
+            postQuestion: node.frontmatter.questions,
           },
         });
       }
@@ -347,20 +412,18 @@ exports.createPages = async ({ graphql, actions }) => {
           .images.fallback.src;
       node.htmlAst.children.map(child => {
         if (child.children && child.children[0]) {
-          child.children.map(eleChild=>{
-                      if (eleChild.tagName === "span") {
-                        eleChild.children.map(grandChildEle=>{
-                          if (grandChildEle.tagName==="img") {
-                            
-                            imgsObj.push([grandChildEle.properties.dataSrc,grandChildEle.properties.alt]);
-                          }
-                        })
-
-                      }
-
-          })
-
-
+          child.children.map(eleChild => {
+            if (eleChild.tagName === "span") {
+              eleChild.children.map(grandChildEle => {
+                if (grandChildEle.tagName === "img") {
+                  imgsObj.push([
+                    grandChildEle.properties.dataSrc,
+                    grandChildEle.properties.alt,
+                  ]);
+                }
+              });
+            }
+          });
         }
       });
 
@@ -388,13 +451,19 @@ exports.createPages = async ({ graphql, actions }) => {
 						<image:loc>${item.imageSrc}</image:loc>
 					</image:image>
 
-          ${item.insideImgs ? item.insideImgs.map(img=>{return`<image:image>
+          ${
+            item.insideImgs
+              ? item.insideImgs.map(img => {
+                  return `<image:image>
           <image:loc>${
             img[0].substring(0, 4) === "http"
               ? img[0]
               : businessInfos.siteUrl + img[0]
           }</image:loc>
-        </image:image>`}):''}
+        </image:image>`;
+                })
+              : ""
+          }
 
 
 
@@ -412,19 +481,26 @@ exports.createPages = async ({ graphql, actions }) => {
 				xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 				${allFeed.map(item => {
           return `<url>
-					<loc>${businessInfos.siteUrl}${item.slug.slice(0, -1)+`.stories.amp.html`}</loc>
+					<loc>${businessInfos.siteUrl}${item.slug.slice(0, -1) +
+            `.stories.amp.html`}</loc>
 					<lastmod>${item.date}</lastmod>
 					<image:image>
 						<image:loc>${item.imageSrc}</image:loc>
 					</image:image>
 
-          ${item.insideImgs ? item.insideImgs.map(img=>{return`<image:image>
+          ${
+            item.insideImgs
+              ? item.insideImgs.map(img => {
+                  return `<image:image>
           <image:loc>${
             img[0].substring(0, 4) === "http"
               ? img[0]
               : businessInfos.siteUrl + img[0]
           }</image:loc>
-        </image:image>`}):''}
+        </image:image>`;
+                })
+              : ""
+          }
 
 
 
@@ -433,9 +509,12 @@ exports.createPages = async ({ graphql, actions }) => {
 		</urlset>
 		`;
     fs.writeFileSync(`./public/webstories-sitemap.xml`, theStoriesXML);
-    
 
-    const ampStoryPage = (srcImg, title,index) => `<amp-story-page id="page-${index}" auto-advance-after="7s" >
+    const ampStoryPage = (
+      srcImg,
+      title,
+      index
+    ) => `<amp-story-page id="page-${index}" auto-advance-after="7s" >
   <amp-story-grid-layer template="vertical" >
     <amp-img src="${srcImg}" alt="${title}" width="900" height="675"
     layout="responsive">
@@ -448,15 +527,9 @@ exports.createPages = async ({ graphql, actions }) => {
         <p>@ascasamenteiras_</p>
       </div>
     </amp-story-grid-layer>
-  </amp-story-page>`
+  </amp-story-page>`;
 
-    const theAmpStorie = (title,      
-      key,
-      srcImg,
-      mainText,
-      postImages,
-      slug) => {
-        
+    const theAmpStorie = (title, key, srcImg, mainText, postImages, slug) => {
       return `<!DOCTYPE html>
       <html amp lang="pt-BR">
       
@@ -548,7 +621,7 @@ exports.createPages = async ({ graphql, actions }) => {
           
       <style amp-custom="">
 .story-page{position:relative}
-.inner-page-wrapper{position:absolute; width: 100%; height: 40%;  
+.inner-page-wrapper{position:absolute; width: 100%; height: 50%;  
   background: rgb(0,0,0);
   background: linear-gradient(1deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0) 100%);
   display: block;
@@ -587,35 +660,48 @@ exports.createPages = async ({ graphql, actions }) => {
             poster-landscape-src="logo4x3.png"
             >
                 
-              ${ampStoryPage(srcImg,title,1)}
+              ${ampStoryPage(srcImg, title, 1)}
               
-              ${postImages.map((img,indx)=>{return ampStoryPage(img[0],img[1],indx+2)})}
+              ${postImages.map((img, indx) => {
+                return ampStoryPage(img[0], img[1], indx + 2);
+              })}
 
-              ${ampStoryPage(businessInfos.siteUrl + result.data.storiesA.childrenImageSharp[0].gatsbyImageData
-                .images.fallback.src,'Fale com As Casamenteiras!', 99)}
-              ${ampStoryPage(businessInfos.siteUrl + result.data.storiesZ.childrenImageSharp[0].gatsbyImageData
-                .images.fallback.src, "Todo Amor Importa!",100)}
+              ${ampStoryPage(
+                businessInfos.siteUrl +
+                  result.data.storiesA.childrenImageSharp[0].gatsbyImageData
+                    .images.fallback.src,
+                "Fale com As Casamenteiras!",
+                99
+              )}
+              ${ampStoryPage(
+                businessInfos.siteUrl +
+                  result.data.storiesZ.childrenImageSharp[0].gatsbyImageData
+                    .images.fallback.src,
+                "Todo Amor Importa!",
+                100
+              )}
 
           </amp-story>
         </body>
-      </html>`
-    }
-
-    allFeed.map((item,key) => {
-      const itemSlug = businessInfos.siteUrl + item.slug
-      fs.writeFile(`./public/${item.slug.slice(1,-1)}.stories.amp.html`, theAmpStorie(
-        item.title,
-        key,
-        item.imageSrc,
-        'txt',
-        item.insideImgs,
-        itemSlug.replace('//','/')
-        ), function (err) {
+      </html>`;
+    };
+    allFeed.map((item, key) => {
+      const itemSlug = businessInfos.siteUrl.slice(0, -1) + item.slug;
+      fs.writeFile(
+        `./public/${item.slug.slice(1, -1)}.stories.amp.html`,
+        theAmpStorie(
+          item.title,
+          key,
+          item.imageSrc,
+          "txt",
+          item.insideImgs,
+          itemSlug
+        ),
+        function(err) {
           if (err) throw err;
-          console.log('File is created successfully.');
-        });
-
-    })
-
+          console.log("File is created successfully.");
+        }
+      );
+    });
   });
 };

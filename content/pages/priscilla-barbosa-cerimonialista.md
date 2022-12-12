@@ -21,4 +21,4 @@ Atua na organização de casamentos ao ar livre conectados à natureza, miniwedd
 
 ## Todo Amor Importa!
 
-Oferece o serviço de assessoria e cerimonial para casamentos, eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor e acredita que Todo Amor Importa!
+Oferece o serviço de cerimonialista de casamentos para casamentos, eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor e acredita que Todo Amor Importa!

@@ -1,7 +1,7 @@
 ---
 topology: pages
 status: true
-title: Assessoria e Cerimonial
+title: Cerimonialista de Casamentos
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: assessoria-cerimonial
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
@@ -15,7 +15,7 @@ questions: ["O que faz uma assessoria de casamento?:A assessoria faz a direção
 
 As Casamenteiras oferece assessoria completa ou personalizada e consultorias avulsas.
 
-Priscilla Barbosa presta serviços de assessoria e cerimonial para casamentos, eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor.
+Priscilla Barbosa presta serviços de cerimonialista de casamentos para casamentos, eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor.
 
 ## Priscilla Barbosa
 

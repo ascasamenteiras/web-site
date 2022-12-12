@@ -64,11 +64,28 @@ export const useSiteMetadatas = () =>
             }
           }
         }
+        dateImageButton: file(relativePath: { eq: "date-img.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(width: 60, height: 60, quality: 90)
+          }
+        }
+        fingerButton: file(relativePath: { eq: "turn-finger.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(width: 60, height: 60, quality: 90)
+          }
+        }
         boilerplateLogo: file(
           relativePath: { eq: "logo-fundo-transparent-900-w.png" }
         ) {
           childrenImageSharp {
             gatsbyImageData(width: 450, quality: 100)
+          }
+        }
+        boilerplateLogoSmall: file(
+          relativePath: { eq: "logo-fundo-transparent-900-w.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(width: 200, quality: 100)
           }
         }
         profileOficial: file(
@@ -328,9 +345,7 @@ export const useSiteMetadatas = () =>
             )
           }
         }
-        bandeiraQuestion: file(
-          relativePath: { eq: "bandeira-pergunta.png" }
-        ) {
+        bandeiraQuestion: file(relativePath: { eq: "bandeira-pergunta.png" }) {
           childrenImageSharp {
             gatsbyImageData(
               width: 70

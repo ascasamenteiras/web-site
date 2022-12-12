@@ -1,0 +1,15 @@
+redirects:
+  - item:
+      {
+        fromPath: "/vencemos-premio-zankyou-ziwa-awards-2022",
+        toPath: "/vencemos-premio-zankyou-2022/",
+      }
+  - item:
+      {
+        fromPath: "/vencemos-premio-zankyou-ziwa-awards-2022/",
+        toPath: "/vencemos-premio-zankyou-2022/",
+      }
+  - item: { fromPath: "/rsvp-contato", toPath: "/contato/" }
+  - item: { fromPath: "/rsvp-contato/", toPath: "/contato/" }
+  - item: { fromPath: "/nossos-casais", toPath: "/casamentos/" }
+  - item: { fromPath: "/nossos-casais/", toPath: "/casamentos/" }

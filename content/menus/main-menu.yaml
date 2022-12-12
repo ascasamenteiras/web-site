@@ -6,7 +6,7 @@ menu:
               label: Casamentos
               to: /casamentos/
         - item:
-              label: Assessoria e Cerimonial
+              label: Cerimonialista de Casamentos
               to: /assessoria-cerimonial/
         - item:
               label: Cerimonialistas

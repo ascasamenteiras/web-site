@@ -1,7 +1,7 @@
 ---
 topology: posts
 title: Vencemos o Prêmio Internacional Zankyou ZIWA Awards 2022
-headline: As Casamenteiras é a vencedora do Prêmio Internacional Zankyou ZIWA Awards 2022 na categoria Assessoria e Cerimonial de casamentos.
+headline: As Casamenteiras é a vencedora do Prêmio Internacional Zankyou ZIWA Awards 2022 na categoria Cerimonialista de Casamentos.
 date: 2022-12-01T09:30:00+00:00
 updatedAt: 2022-12-01T08:30:00+00:00
 createdAt: 2022-11-27T03:36:00+00:00
@@ -20,7 +20,7 @@ Estamos imensamente animadas e surpresas por termos sidos escolhidas como as mel
 
 ## Prêmio Zankyou ZIWA Awards 2022
 
-Somos as vencedoras na categoria **Assessoria e Cerimonial** da XII Edição deste que é um dos mais prestigiados prêmios internacionais do setor casamenteiro. 
+Somos as vencedoras na categoria **Cerimonialista de Casamentos** da XII Edição deste que é um dos mais prestigiados prêmios internacionais do setor casamenteiro. 
 
 ![Logotipo Prêmio Zankyou ZIWA Awards 2022](./images/badge-ziwa2022.png)
 
@@ -34,7 +34,7 @@ Quando olhamos para o currículo de **Priscilla Barbosa** vemos o seu diferencia
 
 **Priscilla Barbosa** obteve sucesso como empreendedora e carrega experiências no setor agroecológico (como produtora e distribuidora), comerciante na área de produtos orgânicos de cadeia de suprimento sustentável. Está há mais de uma década na área de eventos. Pri Barbosa teve seu primeiro emprego no INCRA, onde foi continuamente promovida até vir a se tornar chefe de gabinete. Atualmente trabalha como assessora parlamentar na **ALESP**.
 
-## Categoria Assessoria e Cerimonial de Casamentos
+## Categoria Cerimonialista de Casamentos
 
 Por que contratar uma assessora de casamento? Qual é a real importância de uma casamenteira?
 

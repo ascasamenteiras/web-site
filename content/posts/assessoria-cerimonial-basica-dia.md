@@ -1,6 +1,6 @@
 ---
 topology: posts
-title: Assessoria e Cerimonial Do Dia (básica)
+title: Assessoria e Cerimonial de Casamentos Do Dia (básica)
 headline: O serviço de assessoria e cerimonial do dia é relativo ao pacote básico dos serviços d'As Casamenteiras.
 date: 2022-12-01T08:35:00+00:00
 createdAt: 2022-07-10T22:17:20+00:00
@@ -48,6 +48,6 @@ Em cada uma das etapas do grande dia o foco é voltado para que a festa seja viv
 
 Esse é um resumo pontuado de diversos dos serviços que As Casamenteiras prestam no pacote básico. Solicite um orçamento para maiores detalhes.
 
-## Assessoria e Cerimonial Plena (completa)
+## Cerimonialista de Casamentos Plena (completa)
 
-Todos os serviços básicos acima apresentados estão contemplados também no pacote completo. Para conferir como funciona a [_Assessoria e Cerimonial Plena, clique aqui!_](/assessoria-cerimonial-plena-completa/).
+Todos os serviços básicos acima apresentados estão contemplados também no pacote completo. Para conferir como funciona a [_Cerimonialista de Casamentos Plena, clique aqui!_](/assessoria-cerimonial-plena-completa/).

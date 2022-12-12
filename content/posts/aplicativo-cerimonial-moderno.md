@@ -74,6 +74,6 @@ Notificações sobre as movimentações dos fornecedores, convidados e novidades
 
 ## Aplicativo Para Cerimonial de Casamento
 
-O serviço de assessoria e cerimonial d'As Casamenteiras possui benefícios tais como roteiro do cerimonial, carteira virtual alinhada com os contratos assinados, interação com fornecedores, solicitações de orçamentos, assinatura de contratos on-line, RSVP moderno e on-line, pasta para gerenciamento de arquivos e contratos, notificações na tela do seu dispositivo móvel e muitas outras ferramentas indispensáveis para a organização do seu casamento.
+O serviço de **assessoria e cerimonial de casamentos** d'As Casamenteiras possui benefícios tais como roteiro do cerimonial, carteira virtual alinhada com os contratos assinados, interação com fornecedores, solicitações de orçamentos, assinatura de contratos on-line, RSVP moderno e on-line, pasta para gerenciamento de arquivos e contratos, notificações na tela do seu dispositivo móvel e muitas outras ferramentas indispensáveis para a organização do seu casamento.
 
 Para saber mais sobre como usamos o aplicativo de organização de cerimonial e saber mais sobre os nossos parceiros fornecedores de casamento [clique aqui](/assessoria-cerimonial-plena-completa/).

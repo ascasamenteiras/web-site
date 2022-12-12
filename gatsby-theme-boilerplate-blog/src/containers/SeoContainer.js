@@ -21,12 +21,13 @@ function SeoContainer({
   cardImage,
   serverUrl,
   articleUrl,
-  pageQuestions
+  pageQuestions,
+  killSEO,
 }) {
   const { site } = useSiteMetadatas();
   const metaDescription = description || site.siteMetadata.description;
-  
-  const theQuestions = pageQuestions || site.siteMetadata.questions
+
+  const theQuestions = pageQuestions || site.siteMetadata.questions;
 
   return (
     <Seo
@@ -56,6 +57,7 @@ function SeoContainer({
       pageQuestions={theQuestions}
       articleUrl={articleUrl}
       slug={serverUrl}
+      killSEO={killSEO}
     />
   );
 }

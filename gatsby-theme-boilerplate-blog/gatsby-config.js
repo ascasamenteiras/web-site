@@ -38,6 +38,13 @@ module.exports = {
     `gatsby-plugin-react-helmet-async`,
     `gatsby-transformer-yaml`,
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: "https://ascasamenteiras.us21.list-manage.com/subscribe/post?u=7788204f1e9c743f2274eb8bc&amp;id=07328022a5&amp;f_id=0076c4e1f0", // string; add your MC list endpoint here; see instructions below
+          timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+    },
+    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
@@ -80,8 +87,24 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `images`,
+        path: path.resolve(rootDir, "content/landing/images/"),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `posts`,
         path: path.resolve(rootDir, "content/posts/"),
+        ignore: [`**/\.jpg`,`**/\.png`], // ignore files starting with a dot
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `landing`,
+        path: path.resolve(rootDir, "content/landing/"),
         ignore: [`**/\.jpg`,`**/\.png`], // ignore files starting with a dot
       },
     },

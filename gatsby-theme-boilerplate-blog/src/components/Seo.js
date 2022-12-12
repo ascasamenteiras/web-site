@@ -7,7 +7,6 @@ const Seo = ({
   title,
   siteTitle,
   metaDescription,
-  // meta,
   siteUrl,
   image,
   author,
@@ -15,7 +14,6 @@ const Seo = ({
   social,
   datePublished,
   description,
-  // url,
   schemaType,
   socialSameAs,
   blogListing,
@@ -28,7 +26,8 @@ const Seo = ({
   serverUrl,
   themeColor,
   pageQuestions,
-  slug
+  slug,
+  killSEO,
 }) => {
   const hasBar = serverUrl?.charAt(serverUrl.length - 1);
   const servBar = hasBar === "/" ? serverUrl?.slice(0, -1) : serverUrl;
@@ -42,7 +41,10 @@ const Seo = ({
         titleTemplate={`%s - ${siteTitle}`}
       >
         <title>{title}</title>
-        <meta name="robots" content="index, follow" />
+        <meta
+          name='robots'
+          content={killSEO ? "noindex, nofollow" : "index, follow"}
+        />
         <meta name='description' content={metaDescription} />
         <meta name='image' content={cardImagesrc || featuredImage} />
         <meta name='keywords' content={keywords.map(e => e)} />
