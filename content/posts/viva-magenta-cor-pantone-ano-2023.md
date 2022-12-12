@@ -9,7 +9,7 @@ author: Equipe As Casamenteiras
 categories:
   - branding de casamento
 featuredPost: true
-featuredImage: ../posts/images/ricardo-paulo-marli.jpg
+featuredImage: ../posts/images/viva-magenta-pantone.jpg
 homeHighlightRelatedList: false
 homeHighlight: true
 homeHighlightRelated: false

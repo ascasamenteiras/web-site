@@ -13,7 +13,7 @@ featuredImage: ../posts/images/ricardo-paulo-marli.jpg
 homeHighlightRelatedList: false
 homeHighlight: false
 homeHighlightRelated: false
-questions: ["O que é cor Pantone do ano? :essas."]
+questions: ["O que é cor do ano? :essas."]
 ---
 
 Qual é a diferença entre assessoria, cerimonial e recepção de casamentos?
