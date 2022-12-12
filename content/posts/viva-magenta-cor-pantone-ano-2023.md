@@ -15,7 +15,7 @@ homeHighlight: true
 homeHighlightRelated: false
 questions:
   [
-    "O que é cor Pantone do ano?:É a cor de tendência para o ano seguinte anunciada pela empresa Pantone.",
+    "O que é cor Pantone do ano?:É a cor de tendência para todo tipo de trabalho criativo do ano seguinte anunciada pela empresa Pantone.",
     "O que é e o que faz o Pantone Color Institute (Instituto Cor Pantone)?:Reconhecido globalmente como uma fonte líder de especialização em cores, o Pantone Color Institute fornece percepções e soluções de cores.",
     "Qual é a cor Pantone do ano de 2022?:Uma tonalidade de violeta, a Very Peri pode ser descrita como uma mistura de bases avermelhadas e azuladas.",
     "Qual é a cor Pantone do ano de 2023?:O Viva Magenta é um tom natural da família do vermelho e demonstra um novo sinal de força.",
@@ -24,11 +24,15 @@ questions:
 
 A **Cor Pantone do ano de 2023** foi revelada! Mas não foi somente a Pantone que revelou a sua cor do ano, descobra agora tudo sobre as tendências de cores para o ano de 2023 e planeje o seu casamento com esse universo tão diverso de cores.
 
+![Aliança Cor Viva Magenta](./images/alianca-viva-magenta.jpg)
+
 Esse é um momento muito importante para todos e nós d'**As Casamenteiras** estávamos ansiosas por essa apresentação; O **Pantone Color Institute** (Instituto Cor Pantone) acaba de fazer o anúncio oficial de que a Cor Pantone do ano de 2023 será o **Viva Magenta**.
 
 ## Vibrante Com Vigor
 
 Pronto para pensar no seu casamento com a cor Pantone de 2023? Foi pensando nos casamentos de 2023 que nós d'As Casamenteiras preparamos aqui tudo o que você precisa saber sobre o Viva Magenta e como usar essa cor para inspirar o seu casamento.
+
+![Mulher entrando no Magentaverso](./images/magentaverso-viva-magenta-mulher-01.webp)
 
 ## Viva Magenta, A Cor do Ano de 2023
 
@@ -50,15 +54,21 @@ A cochonilha é um minúsculo inseto, um besouro de no máximo meia polegada. A 
 
 ## PANTONE 18-1750 Viva Magenta
 
+![Produtos com cor Viva Magenta](./images/viva-magenta20.jpg)
+
 _PANTONE 18-1750 Viva Magenta_ escreve uma nova narrativa. Corajosa e destemida, uma cor pulsante cuja exuberância promove otimismo e alegria. Poderoso e fortalecedor, é um vermelho animado que encoraja a experimentação e a auto-expressão sem restrições, um tom eletrizante e sem limites que está manifestamente “lá fora” e é uma declaração de destaque. Audacioso, espirituoso e inclusivo para todos, PANTONE 18-1750 Viva Magenta dá as boas-vindas a todos e a todos com o mesmo espírito rebelde.
 
 Um tom vermelho carmesim matizado que apresenta um equilíbrio entre quente e frio, PANTONE 18-1750 Viva Magenta também é uma cor híbrida, que confortavelmente se estende entre o físico e o virtual, evocando nosso mundo multidimensional. Assertivo, mas não agressivo, é um vermelho carmim que não domina com ousadia, mas adota uma abordagem de “punho em luva de veludo”. Exalando dinamismo, PANTONE 18-1750 Viva Magenta é um tom vermelho transformador capaz de conduzir o design para criar um futuro mais positivo.”
+
+![Jóias de parceiros anunciadas com cor Viva Magenta](./images/viva-magenta14.jpg)
 
 De acordo com a diretora executiva do Pantone Color Institute, Leatrice Eiseman, já era hora de uma cor vermelha do ano novamente. O vermelho está, sem dúvida, fazendo sucesso no mundo da moda, com designers de Tom Ford a Roksanda apresentando tons de vermelho na passarela, incluindo magenta.
 
 Para começar a incorporar esta nova e excitante tonalidade Pantone em seus designs ou projetos criativos, confira nossa Coleção Viva Magenta no Envato Elements.
 
 ## Magentaverso
+
+![Casal sentado olhando o Magentaverso](./images/viva-magenta9.jpg)
 
 > Cor! Que linguagem profunda e misteriosa, a linguagem dos sonhos. - Eugène-Henri-Paul Gauguin - pintor francês do pós-impressionismo.
 
@@ -76,7 +86,7 @@ Abaixo listamos as cores do Magentaverso:
 - Campos de centeio (Fields of Rye - #B7A990);
 - Lilás cinza (Gray Lilac - #D4CACD).
 
-Não só presente no mundo real, saltando aos nossos olhos, com a presença do Viva Magenta, a Pantone celebra nossa transição gradual para a realidade virtual, que se reflete na apresentação não convencional deste ano da _cor zeitgeist de 2023_.
+Não só presente no mundo real, saltando aos nossos olhos, com a presença do Viva Magenta, a Pantone celebra nossa transição gradual para a realidade virtual, que se reflete na apresentação não convencional deste ano da _cor do ano de 2023_.
 
 Os últimos anos foram transformadores em muitos aspectos. Como resultado, foi criado um espaço onde somos livres para explorar e ser aceitos exatamente por quem sentimos que somos, seja em um universo cibernético, um espaço convencional ou uma mistura mágica de ambos. Estamos criando um mundo dinâmico que incentiva a experimentação, que aproveita o virtual dentro do reino físico e encoraja nossa força e espírito para explorar possibilidades inovadoras.
 
