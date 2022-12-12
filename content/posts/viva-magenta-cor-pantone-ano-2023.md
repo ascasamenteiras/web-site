@@ -2,9 +2,9 @@
 topology: posts
 title: Viva Magenta - A Cor Pantone do Ano 2023
 headline: Encontre tudo o que você precisa saber sobre a cor Viva Magenta, a cor do ano 2023.
-date: 2022-12-10T09:30:00+00:00
-updatedAt: 2022-12-01T08:30:00+00:00
-createdAt: 2022-11-27T03:36:00+00:00
+date: 2022-12-12T02:30:00+00:00
+updatedAt: 2022-12-12T02:30:00+00:00
+createdAt: 2022-12-12T02:30:00+00:00
 author: Equipe As Casamenteiras
 categories:
   - branding de casamento
