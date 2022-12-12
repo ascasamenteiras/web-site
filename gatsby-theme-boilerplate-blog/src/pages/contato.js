@@ -4,7 +4,7 @@ import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import MainPageWrapper from "@BlockBuilder/MainPageWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-const ContatoPage = () => {
+const ContatoPage = props => {
   const {
     imgHolder,
     bgPatternImg,
@@ -44,7 +44,7 @@ const ContatoPage = () => {
         pageQuestions: defaultQuestions,
         mainLogo: imgHolder,
         cardImage: cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null,
-        serverUrl: location.href,
+        serverUrl: props.location.href,
         schemaType: "article",
         description: "description",
         social: site.siteMetadata.social.twitter,
