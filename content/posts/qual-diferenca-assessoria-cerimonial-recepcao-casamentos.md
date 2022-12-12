@@ -8,10 +8,10 @@ createdAt: 2022-11-27T03:36:00+00:00
 author: Equipe As Casamenteiras
 categories:
   - premio
-featuredPost: true
+featuredPost: false
 featuredImage: ../posts/images/ricardo-paulo-marli.jpg
 homeHighlightRelatedList: false
-homeHighlight: true
+homeHighlight: false
 homeHighlightRelated: false
 questions: ["O que é cor Pantone do ano? :essas."]
 ---
@@ -20,10 +20,13 @@ Qual é a diferença entre assessoria, cerimonial e recepção de casamentos?
 falar sobre os sims e nãos de cada um
 
 ## Assessoria de Casamento
+
 s
 
 ## Cerimonial de Casamento
+
 s
 
 ## Recepção de Casamento
+
 s

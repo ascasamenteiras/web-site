@@ -15,11 +15,10 @@ homeHighlight: true
 homeHighlightRelated: false
 questions:
   [
-    "O que é cor Pantone do ano? :Sim.",
-    "O que é e o que faz o Pantone Color Institute (Instituto Cor Pantone)?:",
-    "Qual é a cor Pantone do ano de 2022?:Essa",
-    "Qual é a cor Pantone do ano de 2023?:Aquela.",
-    "Quais as cores Pantone dos últimos dez anos?:essas.",
+    "O que é cor Pantone do ano?:É a cor de tendência para o ano seguinte anunciada pela empresa Pantone.",
+    "O que é e o que faz o Pantone Color Institute (Instituto Cor Pantone)?:Reconhecido globalmente como uma fonte líder de especialização em cores, o Pantone Color Institute fornece percepções e soluções de cores.",
+    "Qual é a cor Pantone do ano de 2022?:Uma tonalidade de violeta, a Very Peri pode ser descrita como uma mistura de bases avermelhadas e azuladas.",
+    "Qual é a cor Pantone do ano de 2023?:O Viva Magenta é um tom natural da família do vermelho e demonstra um novo sinal de força.",
   ]
 ---
 

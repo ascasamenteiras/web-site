@@ -3,14 +3,16 @@ topology: pages
 status: true
 title: Cerimonialista de Casamentos
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
-slug: assessoria-cerimonial
+slug: cerimonialista-casamentos
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 date: 2022-12-01T08:30:00+00:00
-questions: ["O que faz uma assessoria de casamento?:A assessoria faz a direção do evento. Reuniões com o casal, com fornecedores, alinhando-os com as escolhas do casal. Faz planejamento geral e mapeamento de riscos no local do evento.",
+questions:
+  [
+    "O que faz uma assessoria de casamento?:A assessoria faz a direção do evento. Reuniões com o casal, com fornecedores, alinhando-os com as escolhas do casal. Faz planejamento geral e mapeamento de riscos no local do evento.",
     "Como organizar uma festa de casamento?:É com amor que em primeiro lugar, nós d'As Casamenteiras decidimos ouvir o casal, perguntar sobre informações e detalhes do romance. De posse das primeiras impressões, a cerimonialista Priscilla Barbosa irá elaborar um primeiro cronograma e compartilhar diversas idéias, contatos de fornecedores, tarefas da rota da noiva e dar um acompanhamento especial, além de reuniões de alinhamento, tanto emergenciais, como outras já programadas por nós para que a cada mês você dê atenção ao que realmente importa e deixe cada coisa ser resolvida ao seu tempo, com a ajuda d'As Casamenteiras.",
-    "Sem contratar uma assessoria de casamento, eu vou precisar fazer reuniões exaustivas e entrevistar fornecedores todos os meses que antecedem o grande dia?:Sim. E os fornecedores possuem diversos clientes, por isso é importante você ter alguém do seu lado para tornar o seu atendimento único, como o casal merece. De outra forma, alguns fornecedores podem ser tentados a lidar com o seu casamento como 'só mais um' e isso é inadmissível.",    
-    "Quais os pontos principais um casamento que não podem ser esquecidos?:O principal ponto é contratar uma assessoria completa, por meio da Gestão 360° d'As Casamenteiras. Cada mês liberaremos as tarefas da rota da noiva para que tudo seja lembrado de forma ordenada."
-]
+    "Sem contratar uma assessoria de casamento, eu vou precisar fazer reuniões exaustivas e entrevistar fornecedores todos os meses que antecedem o grande dia?:Sim. E os fornecedores possuem diversos clientes, por isso é importante você ter alguém do seu lado para tornar o seu atendimento único, como o casal merece. De outra forma, alguns fornecedores podem ser tentados a lidar com o seu casamento como 'só mais um' e isso é inadmissível.",
+    "Quais os pontos principais um casamento que não podem ser esquecidos?:O principal ponto é contratar uma assessoria completa, por meio da Gestão 360° d'As Casamenteiras. Cada mês liberaremos as tarefas da rota da noiva para que tudo seja lembrado de forma ordenada.",
+  ]
 ---
 
 As Casamenteiras oferece assessoria completa ou personalizada e consultorias avulsas.
