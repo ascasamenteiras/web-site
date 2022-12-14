@@ -1,6 +1,7 @@
 ---
 topology: posts
-title: Passo a Passo - Aprenda a montar uma cerimônia de casamento
+status: false
+title: Passo a Passos - Aprenda a montar uma cerimônia de casamento
 headline: Os pré-moldades chegaram para ficar no meio industrial
 date: 2022-12-01T08:50:00+00:00
 createdAt: 2022-07-01T22:17:20+00:00

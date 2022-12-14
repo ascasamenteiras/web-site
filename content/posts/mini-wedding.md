@@ -1,5 +1,6 @@
 ---
 topology: posts
+status: true
 title: Mini Wedding
 headline: Está pensando em realizar um casamento ao estilo mini wedding? As Casamenteiras tem o serviço perfeito para você.
 date: 2022-12-01T09:00:00+00:00
@@ -16,7 +17,11 @@ featuredImage: ../posts/images/tais-paulo-mini-wedding.jpg
 homeHighlightRelatedList: true
 homeHighlight: true
 homeHighlightRelated: false
-questions: ["A noiva consegue ter confiança para o grande dia depois de conhecer inúmeras problemáticas de organizar um casamento sem ajuda?:Toda noiva, em seu momento de entrada está nervosa ao ponto de ter um piripaque. Antes disso, ela está no dia da noiva se preparando toda nervosa. Ela já acorda ansiosa e a noite anterior então, talvez nem durma. Essa noiva não merece passar pelo processo de organizar um evento dessa magnitute sem ajuda profissional.","O que é e quanto custa um Mini Wedding?:O Mini Wedding é um casamento intimista, com até 100 convidados. O seu custo pode variar de 30 mil reais a 120 mil reais."]
+questions:
+  [
+    "A noiva consegue ter confiança para o grande dia depois de conhecer inúmeras problemáticas de organizar um casamento sem ajuda?:Toda noiva, em seu momento de entrada está nervosa ao ponto de ter um piripaque. Antes disso, ela está no dia da noiva se preparando toda nervosa. Ela já acorda ansiosa e a noite anterior então, talvez nem durma. Essa noiva não merece passar pelo processo de organizar um evento dessa magnitute sem ajuda profissional.",
+    "O que é e quanto custa um Mini Wedding?:O Mini Wedding é um casamento intimista, com até 100 convidados. O seu custo pode variar de 30 mil reais a 120 mil reais.",
+  ]
 ---
 
 O mais completo **mini wedding** você encontra nAs Casamenteiras.

@@ -1,5 +1,6 @@
 ---
 topology: posts
+status: true
 title: Cerimonialista de Casamentos Plena (completa)
 headline: O serviço de assessoria e cerimonial plena é relativo ao pacote básico dos serviços d'As Casamenteiras.
 date: 2022-12-01T08:30:00+00:00
@@ -15,8 +16,10 @@ featuredImage: ../posts/images/ana-caroline-rodrigo.jpg
 homeHighlight: false
 homeHighlightRelated: false
 homeHighlightRelatedList: true
-questions: ["Como fazer a montagem do cerimonial e festa?:As Casamenteiras cria um grupo no WhatsApp com todos os fornecedores envolvidos para compartilhamento dos roteiros e cronograma. Além disso, estaremos em contato constante com cada fornecedor para construção do cronograma de chegada e montagem no local do casamento e festa.
-"]
+questions: [
+    "Como fazer a montagem do cerimonial e festa?:As Casamenteiras cria um grupo no WhatsApp com todos os fornecedores envolvidos para compartilhamento dos roteiros e cronograma. Além disso, estaremos em contato constante com cada fornecedor para construção do cronograma de chegada e montagem no local do casamento e festa.
+    ",
+  ]
 ---
 
 Dentro da assessoria e cerimonial plena (completa) todo o pacote básico está contemplado. Se vocês ainda não acessaram a página do pacote básico, façam uma visita para saber mais sobre esses detalhes visitando a página da [_Assessoria e Cerimonial Do Dia (básica)_](/assessoria-cerimonial-basica-dia/).

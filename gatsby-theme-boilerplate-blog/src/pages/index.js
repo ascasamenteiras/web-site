@@ -44,7 +44,7 @@ const IndexPage = props => {
   } = useSiteMetadatas();
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
-  const defaultQuestions = site.siteMetadata.questions
+  const defaultQuestions = site.siteMetadata.questions;
   const findItemFeatured = postsList => {
     let x = null;
 
@@ -184,8 +184,8 @@ const IndexPage = props => {
           placeholder={"NONE"}
           critical='true'
           className={" profile-socials"}
-	        width={28}
-	        height={28}
+          width={28}
+          height={28}
         />
       </a>
     );
@@ -248,28 +248,28 @@ const IndexPage = props => {
           <section className='main-page-wrapper'>
             <Row opt={{ classes: "main-row", numColumns: 2 }}>
               <div className='main-article'>
-<div className="main-headings">
-              <h1>
-                  <Link to={homeHighlightPost[0].node.fields.slug}>
-                    {homeHighlightPost[0].node.frontmatter.title}
-                  </Link>
-                </h1>
-                
-                <span className="heading-categorie">
-                  {homeHighlightPost[0].node.frontmatter.categories.map(
-                    (el, key) => {
-                      return (
-                        <Link
-                          key={key}
-                          to={"/trends/" + el + "/"}
-                          className='main-article-categories'
-                        >
-                          {el}
-                        </Link>
-                      );
-                    }
-                  )}
-                </span>
+                <div className='main-headings'>
+                  <h1>
+                    <Link to={homeHighlightPost[0].node.fields.slug}>
+                      {homeHighlightPost[0].node.frontmatter.title}
+                    </Link>
+                  </h1>
+
+                  <span className='heading-categorie'>
+                    {homeHighlightPost[0].node.frontmatter.categories.map(
+                      (el, key) => {
+                        return (
+                          <Link
+                            key={key}
+                            to={"/trends/" + el + "/"}
+                            className='main-article-categories'
+                          >
+                            {el}
+                          </Link>
+                        );
+                      }
+                    )}
+                  </span>
                 </div>
                 <Link
                   to={homeHighlightPost[0].node.fields.slug}
@@ -311,17 +311,22 @@ const IndexPage = props => {
                       
                     }
                   /> */}
-                <a className="home-video-button" href="https://www.youtube.com/watch?v=07COygyW6W0" target="_blank" rel="nofollow">
-                  <GatsbyImage
-                        image={vaiCasarGetImg}
-                        alt={"Vídeo Promocional d'As Casamenteiras no YouTube"}
-                        placeholder={"NONE"}
-                        critical='true'
-                        className={"video-promo"}
-                        width="250"
-                        height="167"
-                      />
-                      </a>
+                  <a
+                    className='home-video-button'
+                    href='https://www.youtube.com/watch?v=07COygyW6W0'
+                    target='_blank'
+                    rel='nofollow'
+                  >
+                    <GatsbyImage
+                      image={vaiCasarGetImg}
+                      alt={"Vídeo Promocional d'As Casamenteiras no YouTube"}
+                      placeholder={"NONE"}
+                      critical='true'
+                      className={"video-promo"}
+                      width='250'
+                      height='167'
+                    />
+                  </a>
                 </div>
               </div>
               <div className='home-profile-wrapper'>
@@ -481,8 +486,8 @@ const IndexPage = props => {
                       Negócios pela USP-ESALQ, com título de MBA.
                     </p>
                     <p>
-                      Atua na organização de casamentos ao ar livre conectados
-                      à natureza, miniwedding, praia, igrejas, chácaras,
+                      Atua na organização de casamentos ao ar livre conectados à
+                      natureza, miniwedding, praia, igrejas, chácaras,
                       residências, destination e elopement wedding. Organiza
                       cerimônias tradicionais e modernas, tais como: religiosa
                       diversa, civil, ecológica, cerimônias ecumênicas ,
@@ -549,8 +554,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
-               width={90}
-            height={90}
+              width={90}
+              height={90}
             />
             <h3>Empreendedorismo Feminino</h3>
           </Link>
@@ -561,8 +566,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
-               width={90}
-            height={90}
+              width={90}
+              height={90}
             />
             <h3>Amor LGBTQIAP+</h3>
           </Link>
@@ -573,8 +578,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
-               width={90}
-            height={90}
+              width={90}
+              height={90}
             />
             <h3>Vidas Negras Importam</h3>
           </Link>
@@ -585,8 +590,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
-               width={90}
-            height={90}
+              width={90}
+              height={90}
             />
             <h3>Comércio Local</h3>
           </Link>
@@ -597,8 +602,8 @@ const IndexPage = props => {
               placeholder={"NONE"}
               critical='true'
               className={" footer-badges"}
-               width={90}
-            height={90}
+              width={90}
+              height={90}
             />
             <h3>Hackativismo</h3>
           </Link>
@@ -630,7 +635,9 @@ export const queryAtividade = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { createdAt: { lt: "null" } } }
+      filter: {
+        frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
+      }
       limit: 900
     ) {
       edges {

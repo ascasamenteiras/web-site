@@ -1,5 +1,6 @@
 ---
 topology: posts
+status: true
 title: Hackativismo - o código aberto e a descentralização da internet
 headline: Nós d'As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
 date: 2022-08-01T08:30:00+00:00
@@ -14,7 +15,8 @@ featuredImage: ../posts/images/homem-computador.jpg
 homeHighlightRelatedList: false
 homeHighlight: false
 homeHighlightRelated: false
-questions: ["uma:pergunta","outra:pergunta","duas:perguntas","novas:perguntas"]
+questions:
+  ["uma:pergunta", "outra:pergunta", "duas:perguntas", "novas:perguntas"]
 ---
 
 Patrocinamos tecnologia brasileira, livre e aberta em nosso web sítio.

@@ -124,7 +124,9 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       allMarkdownRemark(
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { frontmatter: { createdAt: { lt: "null" } } }
+        filter: {
+          frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
+        }
       ) {
         edges {
           node {
@@ -143,6 +145,7 @@ exports.createPages = async ({ graphql, actions }) => {
               topology
               title
               author
+              status
               questions
               featuredPost
               homeHighlight
@@ -372,7 +375,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const posts = result.data.allMarkdownRemark.edges;
     posts.forEach(({ node }) => {
-      if (node.frontmatter.topology === "posts") {
+      if (
+        node.frontmatter.topology === "posts" &&
+        node.frontmatter.status === true
+      ) {
         createPage({
           path: node.fields.slug,
           component: path.resolve(
