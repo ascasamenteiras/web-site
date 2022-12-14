@@ -194,7 +194,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       allPages: allMarkdownRemark(
         filter: {
-          frontmatter: { status: { eq: true }, topology: { ne: "pages" } }
+          frontmatter: { status: { eq: true }, topology: { eq: "pages" } }
         }
       ) {
         edges {
