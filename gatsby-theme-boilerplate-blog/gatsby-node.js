@@ -345,6 +345,25 @@ exports.createPages = async ({ graphql, actions }) => {
 				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
 				xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+        <url>
+        <loc>https://ascasamenteiras.com.br/</loc>
+        <lastmod>2022-12-14T08:30:00.000Z</lastmod>
+        <image:image>
+          <image:loc>https://ascasamenteiras.com.br/static/a0dd69c92bab97911931006e14f102b6/5531e/52015494369_659ac9d5bb_o.webp</image:loc>
+        </image:image>
+      </url>,
+
+      <url>
+        <loc>https://ascasamenteiras.com.br/contato/</loc>
+        <lastmod>2022-12-14T08:30:00.000Z</lastmod>
+        <image:image>
+          <image:loc>https://ascasamenteiras.com.br/static/a0dd69c92bab97911931006e14f102b6/5531e/52015494369_659ac9d5bb_o.webp</image:loc>
+        </image:image>
+      </url>,
+
+
+
 				${allPages.map(item => {
           return `<url>
 					<loc>${businessInfos.siteUrl}${item.slug}</loc>
@@ -367,6 +386,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
 				</url>`;
         })}
+
 		</urlset>
 		`;
     fs.writeFileSync(`./public/page-sitemap.xml`, theXMLpages);
