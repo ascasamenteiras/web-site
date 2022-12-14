@@ -5,7 +5,7 @@ title: Cerimonialista de Casamentos
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: cerimonialista-casamentos
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
-date: 2022-12-01T08:30:00+00:00
+date: 2022-12-14T08:30:00+00:00
 questions:
   [
     "O que faz uma assessoria de casamento?:A assessoria faz a direção do evento. Reuniões com o casal, com fornecedores, alinhando-os com as escolhas do casal. Faz planejamento geral e mapeamento de riscos no local do evento.",

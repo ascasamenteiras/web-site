@@ -5,7 +5,7 @@ title: Casamentos
 description: Depoimentos dos nossos casais sobre o cerimonial e assessoria d'As Casamenteiras.
 slug: casamentos
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
-date: 2022-12-01T08:30:00+00:00
+date: 2022-12-14T08:30:00+00:00
 questions: ["Quantos casamentos As Casamenteiras já realizaram?:Mais de 50."]
 ---
 
