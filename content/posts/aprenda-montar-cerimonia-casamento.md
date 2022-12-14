@@ -12,15 +12,17 @@ categories:
   - artigo
 featuredPost: false
 featuredImage: ../posts/images/jantar-luxo.jpg
-homeHighlight: true
+homeHighlight: false
 homeHighlightRelated: false
 homeHighlightRelatedList: false
-questions: ["Como um casamento desorganizado:lembrados pela equipe d'As Casamenteiras no momento do casamento. ",
-]
+questions:
+  [
+    "Como um casamento desorganizado:lembrados pela equipe d'As Casamenteiras no momento do casamento. ",
+  ]
 ---
 
 Fazer a assessoria de casamento com As Casamenteiras significa não ter estresse e sim.
 
 ## Qual é o primeiro passo para o seu casamento sair perfeito?
 
-As Casamenteiras utiliza tecnologia de ponta para planejamento moderno, manter as 
+As Casamenteiras utiliza tecnologia de ponta para planejamento moderno, manter as

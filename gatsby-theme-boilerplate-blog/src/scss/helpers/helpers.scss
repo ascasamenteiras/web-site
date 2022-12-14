@@ -1011,6 +1011,13 @@ sup {
 					flex-direction: column;
 					text-align: center;
 					min-width: 120px;
+					button {
+						background: transparent;
+						border: 0;
+						display: flex;
+						flex-direction: column;
+						text-align: center;
+					}
 					label {
 						margin: 10px 5px 15px;
 						font-size: 16px;
@@ -1018,6 +1025,8 @@ sup {
 						text-transform: uppercase;
 						line-height: 19px;
 						font-family: $third__font;
+						color: $cta__colorLink;
+						cursor: pointer;
 					}
 					.image-button {
 						cursor: pointer;
@@ -1054,7 +1063,24 @@ sup {
 					display: grid;
 					grid-template-columns: 1fr 1fr 1fr;
 					width: 90%;
+					margin: 0 auto 15px;
+				}
+				.submit-button {
+					border-radius: 3px;
+					border: 2px solid $cta__colorLink;
 					margin: 0 auto;
+					padding: 10px 15px;
+					font-size: 16px;
+					color: $cta__colorLink;
+					background: $cta__color;
+					cursor: pointer;
+					&:hover {
+						color: $cta__color;
+						background: $cta__colorLink;
+					}
+					&:disabled {
+						opacity: 0.5;
+					}
 				}
 			}
 		}
@@ -1077,4 +1103,81 @@ sup {
 }
 .full-width {
 	width: 100%;
+}
+
+@media (max-width: 768px) {
+	body,
+	.half-div {
+		overflow: auto;
+	}
+	.half-div main {
+		flex-direction: column;
+	}
+	.half-div main .main-image,
+	.half-div main .main-content {
+		width: 100%;
+	}
+}
+.modal-background {
+	background: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	display: block;
+	content: " ";
+	z-index: 1;
+	cursor: not-allowed;
+}
+.landing-modal-wrapper {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	backdrop-filter: blur(5px);
+	.modal-landing {
+		max-width: 440px;
+		width: 100%;
+		min-width: 300px;
+		background-color: $brand__color;
+		border-radius: 5px;
+		padding: 20px;
+		box-shadow: 0px 0px 12px 3px rgb(100 70 50 / 40%);
+		border: 2px solid #85664b;
+		z-index: 9999;
+		input {
+			background: #fffded;
+			padding: 10px 15px;
+			border: 1px solid #856732;
+			width: 80%;
+			min-width: 300px;
+			border-radius: 3px;
+		}
+	}
+	span.close-modal {
+		position: absolute;
+		z-index: 9999;
+		top: 25px;
+		right: 25px;
+		font-size: 55px;
+		font-weight: 500;
+		border: 1px solid white;
+		color: white;
+		border-radius: 5px;
+		height: 60px;
+		width: 60px;
+		line-height: 58px;
+		font-family: $third__font;
+		opacity: 0.8;
+		cursor: pointer;
+		&:hover {
+			opacity: 1;
+		}
+	}
 }

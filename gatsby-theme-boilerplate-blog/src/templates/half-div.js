@@ -7,8 +7,10 @@ import HalfDivWrapper from "@BlockBuilder/HalfDivWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 const HalfDiv = ({ location, pageContext }) => {
-  const [btnClick, setBtnClick] = useState("");
+  const [btnClick, setBtnClick] = useState(null);
+  // btnClick.wich === "email"
   const [email, setEmail] = useState("");
+  const [emailFocus, setEmailFocus] = useState("");
   const [honey, setHoney] = useState("");
   const [mcRes, setMcRes] = useState("");
   const [msg, setMsg] = useState("");
@@ -33,12 +35,12 @@ const HalfDiv = ({ location, pageContext }) => {
   };
 
   const handleEmailChange = emailTyping => {
-    if (emailTyping.includes('@')) {
+    if (emailTyping.includes("@")) {
       if (emailTyping.lenght >= 8) {
         return setEmail(emailTyping);
       }
     }
-    return null
+    return null;
   };
   const handleHoneypotChange = honeyTyping => {
     setHoney(honeyTyping);
@@ -78,6 +80,19 @@ const HalfDiv = ({ location, pageContext }) => {
   const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
   const fingerImage = getImage(fingerButton.childrenImageSharp[0]);
 
+  function handleClick(clickedBtn) {
+    setBtnClick(clickedBtn);
+    console.log(btnClick);
+  }
+  // btn name
+  // state neutral
+  // state clicked
+  // state closed
+
+  // modal name
+  // state open
+  // state close
+  // content inputs
   return (
     <HalfDivWrapper
       backgroundImage={{
@@ -308,33 +323,54 @@ const HalfDiv = ({ location, pageContext }) => {
                     </div>
                   </div>
 
-                  <div className='landing-date input-wrapper'>
-                    <GatsbyImage
-                      image={dateImage}
-                      alt={"Algo aqui"}
-                      width={60}
-                      height={60}
-                      layout='contain'
-                      placeholder={"NONE"}
-                      className={"image-button error-color"}
-                    />
-
-                    <label htmlFor='mce-EMAIL'>
-                      E-mail
-                      <br />
-                      Cônjuge A
-                    </label>
-                    <div className='hidden'>
-                      <input
-                        type='email'
-                        placeholder='seu@email.com (avise-me por e-mail)'
-                        onChange={e => handleEmailChange(e.target.value)}
-                        value={email}
-                        name='EMAIL'
-                        className='required email'
-                        id='mce-EMAIL'
-                        required
+                  <div className='landing-date input-wrapper email'>
+                    <button onClick={e => handleClick("email")}>
+                      <GatsbyImage
+                        image={dateImage}
+                        alt={"Algo aqui"}
+                        width={60}
+                        height={60}
+                        layout='contain'
+                        placeholder={"NONE"}
+                        className={"image-button error-color"}
                       />
+
+                      <label htmlFor='mce-EMAIL'>
+                        E-mail
+                        <br />
+                        Cônjuge A
+                      </label>
+                    </button>
+
+                    <div
+                      className={
+                        btnClick === "email"
+                          ? "landing-modal-wrapper"
+                          : "hidden"
+                      }
+                    >
+                      <div
+                        className='modal-background'
+                        onClick={e => handleClick(null)}
+                      ></div>
+                      <div className='modal-landing'>
+                        <input
+                          type='email'
+                          placeholder='seu@email.com (avise-me por e-mail)'
+                          onChange={e => handleEmailChange(e.target.value)}
+                          value={email}
+                          name='EMAIL'
+                          className='required email'
+                          id='mce-EMAIL'
+                          required
+                        />
+                      </div>
+                      <span
+                        className='close-modal'
+                        onClick={e => handleClick(null)}
+                      >
+                        x
+                      </span>
                     </div>
                   </div>
 
@@ -387,17 +423,13 @@ const HalfDiv = ({ location, pageContext }) => {
 
                 <input
                   type='submit'
-                  value='Subscribe'
+                  value='Inscreva-se'
                   name='subscribe'
                   id='mc-embedded-subscribe'
-                  className='button'
+                  className='button submit-button'
                   disabled={email ? false : true}
                 />
 
-                <br />
-                <label htmlFor='mce-EMAIL'>
-                  <span>Não enviamos SPAM.</span>
-                </label>
                 <br />
                 <br />
               </form>
