@@ -12,7 +12,7 @@ const OneColumn = ({ location, pageContext }) => {
     site,
     cardImage,
     bandeiraWhats,
-    bandeiraQuestion
+    bandeiraQuestion,
   } = useSiteMetadatas();
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
   const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
@@ -20,7 +20,7 @@ const OneColumn = ({ location, pageContext }) => {
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const { title, content, description, questions } = pageContext;
-  const defaultQuestions = site.siteMetadata.questions
+  const defaultQuestions = site.siteMetadata.questions;
 
   return (
     <MainPageWrapper
@@ -40,7 +40,7 @@ const OneColumn = ({ location, pageContext }) => {
         />
       }
       opt={{
-        titleSeo: `As Casamenteiras`,
+        titleSeo: title,
         classes: "one-column",
         pageQuestions: questions || defaultQuestions,
         mainLogo: imgHolder,
