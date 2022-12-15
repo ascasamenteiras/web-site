@@ -652,7 +652,19 @@ exports.createPages = async ({ graphql, actions }) => {
           <meta name="amp-story-generator-name" content="Web Stories for GatsbyJS">
           <meta name="amp-story-generator-version" content="1.0.0">
           <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-          
+          <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+  "vars" : {
+    "gtag_id": "G-D2B5PVZ7TY",
+    "config" : {
+      "G-D2B5PVZ7TY": { "groups": "default" }
+    }
+  }
+}
+</script>
+</amp-analytics>
       <style amp-custom="">
 .story-page{position:relative}
 .inner-page-wrapper{position:absolute; width: 100%; height: 50%;  
