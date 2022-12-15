@@ -347,7 +347,7 @@ exports.createPages = async ({ graphql, actions }) => {
 				xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
         <url>
-        <loc>https://ascasamenteiras.com.br/</loc>
+        <loc>https://ascasamenteiras.com.br</loc>
         <lastmod>2022-12-14T08:30:00.000Z</lastmod>
         <image:image>
           <image:loc>https://ascasamenteiras.com.br/static/a0dd69c92bab97911931006e14f102b6/5531e/52015494369_659ac9d5bb_o.webp</image:loc>
