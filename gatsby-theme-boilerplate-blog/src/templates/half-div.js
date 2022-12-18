@@ -5,12 +5,44 @@ import addToMailchimp from "gatsby-plugin-mailchimp";
 
 import HalfDivWrapper from "@BlockBuilder/HalfDivWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
-
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+function validateDate(input) {
+  const reg = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
+  const dates = input.split("/");
+  if (parseInt(dates[2]) > 2022) {
+    return reg.test(String(input).toLowerCase());
+  } else {
+    return false;
+  }
+}
+function validateWhats(input) {
+  const whatSlipt = input.split("-");
+  if (input.length > 12) {
+    if (whatSlipt[1].length === 4) {
+      const reW = /(\([0-9]{2}\)\s?[0-9]{4,5}-?[0-9]{3,4})|([0-9]{10,11})|([0-9]{2}\s?[0-9]{8,9})/gm;
+      return input.match(reW) ? true : false;
+    }
+  }
+}
 const HalfDiv = ({ location, pageContext }) => {
   const [btnClick, setBtnClick] = useState(null);
-  // btnClick.wich === "email"
   const [email, setEmail] = useState("");
-  const [emailFocus, setEmailFocus] = useState("");
+  const [emailSuccess, setEmailSuccess] = useState(false);
+  const [date, setDate] = useState("");
+  const [dateSuccess, setDateSuccess] = useState(false);
+  const [peopleA, setPeopleA] = useState("");
+  const [peopleASuccess, setPeopleASuccess] = useState(false);
+  const [peopleB, setPeopleB] = useState("");
+  const [peopleBSuccess, setPeopleBSuccess] = useState(false);
+  const [city, setCity] = useState("");
+  const [citySuccess, setCitySuccess] = useState(false);
+
+  const [peopleAWhats, setPeopleAWhats] = useState("");
+  const [peopleAWhatsSuccess, setPeopleAWhatsSuccess] = useState("");
+
   const [honey, setHoney] = useState("");
   const [mcRes, setMcRes] = useState("");
   const [msg, setMsg] = useState("");
@@ -33,14 +65,59 @@ const HalfDiv = ({ location, pageContext }) => {
   const handleSuccess = successNow => {
     setSuccess(successNow);
   };
-
-  const handleEmailChange = emailTyping => {
-    if (emailTyping.includes("@")) {
-      if (emailTyping.lenght >= 8) {
-        return setEmail(emailTyping);
-      }
+  const handlePeopleAWhatsChange = peopleAWhatsTyping => {
+    const whatsValidated = validateWhats(peopleAWhatsTyping);
+    setPeopleAWhats(peopleAWhatsTyping);
+    if (whatsValidated) {
+      return setPeopleAWhatsSuccess(true);
+    } else {
+      return setPeopleAWhatsSuccess(false);
     }
-    return null;
+  };
+
+  const handleCityChange = cityTyping => {
+    setCity(cityTyping);
+    if (cityTyping.length >= 2) {
+      return setCitySuccess(true);
+    } else {
+      return setCitySuccess(false);
+    }
+  };
+  const handlePeopleBChange = peopleBTyping => {
+    setPeopleB(peopleBTyping);
+    if (peopleBTyping.length >= 2) {
+      return setPeopleBSuccess(true);
+    } else {
+      return setPeopleBSuccess(false);
+    }
+  };
+  const handlePeopleAChange = peopleATyping => {
+    setPeopleA(peopleATyping);
+    if (peopleATyping.length >= 2) {
+      return setPeopleASuccess(true);
+    } else {
+      return setPeopleASuccess(false);
+    }
+  };
+  const handleDateChange = dateTyping => {
+    setDate(dateTyping);
+    const validatedDate = validateDate(dateTyping);
+    if (validatedDate) {
+      return setDateSuccess(true);
+    } else {
+      return setDateSuccess(false);
+    }
+  };
+  const handleEmailChange = emailTyping => {
+    setEmail(emailTyping);
+
+    console.log("yeah setEmail typing");
+    const validatedEmail = validateEmail(emailTyping);
+    if (validatedEmail) {
+      return setEmailSuccess(true);
+    } else {
+      return setEmailSuccess(false);
+    }
   };
   const handleHoneypotChange = honeyTyping => {
     setHoney(honeyTyping);
@@ -221,26 +298,123 @@ const HalfDiv = ({ location, pageContext }) => {
                   </label>
                 </p>
                 <br />
+                {/* 
+                <div className='landing-date input-wrapper email'>
+                    <button onClick={e => handleClick("email")}>
+                      <GatsbyImage
+                        image={dateImage}
+                        alt={"Algo aqui"}
+                        width={60}
+                        height={60}
+                        layout='contain'
+                        placeholder={"NONE"}
+                        className={`image-button ${
+                          dateSuccess === true
+                            ? "success-color"
+                            : email === ""
+                            ? ""
+                            : "error-color"
+                        }`}
+                      />
+
+                      <label htmlFor='mce-EMAIL'>
+                        E-mail
+                        <br />
+                        Cônjuge A
+                      </label>
+                    </button>
+
+                    <div
+                      className={
+                        btnClick === "email"
+                          ? "landing-modal-wrapper"
+                          : "hidden"
+                      }
+                    >
+                      <div
+                        className='modal-background'
+                        onClick={e => handleClick(null)}
+                      ></div>
+                      <div className='modal-landing'>
+                        <input
+                          type='email'
+                          placeholder='seu@email.com (avise-me por e-mail)'
+                          onChange={e => handleEmailChange(e.target.value)}
+                          value={email}
+                          name='EMAIL'
+                          className={`required email`}
+                          id='mce-EMAIL'
+                          required
+                        />
+                        <button
+                          className='landing-input-ok'
+                          onClick={e => handleClick(null)}
+                        >
+                          OK
+                        </button>
+                      </div>
+                      <span
+                        className='close-modal'
+                        onClick={e => handleClick(null)}
+                      >
+                        x
+                      </span>
+                    </div>
+                  </div> */}
 
                 <div className='grid-me-please'>
-                  <div className='landing-date input-wrapper'>
-                    <GatsbyImage
-                      image={dateImage}
-                      alt={"Algo aqui"}
-                      width={60}
-                      height={60}
-                      layout='contain'
-                      placeholder={"NONE"}
-                      className={"image-button"}
-                    />
+                  <div className='landing-date input-wrapper date'>
+                    <button onClick={e => handleClick("date")}>
+                      <GatsbyImage
+                        image={dateImage}
+                        alt={"Algo aqui"}
+                        width={60}
+                        height={60}
+                        layout='contain'
+                        placeholder={"NONE"}
+                        className={`image-button ${
+                          dateSuccess === true
+                            ? "success-color"
+                            : date === ""
+                            ? ""
+                            : "error-color"
+                        }`}
+                      />
 
-                    <label htmlFor='mce-DATE1-day'>
-                      Data do
-                      <br />
-                      Casamento
-                    </label>
-                    <div className='hidden'>
-                      <input
+                      <label htmlFor='mce-DATE1-day'>
+                        Data do
+                        <br />
+                        Casamento
+                      </label>
+                    </button>
+
+                    <div
+                      className={
+                        btnClick === "date" ? "landing-modal-wrapper" : "hidden"
+                      }
+                    >
+                      <div
+                        className='modal-background'
+                        onClick={e => handleClick(null)}
+                      ></div>
+                      <div className='modal-landing'>
+                        <input
+                          type='text'
+                          name='fulldate'
+                          id='fulldate'
+                          size='10'
+                          maxLength={10}
+                          placeholder='DD/MM/AAAA'
+                          pattern='/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/'
+                          onChange={e => handleDateChange(e.target.value)}
+                        />
+                        <button
+                          className='landing-input-ok'
+                          onClick={e => handleClick(null)}
+                        >
+                          OK
+                        </button>
+                        {/* <input
                         className='datepart '
                         type='text'
                         pattern='[0-9]*'
@@ -269,57 +443,136 @@ const HalfDiv = ({ location, pageContext }) => {
                         maxLength='4'
                         name='DATE1[year]'
                         id='mce-DATE1-year'
-                      />
+                      /> */}
+                      </div>
+                      <span
+                        className='close-modal'
+                        onClick={e => handleClick(null)}
+                      >
+                        x
+                      </span>
                     </div>
                   </div>
 
-                  <div className='landing-date input-wrapper'>
-                    <GatsbyImage
-                      image={dateImage}
-                      alt={"Algo aqui"}
-                      width={60}
-                      height={60}
-                      layout='contain'
-                      placeholder={"NONE"}
-                      className={"image-button"}
-                    />
-                    <label htmlFor='mce-PEOPLEA'>
-                      Nome
-                      <br />
-                      Cônjuge A
-                    </label>
-                    <div className='hidden'>
-                      <input
-                        type='text'
-                        name='PEOPLEA'
-                        className=''
-                        id='mce-PEOPLEA'
+                  <div className='landing-date input-wrapper peopleA'>
+                    <button onClick={e => handleClick("peopleA")}>
+                      <GatsbyImage
+                        image={dateImage}
+                        alt={"Algo aqui"}
+                        width={60}
+                        height={60}
+                        layout='contain'
+                        placeholder={"NONE"}
+                        className={`image-button ${
+                          peopleASuccess === true
+                            ? "success-color"
+                            : peopleA === ""
+                            ? ""
+                            : "error-color"
+                        }`}
                       />
+                      <label htmlFor='mce-PEOPLEA'>
+                        Nome
+                        <br />
+                        Cônjuge A
+                      </label>
+                    </button>
+
+                    <div
+                      className={
+                        btnClick === "peopleA"
+                          ? "landing-modal-wrapper"
+                          : "hidden"
+                      }
+                    >
+                      <div
+                        className='modal-background'
+                        onClick={e => handleClick(null)}
+                      ></div>
+                      <div className='modal-landing'>
+                        <input
+                          type='text'
+                          name='PEOPLEA'
+                          className=''
+                          id='mce-PEOPLEA'
+                          onChange={e => handlePeopleAChange(e.target.value)}
+                        />
+                        <button
+                          className='landing-input-ok'
+                          onClick={e => handleClick(null)}
+                        >
+                          OK
+                        </button>
+                      </div>
+
+                      <span
+                        className='close-modal'
+                        onClick={e => handleClick(null)}
+                      >
+                        x
+                      </span>
                     </div>
                   </div>
 
-                  <div className='landing-date input-wrapper'>
-                    <GatsbyImage
-                      image={dateImage}
-                      alt={"Algo aqui"}
-                      width={60}
-                      height={60}
-                      layout='contain'
-                      placeholder={"NONE"}
-                      className={"image-button success-color"}
-                    />
-                    <label htmlFor='mce-PHONE'>
-                      Whatsapp
-                      <br />
-                      Cônjuge A
-                    </label>
-                    <div className='hidden'>
-                      <input
-                        type='text'
-                        name='PHONE'
-                        className=''
-                        id='mce-PHONE'
+                  <div className='landing-date input-wrapper whatsPeopleA'>
+                    <button onClick={e => handleClick("whatsPeopleA")}>
+                      <GatsbyImage
+                        image={dateImage}
+                        alt={"Algo aqui"}
+                        width={60}
+                        height={60}
+                        layout='contain'
+                        placeholder={"NONE"}
+                        className={`image-button ${
+                          peopleAWhatsSuccess === true
+                            ? "success-color"
+                            : peopleAWhats === ""
+                            ? ""
+                            : "error-color"
+                        }`}
                       />
+                      <label htmlFor='mce-PHONE'>
+                        Whatsapp
+                        <br />
+                        Cônjuge A
+                      </label>
+                    </button>
+
+                    <div
+                      className={
+                        btnClick === "whatsPeopleA"
+                          ? "landing-modal-wrapper"
+                          : "hidden"
+                      }
+                    >
+                      <div
+                        className='modal-background'
+                        onClick={e => handleClick(null)}
+                      ></div>
+                      <div className='modal-landing'>
+                        <input
+                          type='text'
+                          name='PHONE'
+                          className=''
+                          id='mce-PHONE'
+                          onChange={e =>
+                            handlePeopleAWhatsChange(e.target.value)
+                          }
+                        />
+                        <button
+                          className='landing-input-ok'
+                          onClick={e => handleClick(null)}
+                        >
+                          OK
+                        </button>
+                      </div>
+
+                      <span
+                        className='close-modal'
+                        onClick={e => handleClick(null)}
+                      >
+                        x
+                      </span>
                     </div>
                   </div>
 
@@ -332,7 +585,13 @@ const HalfDiv = ({ location, pageContext }) => {
                         height={60}
                         layout='contain'
                         placeholder={"NONE"}
-                        className={"image-button error-color"}
+                        className={`image-button ${
+                          emailSuccess === true
+                            ? "success-color"
+                            : email === ""
+                            ? ""
+                            : "error-color"
+                        }`}
                       />
 
                       <label htmlFor='mce-EMAIL'>
@@ -360,10 +619,16 @@ const HalfDiv = ({ location, pageContext }) => {
                           onChange={e => handleEmailChange(e.target.value)}
                           value={email}
                           name='EMAIL'
-                          className='required email'
+                          className={`required email`}
                           id='mce-EMAIL'
                           required
                         />
+                        <button
+                          className='landing-input-ok'
+                          onClick={e => handleClick(null)}
+                        >
+                          OK
+                        </button>
                       </div>
                       <span
                         className='close-modal'
@@ -374,49 +639,115 @@ const HalfDiv = ({ location, pageContext }) => {
                     </div>
                   </div>
 
-                  <div className='landing-date input-wrapper'>
-                    <GatsbyImage
-                      image={dateImage}
-                      alt={"Algo aqui"}
-                      width={60}
-                      height={60}
-                      layout='contain'
-                      placeholder={"NONE"}
-                      className={"image-button"}
-                    />
-                    <label htmlFor='mce-PEOPLEB'>
-                      Nome
-                      <br />
-                      Cônjuge B
-                    </label>
-                    <div className='hidden'>
-                      <input
-                        type='text'
-                        name='PEOPLEB'
-                        className=''
-                        id='mce-PEOPLEB'
+                  <div className='landing-date input-wrapper peopleB'>
+                    <button onClick={e => handleClick("peopleB")}>
+                      <GatsbyImage
+                        image={dateImage}
+                        alt={"Algo aqui"}
+                        width={60}
+                        height={60}
+                        layout='contain'
+                        placeholder={"NONE"}
+                        className={`image-button ${
+                          peopleBSuccess === true
+                            ? "success-color"
+                            : peopleB === ""
+                            ? ""
+                            : "error-color"
+                        }`}
                       />
+                      <label htmlFor='mce-PEOPLEB'>
+                        Nome
+                        <br />
+                        Cônjuge B
+                      </label>
+                    </button>
+
+                    <div
+                      className={
+                        btnClick === "peopleB"
+                          ? "landing-modal-wrapper"
+                          : "hidden"
+                      }
+                    >
+                      <div
+                        className='modal-background'
+                        onClick={e => handleClick(null)}
+                      ></div>
+                      <div className='modal-landing'>
+                        <input
+                          type='text'
+                          name='PEOPLEB'
+                          className=''
+                          id='mce-PEOPLEB'
+                          onChange={e => handlePeopleBChange(e.target.value)}
+                        />
+                        <button
+                          className='landing-input-ok'
+                          onClick={e => handleClick(null)}
+                        >
+                          OK
+                        </button>
+                      </div>
+                      <span
+                        className='close-modal'
+                        onClick={e => handleClick(null)}
+                      >
+                        x
+                      </span>
                     </div>
                   </div>
 
-                  <div className='landing-date input-wrapper'>
-                    <GatsbyImage
-                      image={dateImage}
-                      alt={"Algo aqui"}
-                      width={60}
-                      height={60}
-                      layout='contain'
-                      placeholder={"NONE"}
-                      className={"image-button"}
-                    />
-                    <label htmlFor='mce-CITY'>Cidade</label>
-                    <div className='hidden'>
-                      <input
-                        type='text'
-                        name='CITY'
-                        className=''
-                        id='mce-CITY'
+                  <div className='landing-date input-wrapper city'>
+                    <button onClick={e => handleClick("city")}>
+                      <GatsbyImage
+                        image={dateImage}
+                        alt={"Algo aqui"}
+                        width={60}
+                        height={60}
+                        layout='contain'
+                        placeholder={"NONE"}
+                        className={`image-button ${
+                          citySuccess === true
+                            ? "success-color"
+                            : city === ""
+                            ? ""
+                            : "error-color"
+                        }`}
                       />
+                      <label htmlFor='mce-CITY'>Cidade</label>
+                    </button>
+
+                    <div
+                      className={
+                        btnClick === "city" ? "landing-modal-wrapper" : "hidden"
+                      }
+                    >
+                      <div
+                        className='modal-background'
+                        onClick={e => handleClick(null)}
+                      ></div>
+                      <div className='modal-landing'>
+                        <input
+                          type='text'
+                          name='CITY'
+                          className=''
+                          id='mce-CITY'
+                          onChange={e => handleCityChange(e.target.value)}
+                        />
+                        <button
+                          className='landing-input-ok'
+                          onClick={e => handleClick(null)}
+                        >
+                          OK
+                        </button>
+                      </div>
+                      <span
+                        className='close-modal'
+                        onClick={e => handleClick(null)}
+                      >
+                        x
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -427,7 +758,16 @@ const HalfDiv = ({ location, pageContext }) => {
                   name='subscribe'
                   id='mc-embedded-subscribe'
                   className='button submit-button'
-                  disabled={email ? false : true}
+                  disabled={
+                    emailSuccess &&
+                    dateSuccess &&
+                    peopleASuccess &&
+                    peopleBSuccess &&
+                    citySuccess &&
+                    peopleAWhatsSuccess
+                      ? false
+                      : true
+                  }
                 />
 
                 <br />

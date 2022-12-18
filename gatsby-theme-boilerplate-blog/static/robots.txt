@@ -25,6 +25,7 @@ Disallow: /category/staff/
 Disallow: /biografia/
 Disallow: /portifolio/
 Disallow: /category/pain/
+Disallow: /assessoria-cerimonial/
 
 Sitemap: https://ascasamenteiras.com.br/post-sitemap.xml
 Sitemap: https://ascasamenteiras.com.br/page-sitemap.xml

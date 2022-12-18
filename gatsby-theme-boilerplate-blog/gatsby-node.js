@@ -654,7 +654,7 @@ exports.createPages = async ({ graphql, actions }) => {
           <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
           <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
-      <style amp-custom="">
+      <style amp-custom>
 .story-page{position:relative}
 .inner-page-wrapper{position:absolute; width: 100%; height: 50%;  
   background: rgb(0,0,0);

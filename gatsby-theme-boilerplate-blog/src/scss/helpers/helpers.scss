@@ -1018,6 +1018,13 @@ sup {
 						flex-direction: column;
 						text-align: center;
 					}
+					button.landing-input-ok {
+						border: 2px solid gray;
+						background-color: green;
+						border-radius: 3px;
+						padding: 7px 15px;
+						cursor: pointer;
+					}
 					label {
 						margin: 10px 5px 15px;
 						font-size: 16px;
@@ -1027,6 +1034,7 @@ sup {
 						font-family: $third__font;
 						color: $cta__colorLink;
 						cursor: pointer;
+						width: 100%;
 					}
 					.image-button {
 						cursor: pointer;
