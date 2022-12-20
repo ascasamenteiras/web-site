@@ -4,6 +4,8 @@ import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import MainPageWrapper from "@BlockBuilder/MainPageWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
+import schemaYAML from "@Content/configs/schema-org.yaml";
+
 const ContatoPage = props => {
   const {
     imgHolder,
@@ -20,7 +22,10 @@ const ContatoPage = props => {
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const defaultQuestions = site.siteMetadata.questions;
+  console.log("schemaYAML");
 
+  const { sameAs } = schemaYAML.schema[0].card;
+  const sameAsResult = Object.keys(sameAs).map(key => [key, sameAs[key]]);
   return (
     <MainPageWrapper
       backgroundImage={{
@@ -30,7 +35,7 @@ const ContatoPage = props => {
       logo={
         <GatsbyImage
           image={logoQuery}
-          alt={"Logotipo d'As Casamenteiras"}
+          alt={"Logotipo do Portal MaiTextos"}
           width={450}
           height={230}
           placeholder={"NONE"}
@@ -39,7 +44,7 @@ const ContatoPage = props => {
         />
       }
       opt={{
-        titleSeo: `As Casamenteiras`,
+        titleSeo: `Portal MaiTextos`,
         classes: "one-column",
         pageQuestions: defaultQuestions,
         mainLogo: imgHolder,
@@ -74,7 +79,15 @@ const ContatoPage = props => {
     >
       <main>
         {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
-        <h1>teste</h1>
+        <ul className={"contact-link-tree-wrapper"}>
+          {sameAsResult.map((e, i) => (
+            <li>
+              <a href={e[1]} rel='nofollow' target={"_blank"} key={i}>
+                {e[0].charAt(0).toUpperCase() + e[0].slice(1)}
+              </a>
+            </li>
+          ))}
+        </ul>
       </main>
     </MainPageWrapper>
   );
