@@ -1204,7 +1204,10 @@ ul.contact-link-tree-wrapper {
 			box-shadow: 2px 6px 0 0 rgb(0 0 0 / 60%);
 			line-height: 22px;
 			max-width: 550px;
-			width: 100%;
+			width: 240px;
+			@media (min-width: 768px) {
+				width: 100%;
+			}
 			margin: 10px auto;
 			background-color: $cta__color;
 			color: $cta__colorLink;
