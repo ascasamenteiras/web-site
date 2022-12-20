@@ -35,7 +35,7 @@ const ContatoPage = props => {
       logo={
         <GatsbyImage
           image={logoQuery}
-          alt={"Logotipo do Portal MaiTextos"}
+          alt={"Logotipo do As Casamenteiras"}
           width={450}
           height={230}
           placeholder={"NONE"}
@@ -44,7 +44,7 @@ const ContatoPage = props => {
         />
       }
       opt={{
-        titleSeo: `Portal MaiTextos`,
+        titleSeo: `Árvore de Links`,
         classes: "one-column",
         pageQuestions: defaultQuestions,
         mainLogo: imgHolder,
