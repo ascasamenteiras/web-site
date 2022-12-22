@@ -113,7 +113,10 @@ const Seo = ({
         <meta name='theme-color' content={themeColor || "#FF0081"} />
         <link rel='canonical' href={slug} />
         {topology === "post" ? (
-          <link rel='amphtml' href={`${slug.slice(0, -1)}.stories.amp.html`} />
+          <link
+            rel='alternate amphtml'
+            href={`${slug.slice(0, -1)}.stories.amp.html`}
+          />
         ) : (
           ""
         )}

@@ -147,7 +147,7 @@ const CategoryListPage = props => {
               />
             </Row>
             <main className='main-container' role='list'>
-              <HeadingBlock classes='m30auto' importance={9} width={400}>
+              <HeadingBlock classes='m30auto' importance={10} width={400}>
                 Posts da Categoria: {props.pageContext.categories}
               </HeadingBlock>
               <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
