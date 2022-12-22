@@ -33,8 +33,10 @@ function SeoContainer({
 
   let articleUrlLastChar = null;
   let finalArticleUrl = null;
-  if (articleUrl.slice(-4) === "html") {
-    topology = "amp";
+  if (articleUrl) {
+    if (articleUrl.slice(-4) === "html") {
+      topology = "amp";
+    }
   }
   if (topology !== "amp") {
     articleUrlLastChar = articleUrl.slice(-1);
