@@ -40,7 +40,7 @@ const ErrorPage = props => {
         />
       }
       opt={{
-        titleSeo: `Árvore de Links`,
+        titleSeo: `Erro 404`,
         classes: "one-column",
         pageQuestions: defaultQuestions,
         articleUrl: props.location.href,
