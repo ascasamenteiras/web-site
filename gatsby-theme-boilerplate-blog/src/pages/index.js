@@ -212,7 +212,7 @@ const IndexPage = props => {
         classes: "blog-list",
         schemaType: "blog",
         blogListing: posts.slice(0, 9),
-        articleUrl: location.href,
+        articleUrl: props.location.href,
         mainLogo: imgHolder,
         cardImage: cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null,
         serverUrl: props.location.href,

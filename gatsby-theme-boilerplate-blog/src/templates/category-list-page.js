@@ -99,7 +99,7 @@ const CategoryListPage = props => {
               titleSeo: `Trends: ${props.pageContext.categories}`,
               pageQuestions: defaultQuestions,
               classes: "blog-list",
-              articleUrl: location.href,
+              articleUrl: props.location.href,
               schemaType: "blog",
               mainLogo: imgHolder,
               cardImage: getSrc(cardImage.childrenImageSharp[0]),

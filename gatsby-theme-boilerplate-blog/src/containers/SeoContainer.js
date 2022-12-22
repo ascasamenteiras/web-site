@@ -37,11 +37,11 @@ function SeoContainer({
     if (articleUrl.slice(-4) === "html") {
       topology = "amp";
     }
-  }
-  if (topology !== "amp") {
-    articleUrlLastChar = articleUrl.slice(-1);
-    finalArticleUrl =
-      articleUrlLastChar === "/" ? articleUrl : articleUrl + "/";
+    if (topology !== "amp") {
+      articleUrlLastChar = articleUrl.slice(-1);
+      finalArticleUrl =
+        articleUrlLastChar === "/" ? articleUrl : articleUrl + "/";
+    }
   }
 
   return (
