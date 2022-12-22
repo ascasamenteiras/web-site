@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
+const _ = require("lodash");
+
 import { Row } from "../components/InsertRow";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 import PostsBlock from "@BlockBuilder/PostsBlock";
@@ -263,7 +265,7 @@ const IndexPage = props => {
                         return (
                           <Link
                             key={key}
-                            to={"/trends/" + el + "/"}
+                            to={"/trends/" + _.kebabCase(el) + "/"}
                             className='main-article-categories'
                           >
                             {el}
