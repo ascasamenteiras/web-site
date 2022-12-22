@@ -42,6 +42,9 @@ function SeoContainer({
       finalArticleUrl =
         articleUrlLastChar === "/" ? articleUrl : articleUrl + "/";
     }
+    if (topology === "index") {
+      finalArticleUrl = articleUrl.slice(0, -1);
+    }
   }
 
   return (

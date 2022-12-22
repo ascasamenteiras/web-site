@@ -211,6 +211,7 @@ const IndexPage = props => {
         pageQuestions: defaultQuestions,
         classes: "blog-list",
         schemaType: "blog",
+        topology: "index",
         blogListing: posts.slice(0, 9),
         articleUrl: props.location.href,
         mainLogo: imgHolder,
