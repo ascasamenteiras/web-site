@@ -33,6 +33,7 @@ const Seo = ({
   const hasBar = serverUrl?.charAt(serverUrl.length - 1);
   const servBar = hasBar === "/" ? serverUrl?.slice(0, -1) : serverUrl;
   const cardImagesrc = servBar + cardImage || servBar || cardImage;
+  const slug = articleUrl || servBar;
   return (
     <>
       <Helmet
@@ -110,12 +111,9 @@ const Seo = ({
           ""
         )}
         <meta name='theme-color' content={themeColor || "#FF0081"} />
-        <link rel='canonical' href={articleUrl} />
+        <link rel='canonical' href={slug} />
         {topology === "post" ? (
-          <link
-            rel='amphtml'
-            href={`${articleUrl.slice(0, -1)}.stories.amp.html`}
-          />
+          <link rel='amphtml' href={`${slug.slice(0, -1)}.stories.amp.html`} />
         ) : (
           ""
         )}
