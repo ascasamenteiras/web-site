@@ -56,7 +56,6 @@ function SeoContainer({
       themeColor={site.siteMetadata.themeColor}
       pageQuestions={theQuestions}
       articleUrl={articleUrl}
-      slug={serverUrl}
       killSEO={killSEO}
     />
   );

@@ -26,7 +26,7 @@ const Seo = ({
   serverUrl,
   themeColor,
   pageQuestions,
-  slug,
+  articleUrl,
   killSEO,
 }) => {
   const hasBar = serverUrl?.charAt(serverUrl.length - 1);
@@ -54,10 +54,13 @@ const Seo = ({
         ) : (
           <meta property='og:type' content='website' />
         )}
-        <meta property='article:author' content={siteUrl} />
+        <meta
+          property='article:author'
+          content={siteUrl + "/priscilla-barbosa-cerimonialista"}
+        />
         <meta property='article:publisher' content={siteUrl} />
 
-        <meta property='og:url' content={slug} />
+        <meta property='og:url' content={articleUrl} />
         <meta property='og:site_name' content={title} />
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
