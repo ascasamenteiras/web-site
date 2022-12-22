@@ -28,6 +28,7 @@ const MainTemplateWrapper = ({
   return (
     <BodyBlock
       opt={{ classes: classes, bgImg: backgroundImage.src, options: opt }}
+      topology={opt.topology}
     >
       <HeaderBlock logotipoSvg={logo} />
       {children}

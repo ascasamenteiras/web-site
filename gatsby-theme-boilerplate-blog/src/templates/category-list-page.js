@@ -17,7 +17,7 @@ const CategoryListPage = props => {
     cardImage,
     imgHolder,
     bandeiraWhats,
-    bandeiraQuestion
+    bandeiraQuestion,
   } = useSiteMetadatas();
   return (
     <StaticQuery
@@ -58,13 +58,12 @@ const CategoryListPage = props => {
       `}
       render={data => {
         const categoriesList = data.allMarkdownRemark.edges;
-        
 
-        const defaultQuestions = site.siteMetadata.questions
+        const defaultQuestions = site.siteMetadata.questions;
         const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
         const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
         const categoriesContext = props.pageContext.categories;
-        
+
         const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
         const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
 
@@ -100,6 +99,7 @@ const CategoryListPage = props => {
               titleSeo: `Trends: ${props.pageContext.categories}`,
               pageQuestions: defaultQuestions,
               classes: "blog-list",
+              articleUrl: location.href,
               schemaType: "blog",
               mainLogo: imgHolder,
               cardImage: getSrc(cardImage.childrenImageSharp[0]),
@@ -120,7 +120,7 @@ const CategoryListPage = props => {
               badgesQuestion: (
                 <GatsbyImage
                   image={badgeQuestion}
-                  alt={"Botão do Whats"}       
+                  alt={"Botão do Whats"}
                   width={450}
                   height={230}
                   placeholder={"NONE"}
@@ -133,7 +133,7 @@ const CategoryListPage = props => {
             <Row
               opt={{
                 classes: "banner colorME",
-                isBoxed: true
+                isBoxed: true,
               }}
             >
               <GatsbyImage

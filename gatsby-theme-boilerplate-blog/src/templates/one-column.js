@@ -46,6 +46,7 @@ const OneColumn = ({ location, pageContext }) => {
         mainLogo: imgHolder,
         cardImage: cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null,
         serverUrl: location.href,
+        articleUrl: location.href,
         schemaType: "article",
         description: description,
         social: site.siteMetadata.social.twitter,

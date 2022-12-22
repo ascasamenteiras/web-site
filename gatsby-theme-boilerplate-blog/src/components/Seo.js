@@ -28,6 +28,7 @@ const Seo = ({
   pageQuestions,
   articleUrl,
   killSEO,
+  topology,
 }) => {
   const hasBar = serverUrl?.charAt(serverUrl.length - 1);
   const servBar = hasBar === "/" ? serverUrl?.slice(0, -1) : serverUrl;
@@ -54,10 +55,16 @@ const Seo = ({
         ) : (
           <meta property='og:type' content='website' />
         )}
+
         <meta
           property='article:author'
           content={siteUrl + "/priscilla-barbosa-cerimonialista"}
         />
+        <meta name='author' content={"Priscilla Barbosa"} />
+
+        <meta name='author' content={author} />
+        <meta property='article:author' content={siteUrl} />
+
         <meta property='article:publisher' content={siteUrl} />
 
         <meta property='og:url' content={articleUrl} />
@@ -97,13 +104,21 @@ const Seo = ({
         ) : (
           ""
         )}
-        <meta name='author' content={author} />
         {datePublished ? (
           <meta name='article:published_time' content={datePublished} />
         ) : (
           ""
         )}
         <meta name='theme-color' content={themeColor || "#FF0081"} />
+        <link rel='canonical' href={articleUrl} />
+        {topology === "post" ? (
+          <link
+            rel='amphtml'
+            href={`${articleUrl.slice(0, -1)}.stories.amp.html`}
+          />
+        ) : (
+          ""
+        )}
       </Helmet>
       <SchemaOrgContainer
         schemaType={schemaType}

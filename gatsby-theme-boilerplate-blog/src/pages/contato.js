@@ -47,6 +47,7 @@ const ContatoPage = props => {
         titleSeo: `Árvore de Links`,
         classes: "one-column",
         pageQuestions: defaultQuestions,
+        articleUrl: props.location.href,
         mainLogo: imgHolder,
         cardImage: cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null,
         serverUrl: props.location.href,
@@ -81,8 +82,8 @@ const ContatoPage = props => {
         {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
         <ul className={"contact-link-tree-wrapper"}>
           {sameAsResult.map((e, i) => (
-            <li>
-              <a href={e[1]} rel='nofollow' target={"_blank"} key={i}>
+            <li key={i}>
+              <a href={e[1]} rel='nofollow' target={"_blank"}>
                 {e[0].charAt(0).toUpperCase() + e[0].slice(1)}
               </a>
             </li>

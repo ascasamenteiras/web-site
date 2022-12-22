@@ -23,11 +23,24 @@ function SeoContainer({
   articleUrl,
   pageQuestions,
   killSEO,
+  topology,
 }) {
   const { site } = useSiteMetadatas();
+
   const metaDescription = description || site.siteMetadata.description;
 
   const theQuestions = pageQuestions || site.siteMetadata.questions;
+
+  let articleUrlLastChar = null;
+  let finalArticleUrl = null;
+  if (articleUrl.slice(-4) === "html") {
+    topology = "amp";
+  }
+  if (topology !== "amp") {
+    articleUrlLastChar = articleUrl.slice(-1);
+    finalArticleUrl =
+      articleUrlLastChar === "/" ? articleUrl : articleUrl + "/";
+  }
 
   return (
     <Seo
@@ -55,8 +68,9 @@ function SeoContainer({
       serverUrl={site.siteMetadata.siteUrl || serverUrl}
       themeColor={site.siteMetadata.themeColor}
       pageQuestions={theQuestions}
-      articleUrl={articleUrl}
+      articleUrl={finalArticleUrl}
       killSEO={killSEO}
+      topology={topology}
     />
   );
 }

@@ -6,30 +6,26 @@ import SinglePostBlock from "@BlockBuilder/SinglePostBlock";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 const SinglePost = ({ location, pageContext }) => {
-  console.log(pageContext.thePost.htmlAst.children[0])
+  console.log(pageContext.thePost.htmlAst.children[0]);
 
-  pageContext.thePost.htmlAst.children.map(ele=>{
+  pageContext.thePost.htmlAst.children.map(ele => {
     if (ele.children && ele.children[0]) {
-
-      ele.children.map(eleChild=>{
+      ele.children.map(eleChild => {
         // console.log(eleChild)
-                  if (eleChild.tagName === "span") {
-                    // imgsObj.push(eleChild.properties.src);
-                    eleChild.children.map(grandChildEle=>{
-                      // console.log(grandChildEle.tagName)
-                      if (grandChildEle.tagName==="img") {
-                        console.log(grandChildEle.properties.alt)
-                        console.log(grandChildEle.properties.dataSrc)
-                        console.log(grandChildEle.properties.title)
-                      }
-                    })
-                  }
-
-      })
-
-
+        if (eleChild.tagName === "span") {
+          // imgsObj.push(eleChild.properties.src);
+          eleChild.children.map(grandChildEle => {
+            // console.log(grandChildEle.tagName)
+            if (grandChildEle.tagName === "img") {
+              console.log(grandChildEle.properties.alt);
+              console.log(grandChildEle.properties.dataSrc);
+              console.log(grandChildEle.properties.title);
+            }
+          });
+        }
+      });
     }
-  })
+  });
 
   const {
     imgHolder,
@@ -37,7 +33,7 @@ const SinglePost = ({ location, pageContext }) => {
     boilerplateLogo,
     site,
     bandeiraWhats,
-    bandeiraQuestion
+    bandeiraQuestion,
   } = useSiteMetadatas();
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
   const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
@@ -45,8 +41,8 @@ const SinglePost = ({ location, pageContext }) => {
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const post = pageContext.thePost;
-  const questions = pageContext.postQuestion
-  const defaultQuestions = site.siteMetadata.questions
+  const questions = pageContext.postQuestion;
+  const defaultQuestions = site.siteMetadata.questions;
   return (
     <MainTemplateWrapper
       backgroundImage={{
@@ -79,6 +75,7 @@ const SinglePost = ({ location, pageContext }) => {
           post.frontmatter.featuredImage.childrenImageSharp[0].gatsbyImageData
             .images.fallback.src,
         articleBody: post.html,
+        topology: "post",
         mainLogo: imgHolder,
         description: post.excerpt,
         serverUrl: location.origin || site.siteMetadata.siteUrl || "/",

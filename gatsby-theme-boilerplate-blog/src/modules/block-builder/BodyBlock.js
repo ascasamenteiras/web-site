@@ -1,7 +1,7 @@
 import React from "react";
 import SeoContainer from "../../containers/SeoContainer";
 
-const BodyBlock = ({ children, opt, killSEO }) => {
+const BodyBlock = ({ children, opt, killSEO, topology }) => {
   const { options } = opt;
   return (
     <div
@@ -25,6 +25,7 @@ const BodyBlock = ({ children, opt, killSEO }) => {
         articleUrl={options.articleUrl || null}
         pageQuestions={options.pageQuestions}
         killSEO={killSEO}
+        topology={topology}
       />
 
       {children}
