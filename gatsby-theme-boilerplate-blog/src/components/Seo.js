@@ -30,7 +30,7 @@ const Seo = ({
   killSEO,
   topology,
 }) => {
-  const hasBar = serverUrl?.charAt(serverUrl.length - 1);
+  const hasBar = serverUrl?.slice(-1);
   const servBar = hasBar === "/" ? serverUrl?.slice(0, -1) : serverUrl;
   const cardImagesrc = servBar + cardImage || servBar || cardImage;
   const slug = articleUrl || servBar;
@@ -59,7 +59,7 @@ const Seo = ({
 
         <meta
           property='article:author'
-          content={siteUrl + "/priscilla-barbosa-cerimonialista"}
+          content={siteUrl + "/priscilla-barbosa-cerimonialista/"}
         />
         <meta name='author' content={"Priscilla Barbosa"} />
 

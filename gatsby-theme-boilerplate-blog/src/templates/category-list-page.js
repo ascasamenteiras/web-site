@@ -156,7 +156,7 @@ const CategoryListPage = props => {
                   postsPerPage={site.siteMetadata.postsPerPage}
                   readMoreText='Ler Mais'
                   pagination={{
-                    loadMoreBtn: true,
+                    loadMoreBtn: false,
                     loadMore: "Ler Mais",
                   }}
                 />

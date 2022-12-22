@@ -441,7 +441,7 @@ const IndexPage = props => {
                     </div>
                     <div className='home-profile-infos'>
                       <Link
-                        to='/priscilla-barbosa-cerimonialista'
+                        to='/priscilla-barbosa-cerimonialista/'
                         className='profile-btn'
                       >
                         + Info
@@ -560,7 +560,7 @@ const IndexPage = props => {
             />
             <h3>Empreendedorismo Feminino</h3>
           </Link>
-          <Link to='/causas-apoiadas'>
+          <Link to='/causas-apoiadas/'>
             <GatsbyImage
               image={badgeLgbtqia}
               alt={"LGBTQIAP+"}
@@ -572,7 +572,7 @@ const IndexPage = props => {
             />
             <h3>Amor LGBTQIAP+</h3>
           </Link>
-          <Link to='/causas-apoiadas'>
+          <Link to='/causas-apoiadas/'>
             <GatsbyImage
               image={badgeVidasNegras}
               alt={"Vidas Negras Importam"}
@@ -584,7 +584,7 @@ const IndexPage = props => {
             />
             <h3>Vidas Negras Importam</h3>
           </Link>
-          <Link to='/causas-apoiadas'>
+          <Link to='/causas-apoiadas/'>
             <GatsbyImage
               image={badgeRibeiraoPreto}
               alt={"Comércio Local"}
@@ -596,7 +596,7 @@ const IndexPage = props => {
             />
             <h3>Comércio Local</h3>
           </Link>
-          <Link to='/causas-apoiadas'>
+          <Link to='/causas-apoiadas/'>
             <GatsbyImage
               image={badgeCodigoAberto}
               alt={"Hackativismo"}
