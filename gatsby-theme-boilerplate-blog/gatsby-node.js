@@ -732,7 +732,7 @@ exports.createPages = async ({ graphql, actions }) => {
       </html>`;
     };
     allFeed.map((item, key) => {
-      const itemSlug = businessInfos.siteUrl.slice(0, -1) + item.slug;
+      const itemSlug = businessInfos.siteUrl + item.slug;
       fs.writeFile(
         `./public/${item.slug.slice(1, -1)}.stories.amp.html`,
         theAmpStorie(
