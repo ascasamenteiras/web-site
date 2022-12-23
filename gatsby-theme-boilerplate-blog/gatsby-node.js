@@ -515,9 +515,8 @@ exports.createPages = async ({ graphql, actions }) => {
 				xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 				${allFeed.map(item => {
           return `<url>
-					<loc>${businessInfos.siteUrl}${
-            item.slug.slice(0, -1) + `.stories.amp.html`
-          }</loc>
+					<loc>${businessInfos.siteUrl}${item.slug.slice(0, -1) +
+            `.stories.amp.html`}</loc>
 					<lastmod>${item.date}</lastmod>
 					<image:image>
 						<image:loc>${item.imageSrc}</image:loc>
@@ -643,7 +642,7 @@ exports.createPages = async ({ graphql, actions }) => {
          
           <script async src="https://cdn.ampproject.org/v0.js"></script>
           <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-          <link rel="canonical" href="${slug}" />
+          <link rel="alternate" type="text/html" href="${slug}" />
       
           <link rel="modulepreload" href="https://cdn.ampproject.org/v0.mjs" as="script" crossorigin="anonymous">
           <link rel="preconnect" href="https://cdn.ampproject.org">
@@ -744,7 +743,7 @@ exports.createPages = async ({ graphql, actions }) => {
           item.insideImgs,
           itemSlug
         ),
-        function (err) {
+        function(err) {
           if (err) throw err;
           console.log("File is created successfully.");
         }
