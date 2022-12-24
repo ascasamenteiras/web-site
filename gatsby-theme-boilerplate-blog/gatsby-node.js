@@ -563,7 +563,15 @@ exports.createPages = async ({ graphql, actions }) => {
     </amp-story-grid-layer>
   </amp-story-page>`;
 
-    const theAmpStorie = (title, key, srcImg, mainText, postImages, slug) => {
+    const theAmpStorie = (
+      title,
+      key,
+      srcImg,
+      mainText,
+      postImages,
+      postSlug,
+      canonical
+    ) => {
       return `<!DOCTYPE html>
       <html amp lang="pt-BR">
       
@@ -642,7 +650,8 @@ exports.createPages = async ({ graphql, actions }) => {
          
           <script async src="https://cdn.ampproject.org/v0.js"></script>
           <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-          <link rel="alternate" type="text/html" href="${slug}" />
+          <link rel="alternate" type="text/html" href="${postSlug}" />
+          <link rel="canonical" type="text/html" href="${canonical}" />
       
           <link rel="modulepreload" href="https://cdn.ampproject.org/v0.mjs" as="script" crossorigin="anonymous">
           <link rel="preconnect" href="https://cdn.ampproject.org">
@@ -741,7 +750,8 @@ exports.createPages = async ({ graphql, actions }) => {
           item.imageSrc,
           "txt",
           item.insideImgs,
-          itemSlug
+          itemSlug,
+          businessInfos
         ),
         function(err) {
           if (err) throw err;
