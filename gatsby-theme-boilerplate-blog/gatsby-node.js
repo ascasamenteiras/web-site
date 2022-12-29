@@ -563,13 +563,12 @@ exports.createPages = async ({ graphql, actions }) => {
     </amp-story-grid-layer>
   </amp-story-page>`;
 
-    const theAmpStorie = (
+    const theAmpStories = (
       title,
       key,
       srcImg,
       mainText,
       postImages,
-      postSlug,
       canonical
     ) => {
       return `<!DOCTYPE html>
@@ -650,7 +649,6 @@ exports.createPages = async ({ graphql, actions }) => {
          
           <script async src="https://cdn.ampproject.org/v0.js"></script>
           <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-          <link rel="alternate" type="text/html" href="${postSlug}" />
           <link rel="canonical" type="text/html" href="${canonical}" />
       
           <link rel="modulepreload" href="https://cdn.ampproject.org/v0.mjs" as="script" crossorigin="anonymous">
@@ -742,16 +740,16 @@ exports.createPages = async ({ graphql, actions }) => {
     };
     allFeed.map((item, key) => {
       const itemSlug = businessInfos.siteUrl + item.slug;
+
       fs.writeFile(
         `./public/${item.slug.slice(1, -1)}.stories.amp.html`,
-        theAmpStorie(
+        theAmpStories(
           item.title,
           key,
           item.imageSrc,
           "txt",
           item.insideImgs,
-          itemSlug,
-          businessInfos
+          itemSlug
         ),
         function(err) {
           if (err) throw err;
