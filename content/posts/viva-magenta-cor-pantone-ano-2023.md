@@ -137,7 +137,7 @@ Para saber mais sobre todos os nossos serviços, sinta-se à vontade em nos envi
 
 Nos siga também no [Instagram](https://instagram.com/ascasamenteiras_).
 
-Visita também a página do nosso **Prêmio Internacional ZIWA Awards 2022**, [clicando aqui](/vencemos-premio-zankyou-2022).
+Visita também a página do nosso **Prêmio Internacional ZIWA Awards 2022**, [clicando aqui](/vencemos-premio-zankyou-2022/).
 
 Desejamos só o melhor para vocês nesse momento tão especial.
 

@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
-import addToMailchimp from "gatsby-plugin-mailchimp";
+import VMasker from "vanilla-masker";
+
+// import addToMailchimp from "gatsby-plugin-mailchimp";
+
+// import sgMail from "@sendgrid/mail";
 
 import HalfDivWrapper from "@BlockBuilder/HalfDivWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
+
+let validator = {
+  set: function(target, key, value) {
+    console.log(`The property ${key} has been updated with ${value}`);
+    return true;
+  },
+};
+
 function validateEmail(email) {
+  if (email.slice(-1) === ".") {
+    return false;
+  }
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
@@ -27,6 +42,7 @@ function validateWhats(input) {
     }
   }
 }
+
 const HalfDiv = ({ location, pageContext }) => {
   const [btnClick, setBtnClick] = useState(null);
   const [email, setEmail] = useState("");
@@ -44,26 +60,56 @@ const HalfDiv = ({ location, pageContext }) => {
   const [peopleAWhatsSuccess, setPeopleAWhatsSuccess] = useState("");
 
   const [honey, setHoney] = useState("");
-  const [mcRes, setMcRes] = useState("");
   const [msg, setMsg] = useState("");
   const [success, setSuccess] = useState("");
-  const handleMcRes = (msgReceived, resReceived) => {
-    setMcRes(resReceived);
-    handleMsg(msgReceived, resReceived);
-    handleSuccess(resReceived);
-  };
-  const handleMsg = (msgNow, resReceived) => {
-    let msgNull = null;
-    if (resReceived === "error") {
-      msgNull = "E-mail inválido ou já cadastrado.";
+
+  // useRef
+  const refDate = useRef();
+  const refEmail = useRef();
+  const refPeopleA = useRef();
+  const refWhatsPeopleA = useRef();
+  const refPeopleB = useRef();
+  const refCity = useRef();
+
+  // handle Images
+  const {
+    imgHolder,
+    bgPatternImg,
+    boilerplateLogoSmall,
+    site,
+    bandeiraWhats,
+    bandeiraQuestion,
+    dateImageButton,
+  } = useSiteMetadatas();
+  const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+  const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
+  const defaultQuestions = site.siteMetadata.questions;
+
+  const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
+  const logoQuery = getImage(boilerplateLogoSmall.childrenImageSharp[0]);
+  const { title, content, questions, excerpt, featureImage } = pageContext;
+  const mainImage = getImage(featureImage.childrenImageSharp[0]);
+  const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
+
+  // handle States
+
+  const handleSuccess = (e, email, honey) => {
+    if (honey) {
+      return setSuccess(false);
     }
-    if (resReceived === "success") {
-      msgNull = "Lembrete definido. Até logo!";
+    if (
+      emailSuccess &&
+      dateSuccess &&
+      peopleASuccess &&
+      peopleBSuccess &&
+      citySuccess &&
+      peopleAWhatsSuccess
+    ) {
+      setSuccess(true);
+      return handleSubmit(e, email, honey);
+    } else {
+      return setSuccess(false);
     }
-    setMsg(msgNull);
-  };
-  const handleSuccess = successNow => {
-    setSuccess(successNow);
   };
   const handlePeopleAWhatsChange = peopleAWhatsTyping => {
     const whatsValidated = validateWhats(peopleAWhatsTyping);
@@ -99,7 +145,8 @@ const HalfDiv = ({ location, pageContext }) => {
       return setPeopleASuccess(false);
     }
   };
-  const handleDateChange = dateTyping => {
+  const handleDateChange = (e, dateTyping) => {
+    console.log(e.key);
     setDate(dateTyping);
     const validatedDate = validateDate(dateTyping);
     if (validatedDate) {
@@ -110,8 +157,6 @@ const HalfDiv = ({ location, pageContext }) => {
   };
   const handleEmailChange = emailTyping => {
     setEmail(emailTyping);
-
-    console.log("yeah setEmail typing");
     const validatedEmail = validateEmail(emailTyping);
     if (validatedEmail) {
       return setEmailSuccess(true);
@@ -122,54 +167,97 @@ const HalfDiv = ({ location, pageContext }) => {
   const handleHoneypotChange = honeyTyping => {
     setHoney(honeyTyping);
   };
+
+  function handleClick(e, clickedBtn) {
+    if (e) {
+      e.preventDefault();
+    }
+
+    return setBtnClick(clickedBtn);
+  }
+
+  // handle submit form
+
   const handleSubmit = async (e, email, honey) => {
     e.preventDefault();
-    honey ||
-      (await addToMailchimp(email).then(({ msg, result }) => {
-        handleMcRes(msg, result);
-      }));
+    // sgMail.setApiKey(process.env.GATSBY_SENDGRID_API_KEY);
+    const msg = {
+      to: "miltonbolonha@gmail.com",
+      from: "pri@ascasamenteiras.com.br",
+      subject: "Sending with SendGrid is Fun",
+      text: "and easy to do anywhere, even with Node.js",
+      html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+    };
+    // sgMail
+    //   .send(msg)
+    //   .then(() => {
+    //     console.log("Email sent");
+    //   })
+    //   .catch(error => {
+    //     console.error(error);
+    //   });
+
+    //   const fromEmail = 'cerimonial@ascasamenteiras.com.br'
+    //   const subject = 'titulo'
+    //   const body = 'message'
+
+    //  const response = await fetch('http://localhost:8000/api/teste', {
+    //    method: "post",
+    //    headers: {
+    //      "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    //    },
+    //    body: new URLSearchParams({ fromEmail, subject, body }).toString(),
+    //  })
+    //  if (response.status === 200) {
+    //    this.setState({
+    //      error: null,
+    //      submitting: false,
+    //      message: {
+    //        fromEmail: "",
+    //        subject: "",
+    //        body: "",
+    //      },
+    //    })
+    //  } else {
+    //    const json = await response.json()
+    //    this.setState({
+    //      error: json.error,
+    //      submitting: false,
+    //    })
+    //  }
   };
-  const {
-    imgHolder,
-    bgPatternImg,
-    boilerplateLogoSmall,
-    site,
-    bandeiraWhats,
-    bandeiraQuestion,
-    dateImageButton,
-    fingerButton,
-  } = useSiteMetadatas();
-  const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
-  const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
-  const defaultQuestions = site.siteMetadata.questions;
-
-  const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
-  const logoQuery = getImage(boilerplateLogoSmall.childrenImageSharp[0]);
-  const {
-    title,
-    content,
-    headline,
-    questions,
-    excerpt,
-    featureImage,
-  } = pageContext;
-  const mainImage = getImage(featureImage.childrenImageSharp[0]);
-  const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
-  const fingerImage = getImage(fingerButton.childrenImageSharp[0]);
-
-  function handleClick(clickedBtn) {
-    setBtnClick(clickedBtn);
-    console.log(btnClick);
-  }
-  // btn name
-  // state neutral
-  // state clicked
-  // state closed
-
-  // modal name
-  // state open
-  // state close
-  // content inputs
+  const handleKeyDown = event => {
+    if (event.key === "Enter" || event.key === "Escape") {
+      handleClick(event, null);
+    }
+  };
+  useEffect(() => {
+    VMasker(document.querySelector('input[name="PHONE"')).maskPattern(
+      "(99) 99999-9999"
+    );
+    VMasker(document.querySelector('input[name="FULLDATE"')).maskPattern(
+      "99/99/9999"
+    );
+    if (btnClick === "date") {
+      refDate.current.focus();
+    }
+    if (btnClick === "email") {
+      refEmail.current.focus();
+    }
+    if (btnClick === "peopleA") {
+      refPeopleA.current.focus();
+    }
+    if (btnClick === "whatsPeopleA") {
+      refWhatsPeopleA.current.focus();
+    }
+    btnClick === "email";
+    if (btnClick === "peopleB") {
+      refPeopleB.current.focus();
+    }
+    if (btnClick === "city") {
+      refCity.current.focus();
+    }
+  }, [btnClick]);
   return (
     <HalfDivWrapper
       backgroundImage={{
@@ -253,15 +341,7 @@ const HalfDiv = ({ location, pageContext }) => {
             className='full-width'
             dangerouslySetInnerHTML={{ __html: content }}
           ></div>
-          {/* <GatsbyImage
-            image={fingerImage}
-            alt={"Algo aqui"}
-            width={60}
-            height={60}
-            layout='contain'
-            placeholder={"NONE"}
-            className={"finger-button"}
-          /> */}
+
           <h3>
             Clique nos botões abaixo e preencha as informações para liberar o
             PDF.
@@ -278,93 +358,31 @@ const HalfDiv = ({ location, pageContext }) => {
           {success !== "success" ? (
             <>
               <form
-                action='https://ascasamenteiras.us21.list-manage.com/subscribe/post?u=7788204f1e9c743f2274eb8bc&amp;id=07328022a5&amp;f_id=0076c4e1f0'
-                method='post'
+                action={"/api/sendtest"}
+                // onSubmit={e => handleChangeForm(e)}
+                method='POST'
                 id='mc-embedded-subscribe-form'
                 name='mc-embedded-subscribe-form'
                 className='validate'
-                target='_blank'
-                onSubmit={e => handleSubmit(e, email, honey)}
+                // target='_blank'
+                // onSubmit={e => handleSuccess(e, email, honey)}
                 noValidate
               >
                 <p className='hidden'>
                   <label>
                     Don’t fill this out if you’re human:{" "}
                     <input
-                      name='bot-field'
+                      name='botField'
                       onChange={e => handleHoneypotChange(e.target.value)}
                       value={honey}
                     />
                   </label>
                 </p>
                 <br />
-                {/* 
-                <div className='landing-date input-wrapper email'>
-                    <button onClick={e => handleClick("email")}>
-                      <GatsbyImage
-                        image={dateImage}
-                        alt={"Algo aqui"}
-                        width={60}
-                        height={60}
-                        layout='contain'
-                        placeholder={"NONE"}
-                        className={`image-button ${
-                          dateSuccess === true
-                            ? "success-color"
-                            : email === ""
-                            ? ""
-                            : "error-color"
-                        }`}
-                      />
-
-                      <label htmlFor='mce-EMAIL'>
-                        E-mail
-                        <br />
-                        Cônjuge A
-                      </label>
-                    </button>
-
-                    <div
-                      className={
-                        btnClick === "email"
-                          ? "landing-modal-wrapper"
-                          : "hidden"
-                      }
-                    >
-                      <div
-                        className='modal-background'
-                        onClick={e => handleClick(null)}
-                      ></div>
-                      <div className='modal-landing'>
-                        <input
-                          type='email'
-                          placeholder='seu@email.com (avise-me por e-mail)'
-                          onChange={e => handleEmailChange(e.target.value)}
-                          value={email}
-                          name='EMAIL'
-                          className={`required email`}
-                          id='mce-EMAIL'
-                          required
-                        />
-                        <button
-                          className='landing-input-ok'
-                          onClick={e => handleClick(null)}
-                        >
-                          OK
-                        </button>
-                      </div>
-                      <span
-                        className='close-modal'
-                        onClick={e => handleClick(null)}
-                      >
-                        x
-                      </span>
-                    </div>
-                  </div> */}
 
                 <div className='grid-me-please'>
                   <div className='landing-date input-wrapper date'>
-                    <button onClick={e => handleClick("date")}>
+                    <button onClick={e => handleClick(e, "date")}>
                       <GatsbyImage
                         image={dateImage}
                         alt={"Algo aqui"}
@@ -381,13 +399,12 @@ const HalfDiv = ({ location, pageContext }) => {
                         }`}
                       />
 
-                      <label htmlFor='mce-DATE1-day'>
+                      <label htmlFor='FULLDATE'>
                         Data do
                         <br />
                         Casamento
                       </label>
                     </button>
-
                     <div
                       className={
                         btnClick === "date" ? "landing-modal-wrapper" : "hidden"
@@ -395,22 +412,24 @@ const HalfDiv = ({ location, pageContext }) => {
                     >
                       <div
                         className='modal-background'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       ></div>
                       <div className='modal-landing'>
                         <input
                           type='text'
-                          name='fulldate'
-                          id='fulldate'
+                          name='FULLDATE'
+                          id='FULLDATE'
                           size='10'
+                          onKeyDown={e => handleKeyDown(e)}
+                          ref={refDate}
                           maxLength={10}
                           placeholder='DD/MM/AAAA'
                           pattern='/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/'
-                          onChange={e => handleDateChange(e.target.value)}
+                          onChange={e => handleDateChange(e, e.target.value)}
                         />
                         <button
                           className='landing-input-ok'
-                          onClick={e => handleClick(null)}
+                          onClick={e => handleClick(e, null)}
                         >
                           OK
                         </button>
@@ -447,7 +466,7 @@ const HalfDiv = ({ location, pageContext }) => {
                       </div>
                       <span
                         className='close-modal'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       >
                         x
                       </span>
@@ -455,7 +474,7 @@ const HalfDiv = ({ location, pageContext }) => {
                   </div>
 
                   <div className='landing-date input-wrapper peopleA'>
-                    <button onClick={e => handleClick("peopleA")}>
+                    <button onClick={e => handleClick(e, "peopleA")}>
                       <GatsbyImage
                         image={dateImage}
                         alt={"Algo aqui"}
@@ -477,7 +496,6 @@ const HalfDiv = ({ location, pageContext }) => {
                         Cônjuge A
                       </label>
                     </button>
-
                     <div
                       className={
                         btnClick === "peopleA"
@@ -487,19 +505,23 @@ const HalfDiv = ({ location, pageContext }) => {
                     >
                       <div
                         className='modal-background'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       ></div>
                       <div className='modal-landing'>
                         <input
+                          onKeyDown={e => handleKeyDown(e)}
+                          ref={refPeopleA}
                           type='text'
                           name='PEOPLEA'
+                          onMouseDown={e => handleKeyDown(e)}
                           className=''
                           id='mce-PEOPLEA'
+                          placeholder='Cônjuge A'
                           onChange={e => handlePeopleAChange(e.target.value)}
                         />
                         <button
                           className='landing-input-ok'
-                          onClick={e => handleClick(null)}
+                          onClick={e => handleClick(e, null)}
                         >
                           OK
                         </button>
@@ -507,7 +529,7 @@ const HalfDiv = ({ location, pageContext }) => {
 
                       <span
                         className='close-modal'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       >
                         x
                       </span>
@@ -515,7 +537,7 @@ const HalfDiv = ({ location, pageContext }) => {
                   </div>
 
                   <div className='landing-date input-wrapper whatsPeopleA'>
-                    <button onClick={e => handleClick("whatsPeopleA")}>
+                    <button onClick={e => handleClick(e, "whatsPeopleA")}>
                       <GatsbyImage
                         image={dateImage}
                         alt={"Algo aqui"}
@@ -537,7 +559,6 @@ const HalfDiv = ({ location, pageContext }) => {
                         Cônjuge A
                       </label>
                     </button>
-
                     <div
                       className={
                         btnClick === "whatsPeopleA"
@@ -547,11 +568,15 @@ const HalfDiv = ({ location, pageContext }) => {
                     >
                       <div
                         className='modal-background'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       ></div>
                       <div className='modal-landing'>
                         <input
+                          onKeyDown={e => handleKeyDown(e)}
+                          ref={refWhatsPeopleA}
                           type='text'
+                          placeholder='(99)99999-9999'
+                          onMouseDown={e => handleKeyDown(e)}
                           name='PHONE'
                           className=''
                           id='mce-PHONE'
@@ -561,7 +586,7 @@ const HalfDiv = ({ location, pageContext }) => {
                         />
                         <button
                           className='landing-input-ok'
-                          onClick={e => handleClick(null)}
+                          onClick={e => handleClick(e, null)}
                         >
                           OK
                         </button>
@@ -569,7 +594,7 @@ const HalfDiv = ({ location, pageContext }) => {
 
                       <span
                         className='close-modal'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       >
                         x
                       </span>
@@ -577,7 +602,7 @@ const HalfDiv = ({ location, pageContext }) => {
                   </div>
 
                   <div className='landing-date input-wrapper email'>
-                    <button onClick={e => handleClick("email")}>
+                    <button onClick={e => handleClick(e, "email")}>
                       <GatsbyImage
                         image={dateImage}
                         alt={"Algo aqui"}
@@ -600,7 +625,6 @@ const HalfDiv = ({ location, pageContext }) => {
                         Cônjuge A
                       </label>
                     </button>
-
                     <div
                       className={
                         btnClick === "email"
@@ -610,14 +634,17 @@ const HalfDiv = ({ location, pageContext }) => {
                     >
                       <div
                         className='modal-background'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       ></div>
                       <div className='modal-landing'>
                         <input
+                          onKeyDown={e => handleKeyDown(e)}
+                          ref={refEmail}
                           type='email'
-                          placeholder='seu@email.com (avise-me por e-mail)'
+                          onMouseDown={e => handleKeyDown(e)}
+                          placeholder='seu@email.com'
                           onChange={e => handleEmailChange(e.target.value)}
-                          value={email}
+                          defaultValue={email}
                           name='EMAIL'
                           className={`required email`}
                           id='mce-EMAIL'
@@ -625,14 +652,14 @@ const HalfDiv = ({ location, pageContext }) => {
                         />
                         <button
                           className='landing-input-ok'
-                          onClick={e => handleClick(null)}
+                          onClick={e => handleClick(e, null)}
                         >
                           OK
                         </button>
                       </div>
                       <span
                         className='close-modal'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       >
                         x
                       </span>
@@ -640,7 +667,7 @@ const HalfDiv = ({ location, pageContext }) => {
                   </div>
 
                   <div className='landing-date input-wrapper peopleB'>
-                    <button onClick={e => handleClick("peopleB")}>
+                    <button onClick={e => handleClick(e, "peopleB")}>
                       <GatsbyImage
                         image={dateImage}
                         alt={"Algo aqui"}
@@ -662,7 +689,6 @@ const HalfDiv = ({ location, pageContext }) => {
                         Cônjuge B
                       </label>
                     </button>
-
                     <div
                       className={
                         btnClick === "peopleB"
@@ -672,11 +698,15 @@ const HalfDiv = ({ location, pageContext }) => {
                     >
                       <div
                         className='modal-background'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       ></div>
                       <div className='modal-landing'>
                         <input
+                          onKeyDown={e => handleKeyDown(e)}
+                          ref={refPeopleB}
                           type='text'
+                          placeholder='Cônjuge B'
+                          onMouseDown={e => handleKeyDown(e)}
                           name='PEOPLEB'
                           className=''
                           id='mce-PEOPLEB'
@@ -684,14 +714,14 @@ const HalfDiv = ({ location, pageContext }) => {
                         />
                         <button
                           className='landing-input-ok'
-                          onClick={e => handleClick(null)}
+                          onClick={e => handleClick(e, null)}
                         >
                           OK
                         </button>
                       </div>
                       <span
                         className='close-modal'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       >
                         x
                       </span>
@@ -699,7 +729,7 @@ const HalfDiv = ({ location, pageContext }) => {
                   </div>
 
                   <div className='landing-date input-wrapper city'>
-                    <button onClick={e => handleClick("city")}>
+                    <button onClick={e => handleClick(e, "city")}>
                       <GatsbyImage
                         image={dateImage}
                         alt={"Algo aqui"}
@@ -717,7 +747,6 @@ const HalfDiv = ({ location, pageContext }) => {
                       />
                       <label htmlFor='mce-CITY'>Cidade</label>
                     </button>
-
                     <div
                       className={
                         btnClick === "city" ? "landing-modal-wrapper" : "hidden"
@@ -725,67 +754,74 @@ const HalfDiv = ({ location, pageContext }) => {
                     >
                       <div
                         className='modal-background'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       ></div>
                       <div className='modal-landing'>
                         <input
+                          onKeyDown={e => handleKeyDown(e)}
+                          ref={refCity}
                           type='text'
                           name='CITY'
+                          placeholder='Cidade do Casamento'
                           className=''
                           id='mce-CITY'
                           onChange={e => handleCityChange(e.target.value)}
                         />
                         <button
                           className='landing-input-ok'
-                          onClick={e => handleClick(null)}
+                          onClick={e => handleClick(e, null)}
                         >
                           OK
                         </button>
                       </div>
                       <span
                         className='close-modal'
-                        onClick={e => handleClick(null)}
+                        onClick={e => handleClick(e, null)}
                       >
                         x
                       </span>
                     </div>
                   </div>
                 </div>
-
-                <input
-                  type='submit'
-                  value='Inscreva-se'
-                  name='subscribe'
-                  id='mc-embedded-subscribe'
-                  className='button submit-button'
-                  disabled={
-                    emailSuccess &&
-                    dateSuccess &&
-                    peopleASuccess &&
-                    peopleBSuccess &&
-                    citySuccess &&
-                    peopleAWhatsSuccess
-                      ? false
-                      : true
-                  }
-                />
+                {honey ||
+                (emailSuccess &&
+                  dateSuccess &&
+                  peopleASuccess &&
+                  peopleBSuccess &&
+                  citySuccess &&
+                  peopleAWhatsSuccess) === false ? null : (
+                  <>
+                    <button
+                      type='submit'
+                      name='subscribe'
+                      id='mc-embedded-subscribe'
+                      disabled={email ? false : true}
+                    >
+                      Alerta-me!
+                    </button>
+                    <input
+                      type='submit'
+                      value='Inscreva-se'
+                      name='subscribe'
+                      id='mc-embedded-subscribe'
+                      className='button submit-button'
+                      disabled={
+                        emailSuccess &&
+                        dateSuccess &&
+                        peopleASuccess &&
+                        peopleBSuccess &&
+                        citySuccess &&
+                        peopleAWhatsSuccess
+                          ? false
+                          : true
+                      }
+                    />
+                  </>
+                )}
 
                 <br />
                 <br />
               </form>
-
-              {honey || email === "" ? null : (
-                <>
-                  <button
-                    type='submit'
-                    name='subscribe'
-                    id='mc-embedded-subscribe'
-                    disabled={email ? false : true}
-                  >
-                    Alerta-me!
-                  </button>
-                </>
-              )}
             </>
           ) : (
             <>

@@ -1020,7 +1020,11 @@ sup {
 					}
 					button.landing-input-ok {
 						border: 2px solid gray;
-						background-color: green;
+						background-color: $primary_light;
+						border: 0;
+						color: $primary_darkvar;
+						line-height: 25px;
+						font-weight: 600;
 						border-radius: 3px;
 						padding: 7px 15px;
 						cursor: pointer;
@@ -1151,6 +1155,7 @@ sup {
 	backdrop-filter: blur(5px);
 	.modal-landing {
 		max-width: 440px;
+		display: flex;
 		width: 100%;
 		min-width: 300px;
 		background-color: $brand__color;
@@ -1166,6 +1171,8 @@ sup {
 			width: 80%;
 			min-width: 300px;
 			border-radius: 3px;
+			margin-right: 10px;
+			font-weight: 600;
 		}
 	}
 	span.close-modal {

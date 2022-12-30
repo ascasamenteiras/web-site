@@ -11,7 +11,7 @@ $heading__top-padding: 80px;
 $heading__bottom-padding: 60px;
 
 $primary: $cta__color;
-$primary_background__color: #E5F4FF;
+$primary_background__color: #e5f4ff;
 $primary_background: mix(white, $cta__color, 90%);
 $primary_bg_dark: mix(white, $cta__color, 35%);
 $primary_ultralight: mix(white, $cta__color, 80%);
@@ -19,6 +19,7 @@ $primary_light: mix(white, $cta__colorLink, 25%);
 $primary_lightVar: rgb(169, 208, 255);
 $primary_dark: mix(black, $cta__color, 35%);
 $primary_ultradark: mix(black, $cta__color, 80%);
+$primary_darkvar: #252210;
 
 $brand_black__color: #0c0c0c;
 $paragrahp_black__color: #212529;
@@ -49,12 +50,12 @@ $boxedMobile__maxWidth: 375px;
 $s__space: 16pt;
 
 // typograph
-$alternative__font: 'Arial';
-$main__font: 'IBM Plex Serif', $alternative__font, sans-serif;
-$fifth__font: 'Dancing Script', $alternative__font, sans-serif;
-$third__font: 'Josefin Sans', $alternative__font, sans-serif;
-$fourth__font: 'Open Sans', $alternative__font, sans-serif;
-$second__font: 'Noto Serif', $alternative__font, sans-serif;
+$alternative__font: "Arial";
+$main__font: "IBM Plex Serif", $alternative__font, sans-serif;
+$fifth__font: "Dancing Script", $alternative__font, sans-serif;
+$third__font: "Josefin Sans", $alternative__font, sans-serif;
+$fourth__font: "Open Sans", $alternative__font, sans-serif;
+$second__font: "Noto Serif", $alternative__font, sans-serif;
 
 $m__fontSize: 17px;
 $h1__fontSize: 30pt;

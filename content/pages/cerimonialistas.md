@@ -15,6 +15,6 @@ questions:
 
 Nosso time de cerimonialistas:
 
-# [Priscilla Barbosa](/priscilla-barbosa-cerimonialista)
+# [Priscilla Barbosa](/priscilla-barbosa-cerimonialista/)
 
 Formada em Gestão de Negócios pela USP-ESALQ e com mais de dez anos de experiência, a cerimonialista e empreendedora Priscilla Barbosa atua desde 2010 na organização de casamentos, cursou gestão de eventos com grandes especialistas e é consultora na área.

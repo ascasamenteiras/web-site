@@ -30,7 +30,7 @@ Fazemos a condução do casal para elaboração do roteiro do cerimonial e na co
 
 Todo cerimonial se inicia na contratação da assessoria. Seja para casamentos, cerimoniais, festas, eventos privados e governamentais, As Casamenteiras possui ampla experiência para te dar o suporte necessário.
 
-As Casamenteiras oferece os serviços d'Cerimonialista de Casamentos [_Plena (completa)_](/assessoria-cerimonial-plena-completa) e [_Do Dia (básica)_](/assessoria-cerimonial-basica-dia/).
+As Casamenteiras oferece os serviços d'Cerimonialista de Casamentos [_Plena (completa)_](/assessoria-cerimonial-plena-completa/) e [_Do Dia (básica)_](/assessoria-cerimonial-basica-dia/).
 
 As Casamenteiras utiliza tecnologia de ponta para planejamento moderno, manter as informações organizadas, alinhar fornecedores, cronogramas, roteiro da cerimônia e da festa.
 
@@ -92,4 +92,4 @@ Sim casal, são muitos pormenores, todos em sua maioria simples de resolver, mas
 
 Por isso, estamos aqui para vocês. As Casamenteiras que fazem parte do seu momento especial organizando lado a lado o casamento de vocês.
 
-Conheça os serviços detalhados d'As Casamenteiras que oferece os serviços d'Cerimonialista de Casamentos [_Plena (completa_)](/assessoria-cerimonial-plena-completa) e [_Do Dia (básica)_](/assessoria-cerimonial-basica-dia/).
+Conheça os serviços detalhados d'As Casamenteiras que oferece os serviços d'Cerimonialista de Casamentos [_Plena (completa_)](/assessoria-cerimonial-plena-completa/) e [_Do Dia (básica)_](/assessoria-cerimonial-basica-dia/).

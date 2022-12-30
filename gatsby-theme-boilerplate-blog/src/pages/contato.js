@@ -80,6 +80,7 @@ const ContatoPage = props => {
     >
       <main>
         {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
+        {/* fazer um card e deixar escolher entre card e arvore de links*/}
         <ul className={"contact-link-tree-wrapper"}>
           {sameAsResult.map((e, i) => (
             <li key={i}>
