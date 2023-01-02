@@ -88,6 +88,30 @@ export const useSiteMetadatas = () =>
             gatsbyImageData(width: 200, quality: 100)
           }
         }
+
+        floralCimaImg: file(relativePath: { eq: "floral-cima.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(width: 200, quality: 100)
+          }
+        }
+        floralMeioImg: file(relativePath: { eq: "floral-meio.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(width: 200, quality: 100)
+          }
+        }
+        florBaixoImg: file(relativePath: { eq: "floral-baixo.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(width: 200, quality: 100)
+          }
+        }
+        marcaImg: file(
+          relativePath: { eq: "As-Casamenteiras-ICON-fundo-transparent.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(width: 250, quality: 100)
+          }
+        }
+
         profileOficial: file(
           relativePath: { eq: "android-chrome-512x512.jpg" }
         ) {

@@ -239,6 +239,8 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               title
               status
+              landingCTA
+              emailCTA
               questions
               featuredImage {
                 childrenImageSharp {
@@ -289,7 +291,9 @@ exports.createPages = async ({ graphql, actions }) => {
             headline: node.frontmatter.headline,
             questions: node.frontmatter.questions,
             excerpt: node.excerpt,
-            featureImage: node.frontmatter.featuredImage,
+            landingCTA: node.frontmatter.landingCTA,
+            emailCTA: node.frontmatter.emailCTA,
+            featuredImage: node.frontmatter.featuredImage,
           },
         });
       }

@@ -80,6 +80,10 @@ const HalfDiv = ({ location, pageContext }) => {
     bandeiraWhats,
     bandeiraQuestion,
     dateImageButton,
+    floralCimaImg,
+    floralMeioImg,
+    florBaixoImg,
+    marcaImg,
   } = useSiteMetadatas();
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
   const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
@@ -87,10 +91,28 @@ const HalfDiv = ({ location, pageContext }) => {
 
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogoSmall.childrenImageSharp[0]);
-  const { title, content, questions, excerpt, featureImage } = pageContext;
-  const mainImage = getImage(featureImage.childrenImageSharp[0]);
-  const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
+  const floralCima = getImage(floralCimaImg.childrenImageSharp[0]);
+  const floralMeio = getImage(floralMeioImg.childrenImageSharp[0]);
+  const florBaixo = getImage(florBaixoImg.childrenImageSharp[0]);
+  const marca = getImage(marcaImg.childrenImageSharp[0]);
 
+  const {
+    title,
+    content,
+    questions,
+    excerpt,
+    featuredImage,
+    landingCTA,
+    emailCTA,
+  } = pageContext;
+  const mainImage = getImage(featuredImage.childrenImageSharp[0]);
+  const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
+  const subscribeText = landingCTA;
+
+  console.log("pageContext");
+  console.log(pageContext);
+  console.log(location);
+  console.log(site);
   // handle States
 
   const handleSuccess = (e, email, honey) => {
@@ -279,10 +301,10 @@ const HalfDiv = ({ location, pageContext }) => {
         pageQuestions: questions || defaultQuestions,
         featuredImage:
           site.siteMetadata.siteUrl +
-          featureImage.childrenImageSharp[0].gatsbyImageData.images.fallback
+          featuredImage.childrenImageSharp[0].gatsbyImageData.images.fallback
             .src,
         cardImage:
-          featureImage.childrenImageSharp[0].gatsbyImageData.images.fallback
+          featuredImage.childrenImageSharp[0].gatsbyImageData.images.fallback
             .src,
         articleBody: content,
         mainLogo: imgHolder,
@@ -375,6 +397,33 @@ const HalfDiv = ({ location, pageContext }) => {
                       name='botField'
                       onChange={e => handleHoneypotChange(e.target.value)}
                       value={honey}
+                    />
+                    <input name='landingUrl' defaultValue={location.pathname} />
+                    <input name='searchUrl' defaultValue={location.search} />
+                    <input
+                      name='logoImage'
+                      defaultValue={logoQuery.images.fallback.src}
+                    />
+                    <input
+                      name='floralCima'
+                      defaultValue={floralCima.images.fallback.src}
+                    />
+                    <input
+                      name='floralMeio'
+                      defaultValue={floralMeio.images.fallback.src}
+                    />
+                    <input
+                      name='florBaixo'
+                      defaultValue={florBaixo.images.fallback.src}
+                    />
+                    <input
+                      name='marca'
+                      defaultValue={marca.images.fallback.src}
+                    />
+                    <input name='CTABUTTON' defaultValue={emailCTA} />
+                    <input
+                      name='siteUrl'
+                      defaultValue={site.siteMetadata.siteUrl}
                     />
                   </label>
                 </p>
@@ -791,17 +840,9 @@ const HalfDiv = ({ location, pageContext }) => {
                   citySuccess &&
                   peopleAWhatsSuccess) === false ? null : (
                   <>
-                    <button
-                      type='submit'
-                      name='subscribe'
-                      id='mc-embedded-subscribe'
-                      disabled={email ? false : true}
-                    >
-                      Alerta-me!
-                    </button>
                     <input
                       type='submit'
-                      value='Inscreva-se'
+                      value={subscribeText}
                       name='subscribe'
                       id='mc-embedded-subscribe'
                       className='button submit-button'
