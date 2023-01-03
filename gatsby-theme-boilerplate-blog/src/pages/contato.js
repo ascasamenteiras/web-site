@@ -4,7 +4,7 @@ import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import MainPageWrapper from "@BlockBuilder/MainPageWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-// import schemaYAML from "@Content/configs/schema-org.yaml";
+import schemaYAML from "@Content/configs/schema-org.json";
 
 const ContatoPage = props => {
   const {
@@ -24,8 +24,8 @@ const ContatoPage = props => {
   const defaultQuestions = site.siteMetadata.questions;
   // console.log("schemaYAML");
 
-  // const { sameAs } = schemaYAML.schema[0].card;
-  const sameAs = null;
+  const { sameAs } = schemaYAML.schema[0].card;
+
   const sameAsResult = sameAs
     ? Object.keys(sameAs).map(key => [key, sameAs[key]])
     : null;
