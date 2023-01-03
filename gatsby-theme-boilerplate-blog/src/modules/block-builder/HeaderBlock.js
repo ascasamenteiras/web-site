@@ -1,5 +1,5 @@
 import React from "react";
-import MainMenuData from "@Content/menus/main-menu.yaml";
+import MainMenuData from "@Content/menus/main-menu.json";
 import HeaderContainer from "../../containers/HeaderContainer";
 const HeaderBlock = ({ logotipoSvg }) => {
   return (

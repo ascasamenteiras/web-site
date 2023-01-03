@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { BsSmartwatch } from "react-icons/bs";
+// import { BsSmartwatch } from "react-icons/bs";
 const PostCard = ({
   postImage,
   linkUrl,
@@ -25,7 +25,7 @@ const PostCard = ({
         />
       </Link>
       <div className='watch-later'>
-        <BsSmartwatch />
+        {/* <BsSmartwatch /> */}
         <span>Ler mais tarde</span>
       </div>
       <div className='post-card-content'>

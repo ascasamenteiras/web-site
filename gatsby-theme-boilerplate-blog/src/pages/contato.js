@@ -4,7 +4,7 @@ import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import MainPageWrapper from "@BlockBuilder/MainPageWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-import schemaYAML from "@Content/configs/schema-org.yaml";
+// import schemaYAML from "@Content/configs/schema-org.yaml";
 
 const ContatoPage = props => {
   const {
@@ -22,10 +22,13 @@ const ContatoPage = props => {
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const defaultQuestions = site.siteMetadata.questions;
-  console.log("schemaYAML");
+  // console.log("schemaYAML");
 
-  const { sameAs } = schemaYAML.schema[0].card;
-  const sameAsResult = Object.keys(sameAs).map(key => [key, sameAs[key]]);
+  // const { sameAs } = schemaYAML.schema[0].card;
+  const sameAs = null;
+  const sameAsResult = sameAs
+    ? Object.keys(sameAs).map(key => [key, sameAs[key]])
+    : null;
   return (
     <MainPageWrapper
       backgroundImage={{

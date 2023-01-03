@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { RiShoppingBag3Line } from "react-icons/ri";
+// import { RiShoppingBag3Line } from "react-icons/ri";
 const MainMenuList = ({
   list,
   indx,
@@ -61,7 +61,7 @@ const MainMenuList = ({
       <div className='header-columns toggle-menu'>
         <p className='menu-shop-bag-mobile'>{userIcon}</p>
         <p className='menu-shop-bag-mobile' tabIndex='-1'>
-          <RiShoppingBag3Line />
+          {/* <RiShoppingBag3Line /> */}
         </p>
         <button
           type='button'

@@ -4,7 +4,6 @@ const _ = require("lodash");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const rootDir = path.join(__dirname, "../");
 const businessInfos = require("./package.json");
-// const redirectsYAML = require('../content/configs/redirects.yaml')
 
 // Adding slug field to each post
 exports.onCreateNode = ({ node, getNode, actions }) => {

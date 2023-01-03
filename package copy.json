@@ -1,0 +1,49 @@
+{
+  "name": "gatsby-theme-boilerplate-blog-workspace",
+  "version": "0.1.1",
+  "workspaces": [
+    "engine",
+    "gatsby-theme-boilerplate-blog"
+  ],
+  "private": true,
+  "description": "Boilerplate Blog Theme",
+  "author": "Milton Bolonha <miltonbolonha@gmail.com>",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-layout",
+    "gatsby-builder",
+    "gatsby-theme-boilerplate",
+    "gatsby-theme-boilerplate-blog",
+    "layout-builder",
+    "seo",
+    "builder"
+  ],
+  "scripts": {
+    "test": "echo \"No test specified\"",
+    "build": "npm run build -w gatsby-theme-boilerplate-blog",
+    "clean": "npm run clean -w gatsby",
+    "develop": "npm run develop -w gatsby",
+    "version": "./build-docs && git add docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miltonbolonha/as-casamenteiras.git"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "@nuktpls:registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.22.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "babel-preset-gatsby": "^2.11.1",
+    "identity-obj-proxy": "^3.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/miltonbolonha/as-casamenteiras/issues"
+  }
+}

@@ -50,8 +50,10 @@ export default function handler(req, res) {
     landingUrl = body.landingUrl;
   }
 
-  const fullUrl = `${req.body.siteUrl +
-    landingUrl}?success=1&fullDate=${FULLDATE}&peopleA=${PEOPLEA}&whatsPeopleA=${PHONE}&emailPeopleA=${EMAIL}&peopleB=${PEOPLEB}&city=${CITY}`;
+  const fullUrl = encodeURI(
+    `${req.body.siteUrl +
+      landingUrl}?success=1&fullDate=${FULLDATE}&peopleA=${PEOPLEA}&whatsPeopleA=${PHONE}&emailPeopleA=${EMAIL}&peopleB=${PEOPLEB}&city=${CITY}`
+  );
 
   sgMail.setApiKey(process.env.GATSBY_SENDGRID_API_KEY);
 
@@ -75,6 +77,8 @@ export default function handler(req, res) {
   //   .catch(error => {
   //     res.status(200).json({ message: error });
   //   });
+  res.status(200).json(fullUrl);
+
   //   siteUrl + logoImage
   // siteUrl +
   //   floralMeio
@@ -82,6 +86,7 @@ export default function handler(req, res) {
   //   florBaixo
   // siteUrl +
   //   marca
-  res.json(siteUrl + floralMeio);
+  // return res.json(req.body);
+
   // res.status(200).redirect("primaira");
 }

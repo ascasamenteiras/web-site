@@ -34,11 +34,11 @@ module.exports = {
       twitter: businessInfos.clientSocial.twitter,
     },
   },
+  trailingSlash: "always",
   plugins: [
     `gatsby-plugin-sass`,
-    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-react-helmet-async`,
-    `gatsby-transformer-yaml`,
+    // `gatsby-transformer-yaml`,
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
@@ -66,13 +66,13 @@ module.exports = {
         destinationDir: path.resolve(rootDir, "content/posts/images/"),
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `yaml`,
-        path: path.resolve(rootDir, "content/"),
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `yaml`,
+    //     path: path.resolve(rootDir, "content/"),
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -187,6 +187,8 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "G-D2B5PVZ7TY",
+        defaultDataLayer: { platform: "gatsby" },
+        enableWebVitalsTracking: true,
       },
     },
   ],

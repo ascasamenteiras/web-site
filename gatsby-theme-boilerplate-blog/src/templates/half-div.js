@@ -112,7 +112,24 @@ const HalfDiv = ({ location, pageContext }) => {
   console.log("pageContext");
   console.log(pageContext);
   console.log(location);
+
   console.log(site);
+
+  let urlParams = null;
+
+  if (location.search.includes("success=1")) {
+    urlParams = new Proxy(new URLSearchParams(location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    console.log(encodeURI(urlParams.fullDate));
+    console.log(encodeURI(urlParams.peopleA));
+    console.log(encodeURI(urlParams.whatsPeopleA));
+    console.log(encodeURI(urlParams.emailPeopleA));
+    console.log(encodeURI(urlParams.peopleB));
+    console.log(encodeURI(urlParams.city));
+  }
+
   // handle States
 
   const handleSuccess = (e, email, honey) => {
@@ -279,7 +296,11 @@ const HalfDiv = ({ location, pageContext }) => {
     if (btnClick === "city") {
       refCity.current.focus();
     }
+    if (location.search.includes("success=1")) {
+      setSuccess("success");
+    }
   }, [btnClick]);
+
   return (
     <HalfDivWrapper
       backgroundImage={{
@@ -359,15 +380,7 @@ const HalfDiv = ({ location, pageContext }) => {
             critical='true'
             className={""}
           />
-          <div
-            className='full-width'
-            dangerouslySetInnerHTML={{ __html: content }}
-          ></div>
 
-          <h3>
-            Clique nos botões abaixo e preencha as informações para liberar o
-            PDF.
-          </h3>
           {msg ? (
             <p
               className={
@@ -379,6 +392,10 @@ const HalfDiv = ({ location, pageContext }) => {
           ) : null}
           {success !== "success" ? (
             <>
+              <div
+                className='full-width'
+                dangerouslySetInnerHTML={{ __html: content }}
+              ></div>
               <form
                 action={"/api/sendtest"}
                 // onSubmit={e => handleChangeForm(e)}
@@ -866,7 +883,7 @@ const HalfDiv = ({ location, pageContext }) => {
             </>
           ) : (
             <>
-              <br />
+              <h1>{location.search}</h1>
             </>
           )}
         </div>

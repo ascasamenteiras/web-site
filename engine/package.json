@@ -12,14 +12,14 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "gatsby": "^4.12.1",
-    "gatsby-plugin-manifest": "^4.18.0",
+    "gatsby": "^5.3.3",
+    "gatsby-plugin-manifest": "^5.0.0",
+    "gatsby-source-filesystem": "^5.3.1",
     "gatsby-plugin-mdx": "^3.11.1",
     "gatsby-plugin-offline": "^5.18.0",
-    "gatsby-source-filesystem": "^4.12.1",
     "gatsby-theme-boilerplate-blog": "*",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27"

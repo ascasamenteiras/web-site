@@ -17,3 +17,5 @@ questions:
 ---
 
 ### Baixe já o nosso catálogo de serviços.
+
+Clique nos botões abaixo e preencha as informações para liberar o PDF.
