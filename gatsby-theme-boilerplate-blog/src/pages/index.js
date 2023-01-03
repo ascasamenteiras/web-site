@@ -179,7 +179,7 @@ const IndexPage = props => {
       return null;
     }
     return (
-      <a href={link} rel='noreferrer' target={"_blank"}>
+      <a href={link} rel='noopener noreferrer' target={"_blank"}>
         <GatsbyImage
           image={img}
           alt={"Ícone de Rede Social"}
@@ -319,7 +319,7 @@ const IndexPage = props => {
                     className='home-video-button'
                     href='https://www.youtube.com/watch?v=07COygyW6W0'
                     target='_blank'
-                    rel='noreferrer'
+                    rel='noopener noreferrer'
                   >
                     <GatsbyImage
                       image={vaiCasarGetImg}

@@ -37,7 +37,7 @@ const FooterBlock = ({
       <a
         href={link}
         className='social-icon-wrapper'
-        rel='noreferrer'
+        rel='noopener noreferrer'
         target={"_blank"}
       >
         <GatsbyImage

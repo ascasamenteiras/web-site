@@ -54,7 +54,7 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
       <div className={`AskMeWrapper badgeClass question-move-${questionState}`}>
         <div
           href='#'
-          rel='noreferrer'
+          rel='noopener noreferrer'
           target={"_blank"}
           className={"desktop-only"}
           onClick={e => handleQuestionBadgeClick(e)}
@@ -63,7 +63,7 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
         </div>
         <div
           href='#'
-          rel='noreferrer'
+          rel='noopener noreferrer'
           target={"_blank"}
           className={"mobile-only"}
           onClick={e => handleQuestionBadgeClick(e)}
@@ -75,7 +75,7 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
       <div className={`whatsMeWrapper badgeClass whats-move-${questionState}`}>
         <a
           href='https://web.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
-          rel='noreferrer'
+          rel='noopener noreferrer'
           target={"_blank"}
           className={"desktop-only"}
         >
@@ -83,7 +83,7 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
         </a>
         <a
           href='https://api.whatsapp.com/send?phone=5516992452437&text=Ol%C3%A1%2C%20Pri.%20Eu%20gostaria%20de%20falar%20sobre%20assessoria%20e%20cerimonial%20de%20casamento'
-          rel='noreferrer'
+          rel='noopener noreferrer'
           target={"_blank"}
           className={"mobile-only"}
         >

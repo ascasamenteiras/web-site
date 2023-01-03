@@ -87,7 +87,7 @@ const ContatoPage = props => {
         <ul className={"contact-link-tree-wrapper"}>
           {sameAsResult.map((e, i) => (
             <li key={i}>
-              <a href={e[1]} rel='noreferrer' target={"_blank"}>
+              <a href={e[1]} rel='noopener noreferrer' target={"_blank"}>
                 {e[0].charAt(0).toUpperCase() + e[0].slice(1)}
               </a>
             </li>
