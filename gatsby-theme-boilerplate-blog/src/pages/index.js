@@ -373,7 +373,7 @@ const IndexPage = props => {
                     )}
                     {printMySocial(
                       facebookGetImg,
-                      "https://www.facebook.com/profile.php?id=100016966816287"
+                      "https://www.facebook.com/pricerimonial"
                     )}
                     {printMySocial(
                       githubGetImg,

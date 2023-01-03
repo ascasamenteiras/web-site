@@ -77,10 +77,7 @@ const FooterBlock = ({
             casamentospontocomGetImg,
             "https://www.casamentos.com.br/cerimonialista/as-casamenteiras--e192771"
           )}
-          {socialMe(
-            faceGetImg,
-            "https://www.facebook.com/profile.php?id=100016966816287"
-          )}
+          {socialMe(faceGetImg, "https://www.facebook.com/pricerimonial")}
           {socialMe(
             youTubeGetImg,
             "https://www.youtube.com/channel/UCa7WCZgri320eSCS-7rr38g"

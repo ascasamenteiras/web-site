@@ -989,6 +989,10 @@ sup {
 			width: 50%;
 			flex-direction: column;
 			color: $cta__colorLink;
+			margin: 0 auto;
+			.logo-half-div {
+				margin: 20px 0;
+			}
 			h3 {
 				width: 90%;
 				margin: 20px auto 0;
@@ -1002,6 +1006,25 @@ sup {
 				margin: 5px auto;
 				text-align: center;
 			}
+
+			.success-email-check {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				padding: 20px 10px;
+				background: #ebffcb;
+				border: 1px solid green;
+				border-radius: 5px;
+				margin: 20px 0;
+				width: 90%;
+				max-width: 650px;
+				min-width: 300px;
+				p {
+					color: #013801;
+					font-size: 18px;
+				}
+			}
+
 			form {
 				display: flex;
 				flex-direction: column;

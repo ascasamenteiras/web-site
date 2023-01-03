@@ -2,13 +2,69 @@ import React, { useState, useEffect, useRef } from "react";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import VMasker from "vanilla-masker";
-
+// import { useCountdown } from "../tools/useCountdown";
 // import addToMailchimp from "gatsby-plugin-mailchimp";
 
 // import sgMail from "@sendgrid/mail";
 
 import HalfDivWrapper from "@BlockBuilder/HalfDivWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
+
+const DateTimeDisplay = ({ value, type, isDanger }) => {
+  return (
+    <div className={isDanger ? "countdown danger" : "countdown"}>
+      <p>{value}</p>
+      <span>{type}</span>
+    </div>
+  );
+};
+
+const ExpiredNotice = () => {
+  return (
+    <div className='expired-notice'>
+      <span>Expired!!!</span>
+      <p>Please select a future date and time.</p>
+    </div>
+  );
+};
+
+const ShowCounter = ({ days, hours, minutes, seconds }) => {
+  return (
+    <div className='show-counter'>
+      <a
+        className='countdown-link'
+        href='https://tapasadhikary.com'
+        rel='noopener noreferrer'
+        target='_blank'
+      >
+        <DateTimeDisplay isDanger={days <= 3} type='Days' value={days} />
+        <p>:</p>
+        <DateTimeDisplay isDanger={false} type='Hours' value={hours} />
+        <p>:</p>
+        <DateTimeDisplay isDanger={false} type='Mins' value={minutes} />
+        <p>:</p>
+        <DateTimeDisplay isDanger={false} type='Seconds' value={seconds} />
+      </a>
+    </div>
+  );
+};
+
+const CountDownTimer = ({ targetDate }) => {
+  const [days, hours, minutes, seconds] = useCountDown(targetDate);
+
+  if (days + hours + minutes + seconds <= 0) {
+    return <ExpiredNotice />;
+  } else {
+    return (
+      <ShowCounter
+        days={days}
+        hours={hours}
+        minutes={minutes}
+        seconds={seconds}
+      />
+    );
+  }
+};
 
 let validator = {
   set: function(target, key, value) {
@@ -63,6 +119,9 @@ const HalfDiv = ({ location, pageContext }) => {
   const [msg, setMsg] = useState("");
   const [success, setSuccess] = useState("");
 
+  const [timeLeft, setTimeLeft] = useState(null);
+  const [dateGoal] = useState(null);
+
   // useRef
   const refDate = useRef();
   const refEmail = useRef();
@@ -107,31 +166,78 @@ const HalfDiv = ({ location, pageContext }) => {
   } = pageContext;
   const mainImage = getImage(featuredImage.childrenImageSharp[0]);
   const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
-  const subscribeText = landingCTA;
 
   console.log("pageContext");
   console.log(pageContext);
   console.log(location);
 
   console.log(site);
+  // queries.fullDate
+  // const [clockTime, isPlaying, setIsPlaying] = useCountdown(82.5 * 60);
 
   let urlParams = null;
-
+  let longDate = null;
+  let shortDate = null;
+  let diffDays = null;
+  let months = null;
   if (location.search.includes("success=1")) {
     urlParams = new Proxy(new URLSearchParams(location.search), {
       get: (searchParams, prop) => searchParams.get(prop),
     });
     // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-    console.log(encodeURI(urlParams.fullDate));
+    console.log(encodeURI(urlParams.fullDate + " GMT"));
     console.log(encodeURI(urlParams.peopleA));
     console.log(encodeURI(urlParams.whatsPeopleA));
     console.log(encodeURI(urlParams.emailPeopleA));
     console.log(encodeURI(urlParams.peopleB));
     console.log(encodeURI(urlParams.city));
+    console.log("new Date()");
+    const dateNow = urlParams.fullDate.split("/");
+    console.log("dateNowdateNow");
+    console.log(dateNow);
+    const casalDate = new Date(
+      dateNow[1] + "-" + dateNow[0] + "-" + dateNow[2]
+    );
+    const now = new Date();
+    const options1 = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    const options2 = {
+      day: "numeric",
+      month: "numeric",
+      year: "numeric",
+    };
+    longDate = casalDate.toLocaleString("pt-BR", options1);
+    shortDate = casalDate.toLocaleString("pt-BR", options2);
+    const diffTime = Math.abs(casalDate - now);
+    diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const diffResult = Math.round((casalDate - now) / (1000 * 60 * 60 * 24));
+    months = Math.floor(diffResult / 30);
+
+    console.log(diffTime + " milliseconds");
+    console.log(diffDays + " days");
+    console.log(months + " months");
   }
-
+  let queries = [];
+  const urlQueries = decodeURI(location.search)
+    .slice(1)
+    .split("&");
+  urlQueries.map((e, i) => {
+    const splitE = e.split("=");
+    queries[splitE[0]] = splitE[1];
+  });
   // handle States
-
+  console.log("urlQueries");
+  console.log(queries.city);
+  console.log(queries.emailPeopleA);
+  console.log(queries.fullDate);
+  console.log(queries.peopleA);
+  console.log(queries.peopleB);
+  console.log(queries.success);
+  console.log(queries.whatsPeopleA);
   const handleSuccess = (e, email, honey) => {
     if (honey) {
       return setSuccess(false);
@@ -271,12 +377,15 @@ const HalfDiv = ({ location, pageContext }) => {
     }
   };
   useEffect(() => {
-    VMasker(document.querySelector('input[name="PHONE"')).maskPattern(
-      "(99) 99999-9999"
-    );
-    VMasker(document.querySelector('input[name="FULLDATE"')).maskPattern(
-      "99/99/9999"
-    );
+    if (!location.search.includes("success=1")) {
+      VMasker(document.querySelector('input[name="PHONE"')).maskPattern(
+        "(99) 99999-9999"
+      );
+      VMasker(document.querySelector('input[name="FULLDATE"')).maskPattern(
+        "99/99/9999"
+      );
+    }
+
     if (btnClick === "date") {
       refDate.current.focus();
     }
@@ -300,7 +409,7 @@ const HalfDiv = ({ location, pageContext }) => {
       setSuccess("success");
     }
   }, [btnClick]);
-
+  console.log(location.search);
   return (
     <HalfDivWrapper
       backgroundImage={{
@@ -358,7 +467,11 @@ const HalfDiv = ({ location, pageContext }) => {
       }}
     >
       <main>
-        <div className='main-image'>
+        <div
+          className={
+            !location.search.includes("success=1") ? "main-image" : "hidden"
+          }
+        >
           <GatsbyImage
             image={mainImage}
             alt={"Algo aqui"}
@@ -378,7 +491,7 @@ const HalfDiv = ({ location, pageContext }) => {
             height={230}
             placeholder={"NONE"}
             critical='true'
-            className={""}
+            className={"logo-half-div"}
           />
 
           {msg ? (
@@ -859,7 +972,7 @@ const HalfDiv = ({ location, pageContext }) => {
                   <>
                     <input
                       type='submit'
-                      value={subscribeText}
+                      value={landingCTA}
                       name='subscribe'
                       id='mc-embedded-subscribe'
                       className='button submit-button'
@@ -883,7 +996,30 @@ const HalfDiv = ({ location, pageContext }) => {
             </>
           ) : (
             <>
-              <h1>{location.search}</h1>
+              <p>
+                Você ganhou: 01 (um) VOUCHER de <strong>R$500,00</strong>
+              </p>
+              <a href='#' className='button submit-button'>
+                Resgatar VOUCHER Agora !
+              </a>
+              <p>Esse VOUCHER expira em:</p>
+              <p>
+                <span>12 dias</span> <span>12 horas</span>{" "}
+                <span>29 minutos</span> <span>30 segundos</span>
+              </p>
+              <div className='success-email-check'>
+                <p>
+                  Obrigado, <strong>{queries.peopleA}</strong> por confirmar as
+                  informações do seu casamento com{" "}
+                  <strong>{queries.peopleB}</strong>.
+                </p>
+                <p>
+                  O seu casamento será <strong>{longDate}</strong>.
+                </p>
+                <p>
+                  Faltam <strong>{months} meses</strong> ({diffDays} dias).
+                </p>
+              </div>
             </>
           )}
         </div>
