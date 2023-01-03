@@ -37,12 +37,14 @@ const FooterBlock = ({
       <a
         href={link}
         className='social-icon-wrapper'
-        rel='nofollow'
+        rel='noreferrer'
         target={"_blank"}
       >
         <GatsbyImage
           image={img}
-          alt={"Atalhos para redes sociais e outras ferramentas d'As Casamenteiras"}
+          alt={
+            "Atalhos para redes sociais e outras ferramentas d'As Casamenteiras"
+          }
           placeholder={"NONE"}
           critical='true'
           className={"colorME roundME bottom-social"}
@@ -95,15 +97,11 @@ const FooterBlock = ({
             spotifyGetImg,
             "https://open.spotify.com/artist/5scJ7dkADVQQ52kLcRA1mV"
           )}
-          {socialMe(
-            deezerGetImg,
-            "https://www.deezer.com/br/artist/181009227"
-          )}
+          {socialMe(deezerGetImg, "https://www.deezer.com/br/artist/181009227")}
           {socialMe(
             iTunesGetImg,
             "https://music.apple.com/br/artist/priscilla-barbosa/1641419117"
           )}
-          
         </Row>
         <Row opt={{ isBoxed: true, classes: "logo-bottom-wrapper" }}>
           <div className='footer-logo'>{logo}</div>
