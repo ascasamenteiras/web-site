@@ -338,9 +338,9 @@ const HalfDiv = ({ location, pageContext }) => {
     return setBtnClick(clickedBtn);
   }
 
-  const handleSubmit = async (e, email, honey) => {
-    e.preventDefault();
-  };
+  // const handleSubmit = async (e, email, honey) => {
+  // e.preventDefault();
+  // };
   function handleCountDown(params) {
     setCountdown([params[0], params[1], params[2]]);
   }
@@ -408,6 +408,22 @@ const HalfDiv = ({ location, pageContext }) => {
     : "Quero o 🎫 Voucher 🎫 de 🛍R$500 (quinhentos reais)🛍";
   console.log("queries");
   console.log(queries.email);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/api/sendtest", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch(error => alert(error));
+  };
+
   return (
     <HalfDivWrapper
       backgroundImage={{
@@ -508,8 +524,8 @@ const HalfDiv = ({ location, pageContext }) => {
                 dangerouslySetInnerHTML={{ __html: content }}
               ></div>
               <form
-                action={"/.netlify/functions/sendgrid"}
                 // onSubmit={e => handleChangeForm(e)}
+                onSubmit={e => handleSubmit(e)}
                 method='POST'
                 id='ac-subscribe-landing-form'
                 name='ac-subscribe-landing-form'
