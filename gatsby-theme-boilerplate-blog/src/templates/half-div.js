@@ -511,9 +511,11 @@ const HalfDiv = ({ location, pageContext }) => {
                 action={"/.netlify/functions/sendgrid"}
                 // onSubmit={e => handleChangeForm(e)}
                 method='POST'
-                id='mc-embedded-subscribe-form'
-                name='mc-embedded-subscribe-form'
+                id='ac-subscribe-landing-form'
+                name='ac-subscribe-landing-form'
                 className='validate'
+                data-netlify='true'
+                netlify-honeypot='botField'
                 // target='_blank'
                 // onSubmit={e => handleSuccess(e, email, honey)}
                 noValidate
@@ -525,6 +527,11 @@ const HalfDiv = ({ location, pageContext }) => {
                       name='botField'
                       onChange={e => handleHoneypotChange(e.target.value)}
                       value={honey}
+                    />
+                    <input
+                      type='hidden'
+                      name='form-name'
+                      value='ac-subscribe-landing-form'
                     />
                     <input name='landingUrl' defaultValue={location.pathname} />
                     <input name='searchUrl' defaultValue={location.search} />
@@ -973,7 +980,7 @@ const HalfDiv = ({ location, pageContext }) => {
                       type='submit'
                       value={landingCTA}
                       name='subscribe'
-                      id='mc-embedded-subscribe'
+                      id='ac-subscribe'
                       className='button submit-button'
                       disabled={
                         emailSuccess &&
