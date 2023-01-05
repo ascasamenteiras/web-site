@@ -508,7 +508,7 @@ const HalfDiv = ({ location, pageContext }) => {
                 dangerouslySetInnerHTML={{ __html: content }}
               ></div>
               <form
-                action={"/api/sendtest"}
+                action={"/.netlify/functions/sendgrid"}
                 // onSubmit={e => handleChangeForm(e)}
                 method='POST'
                 id='mc-embedded-subscribe-form'
