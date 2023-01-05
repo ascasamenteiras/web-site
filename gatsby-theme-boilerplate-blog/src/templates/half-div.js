@@ -420,7 +420,11 @@ const HalfDiv = ({ location, pageContext }) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => console.log("Form successfully submitted"))
+      .then(dataR => {
+        console.log(dataR);
+        console.log(new URLSearchParams(formData).toString());
+        console.log("Form successfully submitted");
+      })
       .catch(error => alert(error));
   };
 
