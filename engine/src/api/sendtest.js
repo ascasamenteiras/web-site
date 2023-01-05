@@ -19,7 +19,7 @@ export function handler(req, res) {
     return res.status(403).json({ message: "Você não deveria estar aqui!" });
   }
 
-  const body = req.body;
+  const body = JSON.parse(req.body);
 
   const {
     FULLDATE,
