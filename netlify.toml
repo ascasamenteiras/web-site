@@ -3,7 +3,7 @@
     publish = "engine/public"
 
 [build.environment]
-  NODE_VERSION = "16.14.2"
+  NODE_VERSION = "18.12.1"
 
 [[plugins]]
   package = "@netlify/plugin-gatsby"
