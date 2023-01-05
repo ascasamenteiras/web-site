@@ -973,6 +973,9 @@ sup {
 .half-div {
 	height: 100vh;
 	overflow: hidden;
+	&.success {
+		overflow: auto;
+	}
 	main {
 		display: flex;
 		flex-direction: row;
@@ -993,6 +996,87 @@ sup {
 			.logo-half-div {
 				margin: 20px 0;
 			}
+			.countdown-promo {
+				font-size: 16px;
+				font-weight: 600;
+				font-family: $fourth__font;
+				display: flex;
+				justify-content: center;
+				width: 100%;
+				margin: 20px 0 40px;
+				span {
+					border-radius: 5px;
+					border: 2px solid $cta__colorLink;
+					padding: 15px;
+					margin: 0 5px;
+				}
+				&.countdown-final {
+					border: 2px solid $error_color;
+					color: $error_color;
+					display: flex;
+					align-items: center;
+					height: 50px;
+					width: 200px;
+					margin: 0 auto;
+					text-align: center;
+					border-style: dashed;
+					strong {
+						padding: 0 5px;
+					}
+				}
+			}
+			.halfdiv-choose-options {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				padding: 10px 0;
+				p {
+					font-size: 14px;
+					font-weight: 600;
+					font-family: $fourth__font;
+					strong {
+						font-weight: 900;
+					}
+				}
+
+				.voucher-btn-whats {
+					border-radius: 5px;
+					font-family: $fourth__font;
+					font-weight: 600;
+					margin: 20px 0;
+					display: block;
+					border: 2px solid $cta__colorLink;
+					padding: 15px;
+					background-color: $cta__colorLink;
+					color: $cta__color;
+					cursor: pointer;
+					&:hover {
+						background-color: $cta__color;
+						color: $cta__colorLink;
+					}
+				}
+				.halfdiv-btn {
+					border-radius: 5px;
+					border: 2px solid $cta__color;
+					padding: 15px;
+					background-color: $cta__color;
+					margin: 0 5px;
+					cursor: pointer;
+					&:hover {
+						border: 2px solid $cta__color;
+						box-shadow: inset 6px 6px 11px 1px $primary_darklight;
+						background-color: $cta__colorLink;
+
+						p {
+							color: $cta__color;
+						}
+					}
+				}
+				div.row-me {
+					flex-direction: row;
+					display: flex;
+				}
+			}
 			h3 {
 				width: 90%;
 				margin: 20px auto 0;
@@ -1011,17 +1095,18 @@ sup {
 				display: flex;
 				flex-direction: column;
 				flex-wrap: nowrap;
-				padding: 20px 10px;
+				padding: 10px;
 				background: #ebffcb;
 				border: 1px solid green;
 				border-radius: 5px;
-				margin: 20px 0;
+				margin: 15px 0;
 				width: 90%;
 				max-width: 650px;
 				min-width: 300px;
 				p {
 					color: #013801;
-					font-size: 18px;
+					font-size: 15px;
+					line-height: 18px;
 				}
 			}
 

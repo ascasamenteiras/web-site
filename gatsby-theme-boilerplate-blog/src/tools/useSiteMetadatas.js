@@ -111,7 +111,16 @@ export const useSiteMetadatas = () =>
             gatsbyImageData(width: 250, quality: 100)
           }
         }
-
+        voucherImg: file(relativePath: { eq: "voucher.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(width: 80, quality: 100)
+          }
+        }
+        pdfImg: file(relativePath: { eq: "pdf.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(width: 80, quality: 100)
+          }
+        }
         profileOficial: file(
           relativePath: { eq: "android-chrome-512x512.jpg" }
         ) {

@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
+// import moment from "moment";
+import * as moment from "moment";
+import "moment/locale/pt-br";
 
+require("moment-precise-range-plugin");
 import VMasker from "vanilla-masker";
 // import { useCountdown } from "../tools/useCountdown";
 // import addToMailchimp from "gatsby-plugin-mailchimp";
@@ -109,6 +113,7 @@ const HalfDiv = ({ location, pageContext }) => {
   const [peopleASuccess, setPeopleASuccess] = useState(false);
   const [peopleB, setPeopleB] = useState("");
   const [peopleBSuccess, setPeopleBSuccess] = useState(false);
+  const [confirmDate, setConfirmDate] = useState(null);
   const [city, setCity] = useState("");
   const [citySuccess, setCitySuccess] = useState(false);
 
@@ -119,8 +124,8 @@ const HalfDiv = ({ location, pageContext }) => {
   const [msg, setMsg] = useState("");
   const [success, setSuccess] = useState("");
 
-  const [timeLeft, setTimeLeft] = useState(null);
-  const [dateGoal] = useState(null);
+  const [countdown, setCountdown] = useState([12, 60, 60]);
+  const [promoEnd, setPromoEnd] = useState(false);
 
   // useRef
   const refDate = useRef();
@@ -143,6 +148,8 @@ const HalfDiv = ({ location, pageContext }) => {
     floralMeioImg,
     florBaixoImg,
     marcaImg,
+    voucherImg,
+    pdfImg,
   } = useSiteMetadatas();
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
   const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
@@ -154,6 +161,8 @@ const HalfDiv = ({ location, pageContext }) => {
   const floralMeio = getImage(floralMeioImg.childrenImageSharp[0]);
   const florBaixo = getImage(florBaixoImg.childrenImageSharp[0]);
   const marca = getImage(marcaImg.childrenImageSharp[0]);
+  const voucher = getImage(voucherImg.childrenImageSharp[0]);
+  const pdf = getImage(pdfImg.childrenImageSharp[0]);
 
   const {
     title,
@@ -167,11 +176,15 @@ const HalfDiv = ({ location, pageContext }) => {
   const mainImage = getImage(featuredImage.childrenImageSharp[0]);
   const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
 
-  console.log("pageContext");
-  console.log(pageContext);
-  console.log(location);
+  // function handleConfirmDate(x) {
+  // return setConfirmDate(x);
+  // }
 
-  console.log(site);
+  console.log("pageContext");
+  // console.log(pageContext);
+  // console.log(location);
+
+  // console.log(site);
   // queries.fullDate
   // const [clockTime, isPlaying, setIsPlaying] = useCountdown(82.5 * 60);
 
@@ -180,21 +193,22 @@ const HalfDiv = ({ location, pageContext }) => {
   let shortDate = null;
   let diffDays = null;
   let months = null;
-  if (location.search.includes("success=1")) {
+  let condEndPromo = null;
+  if (location.search.includes("success=1") && !condEndPromo) {
     urlParams = new Proxy(new URLSearchParams(location.search), {
       get: (searchParams, prop) => searchParams.get(prop),
     });
     // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-    console.log(encodeURI(urlParams.fullDate + " GMT"));
-    console.log(encodeURI(urlParams.peopleA));
-    console.log(encodeURI(urlParams.whatsPeopleA));
-    console.log(encodeURI(urlParams.emailPeopleA));
-    console.log(encodeURI(urlParams.peopleB));
-    console.log(encodeURI(urlParams.city));
-    console.log("new Date()");
+    // console.log(encodeURI(urlParams.fullDate + " GMT"));
+    // console.log(encodeURI(urlParams.peopleA));
+    // console.log(encodeURI(urlParams.whatsPeopleA));
+    // console.log(encodeURI(urlParams.emailPeopleA));
+    // console.log(encodeURI(urlParams.peopleB));
+    // console.log(encodeURI(urlParams.city));
+    // console.log("new Date()");
     const dateNow = urlParams.fullDate.split("/");
-    console.log("dateNowdateNow");
-    console.log(dateNow);
+    // console.log("dateNowdateNow");
+    // console.log(dateNow);
     const casalDate = new Date(
       dateNow[1] + "-" + dateNow[0] + "-" + dateNow[2]
     );
@@ -220,7 +234,10 @@ const HalfDiv = ({ location, pageContext }) => {
     console.log(diffTime + " milliseconds");
     console.log(diffDays + " days");
     console.log(months + " months");
+
+    console.log("urlParams.confirmDate");
   }
+
   let queries = [];
   const urlQueries = decodeURI(location.search)
     .slice(1)
@@ -230,14 +247,14 @@ const HalfDiv = ({ location, pageContext }) => {
     queries[splitE[0]] = splitE[1];
   });
   // handle States
-  console.log("urlQueries");
-  console.log(queries.city);
-  console.log(queries.emailPeopleA);
-  console.log(queries.fullDate);
-  console.log(queries.peopleA);
-  console.log(queries.peopleB);
-  console.log(queries.success);
-  console.log(queries.whatsPeopleA);
+  // console.log("urlQueries");
+  // console.log(queries.city);
+  // console.log(queries.emailPeopleA);
+  // console.log(queries.fullDate);
+  // console.log(queries.peopleA);
+  // console.log(queries.peopleB);
+  // console.log(queries.success);
+  // console.log(queries.whatsPeopleA);
   const handleSuccess = (e, email, honey) => {
     if (honey) {
       return setSuccess(false);
@@ -321,63 +338,22 @@ const HalfDiv = ({ location, pageContext }) => {
     return setBtnClick(clickedBtn);
   }
 
-  // handle submit form
-
   const handleSubmit = async (e, email, honey) => {
     e.preventDefault();
-    // sgMail.setApiKey(process.env.GATSBY_SENDGRID_API_KEY);
-    const msg = {
-      to: "miltonbolonha@gmail.com",
-      from: "pri@ascasamenteiras.com.br",
-      subject: "Sending with SendGrid is Fun",
-      text: "and easy to do anywhere, even with Node.js",
-      html: "<strong>and easy to do anywhere, even with Node.js</strong>",
-    };
-    // sgMail
-    //   .send(msg)
-    //   .then(() => {
-    //     console.log("Email sent");
-    //   })
-    //   .catch(error => {
-    //     console.error(error);
-    //   });
-
-    //   const fromEmail = 'cerimonial@ascasamenteiras.com.br'
-    //   const subject = 'titulo'
-    //   const body = 'message'
-
-    //  const response = await fetch('http://localhost:8000/api/teste', {
-    //    method: "post",
-    //    headers: {
-    //      "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-    //    },
-    //    body: new URLSearchParams({ fromEmail, subject, body }).toString(),
-    //  })
-    //  if (response.status === 200) {
-    //    this.setState({
-    //      error: null,
-    //      submitting: false,
-    //      message: {
-    //        fromEmail: "",
-    //        subject: "",
-    //        body: "",
-    //      },
-    //    })
-    //  } else {
-    //    const json = await response.json()
-    //    this.setState({
-    //      error: json.error,
-    //      submitting: false,
-    //    })
-    //  }
   };
+  function handleCountDown(params) {
+    setCountdown([params[0], params[1], params[2]]);
+  }
   const handleKeyDown = event => {
     if (event.key === "Enter" || event.key === "Escape") {
       handleClick(event, null);
     }
   };
   useEffect(() => {
-    if (!location.search.includes("success=1")) {
+    if (
+      !location.search.includes("success=1") &&
+      !location.search.includes("success=0")
+    ) {
       VMasker(document.querySelector('input[name="PHONE"')).maskPattern(
         "(99) 99999-9999"
       );
@@ -398,18 +374,40 @@ const HalfDiv = ({ location, pageContext }) => {
     if (btnClick === "whatsPeopleA") {
       refWhatsPeopleA.current.focus();
     }
-    btnClick === "email";
     if (btnClick === "peopleB") {
       refPeopleB.current.focus();
     }
     if (btnClick === "city") {
       refCity.current.focus();
     }
-    if (location.search.includes("success=1")) {
+    if (location.search.includes("success=1") && !promoEnd) {
       setSuccess("success");
+      let promoDate = new Date(urlParams.confirmDate);
+      promoDate.setHours(promoDate.getHours() + 12);
+      const nowDate = new Date();
+      condEndPromo = moment(nowDate) > moment(promoDate);
+      if (condEndPromo) {
+        setPromoEnd(true);
+        handleCountDown([0, 0, 0]);
+      } else {
+        const diffMoment = moment.preciseDiff(nowDate, promoDate, true);
+        setTimeout(
+          () =>
+            handleCountDown([
+              diffMoment.hours,
+              diffMoment.minutes,
+              diffMoment.seconds,
+            ]),
+          1000
+        );
+      }
     }
-  }, [btnClick]);
-  console.log(location.search);
+  }, [btnClick, countdown]);
+  const mensagem = promoEnd
+    ? "Quero 🛍5% de desconto🛍"
+    : "Quero o 🎫 Voucher 🎫 de 🛍R$500 (quinhentos reais)🛍";
+  console.log("queries");
+  console.log(queries.email);
   return (
     <HalfDivWrapper
       backgroundImage={{
@@ -427,7 +425,7 @@ const HalfDiv = ({ location, pageContext }) => {
       }
       opt={{
         titleSeo: `${title}`,
-        classes: "half-div",
+        classes: success ? "half-div success" : "half-div",
         pageQuestions: questions || defaultQuestions,
         featuredImage:
           site.siteMetadata.siteUrl +
@@ -503,7 +501,7 @@ const HalfDiv = ({ location, pageContext }) => {
               {msg}
             </p>
           ) : null}
-          {success !== "success" ? (
+          {success !== "success" && !location.search.includes("success=0") ? (
             <>
               <div
                 className='full-width'
@@ -555,6 +553,7 @@ const HalfDiv = ({ location, pageContext }) => {
                       name='siteUrl'
                       defaultValue={site.siteMetadata.siteUrl}
                     />
+                    <input name='nowDate' defaultValue={new Date()} />
                   </label>
                 </p>
                 <br />
@@ -994,32 +993,127 @@ const HalfDiv = ({ location, pageContext }) => {
                 <br />
               </form>
             </>
-          ) : (
+          ) : !location.search.includes("success=0") ? (
             <>
-              <p>
-                Você ganhou: 01 (um) VOUCHER de <strong>R$500,00</strong>
-              </p>
-              <a href='#' className='button submit-button'>
-                Resgatar VOUCHER Agora !
-              </a>
-              <p>Esse VOUCHER expira em:</p>
-              <p>
-                <span>12 dias</span> <span>12 horas</span>{" "}
-                <span>29 minutos</span> <span>30 segundos</span>
-              </p>
               <div className='success-email-check'>
                 <p>
-                  Obrigado, <strong>{queries.peopleA}</strong> por confirmar as
+                  Obrigada, <strong>{queries.peopleA}</strong> por confirmar as
                   informações do seu casamento com{" "}
-                  <strong>{queries.peopleB}</strong>.
-                </p>
-                <p>
-                  O seu casamento será <strong>{longDate}</strong>.
+                  <strong>{queries.peopleB}</strong>. O seu casamento será{" "}
+                  <strong>{longDate}</strong>.
                 </p>
                 <p>
                   Faltam <strong>{months} meses</strong> ({diffDays} dias).
                 </p>
               </div>
+              <div className='halfdiv-choose-options'>
+                <div className='row-me'>
+                  <div className='halfdiv-btn'>
+                    <GatsbyImage
+                      image={pdf}
+                      alt={"Algo aqui"}
+                      width={80}
+                      layout='contain'
+                      placeholder={"NONE"}
+                      className={`halfdiv-voucher`}
+                    />
+                    <p>
+                      <strong>Clique aqui</strong> e baixe o seu catálogo.
+                    </p>
+                  </div>
+                  <div className='halfdiv-btn'>
+                    <GatsbyImage
+                      image={voucher}
+                      alt={"Algo aqui"}
+                      width={80}
+                      layout='contain'
+                      placeholder={"NONE"}
+                      className={`halfdiv-voucher`}
+                    />
+                    <p>
+                      Você ganhou: 01 (um) VOUCHER de <strong>R$500,00</strong>
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  {queries ? (
+                    <a
+                      href={`https://web.whatsapp.com/send?phone=5516992452437&text=${encodeURI(
+                        "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘\n\n" +
+                          "🥂Oi Pri!🥂 \n\nMeu nome é *" +
+                          queries.peopleA +
+                          "* 💍 e vou casar com *" +
+                          queries.peopleB +
+                          "* 💍 e a data: \n\n*" +
+                          longDate.charAt(0).toUpperCase() +
+                          longDate.slice(1) +
+                          "* 🕑 (faltam " +
+                          months +
+                          " meses," +
+                          diffDays +
+                          " dias).\n\n" +
+                          mensagem +
+                          "\n\nComo faço para você ser a cerimonialista do meu casamento?\n" +
+                          "Também preciso de ajuda com diversos fornecedores.\n\n" +
+                          "😍 Você poderia me ajudar? 😍\n\n" +
+                          "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘"
+                      )}`}
+                      className='voucher-btn-whats'
+                    >
+                      {promoEnd
+                        ? `Perdeu a Promoção? Clique aqui e receba um desconto de 5%`
+                        : `Resgatar VOUCHER agora !`}
+                    </a>
+                  ) : null}
+
+                  <p>Esse VOUCHER expira em:</p>
+                  {!promoEnd ? (
+                    <p className='countdown-promo'>
+                      <span>
+                        {!promoEnd ? countdown[0] : 0}
+                        <br />
+                        horas
+                      </span>{" "}
+                      <span>
+                        {!promoEnd ? countdown[1] : 0}
+                        <br />
+                        min.
+                      </span>{" "}
+                      <span>
+                        {!promoEnd ? countdown[2] : 0}
+                        <br />
+                        seg.
+                      </span>
+                    </p>
+                  ) : (
+                    <p className='countdown-promo countdown-final'>
+                      Voucher <strong>EXPIRADO</strong>!
+                    </p>
+                  )}
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              {queries ? (
+                <>
+                  <p>Cheque o seu e-mail: {queries.email}.</p>
+                  <p>
+                    Enviamos um e-mail de segurança para evitar robôs (SPAM) no
+                    nosso sistema.
+                  </p>
+                  <p>
+                    Procure o email da{" "}
+                    <i>
+                      <strong>pri</strong>@ascasamenteiras.com.br
+                    </i>
+                    .
+                  </p>
+                  <p>E clique no botão "Baixar Catálogo".</p>
+                </>
+              ) : (
+                "Deu certo sem querie."
+              )}
             </>
           )}
         </div>
