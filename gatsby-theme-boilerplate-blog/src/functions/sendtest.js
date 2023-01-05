@@ -5,7 +5,6 @@ require("dotenv").config({
   path: `.env`,
 });
 export function handler(req, res) {
-  return res.json(req.body);
   // return res.json(req.body);
   if (req.method !== "POST") {
     res.json({ message: "Get out here!" });
