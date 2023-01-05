@@ -4,8 +4,7 @@ const sgMail = require("@sendgrid/mail");
 require("dotenv").config({
   path: `.env`,
 });
-
-export default async function(req, res) {
+export function handler(req, res) {
   // return res.json(req.body);
   if (req.method !== "POST") {
     res.json({ message: "Get out here!" });
