@@ -1,9 +1,9 @@
 const path = require("path");
 const rootDir = path.join(__dirname, "../");
 const businessInfos = require("./package.json");
-// require("dotenv").config({
-//   path: `.env`,
-// });
+require("dotenv").config({
+  path: `.env`,
+});
 module.exports = {
   siteMetadata: {
     pathPrefix: businessInfos.urlPrefix,
@@ -37,7 +37,6 @@ module.exports = {
   trailingSlash: "always",
   plugins: [
     `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet-async`,
     // `gatsby-transformer-yaml`,
     {
       resolve: "gatsby-plugin-mailchimp",
@@ -60,6 +59,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-image`,
+    `gatsby-transformer-json`,
     {
       resolve: "gatsby-remark-copy-linked-files",
       options: {
@@ -102,7 +102,6 @@ module.exports = {
         ignore: [`**/\.jpg`, `**/\.png`], // ignore files starting with a dot
       },
     },
-
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -119,6 +118,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.resolve(rootDir, "content/translations"),
+        ignore: [`**/\.js`], // ignore files starting with a dot
+        name: `translations`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -129,7 +136,6 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
-          `gatsby-remark-lazy-load`,
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
@@ -144,6 +150,15 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-subfont`,
+      options: {
+        silent: true,
+        fallbacks: false,
+        inlineFonts: true,
+        fontDisplay: "optional",
       },
     },
     // {
@@ -181,14 +196,6 @@ module.exports = {
         rule: {
           include: /static\/images/, // See below to configure properly
         },
-      },
-    },
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "G-D2B5PVZ7TY",
-        defaultDataLayer: { platform: "gatsby" },
-        enableWebVitalsTracking: true,
       },
     },
   ],

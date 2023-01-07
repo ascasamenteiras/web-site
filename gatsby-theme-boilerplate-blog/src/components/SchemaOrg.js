@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 
 export default React.memo(
   ({
@@ -116,40 +115,28 @@ export default React.memo(
         datePublished: datePublished,
       },
     ];
-    let arrayQuestions = []
+    let arrayQuestions = [];
     questions.forEach(question => {
-      return arrayQuestions.push(
-        {
-          "@type": "Question",
-          "name": question[0],
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": `<p>${question[1]}</p>`
-          }
-        }
-      )
+      return arrayQuestions.push({
+        "@type": "Question",
+        name: question[0],
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `<p>${question[1]}</p>`,
+        },
+      });
     });
-    
-    
-   const questionSchema = [{
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": 
-      [
-        arrayQuestions
-      ]
-    }];
 
-    // inserir imagens todas
-    // "image": 
-    //   "@type": "ImageObject",
-    //   "url": "http://cdn.ampproject.org/leader.jpg",
-    //   "height": 2000,
-    //   "width": 800
-    
+    const questionSchema = [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [arrayQuestions],
+      },
+    ];
 
     return (
-      <Helmet>
+      <>
         {/* Schema.org tags */}
         {schemaType === "article" ? (
           <script type='application/ld+json' data-schema='Article'>
@@ -165,7 +152,7 @@ export default React.memo(
         <script type='application/ld+json'>
           {JSON.stringify(questionSchema)}
         </script>
-      </Helmet>
+      </>
     );
   }
 );

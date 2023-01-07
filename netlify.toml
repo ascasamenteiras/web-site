@@ -1,5 +1,6 @@
 [build]
     command = "GATSBY_CONCURRENT_DOWNLOAD=25 yarn workspace engine build"
+  	functions = "netlify/functions"
     publish = "engine/public"
 
 [build.environment]

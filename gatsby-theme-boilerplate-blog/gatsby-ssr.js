@@ -1,19 +1,22 @@
+import CustomLayout from "./wrapPageElement";
+
+export const wrapPageElement = CustomLayout;
 const _interopRequireDefault = obj =>
-  obj && obj.__esModule ? obj : { default: obj }
+  obj && obj.__esModule ? obj : { default: obj };
 
-const { default: _react } = _interopRequireDefault(require('react'))
+const { default: _react } = _interopRequireDefault(require("react"));
 
-const capitalize = str => `${str[0].toUpperCase()}${str.slice(1)}`
+const capitalize = str => `${str[0].toUpperCase()}${str.slice(1)}`;
 const formatFont = font =>
   font
-    .split(' ')
+    .split(" ")
     .map(capitalize)
-    .join(' ')
+    .join(" ");
 const formatFonts = fonts =>
   fonts
     .map(formatFont)
-    .join('|')
-    .replace(/ /g, '+')
+    .join("|")
+    .replace(/ /g, "+");
 
 exports.onRenderBody = (
   { setHeadComponents },
@@ -22,35 +25,35 @@ exports.onRenderBody = (
   if (
     !Array.isArray(fonts) ||
     !fonts.length ||
-    fonts.some(f => typeof f !== 'string')
+    fonts.some(f => typeof f !== "string")
   ) {
     throw new Error(
       `'fonts' option is a required option and must be an array of strings`
-    )
+    );
   }
 
-  let href = `https://fonts.googleapis.com/css?family=${formatFonts(fonts)}`
-  if (display) href += `&display=${display}`
+  let href = `https://fonts.googleapis.com/css?family=${formatFonts(fonts)}`;
+  if (display) href += `&display=${display}`;
 
   const components = [
-    _react.createElement('link', {
-      key: 'fonts',
-      crossOrigin: preconnect ? 'anonymous' : undefined,
-      rel: 'stylesheet',
+    _react.createElement("link", {
+      key: "fonts",
+      crossOrigin: preconnect ? "anonymous" : undefined,
+      rel: "stylesheet",
       ...attributes,
       href,
-      type: 'text/css',
+      type: "text/css",
     }),
-  ]
+  ];
   if (preconnect)
     components.unshift(
-      _react.createElement('link', {
-        key: 'google-fonts-preconnect',
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com/',
-        crossOrigin: 'anonymous',
+      _react.createElement("link", {
+        key: "google-fonts-preconnect",
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com/",
+        crossOrigin: "anonymous",
       })
-    )
+    );
 
-  setHeadComponents(components)
-}
+  setHeadComponents(components);
+};

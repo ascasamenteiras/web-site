@@ -275,10 +275,6 @@ const IndexPage = props => {
                     )}
                   </span>
                 </div>
-                <Link
-                  to={homeHighlightPost[0].node.fields.slug}
-                  className='main-article-caption'
-                ></Link>
                 {countOneDay === false ? (
                   <p>
                     Atualizado à{" "}

@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 // import moment from "moment";
 import * as moment from "moment";
 import "moment/locale/pt-br";
+// import fetch from "node-fetch";
 
 require("moment-precise-range-plugin");
 import VMasker from "vanilla-masker";
@@ -14,62 +16,58 @@ import VMasker from "vanilla-masker";
 import HalfDivWrapper from "@BlockBuilder/HalfDivWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-const DateTimeDisplay = ({ value, type, isDanger }) => {
-  return (
-    <div className={isDanger ? "countdown danger" : "countdown"}>
-      <p>{value}</p>
-      <span>{type}</span>
-    </div>
-  );
-};
+// //src/api/my-first-function.js
+// import sgMail from "@sendgrid/mail";
 
-const ExpiredNotice = () => {
-  return (
-    <div className='expired-notice'>
-      <span>Expired!!!</span>
-      <p>Please select a future date and time.</p>
-    </div>
-  );
-};
+// const dezEmail = require("../../../gatsby-theme-boilerplate-blog/static/email/dez-2022.html");
 
-const ShowCounter = ({ days, hours, minutes, seconds }) => {
-  return (
-    <div className='show-counter'>
-      <a
-        className='countdown-link'
-        href='https://tapasadhikary.com'
-        rel='noopener noreferrer'
-        target='_blank'
-      >
-        <DateTimeDisplay isDanger={days <= 3} type='Days' value={days} />
-        <p>:</p>
-        <DateTimeDisplay isDanger={false} type='Hours' value={hours} />
-        <p>:</p>
-        <DateTimeDisplay isDanger={false} type='Mins' value={minutes} />
-        <p>:</p>
-        <DateTimeDisplay isDanger={false} type='Seconds' value={seconds} />
-      </a>
-    </div>
-  );
-};
-
-const CountDownTimer = ({ targetDate }) => {
-  const [days, hours, minutes, seconds] = useCountDown(targetDate);
-
-  if (days + hours + minutes + seconds <= 0) {
-    return <ExpiredNotice />;
-  } else {
-    return (
-      <ShowCounter
-        days={days}
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-      />
-    );
+function handlerSgMail(req) {
+  // return res.json(req.body);
+  // return res.json(req.body);
+  if (req.method !== "POST") {
+    return "Get out here!";
   }
-};
+  if (!req.body) {
+    return null;
+  }
+  if (req.body.botField !== "") {
+    return null;
+  }
+  if (req.body.searchUrl !== "") {
+    return "Você não deveria estar aqui!";
+  }
 
+  const body = JSON.parse(req.body);
+
+  const {
+    FULLDATE,
+    PEOPLEA,
+    PHONE,
+    EMAIL,
+    PEOPLEB,
+    CITY,
+    CTABUTTON,
+    logoImage,
+    floralCima,
+    floralMeio,
+    florBaixo,
+    marca,
+    nowDate,
+  } = body;
+
+  let siteUrl = null;
+  if (req.body.siteUrl.slice(-1) === "/") {
+    siteUrl = req.body.siteUrl.slice(0, -1);
+  } else {
+    siteUrl = req.body.siteUrl;
+  }
+  let landingUrl = null;
+  if (body.landingUrl.slice(-1) === "/") {
+    landingUrl = body.landingUrl.slice(0, -1);
+  } else {
+    landingUrl = body.landingUrl;
+  }
+}
 let validator = {
   set: function(target, key, value) {
     console.log(`The property ${key} has been updated with ${value}`);
@@ -103,7 +101,7 @@ function validateWhats(input) {
   }
 }
 
-const HalfDiv = ({ location, pageContext }) => {
+const HalfDiv = ({ location, pageContext, data: { mdx } }) => {
   const [btnClick, setBtnClick] = useState(null);
   const [email, setEmail] = useState("");
   const [emailSuccess, setEmailSuccess] = useState(false);
@@ -164,30 +162,6 @@ const HalfDiv = ({ location, pageContext }) => {
   const voucher = getImage(voucherImg.childrenImageSharp[0]);
   const pdf = getImage(pdfImg.childrenImageSharp[0]);
 
-  const {
-    title,
-    content,
-    questions,
-    excerpt,
-    featuredImage,
-    landingCTA,
-    emailCTA,
-  } = pageContext;
-  const mainImage = getImage(featuredImage.childrenImageSharp[0]);
-  const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
-
-  // function handleConfirmDate(x) {
-  // return setConfirmDate(x);
-  // }
-
-  console.log("pageContext");
-  // console.log(pageContext);
-  // console.log(location);
-
-  // console.log(site);
-  // queries.fullDate
-  // const [clockTime, isPlaying, setIsPlaying] = useCountdown(82.5 * 60);
-
   let urlParams = null;
   let longDate = null;
   let shortDate = null;
@@ -231,11 +205,11 @@ const HalfDiv = ({ location, pageContext }) => {
     const diffResult = Math.round((casalDate - now) / (1000 * 60 * 60 * 24));
     months = Math.floor(diffResult / 30);
 
-    console.log(diffTime + " milliseconds");
-    console.log(diffDays + " days");
-    console.log(months + " months");
+    // console.log(diffTime + " milliseconds");
+    // console.log(diffDays + " days");
+    // console.log(months + " months");
 
-    console.log("urlParams.confirmDate");
+    // console.log("urlParams.confirmDate");
   }
 
   let queries = [];
@@ -402,6 +376,25 @@ const HalfDiv = ({ location, pageContext }) => {
         );
       }
     }
+
+    const handleSubmit = event => {
+      event.preventDefault();
+      return "rua";
+
+      // const myForm = event.target;
+      // const formData = new FormData(myForm);
+
+      // const response = await fetch("/.netlify/functions/sendmail", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      //   body: new URLSearchParams(formData).toString(),
+      // })
+      //   .then(response => response.json())
+      //   .catch(error => alert(error));
+
+      // const data = await response.json();
+      // console.log(data);
+    };
   }, [btnClick, countdown]);
   const mensagem = promoEnd
     ? "Quero 🛍5% de desconto🛍"
@@ -409,24 +402,71 @@ const HalfDiv = ({ location, pageContext }) => {
   console.log("queries");
   console.log(queries.email);
 
-  const handleSubmit = event => {
-    event.preventDefault();
+  // const handleSubmit = event => {
+  //   event.preventDefault();
 
-    const myForm = event.target;
-    const formData = new FormData(myForm);
+  //   const myForm = event.target;
+  //   const formData = new FormData(myForm);
 
-    fetch("/api/sendtest", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(dataR => {
-        console.log(dataR);
-        console.log(new URLSearchParams(formData).toString());
-        console.log("Form successfully submitted");
-      })
-      .catch(error => alert(error));
-  };
+  //   handlerSgMail(new URLSearchParams(formData).toString());
+  // };
+
+  // fetch("/api/sendtest", {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //   body: new URLSearchParams(formData).toString(),
+  // })
+  //   .then(dataR => {
+  //     console.log(dataR);
+  //     console.log(new URLSearchParams(formData).toString());
+  //     console.log("Form successfully submitted");
+  //   })
+  //   .catch(error => alert(error));
+
+  const landingData = useStaticQuery(graphql`
+    query Landing($locale: String!, $title: String!) {
+      mdx(
+        frontmatter: { title: { eq: $title } }
+        fields: {
+          locale: { eq: $locale }
+          frontmatter: { status: { eq: true }, topology: { eq: "landing" } }
+        }
+      ) {
+        frontmatter {
+          title
+          questions
+          landingCTA
+          emailCTA
+          featuredImage {
+            childrenImageSharp {
+              gatsbyImageData(
+                width: 923
+                height: 1050
+                placeholder: NONE
+                quality: 80
+              )
+            }
+          }
+        }
+        body
+        excerpt(pruneLength: 200)
+      }
+    }
+  `);
+
+  const content = landingData.body;
+  const excerpt = landingData.excerpt;
+
+  const {
+    title,
+    questions,
+    featuredImage,
+    landingCTA,
+    emailCTA,
+  } = landingData.frontmatter;
+
+  const mainImage = getImage(featuredImage.childrenImageSharp[0]);
+  const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
 
   return (
     <HalfDivWrapper

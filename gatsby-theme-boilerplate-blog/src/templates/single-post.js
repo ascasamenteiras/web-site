@@ -1,31 +1,54 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 import SinglePostBlock from "@BlockBuilder/SinglePostBlock";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-const SinglePost = ({ location, pageContext }) => {
-  console.log(pageContext.thePost.htmlAst.children[0]);
-
-  pageContext.thePost.htmlAst.children.map(ele => {
-    if (ele.children && ele.children[0]) {
-      ele.children.map(eleChild => {
-        // console.log(eleChild)
-        if (eleChild.tagName === "span") {
-          // imgsObj.push(eleChild.properties.src);
-          eleChild.children.map(grandChildEle => {
-            // console.log(grandChildEle.tagName)
-            if (grandChildEle.tagName === "img") {
-              console.log(grandChildEle.properties.alt);
-              console.log(grandChildEle.properties.dataSrc);
-              console.log(grandChildEle.properties.title);
-            }
-          });
+const SinglePost = ({ pageContext, location, data: { mdx } }) => {
+  const { wordCount, timeToRead } = pageContext;
+  const postData = useStaticQuery(graphql`
+    query SinglePost($locale: String!, $title: String!) {
+      mdx(
+        sort: { fields: frontmatter___date, order: DESC }
+        frontmatter: { title: { eq: $title } }
+        fields: {
+          locale: { eq: $locale }
+          frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
         }
-      });
+      ) {
+        frontmatter {
+          date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+          xmlDate: date
+          topology
+          title
+          author
+          status
+          questions
+          featuredPost
+          homeHighlight
+          homeHighlightRelated
+          homeHighlightRelatedList
+          categories
+          featuredImage {
+            childrenImageSharp {
+              gatsbyImageData(
+                width: 1200
+                height: 627
+                placeholder: NONE
+                quality: 80
+              )
+            }
+          }
+        }
+        body
+        excerpt(pruneLength: 200)
+      }
     }
-  });
+  `);
+  const post = postData.frontmatter;
+  const { title, description, questions } = post.mdx;
 
   const {
     imgHolder,
@@ -40,8 +63,7 @@ const SinglePost = ({ location, pageContext }) => {
 
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
-  const post = pageContext.thePost;
-  const questions = pageContext.postQuestion;
+
   const defaultQuestions = site.siteMetadata.questions;
   return (
     <MainTemplateWrapper
@@ -111,11 +133,11 @@ const SinglePost = ({ location, pageContext }) => {
           authorImg={imgHolder}
           date={post.frontmatter.updatedAt}
           author={post.frontmatter.author}
-          html={post.html}
+          html={post.body}
           title={post.frontmatter.title}
           categories={post.frontmatter.categories}
-          timeToRead={post.timeToRead}
-          wordCount={post.wordCount}
+          timeToRead={wordCount}
+          wordCount={timeToRead}
         />
       </main>
     </MainTemplateWrapper>

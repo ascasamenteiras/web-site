@@ -1,5 +1,5 @@
 import React from "react";
-import SeoContainer from "../../containers/SeoContainer";
+import HeadContainer from "../../containers/HeadContainer";
 
 const BodyBlock = ({ children, opt, killSEO, topology }) => {
   const { options } = opt;
@@ -8,7 +8,7 @@ const BodyBlock = ({ children, opt, killSEO, topology }) => {
       className={options.classes}
       style={{ background: `url(${opt.bgImg}) repeat` }}
     >
-      <SeoContainer
+      <HeadContainer
         title={options.titleSeo}
         author={options.authorSeo}
         datePublished={options.datePublished}

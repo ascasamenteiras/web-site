@@ -4,14 +4,23 @@ const sgMail = require("@sendgrid/mail");
 require("dotenv").config({
   path: `.env`,
 });
-export function handler(req, res) {
+
+export async function handler(req, res) {
   // return res.json(req.body);
   // return res.json(req.body);
+
+  if (req.query && Object.keys(req.query).length !== 0) {
+    res.json(req.query);
+  } else if (req.body) {
+    res.json(req.body);
+  } else {
+    res.json({
+      message: `No body was sent. Try a POST request or query string`,
+    });
+  }
+
   if (req.method !== "POST") {
     res.json({ message: "Get out here!" });
-  }
-  if (!req.body) {
-    return null;
   }
   if (req.body.botField !== "") {
     return null;
@@ -70,7 +79,7 @@ export function handler(req, res) {
     from: "Pri Barb - As Casamenteiras<pri@ascasamenteiras.com.br>",
   };
 
-  sgMail
+  return sgMail
     .send(msg)
     .then(() => {
       res.status(200).redirect(landingUrl + "?success=0&email=" + EMAIL);

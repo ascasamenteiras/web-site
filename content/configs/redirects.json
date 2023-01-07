@@ -1,0 +1,36 @@
+{
+  "fromToPath": [
+    {
+      "fromPath": "/vencemos-premio-zankyou-ziwa-awards-2022",
+      "toPath": "/vencemos-premio-zankyou-2022/"
+    },
+    {
+      "fromPath": "/vencemos-premio-zankyou-ziwa-awards-2022/",
+      "toPath": "/vencemos-premio-zankyou-2022/"
+    },
+    {
+      "fromPath": "/rsvp-contato",
+      "toPath": "/contato/"
+    },
+    {
+      "fromPath": "/rsvp-contato/",
+      "toPath": "/contato/"
+    },
+    {
+      "fromPath": "/nossos-casais",
+      "toPath": "/casamentos/"
+    },
+    {
+      "fromPath": "/nossos-casais/",
+      "toPath": "/casamentos/"
+    },
+    {
+      "fromPath": "/assessoria-cerimonial",
+      "toPath": "/cerimonialista-casamentos/"
+    },
+    {
+      "fromPath": "/assessoria-cerimonial/",
+      "toPath": "/cerimonialista-casamentos/"
+    }
+  ]
+}

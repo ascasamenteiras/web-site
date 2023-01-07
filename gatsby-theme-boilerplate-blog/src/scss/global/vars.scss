@@ -53,11 +53,48 @@ $s__space: 16pt;
 
 // typograph
 $alternative__font: "Arial";
+
 $main__font: "IBM Plex Serif", $alternative__font, sans-serif;
-$fifth__font: "Dancing Script", $alternative__font, sans-serif;
-$third__font: "Josefin Sans", $alternative__font, sans-serif;
-$fourth__font: "Open Sans", $alternative__font, sans-serif;
+$main__fontSLUG: "IBM+Plex+Serif.woff2";
+
 $second__font: "Noto Serif", $alternative__font, sans-serif;
+$second__fontSLUG: "Noto+Serif.woff2";
+
+$third__font: "Josefin Sans", $alternative__font, sans-serif;
+$third__fontSLUG: "Josefin+Sans.woff2";
+
+$fourth__font: "Open Sans", $alternative__font, sans-serif;
+$fourth__fontSLUG: "Open+Sans.woff2";
+
+$fifth__font: "Dancing Script", $alternative__font, sans-serif;
+$fifth__fontSLUG: "Dancing+Script.woff2";
+
+/* latin */
+@font-face {
+  font-family: $main__font;
+  font-display: optional;
+  src: url($main__fontSLUG) format("woff2");
+}
+@font-face {
+  font-family: $second__font;
+  font-display: optional;
+  src: url($second__fontSLUG) format("woff2");
+}
+@font-face {
+  font-family: $third__font;
+  font-display: optional;
+  src: url($third__fontSLUG) format("woff2");
+}
+@font-face {
+  font-family: $fourth__font;
+  font-display: optional;
+  src: url($fourth__fontSLUG) format("woff2");
+}
+@font-face {
+  font-family: $fifth__font;
+  font-display: optional;
+  src: url($fifth__fontSLUG) format("woff2");
+}
 
 $m__fontSize: 17px;
 $h1__fontSize: 30pt;

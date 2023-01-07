@@ -1,81 +1,86 @@
 const fs = require("fs");
 const path = require("path");
-const _ = require("lodash");
-const { createFilePath } = require(`gatsby-source-filesystem`);
 const rootDir = path.join(__dirname, "../");
 const businessInfos = require("./package.json");
+const locales = require(`../content/translations/i18n`);
+const redirects = require(`../content/configs/redirects.json`);
+const {
+  localizedSlug,
+  findKey,
+  removeTrailingSlash,
+} = require(`./src/tools/gatsby-node-helpers`);
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+
+  // First delete the incoming page that was automatically created by Gatsby
+  // So everything in src/pages/
+  deletePage(page);
+
+  // Grab the keys ('en' & 'de') of locales and map over them
+  Object.keys(locales).map(lang => {
+    // Use the values defined in "locales" to construct the path
+    const localizedPath = locales[lang].default
+      ? page.path
+      : `${locales[lang].path}${page.path}`;
+
+    return createPage({
+      // Pass on everything from the original page
+      ...page,
+      // Since page.path returns with a trailing slash (e.g. "/de/")
+      // We want to remove that
+      path: removeTrailingSlash(localizedPath),
+      // Pass in the locale as context to every page
+      // This context also gets passed to the src/components/layout file
+      // This should ensure that the locale is available on every page
+      context: {
+        ...page.context,
+        locale: lang,
+        dateFormat: locales[lang].dateFormat,
+      },
+    });
+  });
+};
+
+// As you don't want to manually add the correct language to the frontmatter of each file
+// a new node is created automatically with the filename
+// It's necessary to do that -- otherwise you couldn't filter by language
 
 // Adding slug field to each post
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-  // Ensures we are processing only markdown files
-  function basePathFinder(nodeTopology) {
-    if (nodeTopology === "pages") {
-      return "pages";
-    }
-    if (nodeTopology === "posts") {
-      return "posts";
-    }
-    if (nodeTopology === "landing") {
-      return "landing";
-    }
-    return null;
-  }
-  if (node.internal.type === "MarkdownRemark") {
-    const basePathLabel = basePathFinder(node.frontmatter.topology) || "posts";
+
+  // Ensures we are processing only markdownX files
+
+  if (node.internal.type === "Mdx") {
+    // Use path.basename
+    // https://nodejs.org/api/path.html#path_path_basename_path_ext
+    const name = path.basename(node.fileAbsolutePath, `.mdx`);
     // Use `createFilePath` to turn markdown files in our `data/faqs` directory into `/faqs/slug`
-    const slug = createFilePath({
-      node,
-      getNode,
-      basePath: basePathLabel,
-    });
-    // Creates new query'able field with name of 'slug'
-    createNodeField({
-      node,
-      name: "slug",
-      value: `/${slug.slice(1)}`,
-    });
+
+    // Check if post.name is "index" -- because that's the file for default language
+    // (In this case "pt_br")
+    const isDefault = name === `index`;
+
+    // Find the key that has "default: true" set (in this case it returns "pt_br")
+    const defaultKey = findKey(locales, o => o.default === true);
+
+    // Files are defined with "name-with-dashes.lang.mdx"
+    // name returns "name-with-dashes.lang"
+    // So grab the lang from that string
+    // If it's the default language, pass the locale for that
+    const lang = isDefault ? defaultKey : name.split(`.`)[1];
+
+    createNodeField({ node, name: `locale`, value: lang });
+    createNodeField({ node, name: `isDefault`, value: isDefault });
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const { createRedirect } = actions;
 
-  const redirectsArray = [
-    {
-      fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
-      toPath: `/vencemos-premio-zankyou-2022/`,
-    },
-    {
-      fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
-      toPath: `/vencemos-premio-zankyou-2022/`,
-    },
-    {
-      fromPath: `/rsvp-contato`,
-      toPath: `/contato/`,
-    },
-    {
-      fromPath: `/rsvp-contato/`,
-      toPath: `/contato/`,
-    },
-    {
-      fromPath: `/nossos-casais`,
-      toPath: `/casamentos/`,
-    },
-    {
-      fromPath: `/nossos-casais/`,
-      toPath: `/casamentos/`,
-    },
-    {
-      fromPath: `/assessoria-cerimonial`,
-      toPath: `/cerimonialista-casamentos/`,
-    },
-    {
-      fromPath: `/assessoria-cerimonial/`,
-      toPath: `/cerimonialista-casamentos/`,
-    },
-  ];
+  const redirectsArray = redirects.fromToPath;
 
   redirectsArray.forEach(redirect => {
     createRedirect({
@@ -84,265 +89,240 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  // createRedirect({
-  //   fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022`,
-  //   toPath: `/vencemos-premio-zankyou-2022`,
-  // });
-
-  // createRedirect({
-  //   fromPath: `/vencemos-premio-zankyou-ziwa-awards-2022/`,
-  //   toPath: `/vencemos-premio-zankyou-2022/`,
-  // });
-
-  // createRedirect({
-  //   fromPath: `/rsvp-contato`,
-  //   toPath: `/contato/`,
-  // });
-
-  // createRedirect({
-  //   fromPath: `/rsvp-contato/`,
-  //   toPath: `/contato/`,
-  // });
-
-  // createRedirect({
-  //   fromPath: `/nossos-casais`,
-  //   toPath: `/casamentos`,
-  // });
-
-  // createRedirect({
-  //   fromPath: `/nossos-casais/`,
-  //   toPath: `/casamentos/`,
-  // });
-
-  return graphql(`
-    {
-      site {
-        siteMetadata {
-          siteUrl
-        }
-      }
-      allMarkdownRemark(
-        sort: { fields: frontmatter___date, order: DESC }
-        filter: {
-          frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
-        }
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            timeToRead
-            wordCount {
-              paragraphs
-              sentences
-              words
-            }
-            frontmatter {
-              date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
-              xmlDate: date
-              topology
-              title
-              author
-              status
-              questions
-              featuredPost
-              homeHighlight
-              homeHighlightRelated
-              homeHighlightRelatedList
-              categories
-              featuredImage {
-                childrenImageSharp {
-                  gatsbyImageData(
-                    width: 1200
-                    height: 627
-                    placeholder: NONE
-                    quality: 80
-                  )
-                }
-              }
-            }
-            excerpt(pruneLength: 200)
-            htmlAst
-            html
+  const result = await graphql(
+    `
+      {
+        site {
+          siteMetadata {
+            siteUrl
           }
         }
-      }
-      categoriesGroup: allMarkdownRemark(
-        filter: { frontmatter: { createdAt: { lt: "null" } } }
-        limit: 800
-      ) {
-        group(field: frontmatter___categories) {
-          fieldValue
-          nodes {
-            headings {
-              value
+        allFile(
+          sort: { fields: frontmatter___date, order: DESC }
+          filter: {
+            frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
+          }
+        ) {
+          edges {
+            node {
+              relativeDirectory
+              childMdx {
+                fields {
+                  locale
+                  isDefault
+                }
+                frontmatter {
+                  date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+                  xmlDate: date
+                  topology
+                  title
+                  author
+                  status
+                  questions
+                  featuredPost
+                  homeHighlight
+                  homeHighlightRelated
+                  homeHighlightRelatedList
+                  categories
+                  featuredImage {
+                    childrenImageSharp {
+                      gatsbyImageData(
+                        width: 1200
+                        height: 627
+                        placeholder: NONE
+                        quality: 80
+                      )
+                    }
+                  }
+                }
+              }
+              timeToRead
+              wordCount {
+                paragraphs
+                sentences
+                words
+              }
+              excerpt(pruneLength: 200)
+              htmlAst
+              html
             }
-            fields {
-              slug
-            }
-            frontmatter {
-              featuredImage {
-                childrenImageSharp {
-                  gatsbyImageData
+          }
+        }
+        categoriesGroup: allFile(
+          filter: { frontmatter: { createdAt: { lt: "null" } } }
+          limit: 800
+        ) {
+          group(field: frontmatter___categories) {
+            fieldValue
+            nodes {
+              headings {
+                value
+              }
+              childMdx {
+                fields {
+                  locale
+                  isDefault
+                }
+                frontmatter {
+                  featuredImage {
+                    childrenImageSharp {
+                      gatsbyImageData
+                    }
+                  }
                 }
               }
             }
           }
         }
-      }
-      allPages: allMarkdownRemark(
-        filter: {
-          frontmatter: { status: { eq: true }, topology: { eq: "pages" } }
-        }
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            frontmatter {
-              status
-              title
-              description
-              slug
-              questions
-              featuredImage {
-                childrenImageSharp {
-                  gatsbyImageData(
-                    width: 350
-                    height: 224
-                    placeholder: NONE
-                    quality: 80
-                  )
+        allPages: allFile(
+          filter: {
+            frontmatter: { status: { eq: true }, topology: { eq: "pages" } }
+          }
+        ) {
+          edges {
+            node {
+              relativeDirectory
+              childMdx {
+                fields {
+                  locale
+                  isDefault
+                }
+                frontmatter {
+                  status
+                  title
                 }
               }
-              date
+              htmlAst
             }
-            html
-            htmlAst
-            excerpt(pruneLength: 200)
+          }
+        }
+        AllLandings: allFile(
+          filter: {
+            frontmatter: { status: { eq: true }, topology: { eq: "landing" } }
+          }
+        ) {
+          edges {
+            node {
+              relativeDirectory
+              childMdx {
+                fields {
+                  locale
+                  isDefault
+                }
+                frontmatter {
+                  title
+                  status
+                }
+              }
+              htmlAst
+            }
+          }
+        }
+        storiesA: file(
+          relativePath: { eq: "as-casamenteiras-stories-ante-final.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(width: 900, height: 675, quality: 80)
+          }
+        }
+        storiesZ: file(
+          relativePath: { eq: "as-casamenteiras-stories-final.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(width: 900, height: 675, quality: 80)
           }
         }
       }
-      AllLandings: allMarkdownRemark(
-        filter: {
-          frontmatter: { status: { eq: true }, topology: { eq: "landing" } }
-        }
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              status
-              landingCTA
-              emailCTA
-              questions
-              featuredImage {
-                childrenImageSharp {
-                  gatsbyImageData(
-                    width: 923
-                    height: 1050
-                    placeholder: NONE
-                    quality: 80
-                  )
-                }
-              }
-            }
-            excerpt(pruneLength: 200)
-            htmlAst
-            html
-          }
-        }
-      }
-      storiesA: file(
-        relativePath: { eq: "as-casamenteiras-stories-ante-final.png" }
-      ) {
-        childrenImageSharp {
-          gatsbyImageData(width: 900, height: 675, quality: 80)
-        }
-      }
-      storiesZ: file(
-        relativePath: { eq: "as-casamenteiras-stories-final.png" }
-      ) {
-        childrenImageSharp {
-          gatsbyImageData(width: 900, height: 675, quality: 80)
-        }
-      }
+    `
+  );
+
+  if (result.errors) {
+    reporter.panicOnBuild("Error loading MDX result", result.errors);
+  }
+  const landings = result.data.AllLandings.edges;
+
+  landings.forEach(({ node }) => {
+    if (node.childMdx.frontmatter.status === true) {
+      const slug = node.relativeDirectory;
+      const landing = node.childMdx;
+      const title = landing.frontmatter.title;
+
+      // Use the fields created in exports.onCreateNode
+      const locale = landing.fields.locale;
+      const isDefault = landing.fields.isDefault;
+
+      createPage({
+        path: localizedSlug({ isDefault, locale, slug }),
+        component: path.resolve(
+          rootDir,
+          `gatsby-theme-boilerplate-blog/src/templates/half-div.js`
+        ),
+        context: {
+          title: title,
+          // content: node.html,
+          // headline: node.childMdx.frontmatter.headline,
+          // questions: node.childMdx.frontmatter.questions,
+          // excerpt: node.excerpt,
+          // landingCTA: node.childMdx.frontmatter.landingCTA,
+          // emailCTA: node.childMdx.frontmatter.emailCTA,
+          // featuredImage: node.childMdx.frontmatter.featuredImage,
+          // Pass both the "title" and "locale" to find a unique file
+          // Only the title would not have been sufficient as articles could have the same title
+          // in different languages, e.g. because an english phrase is also common in german
+          locale,
+        },
+      });
     }
-  `).then(result => {
-    const landings = result.data.AllLandings.edges;
+  });
 
-    landings.forEach(({ node }) => {
-      if (node.frontmatter.status === true) {
-        createPage({
-          path: node.fields.slug,
-          component: path.resolve(
-            rootDir,
-            `gatsby-theme-boilerplate-blog/src/templates/half-div.js`
-          ),
-          context: {
-            title: node.frontmatter.title,
-            content: node.html,
-            headline: node.frontmatter.headline,
-            questions: node.frontmatter.questions,
-            excerpt: node.excerpt,
-            landingCTA: node.frontmatter.landingCTA,
-            emailCTA: node.frontmatter.emailCTA,
-            featuredImage: node.frontmatter.featuredImage,
-          },
-        });
-      }
-    });
+  const pages = result.data.allPages.edges;
+  let allPages = [];
 
-    const pages = result.data.allPages.edges;
-    let allPages = [];
-
-    pages.forEach(({ node }) => {
-      let imgsPageObj = [];
-      const imagePageSrc =
-        businessInfos.siteUrl +
-        node.frontmatter.featuredImage.childrenImageSharp[0].gatsbyImageData
-          .images.fallback.src;
-      if (node.frontmatter.status === true) {
-        createPage({
-          path: node.fields.slug,
-          component: path.resolve(
-            rootDir,
-            `gatsby-theme-boilerplate-blog/src/templates/one-column.js`
-          ),
-          context: {
-            title: node.frontmatter.title,
-            content: node.html,
-            description: node.frontmatter.description,
-            questions: node.frontmatter.questions,
-          },
-        });
-        node.htmlAst.children.map(child => {
-          if (child.children && child.children[0]) {
-            if (child.children[0].tagName === "img") {
-              imgsPageObj.push(child.children[0].properties.src);
-            }
+  pages.forEach(({ node }) => {
+    const slug = node.relativeDirectory;
+    const title = node.childMdx.frontmatter.title;
+    // Use the fields created in exports.onCreateNode
+    const locale = node.childMdx.fields.locale;
+    const isDefault = node.childMdx.fields.isDefault;
+    let imgsPageObj = [];
+    const imagePageSrc =
+      businessInfos.siteUrl +
+      node.childMdx.frontmatter.featuredImage.childrenImageSharp[0]
+        .gatsbyImageData.images.fallback.src;
+    if (node.childMdx.frontmatter.status === true) {
+      createPage({
+        path: localizedSlug({ isDefault, locale, slug }),
+        component: path.resolve(
+          rootDir,
+          `gatsby-theme-boilerplate-blog/src/templates/one-column.js`
+        ),
+        context: {
+          title: title,
+          locale,
+        },
+      });
+      node.htmlAst.children.map(child => {
+        if (child.children && child.children[0]) {
+          if (child.children[0].tagName === "img") {
+            imgsPageObj.push(child.children[0].properties.src);
           }
-        });
+        }
+      });
 
-        allPages.push({
-          slug: node.fields.slug,
-          date: node.frontmatter.date,
-          title: node.frontmatter.title,
-          imageSrc: imagePageSrc,
-          excerpt: node.excerpt,
-          insideImgs: imgsPageObj,
-        });
-      }
-    });
+      allPages.push({
+        slug: node.fields.slug,
+        date: node.childMdx.frontmatter.date,
+        title: node.childMdx.frontmatter.title,
+        imageSrc: imagePageSrc,
+        excerpt: node.excerpt,
+        insideImgs: imgsPageObj,
+      });
+    }
+  });
 
-    // xml pages
+  // xml pages
 
-    const theXMLpages = `<?xml version="1.0" encoding="UTF-8"?>
+  const theXMLpages = `<?xml version="1.0" encoding="UTF-8"?>
 		<?xml-stylesheet type="text/xsl" href="/template.xsl"?>
 			<urlset
 				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -392,89 +372,113 @@ exports.createPages = async ({ graphql, actions }) => {
 
 		</urlset>
 		`;
-    fs.writeFileSync(`./public/page-sitemap.xml`, theXMLpages);
+  fs.writeFileSync(`./public/page-sitemap.xml`, theXMLpages);
 
-    // xml posts
+  // xml posts
 
-    const posts = result.data.allMarkdownRemark.edges;
-    posts.forEach(({ node }) => {
-      if (
-        node.frontmatter.topology === "posts" &&
-        node.frontmatter.status === true
-      ) {
-        createPage({
-          path: node.fields.slug,
-          component: path.resolve(
-            rootDir,
-            "gatsby-theme-boilerplate-blog/src/templates/single-post.js"
-          ),
-          context: {
-            slug: node.fields.slug,
-            thePost: node,
-            postQuestion: node.frontmatter.questions,
-          },
+  const posts = result.data.allFile.edges;
+  posts.forEach(({ node }) => {
+    if (
+      node.childMdx.frontmatter.topology === "posts" &&
+      node.childMdx.frontmatter.status === true
+    ) {
+      const slug = node.relativeDirectory;
+
+      const title = node.childMdx.frontmatter.title;
+
+      // Use the fields created in exports.onCreateNode
+      const locale = node.childMdx.fields.locale;
+      const isDefault = node.childMdx.fields.isDefault;
+      createPage({
+        path: localizedSlug({ isDefault, locale, slug }),
+        component: path.resolve(
+          rootDir,
+          "gatsby-theme-boilerplate-blog/src/templates/single-post.js"
+        ),
+        context: {
+          locale,
+          title,
+          timeToRead: timeToRead,
+          wordCount: wordCount,
+        },
+      });
+    }
+  });
+
+  const categories = result.data.categoriesGroup.group;
+  // Make category pages
+  categories.forEach(category => {
+    const slug = category.relativeDirectory;
+
+    const title = category.childMdx.frontmatter.title;
+
+    // Use the fields created in exports.onCreateNode
+    const locale = category.childMdx.fields.locale;
+    const isDefault = category.childMdx.fields.isDefault;
+    createPage({
+      path: `/trends/${localizedSlug({ isDefault, locale, slug })}/`,
+      component: path.resolve(
+        rootDir,
+        "gatsby-theme-boilerplate-blog/src/templates/category-list-page.js"
+      ),
+      context: {
+        locale,
+        title,
+        // categories: category.fieldValue,
+        siteMetadata: result.data.siteMetadata,
+        // footerThreeMarkdowRemark: result.data.footerThreeMarkdowRemark,
+        postsPerPage: result.data.postsPerPage,
+      },
+    });
+  });
+
+  let allFeed = [];
+
+  result.data.allFile.edges.forEach(({ node }) => {
+    let imgsObj = [];
+
+    const slug = node.relativeDirectory;
+
+    const title = node.childMdx.frontmatter.title;
+
+    // Use the fields created in exports.onCreateNode
+    // const locale = category.childMdx.fields.locale;
+    // const isDefault = category.childMdx.fields.isDefault;
+
+    const frontmatter = node.childMdx.frontmatter;
+    const { xmlDate } = frontmatter;
+    const imageSrc =
+      businessInfos.siteUrl +
+      node.childMdx.frontmatter.featuredImage.childrenImageSharp[0]
+        .gatsbyImageData.images.fallback.src;
+    node.htmlAst.children.map(child => {
+      if (child.children && child.children[0]) {
+        child.children.map(eleChild => {
+          if (eleChild.tagName === "span") {
+            eleChild.children.map(grandChildEle => {
+              if (grandChildEle.tagName === "img") {
+                imgsObj.push([
+                  grandChildEle.properties.dataSrc,
+                  grandChildEle.properties.alt,
+                ]);
+              }
+            });
+          }
         });
       }
     });
 
-    const categories = result.data.categoriesGroup.group;
-    // Make category pages
-    categories.forEach(category => {
-      createPage({
-        path: `/trends/${_.kebabCase(category.fieldValue)}/`,
-        component: path.resolve(
-          rootDir,
-          "gatsby-theme-boilerplate-blog/src/templates/category-list-page.js"
-        ),
-        context: {
-          categories: category.fieldValue,
-          siteMetadata: result.data.siteMetadata,
-          footerThreeMarkdowRemark: result.data.footerThreeMarkdowRemark,
-          postsPerPage: result.data.postsPerPage,
-        },
-      });
+    allFeed.push({
+      slug: slug,
+      date: xmlDate,
+      title: title,
+      imageSrc: imageSrc,
+      excerpt: node.excerpt,
+      insideImgs: imgsObj,
     });
+  });
 
-    let allFeed = [];
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      let imgsObj = [];
-
-      const slug = node.fields.slug;
-      const frontmatter = node.frontmatter;
-      const { xmlDate, title } = frontmatter;
-      const imageSrc =
-        businessInfos.siteUrl +
-        node.frontmatter.featuredImage.childrenImageSharp[0].gatsbyImageData
-          .images.fallback.src;
-      node.htmlAst.children.map(child => {
-        if (child.children && child.children[0]) {
-          child.children.map(eleChild => {
-            if (eleChild.tagName === "span") {
-              eleChild.children.map(grandChildEle => {
-                if (grandChildEle.tagName === "img") {
-                  imgsObj.push([
-                    grandChildEle.properties.dataSrc,
-                    grandChildEle.properties.alt,
-                  ]);
-                }
-              });
-            }
-          });
-        }
-      });
-
-      allFeed.push({
-        slug: slug,
-        date: xmlDate,
-        title: title,
-        imageSrc: imageSrc,
-        excerpt: node.excerpt,
-        insideImgs: imgsObj,
-      });
-    });
-
-    const theXML = `<?xml version="1.0" encoding="UTF-8"?>
+  const theXML = `<?xml version="1.0" encoding="UTF-8"?>
 		<?xml-stylesheet type="text/xsl" href="/template.xsl"?>
 			<urlset
 				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -501,16 +505,13 @@ exports.createPages = async ({ graphql, actions }) => {
                 })
               : ""
           }
-
-
-
 				</url>`;
         })}
 		</urlset>
 		`;
-    fs.writeFileSync(`./public/post-sitemap.xml`, theXML);
+  fs.writeFileSync(`./public/post-sitemap.xml`, theXML);
 
-    const theStoriesXML = `<?xml version="1.0" encoding="UTF-8"?>
+  const theStoriesXML = `<?xml version="1.0" encoding="UTF-8"?>
 		<?xml-stylesheet type="text/xsl" href="/template.xsl"?>
 			<urlset
 				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -545,13 +546,13 @@ exports.createPages = async ({ graphql, actions }) => {
         })}
 		</urlset>
 		`;
-    fs.writeFileSync(`./public/webstories-sitemap.xml`, theStoriesXML);
+  fs.writeFileSync(`./public/webstories-sitemap.xml`, theStoriesXML);
 
-    const ampStoryPage = (
-      srcImg,
-      title,
-      index
-    ) => `<amp-story-page id="page-${index}" auto-advance-after="7s" >
+  const ampStoryPage = (
+    srcImg,
+    title,
+    index
+  ) => `<amp-story-page id="page-${index}" auto-advance-after="7s" >
   <amp-story-grid-layer template="vertical" >
     <amp-img src="${srcImg}" alt="${title}" width="900" height="675"
     layout="responsive">
@@ -566,15 +567,15 @@ exports.createPages = async ({ graphql, actions }) => {
     </amp-story-grid-layer>
   </amp-story-page>`;
 
-    const theAmpStories = (
-      title,
-      key,
-      srcImg,
-      mainText,
-      postImages,
-      canonical
-    ) => {
-      return `<!DOCTYPE html>
+  const theAmpStories = (
+    title,
+    key,
+    srcImg,
+    mainText,
+    postImages,
+    canonical
+  ) => {
+    return `<!DOCTYPE html>
       <html amp lang="pt-BR">
       
         <head>
@@ -682,20 +683,20 @@ exports.createPages = async ({ graphql, actions }) => {
     border-radius: 5px;
     margin-bottom: 20px;
     padding: 5px 10px;
-    width: 85%;
-    text-align: center;
-}
-.inner-page-wrapper p{text-align:center; font-size:16px;font-weight:400; width: 90%; margin-top: 20px; text-shadow: 1px 2px black;}
-.inner-page-wrapper h1{ margin-top: 50px;
-  background: white;
-  display: block;
-  color: black;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  padding: 5px 10px;
-  width: 85%;
-  text-align: center;}
-/*# sourceURL=amp-custom.css */</style>
+        width: 85%;
+        text-align: center;
+    }
+    .inner-page-wrapper p{text-align:center; font-size:16px;font-weight:400; width: 90%; margin-top: 20px; text-shadow: 1px 2px black;}
+    .inner-page-wrapper h1{ margin-top: 50px;
+      background: white;
+      display: block;
+      color: black;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 5px 10px;
+      width: 85%;
+      text-align: center;}
+    /*# sourceURL=amp-custom.css */</style>
         </head>
         <body>
           <amp-story id="amp-story-id" standalone live-story title="${title}" publisher="As Casamenteiras"
@@ -740,25 +741,24 @@ exports.createPages = async ({ graphql, actions }) => {
           </amp-story>
         </body>
       </html>`;
-    };
-    allFeed.map((item, key) => {
-      const itemSlug = businessInfos.siteUrl + item.slug;
+  };
+  allFeed.map((item, key) => {
+    const itemSlug = businessInfos.siteUrl + item.slug;
 
-      fs.writeFile(
-        `./public/${item.slug.slice(1, -1)}.stories.amp.html`,
-        theAmpStories(
-          item.title,
-          key,
-          item.imageSrc,
-          "txt",
-          item.insideImgs,
-          itemSlug
-        ),
-        function(err) {
-          if (err) throw err;
-          console.log("File is created successfully.");
-        }
-      );
-    });
+    fs.writeFile(
+      `./public/${item.slug.slice(1, -1)}.stories.amp.html`,
+      theAmpStories(
+        item.title,
+        key,
+        item.imageSrc,
+        "txt",
+        item.insideImgs,
+        itemSlug
+      ),
+      function(err) {
+        if (err) throw err;
+        console.log("File is created successfully.");
+      }
+    );
   });
 };
