@@ -13,7 +13,7 @@ categories:
 featuredPost: true
 featuredImage: ../posts/images/casar-ribeirao-preto-cerimonial.jpg
 homeHighlight: true
-homeHighlightRelated: true
+homeHighlightRelated: false
 homeHighlightRelatedList: false
 questions:
   [
