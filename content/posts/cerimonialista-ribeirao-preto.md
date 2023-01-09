@@ -17,7 +17,7 @@ homeHighlightRelated: false
 homeHighlightRelatedList: false
 questions:
   [
-    "Qual é o melhor lugar para realizar o casamento em Ribeirão Preto?:Ribeirão Preto possui muitas opções de locais para realizar o casamento, como salões de festa, hotéis, chácaras, sítios e até mesmo parques públicos. O melhor lugar depende do gosto e do orçamento dos noivos, mas alguns dos locais mais populares para casamentos na cidade são o Parque da Cidade, o Parque Municipal e o Hotel Nacional Inn.", 
+    "Qual é o melhor lugar para realizar o casamento em Ribeirão Preto?:Ribeirão Preto possui muitas opções de locais para realizar o casamento, como salões de festa, hotéis, chácaras, sítios e até mesmo parques públicos. O melhor lugar depende do gosto e do orçamento dos noivos.", 
     "Quais são as principais atrações turísticas de Ribeirão Preto?:Ribeirão Preto é conhecida por sua gastronomia, com vários restaurantes, bares e choperias, além de ser o maior produtor de café do país. A cidade também possui vários parques, como o Parque Municipal e o Parque da Cidade, que são ótimos para passear e relaxar.",
     "Vai Casar Em Ribeirão Preto e Precisa De Ajuda?:Se vocês estão planejando o casamento em Ribeirão Preto, espero que tenham a oportunidade de contar com os meus serviços. Será um prazer poder ajudar vocês a realizarem o grande dia dos seus sonhos!"
   ]
