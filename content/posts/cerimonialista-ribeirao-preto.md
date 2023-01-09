@@ -12,7 +12,7 @@ categories:
   - carta da pri
 featuredPost: true
 featuredImage: ../posts/images/mulher-negra-aplicativo.jpg
-homeHighlight: false
+homeHighlight: true
 homeHighlightRelated: true
 homeHighlightRelatedList: false
 questions:
