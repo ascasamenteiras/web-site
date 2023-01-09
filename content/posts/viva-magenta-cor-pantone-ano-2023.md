@@ -12,7 +12,7 @@ categories:
 featuredPost: true
 featuredImage: ../posts/images/viva-magenta-pantone.jpg
 homeHighlightRelatedList: false
-homeHighlight: true
+homeHighlight: false
 homeHighlightRelated: false
 questions:
   [
