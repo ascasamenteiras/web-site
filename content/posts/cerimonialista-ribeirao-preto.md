@@ -11,7 +11,7 @@ categories:
   - cerimonial
   - carta da pri
 featuredPost: true
-featuredImage: ../posts/images/mulher-negra-aplicativo.jpg
+featuredImage: ../posts/images/casar-ribeirao-preto-cerimonial.jpg
 homeHighlight: true
 homeHighlightRelated: true
 homeHighlightRelatedList: false
