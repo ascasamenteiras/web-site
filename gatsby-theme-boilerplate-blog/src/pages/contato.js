@@ -82,8 +82,13 @@ const ContatoPage = props => {
       }}
     >
       <main>
-      <p>Entre em contato por um de seus canais favoritos abaixo ou pelo nosso número de telefone:</p>
-      <h2><strong>(16) 99245-2437</strong></h2>
+        <p className='contact-info'>
+          Entre em contato por um de seus canais favoritos abaixo ou pelo nosso
+          número de telefone:
+        </p>
+        <h2>
+          <strong>(16) 99245-2437</strong>
+        </h2>
         {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
         {/* fazer um card e deixar escolher entre card e arvore de links*/}
         <ul className={"contact-link-tree-wrapper"}>

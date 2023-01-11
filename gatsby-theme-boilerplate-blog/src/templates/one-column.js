@@ -1,11 +1,10 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import MainPageWrapper from "@BlockBuilder/MainPageWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-const OneColumn = ({ location }) => {
+const OneColumn = ({ location, pageContext }) => {
   const {
     imgHolder,
     bgPatternImg,
@@ -22,43 +21,7 @@ const OneColumn = ({ location }) => {
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const defaultQuestions = site.siteMetadata.questions;
 
-  // const dataPage = useStaticQuery(graphql`
-  //   query Pages($locale: String!, $title: String!) {
-  //     mdx(
-  //       frontmatter: { title: { eq: $title } }
-  //       fields: {
-  //         locale: { eq: $locale }
-  //         frontmatter: { status: { eq: true }, topology: { eq: "pages" } }
-  //       }
-  //     ) {
-  //       fields {
-  //         locale
-  //         isDefault
-  //       }
-  //       frontmatter {
-  //         title
-  //         description
-  //         date
-  //         questions
-  //         featuredImage {
-  //           childrenImageSharp {
-  //             gatsbyImageData(
-  //               width: 350
-  //               height: 224
-  //               placeholder: NONE
-  //               quality: 80
-  //             )
-  //           }
-  //         }
-  //       }
-  //       body
-
-  //       excerpt(pruneLength: 200)
-  //     }
-  //   }
-  // `);
-  const { title, description, questions } = null;
-  const content = null;
+  const { title, description, questions, content } = pageContext;
   return (
     <MainPageWrapper
       backgroundImage={{

@@ -199,6 +199,19 @@ exports.createPages = ({ graphql, actions, reporter }) => {
               title
               topology
               status
+              headline
+              questions
+              emailCTA
+              featuredImage {
+                childrenImageSharp {
+                  gatsbyImageData(
+                    width: 923
+                    height: 1050
+                    placeholder: NONE
+                    quality: 80
+                  )
+                }
+              }
             }
             excerpt(pruneLength: 200)
             htmlAst
@@ -365,19 +378,28 @@ exports.createPages = ({ graphql, actions, reporter }) => {
         return console.log("category: frontmatter deu muito ruim");
       }
       // Use the fields created in exports.onCreateNode
+      console.log("category: TA INDOOO");
+      console.log(result.data.categoriesGroup.group.fieldValue);
+      console.log(_.kebabCase(result.data.categoriesGroup.group.fieldValue));
+      console.log("category: TA INDOOO");
       createPage({
-        path: `/trends/${_.kebabCase(category.fieldValue)}/`,
+        path: `/trends/${_.kebabCase(
+          result.data.categoriesGroup.group.fieldValue
+        )}/`,
         component: path.resolve(
           rootDir,
           "gatsby-theme-boilerplate-blog/src/templates/category-list-page.js"
         ),
         context: {
-          categories: category.fieldValue,
+          categories: result.data.categoriesGroup.group.fieldValue,
           siteMetadata: result.data.siteMetadata,
           // footerThreeMarkdowRemark: result.data.footerThreeMarkdowRemark,
           postsPerPage: result.data.postsPerPage,
         },
       });
+      console.log("category: FOIIIIII");
+      console.log("category: FOIIIIII");
+      console.log("category: FOIIIIII");
     });
 
     // dealing with nodes
@@ -389,7 +411,7 @@ exports.createPages = ({ graphql, actions, reporter }) => {
         return console.log("landing: deu erro");
       }
       const { slug } = landing.node.fields;
-      const { title, headline, questions, featuredImage } =
+      const { title, headline, questions, featuredImage, emailCTA } =
         landing.node.frontmatter;
 
       // Use the fields created in exports.onCreateNode
@@ -406,7 +428,8 @@ exports.createPages = ({ graphql, actions, reporter }) => {
           headline: headline,
           questions: questions,
           excerpt: landing.node.excerpt,
-          featureImage: featuredImage,
+          featuredImage: featuredImage,
+          emailCTA: emailCTA,
         },
       });
     });

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+// import { useStaticQuery, graphql } from "gatsby";
+import { navigate } from "gatsby";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 // import moment from "moment";
 import * as moment from "moment";
@@ -376,31 +377,76 @@ const HalfDiv = ({ location, pageContext }) => {
         );
       }
     }
-
-    const handleSubmit = event => {
-      event.preventDefault();
-      return "rua";
-
-      // const myForm = event.target;
-      // const formData = new FormData(myForm);
-
-      // const response = await fetch("/.netlify/functions/sendmail", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      //   body: new URLSearchParams(formData).toString(),
-      // })
-      //   .then(response => response.json())
-      //   .catch(error => alert(error));
-
-      // const data = await response.json();
-      // console.log(data);
-    };
   }, [btnClick, countdown]);
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    // formData.append("teste", "teste");
+    // formData.append("FULLDATE", date);
+    // formData.append("PEOPLEA", peopleA);
+    // formData.append("PHONE", peopleAWhats);
+    // formData.append("EMAIL", email);
+    // formData.append("PEOPLEB", peopleB);
+    // formData.append("CITY", city);
+    // formData.append("CTABUTTON", emailCTA);
+    // formData.append("logoImage", logoQuery.images.fallback.src);
+    // formData.append("floralCima", floralCima.images.fallback.src);
+    // formData.append("floralMeio", floralMeio.images.fallback.src);
+    // formData.append("florBaixo", florBaixo.images.fallback.src);
+    // formData.append("marca", marca.images.fallback.src);
+    // formData.append("nowDate", new Date());
+    // formData.append("siteUrl", site.siteMetadata.siteUrl);
+    // formData.append("landingUrl", location.pathname);
+    // formData.append("searchUrl", location.search);
+
+    // const {
+    //   FULLDATE,
+    //   PEOPLEA,
+    //   PHONE,
+    //   EMAIL,
+    //   PEOPLEB,
+    //   CITY,
+    //   CTABUTTON,
+    //   logoImage,
+    //   floralCima,
+    //   floralMeio,
+    //   florBaixo,
+    //   marca,
+    //   nowDate,
+    // } =
+    // myForm.forEach(data => {
+    //   console.log(data.name, data.value);
+    // });
+    // for (const pair of formData.entries()) {
+    //   console.log(`${pair[0]}, ${pair[1]}`);
+    // }
+    // return console.log(new URLSearchParams(formData).toString());
+
+    const result = await fetch("/api/sendmail", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(response => {
+        const emailRes = response.json();
+        console.log(emailRes);
+        console.log(location);
+
+        return navigate(`?success=0&email=${email}`);
+      })
+      .catch(error => console.log(error));
+
+    console.log(result);
+  };
+
   const mensagem = promoEnd
     ? "Quero 🛍5% de desconto🛍"
     : "Quero o 🎫 Voucher 🎫 de 🛍R$500 (quinhentos reais)🛍";
-  console.log("queries");
-  console.log(queries.email);
+  // console.log("queries");
+  // console.log(queries.email);
 
   // const handleSubmit = event => {
   //   event.preventDefault();
@@ -459,11 +505,17 @@ const HalfDiv = ({ location, pageContext }) => {
   //   }
   // `);
 
-  const content = null;
-  const excerpt = null;
-
-  const { title, questions, featuredImage, landingCTA, emailCTA } = null;
-
+  const {
+    title,
+    questions,
+    featuredImage,
+    landingCTA,
+    emailCTA,
+    content,
+    excerpt,
+  } = pageContext;
+  // console.log("pageContext");
+  // console.log(pageContext);
   const mainImage = getImage(featuredImage.childrenImageSharp[0]);
   const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
 
@@ -526,7 +578,10 @@ const HalfDiv = ({ location, pageContext }) => {
       <main>
         <div
           className={
-            !location.search.includes("success=1") ? "main-image" : "hidden"
+            !location.search.includes("success=1") &&
+            !location.search.includes("success=0")
+              ? "main-image"
+              : "hidden"
           }
         >
           <GatsbyImage
@@ -540,7 +595,13 @@ const HalfDiv = ({ location, pageContext }) => {
             className={""}
           />
         </div>
-        <div className='main-content'>
+        <div
+          className={
+            !location.search.includes("success=0")
+              ? "main-content"
+              : "main-content success"
+          }
+        >
           <GatsbyImage
             image={logoQuery}
             alt={"Logotipo d'As Casamenteiras"}
@@ -1163,15 +1224,17 @@ const HalfDiv = ({ location, pageContext }) => {
             <>
               {queries ? (
                 <>
-                  <p>Cheque o seu e-mail: {queries.email}.</p>
                   <p>
-                    Enviamos um e-mail de segurança para evitar robôs (SPAM) no
-                    nosso sistema.
+                    Cheque o seu e-mail: <strong>{queries.email}</strong>.
+                  </p>
+                  <p>
+                    Enviamos um e-mail de segurança para evitar robôs (
+                    <em>SPAM</em>) no nosso sistema.
                   </p>
                   <p>
                     Procure o email da{" "}
                     <i>
-                      <strong>pri</strong>@ascasamenteiras.com.br
+                      <strong>pri@ascasamenteiras.com.br</strong>
                     </i>
                     .
                   </p>
