@@ -128,6 +128,8 @@ const HalfDiv = ({ location, pageContext }) => {
   const [countdown, setCountdown] = useState([12, 60, 60]);
   const [promoEnd, setPromoEnd] = useState(false);
 
+  const [loadingForm, setLoadingForm] = useState(null);
+
   // useRef
   const refDate = useRef();
   const refEmail = useRef();
@@ -381,6 +383,8 @@ const HalfDiv = ({ location, pageContext }) => {
 
   const handleSubmit = async event => {
     event.preventDefault();
+    setLoadingForm(false);
+
     const myForm = event.target;
     const formData = new FormData(myForm);
 
@@ -425,7 +429,7 @@ const HalfDiv = ({ location, pageContext }) => {
     // }
     // return console.log(new URLSearchParams(formData).toString());
 
-    const result = await fetch("/api/sendmail", {
+    const result = await fetch(process.env.GATSBY_SENDMAIL_API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
@@ -433,8 +437,8 @@ const HalfDiv = ({ location, pageContext }) => {
       .then(response => {
         const emailRes = response.json();
         console.log(emailRes);
+        setLoadingForm(true);
         console.log(location);
-
         return navigate(`?success=0&email=${email}`);
       })
       .catch(error => console.log(error));
@@ -612,7 +616,7 @@ const HalfDiv = ({ location, pageContext }) => {
             className={"logo-half-div"}
           />
 
-          {msg ? (
+          {/* {msg ? (
             <p
               className={
                 success === "success" ? "successHTMLstyle" : "errorHTMLstyle"
@@ -620,8 +624,13 @@ const HalfDiv = ({ location, pageContext }) => {
             >
               {msg}
             </p>
-          ) : null}
-          {success !== "success" && !location.search.includes("success=0") ? (
+          ) : null} */}
+          {loadingForm === false && !location.search.includes("success")
+            ? "CARREGANDO RESPOSTA ..."
+            : null}
+          {success !== "success" &&
+          !location.search.includes("success=0") &&
+          !loadingForm ? (
             <>
               <div
                 className='full-width'
@@ -1120,7 +1129,7 @@ const HalfDiv = ({ location, pageContext }) => {
                 <br />
               </form>
             </>
-          ) : !location.search.includes("success=0") ? (
+          ) : location.search.includes("success=1") ? (
             <>
               <div className='success-email-check'>
                 <p>
