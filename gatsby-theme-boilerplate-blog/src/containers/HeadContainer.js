@@ -4,9 +4,27 @@ import { Script } from "gatsby";
 import Seo from "../components/Seo";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-export default HeadContainer = ({ children }) => <Head>{children}</Head>;
-
-export const Head = () => {
+const HeadContainer = ({
+  children,
+  description,
+  lang,
+  meta,
+  title,
+  datePublished,
+  schemaType,
+  titleSeo,
+  authorSeo,
+  featuredImage,
+  blogListing,
+  articleBody,
+  mainLogo,
+  cardImage,
+  serverUrl,
+  articleUrl,
+  pageQuestions,
+  killSEO,
+  topology,
+}) => {
   const { site } = useSiteMetadatas();
 
   const metaDescription = description || site.siteMetadata.description;
@@ -28,9 +46,8 @@ export const Head = () => {
       finalArticleUrl = articleUrl.slice(0, -1);
     }
   }
-
   return (
-    <HeadContainer>
+    <Head>
       <Seo
         lang={lang}
         title={titleSeo || title}
@@ -60,6 +77,14 @@ export const Head = () => {
         killSEO={killSEO}
         topology={topology}
       />
+      {children}
+    </Head>
+  );
+};
+
+export const Head = () => {
+  return (
+    <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`}
         strategy='off-main-thread'
@@ -72,6 +97,8 @@ export const Head = () => {
           gtag('config', ${process.env.GATSBY_GTAG}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
         `}
       </Script>
-    </HeadContainer>
+    </>
   );
 };
+
+export default HeadContainer;

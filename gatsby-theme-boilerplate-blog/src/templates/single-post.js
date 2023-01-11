@@ -6,50 +6,56 @@ import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 import SinglePostBlock from "@BlockBuilder/SinglePostBlock";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-const SinglePost = ({ pageContext, location, data: { mdx } }) => {
-  const { wordCount, timeToRead } = pageContext;
-  const postData = useStaticQuery(graphql`
-    query SinglePost($locale: String!, $title: String!) {
-      mdx(
-        sort: { fields: frontmatter___date, order: DESC }
-        frontmatter: { title: { eq: $title } }
-        fields: {
-          locale: { eq: $locale }
-          frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
-        }
-      ) {
-        frontmatter {
-          date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
-          xmlDate: date
-          topology
-          title
-          author
-          status
-          questions
-          featuredPost
-          homeHighlight
-          homeHighlightRelated
-          homeHighlightRelatedList
-          categories
-          featuredImage {
-            childrenImageSharp {
-              gatsbyImageData(
-                width: 1200
-                height: 627
-                placeholder: NONE
-                quality: 80
-              )
-            }
-          }
-        }
-        body
-        excerpt(pruneLength: 200)
-      }
-    }
-  `);
-  const post = postData.frontmatter;
-  const { title, description, questions } = post.mdx;
+const SinglePost = ({ location, pageContext }) => {
+  // const { wordCount, timeToRead } = pageContext;
+  // const postData = useStaticQuery(graphql`
+  //   query SinglePost($locale: String!, $title: String!) {
+  //     mdx(
+  //       sort: { fields: frontmatter___date, order: DESC }
+  //       frontmatter: { title: { eq: $title } }
+  //       fields: {
+  //         locale: { eq: $locale }
+  //         frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
+  //       }
+  //     ) {
+  //       fields {
+  //         locale
+  //         isDefault
+  //       }
+  //       frontmatter {
+  //         date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+  //         xmlDate: date
+  //         topology
+  //         title
+  //         author
+  //         status
+  //         questions
+  //         featuredPost
+  //         homeHighlight
+  //         homeHighlightRelated
+  //         homeHighlightRelatedList
+  //         categories
+  //         featuredImage {
+  //           childrenImageSharp {
+  //             gatsbyImageData(
+  //               width: 1200
+  //               height: 627
+  //               placeholder: NONE
+  //               quality: 80
+  //             )
+  //           }
+  //         }
+  //       }
+  //       body
 
+  //       excerpt(pruneLength: 200)
+  //     }
+  //   }
+  // `);
+  console.log(pageContext);
+  const post = pageContext.thePost;
+  const { title, description, questions } = post.frontmatter;
+  const { wordCount, timeToRead } = post;
   const {
     imgHolder,
     bgPatternImg,
@@ -133,11 +139,11 @@ const SinglePost = ({ pageContext, location, data: { mdx } }) => {
           authorImg={imgHolder}
           date={post.frontmatter.updatedAt}
           author={post.frontmatter.author}
-          html={post.body}
+          html={post.html}
           title={post.frontmatter.title}
           categories={post.frontmatter.categories}
-          timeToRead={wordCount}
-          wordCount={timeToRead}
+          timeToRead={timeToRead}
+          wordCount={wordCount}
         />
       </main>
     </MainTemplateWrapper>

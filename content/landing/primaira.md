@@ -1,5 +1,5 @@
 ---
-topology: landing
+topology: landings
 title: Primaira
 headline: Olha só que coisa não?
 status: true

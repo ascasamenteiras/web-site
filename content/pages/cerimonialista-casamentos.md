@@ -17,7 +17,7 @@ questions:
 
 As Casamenteiras oferece assessoria completa ou personalizada e consultorias avulsas.
 
-Priscilla Barbosa presta serviços de cerimonialista de casamentos para casamentos, eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor.
+Priscilla Barbosa presta serviços de cerimonialista de casamentos, produção de eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor.
 
 ## Priscilla Barbosa
 

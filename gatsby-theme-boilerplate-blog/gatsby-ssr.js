@@ -1,22 +1,11 @@
-import CustomLayout from "./wrapPageElement";
-
-export const wrapPageElement = CustomLayout;
 const _interopRequireDefault = obj =>
   obj && obj.__esModule ? obj : { default: obj };
 
 const { default: _react } = _interopRequireDefault(require("react"));
 
 const capitalize = str => `${str[0].toUpperCase()}${str.slice(1)}`;
-const formatFont = font =>
-  font
-    .split(" ")
-    .map(capitalize)
-    .join(" ");
-const formatFonts = fonts =>
-  fonts
-    .map(formatFont)
-    .join("|")
-    .replace(/ /g, "+");
+const formatFont = font => font.split(" ").map(capitalize).join(" ");
+const formatFonts = fonts => fonts.map(formatFont).join("|").replace(/ /g, "+");
 
 exports.onRenderBody = (
   { setHeadComponents },

@@ -19,40 +19,46 @@ const CategoryListPage = props => {
     bandeiraWhats,
     bandeiraQuestion,
   } = useSiteMetadatas();
-  const categoryData = useStaticQuery(graphql`
-    query CategoriesList($locale: String!, $title: String!) {
-      mdx(
-        sort: { fields: frontmatter___date, order: DESC }
-        limit: 900
-        fields: { locale: { eq: $locale } }
-      ) {
-        frontmatter {
-          updatedAt(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
-          title
-          categories
-          featuredImage {
-            childrenImageSharp {
-              gatsbyImageData(
-                width: 400
-                height: 200
-                placeholder: DOMINANT_COLOR
-                quality: 100
-              )
-            }
-          }
-        }
-        excerpt(pruneLength: 200)
-      }
-      site {
-        siteMetadata {
-          siteUrl
-        }
-      }
-    }
-  `);
+  // const categoryData = useStaticQuery(graphql`
+  //   query CategoriesList($locale: String!, $title: String!) {
+  //     mdx(
+  //       sort: { fields: frontmatter___date, order: DESC }
+  //       fields: { locale: { eq: $locale } }
+  //       filter: { frontmatter: { createdAt: { lt: "null" } } }
+  //       limit: 800
+  //     ) {
+  //       fields {
+  //         locale
+  //         isDefault
+  //       }
+  //       frontmatter {
+  //         updatedAt(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+  //         title
+  //         categories
+  //         featuredImage {
+  //           childrenImageSharp {
+  //             gatsbyImageData(
+  //               width: 400
+  //               height: 200
+  //               placeholder: DOMINANT_COLOR
+  //               quality: 100
+  //             )
+  //           }
+  //         }
+  //       }
+
+  //       excerpt(pruneLength: 200)
+  //     }
+  //     site {
+  //       siteMetadata {
+  //         siteUrl
+  //       }
+  //     }
+  //   }
+  // `);
 
   // xxx
-  const defaultQuestions = categoryData.site.siteMetadata.questions;
+  const defaultQuestions = null;
   const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const categoriesContext = categoryData.mdx.frontmatter.categories;
@@ -62,13 +68,13 @@ const CategoryListPage = props => {
 
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const myArticlesCategorized = [];
-  categoryData.mdx.forEach(element => {
-    if (element.node.frontmatter.categories !== null) {
-      if (element.node.frontmatter.categories.includes(categoriesContext)) {
-        myArticlesCategorized.push(element);
-      }
-    }
-  });
+  // categoryData.mdx.forEach(element => {
+  //   if (element.node.frontmatter.categories !== null) {
+  //     if (element.node.frontmatter.categories.includes(categoriesContext)) {
+  //       myArticlesCategorized.push(element);
+  //     }
+  //   }
+  // });
 
   return (
     <MainTemplateWrapper

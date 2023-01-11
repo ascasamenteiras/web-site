@@ -2,8 +2,9 @@ const path = require("path");
 const rootDir = path.join(__dirname, "../");
 const businessInfos = require("./package.json");
 require("dotenv").config({
-  path: `.env`,
+  path: `.env.${process.env.NODE_ENV}`,
 });
+require("dotenv").config();
 module.exports = {
   siteMetadata: {
     pathPrefix: businessInfos.urlPrefix,
@@ -46,33 +47,6 @@ module.exports = {
         timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
     },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          formats: [`webp`],
-          quality: 86,
-          breakpoints: [28, 44, 200, 350, 450, 750, 1080, 1200, 1920],
-        },
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-catch-links`,
-    `gatsby-plugin-image`,
-    `gatsby-transformer-json`,
-    {
-      resolve: "gatsby-remark-copy-linked-files",
-      options: {
-        destinationDir: path.resolve(rootDir, "content/posts/images/"),
-      },
-    },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `yaml`,
-    //     path: path.resolve(rootDir, "content/"),
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -118,28 +92,41 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-sharp`,
       options: {
-        path: path.resolve(rootDir, "content/translations"),
-        ignore: [`**/\.js`], // ignore files starting with a dot
-        name: `translations`,
+        defaults: {
+          formats: [`webp`],
+          quality: 86,
+          breakpoints: [28, 44, 200, 350, 450, 750, 1080, 1200, 1920],
+        },
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-image`,
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `yaml`,
+    //     path: path.resolve(rootDir, "content/"),
+    //   },
+    // },
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: `images`,
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 2200,
               linkImagesToOriginal: false,
-            },
-          },
-          {
-            resolve: `gatsby-remark-relative-images`,
-            options: {
-              name: `images`,
             },
           },
           {
@@ -149,6 +136,7 @@ module.exports = {
               rel: "nofollow",
             },
           },
+          // `gatsby-remark-copy-linked-files`,
         ],
       },
     },
@@ -161,6 +149,7 @@ module.exports = {
         fontDisplay: "optional",
       },
     },
+    `gatsby-transformer-json`,
     // {
     //   resolve: `@slixites/gatsby-plugin-google-fonts`,
     //   options: {

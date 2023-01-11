@@ -69,7 +69,7 @@ function handlerSgMail(req) {
   }
 }
 let validator = {
-  set: function(target, key, value) {
+  set: function (target, key, value) {
     console.log(`The property ${key} has been updated with ${value}`);
     return true;
   },
@@ -79,7 +79,8 @@ function validateEmail(email) {
   if (email.slice(-1) === ".") {
     return false;
   }
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 function validateDate(input) {
@@ -95,13 +96,14 @@ function validateWhats(input) {
   const whatSlipt = input.split("-");
   if (input.length > 12) {
     if (whatSlipt[1].length === 4) {
-      const reW = /(\([0-9]{2}\)\s?[0-9]{4,5}-?[0-9]{3,4})|([0-9]{10,11})|([0-9]{2}\s?[0-9]{8,9})/gm;
+      const reW =
+        /(\([0-9]{2}\)\s?[0-9]{4,5}-?[0-9]{3,4})|([0-9]{10,11})|([0-9]{2}\s?[0-9]{8,9})/gm;
       return input.match(reW) ? true : false;
     }
   }
 }
 
-const HalfDiv = ({ location, pageContext, data: { mdx } }) => {
+const HalfDiv = ({ location, pageContext }) => {
   const [btnClick, setBtnClick] = useState(null);
   const [email, setEmail] = useState("");
   const [emailSuccess, setEmailSuccess] = useState(false);
@@ -213,9 +215,7 @@ const HalfDiv = ({ location, pageContext, data: { mdx } }) => {
   }
 
   let queries = [];
-  const urlQueries = decodeURI(location.search)
-    .slice(1)
-    .split("&");
+  const urlQueries = decodeURI(location.search).slice(1).split("&");
   urlQueries.map((e, i) => {
     const splitE = e.split("=");
     queries[splitE[0]] = splitE[1];
@@ -423,47 +423,46 @@ const HalfDiv = ({ location, pageContext, data: { mdx } }) => {
   //   })
   //   .catch(error => alert(error));
 
-  const landingData = useStaticQuery(graphql`
-    query Landing($locale: String!, $title: String!) {
-      mdx(
-        frontmatter: { title: { eq: $title } }
-        fields: {
-          locale: { eq: $locale }
-          frontmatter: { status: { eq: true }, topology: { eq: "landing" } }
-        }
-      ) {
-        frontmatter {
-          title
-          questions
-          landingCTA
-          emailCTA
-          featuredImage {
-            childrenImageSharp {
-              gatsbyImageData(
-                width: 923
-                height: 1050
-                placeholder: NONE
-                quality: 80
-              )
-            }
-          }
-        }
-        body
-        excerpt(pruneLength: 200)
-      }
-    }
-  `);
+  // const landingData = useStaticQuery(graphql`
+  //   query Landing($locale: String!, $title: String!) {
+  //     mdx(
+  //       frontmatter: { title: { eq: $title } }
+  //       fields: {
+  //         locale: { eq: $locale }
+  //         frontmatter: { status: { eq: true }, topology: { eq: "landing" } }
+  //       }
+  //     ) {
+  //       fields {
+  //         locale
+  //         isDefault
+  //       }
+  //       frontmatter {
+  //         title
+  //         questions
+  //         landingCTA
+  //         emailCTA
+  //         featuredImage {
+  //           childrenImageSharp {
+  //             gatsbyImageData(
+  //               width: 923
+  //               height: 1050
+  //               placeholder: NONE
+  //               quality: 80
+  //             )
+  //           }
+  //         }
+  //       }
+  //       body
 
-  const content = landingData.body;
-  const excerpt = landingData.excerpt;
+  //       excerpt(pruneLength: 200)
+  //     }
+  //   }
+  // `);
 
-  const {
-    title,
-    questions,
-    featuredImage,
-    landingCTA,
-    emailCTA,
-  } = landingData.frontmatter;
+  const content = null;
+  const excerpt = null;
+
+  const { title, questions, featuredImage, landingCTA, emailCTA } = null;
 
   const mainImage = getImage(featuredImage.childrenImageSharp[0]);
   const dateImage = getImage(dateImageButton.childrenImageSharp[0]);

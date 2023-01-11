@@ -34,36 +34,7 @@ export const useSiteMetadatas = () =>
             }
           }
         }
-        footerThreeMarkdowRemark: allMarkdownRemark(
-          sort: { fields: frontmatter___date, order: DESC }
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                updatedAt(
-                  formatString: "DD [de] MMMM [de] YYYY"
-                  locale: "pt-br"
-                )
-                title
-                categories
-                footerFeaturedImage: featuredImage {
-                  childrenImageSharp {
-                    gatsbyImageData(
-                      width: 152
-                      height: 152
-                      placeholder: DOMINANT_COLOR
-                      quality: 80
-                    )
-                  }
-                }
-              }
-              excerpt(pruneLength: 200)
-            }
-          }
-        }
+
         dateImageButton: file(relativePath: { eq: "date-img.png" }) {
           childrenImageSharp {
             gatsbyImageData(width: 60, height: 60, quality: 90)

@@ -18,7 +18,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-mdx`,
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { graphql, Link } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 const _ = require("lodash");
@@ -44,9 +44,63 @@ const IndexPage = props => {
     bandeiraQuestion,
     bandeiraCodigoAberto,
   } = useSiteMetadatas();
-  const { data } = props;
-  const posts = data.allMarkdownRemark.edges;
-  const defaultQuestions = site.siteMetadata.questions;
+
+  const dataIndex = useStaticQuery(graphql`
+    query IndexPosts {
+      site {
+        siteMetadata {
+          questions
+        }
+      }
+      allMarkdownRemark(
+        filter: {
+          frontmatter: { status: { eq: true }, topology: { eq: "posts" } }
+        }
+        sort: { frontmatter: { date: DESC } }
+        limit: 900
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              updatedAt(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+              created: createdAt(
+                formatString: "DD [de] MMMM [de] YYYY"
+                locale: "pt-br"
+              )
+              updated: updatedAt
+              updatedModified: updatedAt(formatString: "YYYY-MM-DDTHH:mm:SS")
+              title
+              headline
+              categories
+              questions
+              featuredPost
+              homeHighlight
+              homeHighlightRelated
+              homeHighlightRelatedList
+              featuredImage {
+                childrenImageSharp {
+                  gatsbyImageData(
+                    width: 350
+                    height: 175
+                    placeholder: DOMINANT_COLOR
+                    quality: 80
+                  )
+                }
+              }
+            }
+            excerpt(pruneLength: 200)
+          }
+        }
+      }
+    }
+  `);
+  console.log(dataIndex);
+  const data = dataIndex?.allMarkdownRemark;
+  const posts = data?.edges;
+  const defaultQuestions = dataIndex?.site?.siteMetadata.questions;
   const findItemFeatured = postsList => {
     let x = null;
 
@@ -132,7 +186,7 @@ const IndexPage = props => {
   const facebookGetImg = getImage(faceImg.childrenImageSharp[0]);
 
   const updatedDate = new Date(
-    homeHighlightPost[0].node.frontmatter.updatedModified
+    homeHighlightPost[0]?.node.frontmatter.updatedModified
   );
   const now = new Date();
   const diff = parseInt((now - updatedDate) / 1000);
@@ -214,7 +268,7 @@ const IndexPage = props => {
         classes: "blog-list",
         schemaType: "blog",
         topology: "index",
-        blogListing: posts.slice(0, 9),
+        blogListing: posts?.slice(0, 9),
         articleUrl: props.location.href,
         mainLogo: imgHolder,
         cardImage: cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null,
@@ -254,13 +308,13 @@ const IndexPage = props => {
               <div className='main-article'>
                 <div className='main-headings'>
                   <h1>
-                    <Link to={homeHighlightPost[0].node.fields.slug}>
-                      {homeHighlightPost[0].node.frontmatter.title}
+                    <Link to={homeHighlightPost[0]?.node.fields.slug}>
+                      {homeHighlightPost[0]?.node.frontmatter.title}
                     </Link>
                   </h1>
 
                   <span className='heading-categorie'>
-                    {homeHighlightPost[0].node.frontmatter.categories.map(
+                    {homeHighlightPost[0]?.node.frontmatter.categories.map(
                       (el, key) => {
                         return (
                           <Link
@@ -288,8 +342,8 @@ const IndexPage = props => {
 
                 <div className='main-article-relatives'>
                   <h2>
-                    <Link to={homeHighlightRelatedPost[0].node.fields.slug}>
-                      {homeHighlightRelatedPost[0].node.frontmatter.title}
+                    <Link to={homeHighlightRelatedPost[0]?.node.fields.slug}>
+                      {homeHighlightRelatedPost[0]?.node.frontmatter.title}
                     </Link>
                   </h2>
 
@@ -526,7 +580,7 @@ const IndexPage = props => {
         </HeadingBlock>
         <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
           <PostsBlock
-            postsPerPage={site.siteMetadata.postsPerPage}
+            postsPerPage={site?.siteMetadata.postsPerPage}
             postList={featuredPosts}
             typeLoad={"push"} // or false
             // readMoreText="Ler Mais"
@@ -613,7 +667,7 @@ const IndexPage = props => {
         </HeadingBlock>
         <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
           <PostsBlock
-            postsPerPage={site.siteMetadata.postsPerPage + 3}
+            postsPerPage={site?.siteMetadata.postsPerPage + 3}
             postList={posts}
             typeLoad={"push"} // or false
             // readMoreText="Ler Mais"
@@ -631,49 +685,49 @@ const IndexPage = props => {
 
 export default IndexPage;
 
-export const queryAtividade = graphql`
-  query {
-    allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
-      filter: {
-        frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
-      }
-      limit: 900
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            updatedAt(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
-            created: createdAt(
-              formatString: "DD [de] MMMM [de] YYYY"
-              locale: "pt-br"
-            )
-            updated: updatedAt
-            updatedModified: updatedAt(formatString: "YYYY-MM-DDTHH:mm:SS")
-            title
-            headline
-            categories
-            featuredPost
-            homeHighlight
-            homeHighlightRelated
-            homeHighlightRelatedList
-            featuredImage {
-              childrenImageSharp {
-                gatsbyImageData(
-                  width: 350
-                  height: 175
-                  placeholder: DOMINANT_COLOR
-                  quality: 80
-                )
-              }
-            }
-          }
-          excerpt(pruneLength: 200)
-        }
-      }
-    }
-  }
-`;
+// export const queryAtividade = graphql`
+// query {
+//   allMarkdownRemark(
+//     sort: { fields: frontmatter___date, order: DESC }
+//     filter: {
+//       frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
+//     }
+//     limit: 900
+//   ) {
+//     edges {
+//       node {
+//         fields {
+//           slug
+//         }
+//         frontmatter {
+//           updatedAt(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+//           created: createdAt(
+//             formatString: "DD [de] MMMM [de] YYYY"
+//             locale: "pt-br"
+//           )
+//           updated: updatedAt
+//           updatedModified: updatedAt(formatString: "YYYY-MM-DDTHH:mm:SS")
+//           title
+//           headline
+//           categories
+//           featuredPost
+//           homeHighlight
+//           homeHighlightRelated
+//           homeHighlightRelatedList
+//           featuredImage {
+//             childrenImageSharp {
+//               gatsbyImageData(
+//                 width: 350
+//                 height: 175
+//                 placeholder: DOMINANT_COLOR
+//                 quality: 80
+//               )
+//             }
+//           }
+//         }
+//         excerpt(pruneLength: 200)
+//       }
+//     }
+//   }
+// }
+// `;
