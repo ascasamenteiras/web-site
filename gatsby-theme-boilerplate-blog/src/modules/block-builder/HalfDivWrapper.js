@@ -10,7 +10,7 @@ const HalfDivWrapper = ({ children, classes, logo, backgroundImage, opt }) => {
       killSEO={true}
     >
       {children}
-      {/* <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} /> */}
+      <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} />
     </BodyBlock>
   );
 };

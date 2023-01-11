@@ -32,7 +32,7 @@ const MainTemplateWrapper = ({
     >
       <HeaderBlock logotipoSvg={logo} />
       {children}
-      {/* <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} /> */}
+      <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} />
       <FooterBlock
         githubImg={githubImg}
         instaImg={instaImg}

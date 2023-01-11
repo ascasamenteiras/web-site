@@ -65,7 +65,7 @@ const MainPageWrapper = ({
           {children}
         </Row>
       </main>
-      {/* <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} /> */}
+      <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} />
 
       <FooterBlock
         githubImg={githubImg}
