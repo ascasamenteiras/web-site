@@ -7,7 +7,7 @@ on:
 jobs:
   release:
     name: Obtém o código-fonte e realiza a construção da aplicaçãos.
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
