@@ -36,7 +36,8 @@
     "@nuktpls:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@changesets/cli": "^2.22.0"
+    "@changesets/cli": "^2.22.0",
+    "path-browserify": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",

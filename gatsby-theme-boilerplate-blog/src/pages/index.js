@@ -499,9 +499,14 @@ const IndexPage = props => {
                       >
                         + Info
                       </Link>
-                      <Link to='/' className='profile-btn'>
+                      <a
+                        href='https://www.instagram.com/ascasamenteiras_'
+                        rel='noopener noreferrer'
+                        target={"_blank"}
+                        className='profile-btn'
+                      >
                         + Seguir
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </Row>

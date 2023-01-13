@@ -12,10 +12,12 @@ import VMasker from "vanilla-masker";
 // import { useCountdown } from "../tools/useCountdown";
 // import addToMailchimp from "gatsby-plugin-mailchimp";
 
-// import sgMail from "@sendgrid/mail";
+import sgMail from "@sendgrid/mail";
 
 import HalfDivWrapper from "@BlockBuilder/HalfDivWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
+
+import mailTemplate from "../components/mailTemplate";
 
 // //src/api/my-first-function.js
 // import sgMail from "@sendgrid/mail";
@@ -138,6 +140,18 @@ const HalfDiv = ({ location, pageContext }) => {
   const refPeopleB = useRef();
   const refCity = useRef();
 
+  // PageContext
+
+  const {
+    title,
+    questions,
+    featuredImage,
+    landingCTA,
+    emailCTA,
+    content,
+    excerpt,
+  } = pageContext;
+
   // handle Images
   const {
     imgHolder,
@@ -154,6 +168,7 @@ const HalfDiv = ({ location, pageContext }) => {
     voucherImg,
     pdfImg,
   } = useSiteMetadatas();
+
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
   const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
   const defaultQuestions = site.siteMetadata.questions;
@@ -166,6 +181,9 @@ const HalfDiv = ({ location, pageContext }) => {
   const marca = getImage(marcaImg.childrenImageSharp[0]);
   const voucher = getImage(voucherImg.childrenImageSharp[0]);
   const pdf = getImage(pdfImg.childrenImageSharp[0]);
+
+  const mainImage = getImage(featuredImage.childrenImageSharp[0]);
+  const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
 
   let urlParams = null;
   let longDate = null;
@@ -284,8 +302,7 @@ const HalfDiv = ({ location, pageContext }) => {
       return setPeopleASuccess(false);
     }
   };
-  const handleDateChange = (e, dateTyping) => {
-    console.log(e.key);
+  const handleDateChange = dateTyping => {
     setDate(dateTyping);
     const validatedDate = validateDate(dateTyping);
     if (validatedDate) {
@@ -387,141 +404,85 @@ const HalfDiv = ({ location, pageContext }) => {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
+    let siteUrl = myForm["searchUrl"].value;
+    let landingUrl = myForm["landingUrl"].value;
+    const botFieldPrevent = myForm["searchUrl"].value !== "" || false;
+    const siteUrlSlashCheck = siteUrl.slice(-1) === "/" || false;
+    const landingSlashCheck = landingUrl.slice(-1) === "/" || false;
 
-    // formData.append("teste", "teste");
-    // formData.append("FULLDATE", date);
-    // formData.append("PEOPLEA", peopleA);
-    // formData.append("PHONE", peopleAWhats);
-    // formData.append("EMAIL", email);
-    // formData.append("PEOPLEB", peopleB);
-    // formData.append("CITY", city);
-    // formData.append("CTABUTTON", emailCTA);
-    // formData.append("logoImage", logoQuery.images.fallback.src);
-    // formData.append("floralCima", floralCima.images.fallback.src);
-    // formData.append("floralMeio", floralMeio.images.fallback.src);
-    // formData.append("florBaixo", florBaixo.images.fallback.src);
-    // formData.append("marca", marca.images.fallback.src);
-    // formData.append("nowDate", new Date());
-    // formData.append("siteUrl", site.siteMetadata.siteUrl);
-    // formData.append("landingUrl", location.pathname);
-    // formData.append("searchUrl", location.search);
+    if (!formData) {
+      return console.log({
+        message: "No body was sent. Try a POST request or query",
+      });
+    }
+    if (myForm["botField"].value !== "") {
+      console.log("bot field detectado");
+      return console.log(myForm["botField"].value);
+    }
+    if (botFieldPrevent) {
+      return console.log({ message: "Você não deveria estar aqui!" });
+    }
+    if (siteUrlSlashCheck) {
+      siteUrl = siteUrl.slice(0, -1);
+    }
+    if (landingSlashCheck) {
+      landingUrl = landingUrl.slice(0, -1);
+    }
 
-    // const {
-    //   FULLDATE,
-    //   PEOPLEA,
-    //   PHONE,
-    //   EMAIL,
-    //   PEOPLEB,
-    //   CITY,
-    //   CTABUTTON,
-    //   logoImage,
-    //   floralCima,
-    //   floralMeio,
-    //   florBaixo,
-    //   marca,
-    //   nowDate,
-    // } =
-    // myForm.forEach(data => {
-    //   console.log(data.name, data.value);
-    // });
-    // for (const pair of formData.entries()) {
-    //   console.log(`${pair[0]}, ${pair[1]}`);
-    // }
-    // return console.log(new URLSearchParams(formData).toString());
+    const fullUrl = encodeURI(
+      `${
+        siteUrl + landingUrl
+      }?success=1&fullDate=${date}&peopleA=${peopleA}&whatsPeopleA=${peopleAWhats}&emailPeopleA=${email}&peopleB=${peopleB}&city=${city}&confirmDate=${new Date()}`
+    );
 
-    const result = await fetch(process.env.GATSBY_SENDMAIL_API_URL, {
+    sgMail.setApiKey(process.env.GATSBY_SENDGRID_API_KEY);
+
+    const msg = {
+      to: email, // Change to your recipient
+      from: "pri@ascasamenteiras.com.br", // Change to your verified sender
+      subject: `${peopleA}, confirme o seu e-mail - As Casamenteiras - Todo Amor Importa!`,
+      html: `oiii`,
+    };
+    // return console.log(sgMail.setApiKey(process.env.GATSBY_SENDGRID_API_KEY)  );
+
+    const result = await fetch("https://api.sendgrid.com/v3/mail/send", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      mode: "no-cors",
+      cache: "no-cache",
+      headers: {
+        Authorization: `Bearer ${process.env.GATSBY_SENDGRID_API_KEY}`,
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true,
+      },
+      body: JSON.stringify(msg),
     })
       .then(response => {
-        const emailRes = response.json();
-        console.log(emailRes);
+        console.log(response);
         setLoadingForm(true);
         console.log(location);
         return navigate(`?success=0&email=${email}`);
       })
       .catch(error => console.log(error));
-
     console.log(result);
+    // sgMail
+    //   .send(msg)
+    //   .then(async () => {
+    //     // const emailRes = await response.json();
+    //     // console.log(emailRes);
+    //     // setLoadingForm(true);
+    //     // console.log(location);
+    //     // return navigate(`?success=0&email=${email}`);
+    //     console.log("foooiiiii");
+    //   })
+    //   .catch(error => {
+    //     return console.log(error);
+    //   });
   };
 
   const mensagem = promoEnd
     ? "Quero 🛍5% de desconto🛍"
     : "Quero o 🎫 Voucher 🎫 de 🛍R$500 (quinhentos reais)🛍";
-  // console.log("queries");
-  // console.log(queries.email);
-
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-
-  //   const myForm = event.target;
-  //   const formData = new FormData(myForm);
-
-  //   handlerSgMail(new URLSearchParams(formData).toString());
-  // };
-
-  // fetch("/api/sendtest", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //   body: new URLSearchParams(formData).toString(),
-  // })
-  //   .then(dataR => {
-  //     console.log(dataR);
-  //     console.log(new URLSearchParams(formData).toString());
-  //     console.log("Form successfully submitted");
-  //   })
-  //   .catch(error => alert(error));
-
-  // const landingData = useStaticQuery(graphql`
-  //   query Landing($locale: String!, $title: String!) {
-  //     mdx(
-  //       frontmatter: { title: { eq: $title } }
-  //       fields: {
-  //         locale: { eq: $locale }
-  //         frontmatter: { status: { eq: true }, topology: { eq: "landing" } }
-  //       }
-  //     ) {
-  //       fields {
-  //         locale
-  //         isDefault
-  //       }
-  //       frontmatter {
-  //         title
-  //         questions
-  //         landingCTA
-  //         emailCTA
-  //         featuredImage {
-  //           childrenImageSharp {
-  //             gatsbyImageData(
-  //               width: 923
-  //               height: 1050
-  //               placeholder: NONE
-  //               quality: 80
-  //             )
-  //           }
-  //         }
-  //       }
-  //       body
-
-  //       excerpt(pruneLength: 200)
-  //     }
-  //   }
-  // `);
-
-  const {
-    title,
-    questions,
-    featuredImage,
-    landingCTA,
-    emailCTA,
-    content,
-    excerpt,
-  } = pageContext;
-  // console.log("pageContext");
-  // console.log(pageContext);
-  const mainImage = getImage(featuredImage.childrenImageSharp[0]);
-  const dateImage = getImage(dateImageButton.childrenImageSharp[0]);
 
   return (
     <HalfDivWrapper
@@ -739,7 +700,7 @@ const HalfDiv = ({ location, pageContext }) => {
                           maxLength={10}
                           placeholder='DD/MM/AAAA'
                           pattern='/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/'
-                          onChange={e => handleDateChange(e, e.target.value)}
+                          onChange={e => handleDateChange(e.target.value)}
                         />
                         <button
                           className='landing-input-ok'

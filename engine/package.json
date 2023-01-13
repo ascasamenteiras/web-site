@@ -10,12 +10,9 @@
     "dev": "gatsby develop"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^2.2.1",
-    "@mdx-js/react": "^2.2.1",
     "gatsby": "^5.3.3",
     "gatsby-plugin-manifest": "^5.3.1",
     "gatsby-source-filesystem": "^5.3.1",
-    "gatsby-plugin-mdx": "^5.3.1",
     "gatsby-plugin-offline": "^6.3.1",
     "gatsby-theme-boilerplate-blog": "*",
     "react": "^18.2.0",

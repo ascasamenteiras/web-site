@@ -5,6 +5,17 @@ const businessInfos = require("./package.json");
 const redirects = require(`../content/configs/redirects.json`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        path: require.resolve("path-browserify"),
+        fs: false,
+      },
+    },
+  });
+};
+
 function basePathFinder(nodeTopology) {
   if (nodeTopology === "pages") {
     return "pages";
