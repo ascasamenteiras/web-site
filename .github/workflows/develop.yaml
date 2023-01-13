@@ -29,4 +29,4 @@ jobs:
           key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install
-        run: yarn && yarn workspace gatsby build
+        run: yarn && yarn workspace engine build
