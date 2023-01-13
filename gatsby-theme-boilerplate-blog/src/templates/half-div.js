@@ -263,7 +263,7 @@ const HalfDiv = ({ location, pageContext }) => {
       peopleAWhatsSuccess
     ) {
       setSuccess(true);
-      return handleSubmit(e, email, honey);
+      return handleSubmit(e);
     } else {
       return setSuccess(false);
     }

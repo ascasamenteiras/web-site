@@ -1,0 +1,78 @@
+{
+  "folders": [
+    {
+      "name": "Conteúdo",
+      "path": "./content"
+    },
+    {
+      "name": "Tema",
+      "path": "./gatsby-theme-boilerplate-blog"
+    },{
+      "name": "Source",
+      "path": "./gatsby-theme-boilerplate-blog/src"
+    },{
+      "name": "Static",
+      "path": "./gatsby-theme-boilerplate-blog/static"
+    },{
+      "name": "Estilos",
+      "path": "./gatsby-theme-boilerplate-blog/src/scss"
+    },
+    {
+      "name": "Início",
+      "path": "./"
+    },
+    {
+      "name": "Posts",
+      "path": "./content/posts"
+    },
+    {
+      "name": "Pages",
+      "path": "./content/pages"
+    },
+    {
+      "name": "Landings",
+      "path": "./content/landing"
+    }
+  ],
+  "settings": {
+    "editor.fontFamily": "VCR OSD Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.rulers": [80, 120],
+    "editor.formatOnSave": true,
+    "eslint.validate": ["javascript", "javascriptreact"],
+    "editor.renderLineHighlight": "gutter",
+    "editor.tabSize": 2,
+    "terminal.integrated.fontSize": 14,
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "emmet.syntaxProfiles": {
+      "javascript": "jsx"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "editor.parameterHints.enabled": false,
+    "breadcrumbs.enabled": false,
+    "javascript.suggest.autoImports": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.visible": false,
+    "editor.minimap.enabled": false,
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "diffEditor.renderSideBySide": true,
+    "workbench.sideBar.location": "right",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.jsxSingleQuote": true,
+    "prettier.arrowParens": "avoid",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Edu4Dev Dark"
+  }
+}
