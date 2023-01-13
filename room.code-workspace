@@ -1,10 +1,6 @@
 {
   "folders": [
     {
-      "name": "Raiz",
-      "path": "./"
-    },
-    {
       "name": "Conteúdo",
       "path": "./content"
     },
@@ -21,19 +17,23 @@
       "path": "./content/landing"
     },
     {
+      "name": "Raiz",
+      "path": "./"
+    },
+    {
       "name": "Tema",
       "path": "./gatsby-theme-boilerplate-blog"
     },
     {
-      "name": "Source - Theme",
+      "name": "Source",
       "path": "./gatsby-theme-boilerplate-blog/src"
     },
     {
-      "name": "Static - Theme",
+      "name": "Static",
       "path": "./gatsby-theme-boilerplate-blog/static"
     },
     {
-      "name": "StyleSheets - Theme",
+      "name": "StyleSheets",
       "path": "./gatsby-theme-boilerplate-blog/src/scss/"
     }
   ],
