@@ -19,6 +19,28 @@ import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 import mailTemplate from "../components/mailTemplate";
 
+var payload = {
+  personalizations: [
+    {
+      to: [
+        {
+          email: "myemail@service.com",
+        },
+      ],
+      subject: "Hello, World!",
+    },
+  ],
+  from: {
+    email: "pri@ascasamenteiras.com.br",
+  },
+  content: [
+    {
+      type: "text/plain",
+      value: "Hello, World!",
+    },
+  ],
+};
+
 // //src/api/my-first-function.js
 // import sgMail from "@sendgrid/mail";
 
