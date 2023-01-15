@@ -1,4 +1,4 @@
-name: Ambiente de testes - boilerplate
+name: Ambiente de Produção
 on:
   push:
     branches:

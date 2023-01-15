@@ -19,6 +19,22 @@
     {
       "name": "Raiz",
       "path": "./"
+    },
+    {
+      "name": "Tema",
+      "path": "./gatsby-theme-boilerplate-blog"
+    },
+    {
+      "name": "Source",
+      "path": "./gatsby-theme-boilerplate-blog/src"
+    },
+    {
+      "name": "Static",
+      "path": "./gatsby-theme-boilerplate-blog/static"
+    },
+    {
+      "name": "StyleSheets",
+      "path": "./gatsby-theme-boilerplate-blog/src/scss/"
     }
   ],
   "settings": {
