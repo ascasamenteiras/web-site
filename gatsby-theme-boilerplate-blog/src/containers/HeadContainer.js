@@ -82,7 +82,7 @@ const HeadContainer = ({
   );
 };
 
-export const Head = () => {
+export const Head = ({children}) => {
   return (
     <>
       <Script
@@ -97,6 +97,7 @@ export const Head = () => {
           gtag('config', ${process.env.GATSBY_GTAG}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
         `}
       </Script>
+      {children}
     </>
   );
 };
