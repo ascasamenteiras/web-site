@@ -1,4 +1,6 @@
 import React from "react";
+import { Script } from "gatsby";
+
 import SchemaOrgContainer from "../containers/SchemaOrgContainer";
 
 const Seo = ({
@@ -35,6 +37,7 @@ const Seo = ({
   const slug = articleUrl || servBar;
   return (
     <>
+    <Script id='seo-elements'>
       <title>{title}</title>
       <meta
         name='robots'
@@ -113,7 +116,8 @@ const Seo = ({
       ) : (
         ""
       )}
-      <SchemaOrgContainer
+    </Script>
+    <SchemaOrgContainer
         schemaType={schemaType}
         url={siteUrl}
         title={title}
