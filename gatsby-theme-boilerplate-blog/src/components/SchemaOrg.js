@@ -1,4 +1,5 @@
 import React from "react";
+import { Script } from "gatsby";
 
 export default React.memo(
   ({
@@ -139,19 +140,19 @@ export default React.memo(
       <>
         {/* Schema.org tags */}
         {schemaType === "article" ? (
-          <script type='application/ld+json' data-schema='Article'>
+          <Script type='application/ld+json' data-schema='Article'>
             {JSON.stringify(articleSchema)}
-          </script>
+          </Script>
         ) : null}
-        <script type='application/ld+json' data-schema='WebSite'>
+        <Script type='application/ld+json' data-schema='WebSite'>
           {JSON.stringify(webSiteSchema)}
-        </script>
-        <script type='application/ld+json' data-schema='Organization'>
+        </Script>
+        <Script type='application/ld+json' data-schema='Organization'>
           {JSON.stringify(orgSchema)}
-        </script>
-        <script type='application/ld+json'>
+        </Script>
+        <Script type='application/ld+json'>
           {JSON.stringify(questionSchema)}
-        </script>
+        </Script>
       </>
     );
   }
