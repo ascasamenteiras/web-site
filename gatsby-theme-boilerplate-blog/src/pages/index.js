@@ -97,7 +97,6 @@ const IndexPage = props => {
       }
     }
   `);
-  console.log(dataIndex);
   const data = dataIndex?.allMarkdownRemark;
   const posts = data?.edges;
   const defaultQuestions = dataIndex?.site?.siteMetadata.questions;
@@ -263,7 +262,7 @@ const IndexPage = props => {
         />
       }
       opt={{
-        titleSeo: `Cerimonialista de Casamentos`,
+        titleSeo: `Cerimonialista de Casamentos - As Casamenteiras`,
         pageQuestions: defaultQuestions,
         classes: "blog-list",
         schemaType: "blog",
