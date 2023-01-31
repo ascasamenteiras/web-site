@@ -83,7 +83,7 @@ Para saber mais sobre todos os nossos serviços, sinta-se à vontade em nos envi
 
 Nos siga também no [Instagram](https://instagram.com/ascasamenteiras_).
 
-Visita também a página dos vencedores **ZIWA Awards 2023**, [clicando aqui](https://www.casamentos.com.br//ziwa/assessorias-cerimonial).
+Visita também a página dos vencedores **ZIWA Awards 2022**, [clicando aqui](https://www.zankyou.com.br/ziwa/assessorias-cerimonial).
 
 Desejamos só o melhor para vocês nesse momento tão especial.
 
