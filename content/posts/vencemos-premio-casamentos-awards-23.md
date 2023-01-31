@@ -3,9 +3,9 @@ topology: posts
 status: true
 title: Vencemos o Prêmio Casamentos Awards 2023
 headline: As Casamenteiras é a vencedora do Prêmio Casamentos Awards 2023 na categoria Cerimonialista de Casamentos.
-date: 2023-12-01T09:30:00+00:00
-updatedAt: 2023-12-01T08:30:00+00:00
-createdAt: 2023-11-27T03:36:00+00:00
+date: 2023-01-31T09:30:00+00:00
+updatedAt: 2023-01-31T09:30:00+00:00
+createdAt: 2023-01-31T09:30:00+00:00
 author: Equipe As Casamenteiras
 categories:
   - premio
