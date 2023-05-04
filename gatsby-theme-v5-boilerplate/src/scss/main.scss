@@ -1,0 +1,301 @@
+// bootstrap
+// @import "~bootstrap/scss/bootstrap";
+
+/* Global styling for this template */
+body {
+  overflow-x: hidden;
+  font-family: "Varela", "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 15px; // default font size for all text
+
+  @media (max-width: 959px) {
+    font-size: 14px;
+  }
+}
+
+.bg-primary-dark {
+  background-color: $farmrev__primary-dark;
+}
+
+.bg-primary-light {
+  background-color: $farmrev__primary-light;
+}
+
+.bg-primary-gray {
+  background-color: $farmrev__primary-gray;
+}
+p {
+  line-height: 1.75;
+}
+
+// Capitalize everything
+*::first-letter {
+  text-transform: capitalize;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.bg-primary {
+  color: $dark-gray;
+  background-color: $light-gray !important;
+  overflow: hidden;
+
+  .text-muted {
+    color: $dark-gray !important;
+  }
+}
+
+.bg-secondary {
+  color: $dark-gray;
+  background-color: $white !important;
+
+  .text-muted {
+    color: $dark-gray !important;
+  }
+}
+
+// those values are based on Achim's data
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal !important;
+}
+
+h1 {
+  font-family: "Varela", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 40px; // Lowered from 50px to 40px
+
+  @media (max-width: 959px) {
+    font-size: 25px;
+  }
+}
+
+h2 {
+  font-family: "Varela", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 25px;
+
+  @media (max-width: 959px) {
+    font-size: 20px;
+  }
+}
+
+h3 {
+  font-family: "Varela", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 15px;
+
+  @media (max-width: 959px) {
+    font-size: 15px;
+  }
+}
+
+h4 {
+  // Note: this is used in the specialty crops specification document
+  font-size: 22px;
+  text-transform: unset;
+
+  @media (max-width: 959px) {
+    font-size: 15px;
+  }
+}
+
+blockquote {
+  color: $primary-dark;
+  border-left: 5px solid $primary-dark;
+  padding-left: 5px;
+}
+
+.cursor-pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Highlight color customization
+::-moz-selection {
+  background: $farmrev__primary-dark;
+  text-shadow: none;
+  color: $farmrev__primary-gray;
+}
+
+::selection {
+  background: $farmrev__primary-dark;
+  text-shadow: none;
+  color: $farmrev__primary-gray;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+/* Components */
+// Button Styles
+.btn-xl {
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+.btn-primary {
+  background-color: $accent;
+  border-color: $accent;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($primary, 7.5%) !important;
+    border-color: darken($primary, 7.5%) !important;
+    color: white;
+  }
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem lightgrey !important;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($secondary, 7.5%) !important;
+    border-color: darken($secondary, 7.5%) !important;
+    color: white;
+  }
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem white !important;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($secondary, 7.5%) !important;
+    border-color: darken($secondary, 7.5%) !important;
+    color: white;
+  }
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem white !important;
+  }
+}
+
+.only-print {
+  display: none;
+}
+
+.page {
+  padding: 2% 10%;
+}
+
+@media print {
+  .page {
+    margin-top: 100px;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  .only-print {
+    display: unset;
+  }
+}
+
+@page {
+  margin: 0mm;
+}
+
+.pageStyles {
+  color: #232129;
+  padding: 96px;
+  font-family: "-apple-system, Roboto, sans-serif, serif";
+}
+.headingStyles {
+  margin-top: 0;
+  margin-bottom: 64px;
+  max-width: 320px;
+}
+.headingAccentStyles {
+  color: #663399;
+}
+.paragraphStyles {
+  margin-bottom: 48px;
+}
+.codeStyles {
+  color: #8a6534;
+  padding: 4px;
+  background-color: #fff4db;
+  font-size: 1.25rem;
+  border-radius: 4px;
+}
+.listStyles {
+  margin-bottom: 96px;
+  padding-left: 0;
+}
+.listItemStyles {
+  font-weight: 300;
+  font-size: 24px;
+  max-width: 560px;
+  margin-bottom: 30px;
+}
+
+.linkStyle {
+  color: #8954a8;
+  font-weight: bold;
+  font-size: 16px;
+  vertical-align: 5%;
+}
+
+.docLinkStyle {
+  color: #8954a8;
+  font-weight: bold;
+  font-size: 16px;
+  vertical-align: 5%;
+  list-style-type: none;
+  margin-bottom: 24px;
+}
+
+.descriptionStyle {
+  color: #232129;
+  font-size: 14px;
+  margin-top: 10;
+  margin-bottom: 0;
+  line-height: 1.25;
+}
+
+.badgeStyle {
+  color: #fff;
+  background-color: #088413;
+  border: "1px solid #088413";
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  padding: "4px 6px";
+  display: "inline-block";
+  position: "relative";
+  top: -2;
+  margin-left: 10px;
+  line-height: 1px;
+}

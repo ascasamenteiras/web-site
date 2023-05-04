@@ -1,0 +1,63 @@
+# DOCUMENTATION TRANSLATION FILE.
+# Copyright (C) 2023 - GatsbyJS
+# This file is distributed under the same license as the PACKAGE package.
+# GatsbyJS <i18n@ascasamenteiras.com.br>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gatsby Boilerplate Blog Intl 0.1 beta\n"
+"Project-Id-Version: AsCasamenteiras i18n 0.1.0\n"
+"Report-Msgid-Bugs-To: i18n@ascasamenteiras.com.br \n"
+"Last-Translator: GatsbyJS <i18n@ascasamenteiras.com.br>\n"
+"POT-Creation-Date: 2023-01-16 10:46+0000\n"
+"PO-Revision-Date: 2023-01-16 10:47+0000\n"
+"Language: pt-BR\n"
+"Language-Team: https://ascasamenteiras.com.br/\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "docsCommunityApplicationPolicyLabel"
+msgstr "Aplicação da Política para Comunidades Profissionais"
+
+msgid "docscommunityApplicationPolicyText"
+msgstr ""
+"Nós removemos qualquer conteúdo que viole nossas Políticas para Comunidades Profissionais." 
+"Ao fazê-lo, também enviamos um aviso de que seu conteúdo viola nossas políticas," 
+"de que forma e as medidas que estamos tomando. Se você acreditar que seu conteúdo foi removido por engano," 
+"terá a oportunidade de solicitar uma segunda análise."
+"Em geral, três (3) violações da política resultarão em restrição da conta." 
+"Oferecemos a oportunidade de contestar uma restrição de conta e podemos restabelecer" 
+"uma conta restrita se o usuário concordar em cumprir as Políticas para Comunidades Profissionais." 
+"Se as violações tornarem a ocorrer, a conta será permanentemente banida da plataforma do LinkedIn."
+"Para certas violações graves de nossas Políticas para Comunidades Profissionais" 
+"(ex., material de abuso sexual infantil, terrorismo, conteúdo extremamente violento, assédio sexual grave)," 
+"podemos restringir sua conta permanentemente após uma única violação."
+"A publicação de um conteúdo que normalmente violaria nossas políticas é permitida" 
+"se o objetivo for usá-lo para condenar a causa ou aumentar a conscientização." 
+"Nesses casos, podemos rotular e ocultar o conteúdo para usuários que possam considerá-lo sensível" 
+"ou perturbador ou que não desejem vê-lo. Entretanto, não removeremos o conteúdo ou penalizaremos" 
+"o autor por sua publicação."
+
+msgid "abusiveContentAlert"
+msgstr "Reportar Conteúdo Abusivo"
+
+msgid "docsAbusiveContent"
+msgstr "Conteúdo Abusivo"
+
+msgid "docsAbusiveContent"
+msgstr ""
+"A GatsbyJS remove qualquer conteúdo do nosso website que viole nossas Políticas de Conduta. "
+"Ao fazê-lo, também enviamos um aviso para o responsável informando que o conteúdo viola nossas políticas "
+"e as medidas que estamos tomando. Se acreditar que o conteúdo foi removido por engano, é possível solicitar "
+"uma revisão. Em geral, três violações resultam em restrição da conta. Oferecemos a oportunidade de contestar "
+"uma restrição de conta e podemos restabelecer uma conta restrita se o usuário concordar em cumprir "
+"as Políticas de Conduta. Se as violações continuarem a ocorrer, a conta será banida permanentemente "
+"do website da GatsbyJS. Para violações graves, como material de abuso sexual infantil, terrorismo, "
+"conteúdo extremamente violento e assédio sexual grave, podemos restringir a conta permanentemente "
+"após uma única violação. A publicação de um conteúdo que normalmente violaria nossas políticas "
+"é permitida se o objetivo for condenar a causa ou aumentar a conscientização. Nesses casos, a GatsbyJS "
+"e a framework Priscilla Barbosa poderá rotular e ocultar o conteúdo para usuários "
+"que possam considerá-lo sensível ou perturbador."

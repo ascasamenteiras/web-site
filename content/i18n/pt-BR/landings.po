@@ -1,0 +1,76 @@
+# HELPER TRANSLATION FILE.
+# Copyright (C) 2023 - GatsbyJS
+# This file is distributed under the same license as the PACKAGE package.
+# GatsbyJS <i18n@ascasamenteiras.com.br>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gatsby Boilerplate Blog Intl 0.1 beta\n"
+"Project-Id-Version: AsCasamenteiras i18n 0.1.0\n"
+"Report-Msgid-Bugs-To: i18n@ascasamenteiras.com.br \n"
+"Last-Translator: GatsbyJS <i18n@ascasamenteiras.com.br>\n"
+"POT-Creation-Date: 2023-01-16 10:46+0000\n"
+"PO-Revision-Date: 2023-01-16 10:47+0000\n"
+"Language: pt-BR\n"
+"Language-Team: https://ascasamenteiras.com.br/\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "eventDate"
+msgstr "Data do Casamento"
+
+msgid "peopleANameLabel"
+msgstr "Nome Cônjuge A"
+
+msgid "eventPeopleAWhatsLabel"
+msgstr "Whatsapp Cônjuge A"
+
+msgid "eventPeopleAEmailLabel"
+msgstr "E-mail Cônjuge A"
+
+msgid "eventPeopleBNameLabel"
+msgstr "Nome Cônjuge B"
+
+msgid "eventCity"
+msgstr "Cidade"
+
+msgid "eventTksMsg"
+msgstr ""
+"Obrigada, <strong>##peopleA##</strong> por confirmar as "
+"informações do seu casamento com "
+"<strong>##peopleB##</strong>. O seu casamento será "
+"<strong>##longDate##</strong>."
+
+msgid "eventCountdownText"
+msgstr "Faltam <strong>::months:: meses</strong> (::diffDays:: dias)."
+
+msgid "eventEmailCTA"
+msgstr "<strong>Clique aqui</strong> e baixe o seu catálogo."
+
+msgid "eventVoucherWon"
+msgstr "Você ganhou: 01 (um) VOUCHER de <strong>R$500,00</strong>"
+
+msgid "eventMissPromoText"
+msgstr "Perdeu a Promoção? Clique aqui e receba um desconto de 5%"
+
+msgid "eventRedeemCTA"
+msgstr "Resgatar VOUCHER agora !"
+
+msgid "eventVoucherCountdownText"
+msgstr "Esse VOUCHER expira em:"
+
+msgid "eventConfirmationSubject"
+msgstr "::peopleA::, confirme o seu e-mail - GatsbyJS - Todo Amor Importa!"
+
+msgid "eventExpiredCoupon"
+msgstr "Voucher <strong>EXPIRADO</strong>!"
+
+msgid "eventSentEmailText"
+msgstr ""
+"Cheque o seu e-mail: <strong>{queries.email}</strong>.\n"
+"Enviamos um e-mail de segurança para evitar robôs (<em>SPAM</em>) no nosso sistema."
+"Procure o email da<i><strong>::brandPromoEmail::</strong>"
+"E clique no botão 'Baixar Catálogo'."

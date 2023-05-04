@@ -1,28 +1,44 @@
-- **`[v.0.6.x:next]`**: Not ready, don't use it yet. Have no ideia what version I'm going. :D
-- **`[v.0.x.0:warning]`**: The first grand finale release will be publish at v1.0.0.
-
-![Theme workflow](https://github.com/nuktpls/gatsby-theme-boilerplate-blog/actions/workflows/master.yaml/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/18254200-644c-4919-a835-b51efd328337/deploy-status)](https://app.netlify.com/sites/boilerplate-blog/deploys) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nuktpls_gatsby-theme-boilerplate-blog&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=nuktpls_gatsby-theme-boilerplate-blog) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=nuktpls_gatsby-theme-boilerplate-blog&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=nuktpls_gatsby-theme-boilerplate-blog) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=nuktpls_gatsby-theme-boilerplate-blog&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=nuktpls_gatsby-theme-boilerplate-blog) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=nuktpls_gatsby-theme-boilerplate-blog&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=nuktpls_gatsby-theme-boilerplate-blog) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=nuktpls_gatsby-theme-boilerplate-blog&metric=bugs)](https://sonarcloud.io/summary/new_code?id=nuktpls_gatsby-theme-boilerplate-blog) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nuktpls_gatsby-theme-boilerplate-blog&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=nuktpls_gatsby-theme-boilerplate-blog) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=nuktpls_gatsby-theme-boilerplate-blog&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=nuktpls_gatsby-theme-boilerplate-blog)
+- **`[v.0.8.x:next]`**: There's a bugfix needed into MD en (default) pages
 
 ---
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/nuktpls/gatsby-theme-boilerplate-blog)
+# As Casamenteiras GatsbyJS Theme
 
----
+## How to start?
 
-# Boilerplate Blog
+First run:
 
-#### Boilerplate Blog _by [Edu4Dev](https://edu4.dev)_
+```
+npm i && npm run develop --workspace=gatsby-theme-v5-boilerplate
+```
 
-**Engine Agent:** GatsbyJS/ReactJS - Javascript Framework
+Commands:
 
-**Engine SubAgent:** Gatsby Theme
+```
+npm run COMMAND --workspace=gatsby-theme-v5-boilerplate
 
-**Gatsby Theme Name:** Boilerplate Blog
+npm run dev --workspace=gatsby-theme-v5-boilerplate
+npm run build --workspace=gatsby-theme-v5-boilerplate
+npm run clean --workspace=gatsby-theme-v5-boilerplate
+```
 
-**Author:** Edu4Dev - Milton Bolonha
+Clean n' dev:
 
-**Description:** Boilerplate Blog is a template for creating
-a [blog like the one here](htts//boilerplate-blog.netlify.app).
+```
+npm run clean && npm run dev --workspace=gatsby-theme-v5-boilerplate
+```
+
+#### As Casamenteiras GatsbyJS Theme _by [As Casamenteiras](https://AsCasamenteiras.netlify.app/)_
+
+**Engine Agent:** GatsbyJS/ReactJS - Javascript Framework and NPM Workspaces
+
+**Engine SubAgent:** RÖÖM Workspace
+
+**Gatsby Theme Name:** As Casamenteiras GatsbyJS Theme
+
+**Author:** As Casamenteiras
+
+**Description:** As Casamenteiras GatsbyJS Theme it's the theme for GatsbyJS.
 
 It's also a platform web creators choose to build professional
 GatsbyJS HTML customized structures.
@@ -35,7 +51,7 @@ GatsbyJS HTML customized structures.
 
 **Plugin Install:** `npm i`
 
-**Theme Start Install:** `yarn workspace engine dev`
+**Theme Start Install:** `npm i && npm run dev -w room-workspace --trace-warnings --verbose`
 
 **Version:** 0.0.1
 
@@ -47,7 +63,7 @@ GatsbyJS HTML customized structures.
 
 Don't mail me yet. Unless you want to make some kind of friendship.
 
-Milton Bolonha <miltonbolonha@gmail.com>
+As Casamenteiras <contato@ascasamenteiras.com.br>
 
 ## 🎓 Learning Gatsby
 

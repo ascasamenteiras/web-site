@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: false
+agent: postPage
+schema: ["pages"]
+description: xxx
+slug: qual-diferenca-assessoria-cerimonial-recepcao-casamentos
+helperI18n: ["pt-BR:/qual-diferenca-assessoria-cerimonial-recepcao-casamentos/"]
 title: Qual é a diferença entre assessoria, cerimonial e recepção de casamentos?
 headline: Encontre tudo o que você precisa saber sobre a cor Viva Magenta, a cor do ano 2023.
 date: 2022-12-01T09:30:00+00:00

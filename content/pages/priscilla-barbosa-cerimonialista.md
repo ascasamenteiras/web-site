@@ -1,6 +1,9 @@
 ---
 topology: pages
 status: true
+agent: singlePage
+schema: ["pages"]
+helperI18n: ["pt-BR:/xxx/"]
 title: Priscilla Barbosa Cerimonialista
 description: Foram mais de 50 casais felizes subindo ao altar junto com a Pri. É consultora na área de eventos. Formada em Gestão de Negócios pela USP-ESALQ, com título de MBA.
 slug: priscilla-barbosa-cerimonialista

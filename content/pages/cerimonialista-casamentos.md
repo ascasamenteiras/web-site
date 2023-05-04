@@ -1,6 +1,9 @@
 ---
 topology: pages
 status: true
+agent: singlePage
+schema: ["pages"]
+helperI18n: ["pt-BR:/xxx/"]
 title: Cerimonialista de Casamentos
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: cerimonialista-casamentos

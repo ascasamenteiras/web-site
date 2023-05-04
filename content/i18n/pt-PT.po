@@ -1,0 +1,685 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.1.0"
+"Report-Msgid-Bugs-To:"
+"POT-Creation-Date: 2023-02-21T18:28:33.282Z"
+"PO-Revision-Date: 2023-02-21T18:28:33.282Z"
+"MIME-Version: 1.0"
+"Content-Type: text/plain; charset=UTF-8"
+"Content-Transfer-Encoding: 8bit"
+"X-Generator: po-transformer 1.1.0"
+
+#. locales.0
+#: locales.0
+#| en-US
+msgid "locales.0"
+msgstr "en-US"
+
+#. locales.1
+#: locales.1
+#| de-DE
+msgid "locales.1"
+msgstr "de-DE"
+
+#. locales.2
+#: locales.2
+#| fr-FR
+msgid "locales.2"
+msgstr "fr-FR"
+
+#. locales.3
+#: locales.3
+#| es-ES
+msgid "locales.3"
+msgstr "es-ES"
+
+#. locales.4
+#: locales.4
+#| nl-NL
+msgid "locales.4"
+msgstr "nl-NL"
+
+#. locales.5
+#: locales.5
+#| pt-PT
+msgid "locales.5"
+msgstr "pt-BR"
+
+#. locales.6
+#: locales.6
+#| ru-RU
+msgid "locales.6"
+msgstr "ru-RU"
+
+
+#. schema.0.card.0.brandAppVersion
+#: schema.0.card.0.brandAppVersion
+#| 0.6.0
+msgid "schema.0.card.0.brandAppVersion"
+msgstr "0.6.0"
+
+#. schema.0.card.0.cardLocale
+#: schema.0.card.0.cardLocale
+#| pt-PT
+msgid "schema.0.card.0.cardLocale"
+msgstr "pt-BR"
+
+#. schema.0.card.0.brandIntl
+#: schema.0.card.0.brandIntl
+#| en-US
+msgid "schema.0.card.0.brandIntl"
+msgstr "en-US"
+
+#. schema.0.card.0.brandPerson
+#: schema.0.card.0.brandPerson
+#| As Casamenteiras
+msgid "schema.0.card.0.brandPerson"
+msgstr "As Casamenteiras"
+
+#. schema.0.card.0.brandName
+#: schema.0.card.0.brandName
+#| As Casamenteiras
+msgid "schema.0.card.0.brandName"
+msgstr "As Casamenteiras"
+
+#. schema.0.card.0.brandAppName
+#: schema.0.card.0.brandAppName
+#| As Casamenteiras - Gatsby Theme
+msgid "schema.0.card.0.brandAppName"
+msgstr "As Casamenteiras - Gatsby Theme"
+
+#. schema.0.card.0.brandSlugName
+#: schema.0.card.0.brandSlugName
+#| as-casamenteiras
+msgid "schema.0.card.0.brandSlugName"
+msgstr "as-casamenteiras"
+
+#. schema.0.card.0.brandShortName
+#: schema.0.card.0.brandShortName
+#| As Casamenteiras
+msgid "schema.0.card.0.brandShortName"
+msgstr "As Casamenteiras"
+
+#. schema.0.card.0.brandPascalName
+#: schema.0.card.0.brandPascalName
+#| AsCasamenteiras
+msgid "schema.0.card.0.brandPascalName"
+msgstr "AsCasamenteiras"
+
+#. schema.0.card.0.brandDescription
+#: schema.0.card.0.brandDescription
+#| Nativo (indígena), filho de espanhóis sefarditas, descendente de nigerianos e outras misturas étnicas, As Casamenteiras se apresenta como homem indígena. Um rosto comum. Sua voz doce é rasgada pelo seu drive único.
+msgid "schema.0.card.0.brandDescription"
+msgstr "Nativo (indígena), filho de espanhóis sefarditas, descendente de nigerianos e outras misturas étnicas, As Casamenteiras se apresenta como homem indígena. Um rosto comum. Sua voz doce é rasgada pelo seu drive único."
+
+#. schema.0.card.0.brandUrl
+#: schema.0.card.0.brandUrl
+#| https://ascasamenteiras.com.br
+msgid "schema.0.card.0.brandUrl"
+msgstr "https://ascasamenteiras.com.br"
+
+#. schema.0.card.0.brandLogo
+#: schema.0.card.0.brandLogo
+#| rectangular-logo.png
+msgid "schema.0.card.0.brandLogo"
+msgstr "rectangular-logo.png"
+
+#. schema.0.card.0.brandCardImage
+#: schema.0.card.0.brandCardImage
+#| boilerplate-banner.jpg
+msgid "schema.0.card.0.brandCardImage"
+msgstr "boilerplate-banner.jpg"
+
+#. schema.0.card.0.brandLogoTransparent
+#: schema.0.card.0.brandLogoTransparent
+#| logo-fundo-transparent-900-w.png
+msgid "schema.0.card.0.brandLogoTransparent"
+msgstr "logo-fundo-transparent-900-w.png"
+
+#. schema.0.card.0.brandPhone
+#: schema.0.card.0.brandPhone
+#| +49 714114152301
+msgid "schema.0.card.0.brandPhone"
+msgstr "+49 714114152301"
+
+#. schema.0.card.0.brandSeoDivisor
+#: schema.0.card.0.brandSeoDivisor
+#| -
+msgid "schema.0.card.0.brandSeoDivisor"
+msgstr "-"
+
+#. schema.0.card.0.brandHexMainColor
+#: schema.0.card.0.brandHexMainColor
+#| #058b8c
+msgid "schema.0.card.0.brandHexMainColor"
+msgstr "#058b8c"
+
+#. schema.0.card.0.brandHexHelperColor
+#: schema.0.card.0.brandHexHelperColor
+#| #373737
+msgid "schema.0.card.0.brandHexHelperColor"
+msgstr "#373737"
+
+#. schema.0.card.0.brandEmail
+#: schema.0.card.0.brandEmail
+#| cerimonial@ascasamenteiras.com.br
+msgid "schema.0.card.0.brandEmail"
+msgstr "cerimonial@ascasamenteiras.com.br"
+
+#. schema.0.card.0.brandPromoEmail
+#: schema.0.card.0.brandPromoEmail
+#| cerimonial@ascasamenteiras.com.br
+msgid "schema.0.card.0.brandPromoEmail"
+msgstr "cerimonial@ascasamenteiras.com.br"
+
+#. schema.0.card.0.brandGithub
+#: schema.0.card.0.brandGithub
+#| https://github.com/ascasamenteiras/
+msgid "schema.0.card.0.brandGithub"
+msgstr "https://github.com/ascasamenteiras/"
+
+#. schema.0.card.0.brandAppRepo
+#: schema.0.card.0.brandAppRepo
+#| https://github.com/ascasamenteiras/web-site/
+msgid "schema.0.card.0.brandAppRepo"
+msgstr "https://github.com/ascasamenteiras/web-site/"
+
+#. schema.0.card.0.brandKeywords.0.key
+#: schema.0.card.0.brandKeywords.0.key
+#| As Casamenteiras
+msgid "schema.0.card.0.brandKeywords.0.key"
+msgstr "As Casamenteiras"
+
+
+#. schema.0.card.0.brandKeywords.1.key
+#: schema.0.card.0.brandKeywords.1.key
+#| farm
+msgid "schema.0.card.0.brandKeywords.1.key"
+msgstr "farm"
+
+
+#. schema.0.card.0.brandKeywords.2.key
+#: schema.0.card.0.brandKeywords.2.key
+#| wedding
+msgid "schema.0.card.0.brandKeywords.2.key"
+msgstr "wedding"
+
+
+#. schema.0.card.0.brandKeywords.3.key
+#: schema.0.card.0.brandKeywords.3.key
+#| robots
+msgid "schema.0.card.0.brandKeywords.3.key"
+msgstr "robots"
+
+
+#. schema.0.card.0.brandKeywords.4.key
+#: schema.0.card.0.brandKeywords.4.key
+#| service
+msgid "schema.0.card.0.brandKeywords.4.key"
+msgstr "service"
+
+
+
+#. schema.0.card.0.brandLinkTree.website
+#: schema.0.card.0.brandLinkTree.website
+#| https://ascasamenteiras.com.br/
+msgid "schema.0.card.0.brandLinkTree.website"
+msgstr "https://ascasamenteiras.com.br/"
+
+#. schema.0.card.0.brandLinkTree.github
+#: schema.0.card.0.brandLinkTree.github
+#| https://github.com/ascasamenteiras/web-site/
+msgid "schema.0.card.0.brandLinkTree.github"
+msgstr "https://github.com/ascasamenteiras/web-site/"
+
+
+#. schema.0.card.0.brandHighlights
+#: schema.0.card.0.brandHighlights
+#| null
+msgid "schema.0.card.0.brandHighlights"
+msgstr "null"
+
+#. schema.0.card.0.brandPersonFamilyBio
+#: schema.0.card.0.brandPersonFamilyBio
+#| null
+msgid "schema.0.card.0.brandPersonFamilyBio"
+msgstr "null"
+
+#. schema.0.card.0.brandPersonBusinessHistory
+#: schema.0.card.0.brandPersonBusinessHistory
+#| null
+msgid "schema.0.card.0.brandPersonBusinessHistory"
+msgstr "null"
+
+#. schema.0.card.0.brandPersonBusinessBio
+#: schema.0.card.0.brandPersonBusinessBio
+#| null
+msgid "schema.0.card.0.brandPersonBusinessBio"
+msgstr "null"
+
+#. schema.0.card.0.brandTopologyDivName
+#: schema.0.card.0.brandTopologyDivName
+#| null
+msgid "schema.0.card.0.brandTopologyDivName"
+msgstr "null"
+
+#. schema.0.card.0.brandTopologyDivSlug
+#: schema.0.card.0.brandTopologyDivSlug
+#| null
+msgid "schema.0.card.0.brandTopologyDivSlug"
+msgstr "null"
+
+#. schema.0.card.0.brandVideoUrl
+#: schema.0.card.0.brandVideoUrl
+#| null
+msgid "schema.0.card.0.brandVideoUrl"
+msgstr "null"
+
+#. schema.0.card.0.brandVideoText
+#: schema.0.card.0.brandVideoText
+#| null
+msgid "schema.0.card.0.brandVideoText"
+msgstr "null"
+
+#. schema.0.card.0.datePublished
+#: schema.0.card.0.datePublished
+#| 06 de fevereiro de 2023
+msgid "schema.0.card.0.datePublished"
+msgstr "06 de fevereiro de 2023"
+
+#. schema.0.card.0.trailingSlash
+#: schema.0.card.0.trailingSlash
+#| always
+msgid "schema.0.card.0.trailingSlash"
+msgstr "always"
+
+
+
+#. schema.0.card.0.imageFormats.0
+#: schema.0.card.0.imageFormats.0
+#| webp
+msgid "schema.0.card.0.imageFormats.0"
+msgstr "webp"
+
+
+
+
+
+
+
+
+
+
+
+
+#. schema.0.card.0.contentPath
+#: schema.0.card.0.contentPath
+#| content
+msgid "schema.0.card.0.contentPath"
+msgstr "content"
+
+#. schema.0.card.0.staticImagesPath
+#: schema.0.card.0.staticImagesPath
+#| static/images/
+msgid "schema.0.card.0.staticImagesPath"
+msgstr "static/images/"
+
+#. schema.0.card.0.themePath
+#: schema.0.card.0.themePath
+#| gatsby-theme-v5-boilerplate
+msgid "schema.0.card.0.themePath"
+msgstr "gatsby-theme-v5-boilerplate"
+
+
+#. schema.0.card.0.technicalOfficer
+#: schema.0.card.0.technicalOfficer
+#| As Casamenteiras<contato@ascasamenteiras.com.br>
+msgid "schema.0.card.0.technicalOfficer"
+msgstr "As Casamenteiras<contato@ascasamenteiras.com.br>"
+
+#. schema.0.card.0.pagesHelper.globals.footerLegend
+#: schema.0.card.0.pagesHelper.globals.footerLegend
+#| Simplify sustainable agriculture and make it affordable for every farmer
+msgid "schema.0.card.0.pagesHelper.globals.footerLegend"
+msgstr "Simplify sustainable agriculture and make it affordable for every farmer"
+
+#. schema.0.card.0.pagesHelper.globals.copyright
+#: schema.0.card.0.pagesHelper.globals.copyright
+#| Copyright © As Casamenteiras
+msgid "schema.0.card.0.pagesHelper.globals.copyright"
+msgstr "Copyright © As Casamenteiras"
+
+#. schema.0.card.0.pagesHelper.globals.privacyPolicy
+#: schema.0.card.0.pagesHelper.globals.privacyPolicy
+#| Privacy Policy
+msgid "schema.0.card.0.pagesHelper.globals.privacyPolicy"
+msgstr "Privacy Policy"
+
+#. schema.0.card.0.pagesHelper.globals.imprint
+#: schema.0.card.0.pagesHelper.globals.imprint
+#| Imprint
+msgid "schema.0.card.0.pagesHelper.globals.imprint"
+msgstr "Imprint"
+
+#. schema.0.card.0.pagesHelper.globals.termsConditions
+#: schema.0.card.0.pagesHelper.globals.termsConditions
+#| Terms and conditions
+msgid "schema.0.card.0.pagesHelper.globals.termsConditions"
+msgstr "Terms and conditions"
+
+#. schema.0.card.0.pagesHelper.globals.contactUs
+#: schema.0.card.0.pagesHelper.globals.contactUs
+#| Contact Us
+msgid "schema.0.card.0.pagesHelper.globals.contactUs"
+msgstr "Contact Us"
+
+#. schema.0.card.0.pagesHelper.globals.notAvailableRedirectLocale
+#: schema.0.card.0.pagesHelper.globals.notAvailableRedirectLocale
+#| de
+msgid "schema.0.card.0.pagesHelper.globals.notAvailableRedirectLocale"
+msgstr "de"
+
+#. schema.0.card.0.pagesHelper.globals.notAvailableLocale
+#: schema.0.card.0.pagesHelper.globals.notAvailableLocale
+#| Not all content is available in English.
+msgid "schema.0.card.0.pagesHelper.globals.notAvailableLocale"
+msgstr "Not all content is available in English."
+
+#. schema.0.card.0.pagesHelper.globals.openGerman
+#: schema.0.card.0.pagesHelper.globals.openGerman
+#| Open site in German
+msgid "schema.0.card.0.pagesHelper.globals.openGerman"
+msgstr "Open site in German"
+
+#. schema.0.card.0.pagesHelper.globals.datasheet
+#: schema.0.card.0.pagesHelper.globals.datasheet
+#| Datasheet
+msgid "schema.0.card.0.pagesHelper.globals.datasheet"
+msgstr "Datasheet"
+
+
+#. schema.0.card.0.pagesHelper.jobs.mainTitle
+#: schema.0.card.0.pagesHelper.jobs.mainTitle
+#| Open positions
+msgid "schema.0.card.0.pagesHelper.jobs.mainTitle"
+msgstr "Open positions"
+
+#. schema.0.card.0.pagesHelper.jobs.tasksTitle
+#: schema.0.card.0.pagesHelper.jobs.tasksTitle
+#| Tasks and responsibilities
+msgid "schema.0.card.0.pagesHelper.jobs.tasksTitle"
+msgstr "Tasks and responsibilities"
+
+#. schema.0.card.0.pagesHelper.jobs.qualificationsTitle
+#: schema.0.card.0.pagesHelper.jobs.qualificationsTitle
+#| Required qualifications 
+msgid "schema.0.card.0.pagesHelper.jobs.qualificationsTitle"
+msgstr "Required qualifications "
+
+#. schema.0.card.0.pagesHelper.jobs.firstName
+#: schema.0.card.0.pagesHelper.jobs.firstName
+#| First name
+msgid "schema.0.card.0.pagesHelper.jobs.firstName"
+msgstr "First name"
+
+#. schema.0.card.0.pagesHelper.jobs.lastName
+#: schema.0.card.0.pagesHelper.jobs.lastName
+#| Last name
+msgid "schema.0.card.0.pagesHelper.jobs.lastName"
+msgstr "Last name"
+
+#. schema.0.card.0.pagesHelper.jobs.email
+#: schema.0.card.0.pagesHelper.jobs.email
+#| Email
+msgid "schema.0.card.0.pagesHelper.jobs.email"
+msgstr "Email"
+
+#. schema.0.card.0.pagesHelper.jobs.phoneNumber
+#: schema.0.card.0.pagesHelper.jobs.phoneNumber
+#| Phone number
+msgid "schema.0.card.0.pagesHelper.jobs.phoneNumber"
+msgstr "Phone number"
+
+#. schema.0.card.0.pagesHelper.jobs.button
+#: schema.0.card.0.pagesHelper.jobs.button
+#| View Openings
+msgid "schema.0.card.0.pagesHelper.jobs.button"
+msgstr "View Openings"
+
+#. schema.0.card.0.pagesHelper.jobs.privacyPolicy
+#: schema.0.card.0.pagesHelper.jobs.privacyPolicy
+#| as-casamenteiras.com is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. For information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our <a href='/en/privacy-policy'>privacy policy</a>.
+msgid "schema.0.card.0.pagesHelper.jobs.privacyPolicy"
+msgstr "as-casamenteiras.com is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. For information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our <a href='/en/privacy-policy'>privacy policy</a>."
+
+#. schema.0.card.0.pagesHelper.jobs.applyButton
+#: schema.0.card.0.pagesHelper.jobs.applyButton
+#| Apply
+msgid "schema.0.card.0.pagesHelper.jobs.applyButton"
+msgstr "Apply"
+
+#. schema.0.card.0.pagesHelper.jobs.acceptMission
+#: schema.0.card.0.pagesHelper.jobs.acceptMission
+#| I adhere to the mission of As Casamenteiras to simplify ,sustainable agriculture and make it available for every farmer
+msgid "schema.0.card.0.pagesHelper.jobs.acceptMission"
+msgstr "I adhere to the mission of As Casamenteiras to simplify ,sustainable agriculture and make it available for every farmer"
+
+#. schema.0.card.0.pagesHelper.jobs.acceptPrivacyPolicy
+#: schema.0.card.0.pagesHelper.jobs.acceptPrivacyPolicy
+#| I accept the privacy policy
+msgid "schema.0.card.0.pagesHelper.jobs.acceptPrivacyPolicy"
+msgstr "I accept the privacy policy"
+
+#. schema.0.card.0.pagesHelper.jobs.sendApplicationButton
+#: schema.0.card.0.pagesHelper.jobs.sendApplicationButton
+#| Send application
+msgid "schema.0.card.0.pagesHelper.jobs.sendApplicationButton"
+msgstr "Send application"
+
+#. schema.0.card.0.pagesHelper.jobs.applyPrintText
+#: schema.0.card.0.pagesHelper.jobs.applyPrintText
+#| Please apply online at <a href='https://ascasamenteiras.com.br/en/careers'>as-casamenteiras.com/en/careers</a>.
+msgid "schema.0.card.0.pagesHelper.jobs.applyPrintText"
+msgstr "Please apply online at <a href='https://ascasamenteiras.com.br/en/careers'>as-casamenteiras.com/en/careers</a>."
+
+#. schema.0.card.0.pagesHelper.jobs.inOtherLanguages
+#: schema.0.card.0.pagesHelper.jobs.inOtherLanguages
+#| In other languages
+msgid "schema.0.card.0.pagesHelper.jobs.inOtherLanguages"
+msgstr "In other languages"
+
+#. schema.0.card.0.pagesHelper.jobs.formThankYou
+#: schema.0.card.0.pagesHelper.jobs.formThankYou
+#| Thank you for submitting the form!
+msgid "schema.0.card.0.pagesHelper.jobs.formThankYou"
+msgstr "Thank you for submitting the form!"
+
+#. schema.0.card.0.pagesHelper.jobs.genders
+#: schema.0.card.0.pagesHelper.jobs.genders
+#| m/f/d
+msgid "schema.0.card.0.pagesHelper.jobs.genders"
+msgstr "m/f/d"
+
+
+
+#. schema.0.card.0.pagesHelper.datasheet.title
+#: schema.0.card.0.pagesHelper.datasheet.title
+#| Datasheet - As Casamenteiras
+msgid "schema.0.card.0.pagesHelper.datasheet.title"
+msgstr "Datasheet - As Casamenteiras"
+
+
+#. schema.0.card.0.pagesHelper.index.sectionOneMainTitle
+#: schema.0.card.0.pagesHelper.index.sectionOneMainTitle
+#| Powerful, Energy-efficient And Autonomous
+msgid "schema.0.card.0.pagesHelper.index.sectionOneMainTitle"
+msgstr "Powerful, Energy-efficient And Autonomous"
+
+#. schema.0.card.0.pagesHelper.index.sectionOneTrackLegend
+#: schema.0.card.0.pagesHelper.index.sectionOneTrackLegend
+#| Track width
+msgid "schema.0.card.0.pagesHelper.index.sectionOneTrackLegend"
+msgstr "Track width"
+
+#. schema.0.card.0.pagesHelper.index.sectionOneTrackParagraph
+#: schema.0.card.0.pagesHelper.index.sectionOneTrackParagraph
+#| Easily adaptable to your crops
+msgid "schema.0.card.0.pagesHelper.index.sectionOneTrackParagraph"
+msgstr "Easily adaptable to your crops"
+
+#. schema.0.card.0.pagesHelper.index.sectionOneSlopesLegend
+#: schema.0.card.0.pagesHelper.index.sectionOneSlopesLegend
+#| Slopes
+msgid "schema.0.card.0.pagesHelper.index.sectionOneSlopesLegend"
+msgstr "Slopes"
+
+#. schema.0.card.0.pagesHelper.index.sectionOneSlopesParagraph
+#: schema.0.card.0.pagesHelper.index.sectionOneSlopesParagraph
+#| 4-wheel drive, crab steering in slopes, low weight
+msgid "schema.0.card.0.pagesHelper.index.sectionOneSlopesParagraph"
+msgstr "4-wheel drive, crab steering in slopes, low weight"
+
+#. schema.0.card.0.pagesHelper.index.sectionOneConsumptionLegend
+#: schema.0.card.0.pagesHelper.index.sectionOneConsumptionLegend
+#| Consumption
+msgid "schema.0.card.0.pagesHelper.index.sectionOneConsumptionLegend"
+msgstr "Consumption"
+
+#. schema.0.card.0.pagesHelper.index.sectionOneConsumptionParagraph
+#: schema.0.card.0.pagesHelper.index.sectionOneConsumptionParagraph
+#| Fully electrical, light-weight, low CO2 footprint, no hydraulics
+msgid "schema.0.card.0.pagesHelper.index.sectionOneConsumptionParagraph"
+msgstr "Fully electrical, light-weight, low CO2 footprint, no hydraulics"
+
+#. schema.0.card.0.pagesHelper.index.sectionOneAutonomousLegend
+#: schema.0.card.0.pagesHelper.index.sectionOneAutonomousLegend
+#| Autonomous
+msgid "schema.0.card.0.pagesHelper.index.sectionOneAutonomousLegend"
+msgstr "Autonomous"
+
+#. schema.0.card.0.pagesHelper.index.sectionOneAutonomousParagraph
+#: schema.0.card.0.pagesHelper.index.sectionOneAutonomousParagraph
+#| Fully autonomous, optional remote supervision over internet, 30h autonomy (through range extender).
+msgid "schema.0.card.0.pagesHelper.index.sectionOneAutonomousParagraph"
+msgstr "Fully autonomous, optional remote supervision over internet, 30h autonomy (through range extender)."
+
+#. schema.0.card.0.pagesHelper.index.sectionTwoTitle
+#: schema.0.card.0.pagesHelper.index.sectionTwoTitle
+#| Precise And Reliable Plant Recognition
+msgid "schema.0.card.0.pagesHelper.index.sectionTwoTitle"
+msgstr "Precise And Reliable Plant Recognition"
+
+#. schema.0.card.0.pagesHelper.index.sectionTwoPlantsLegend
+#: schema.0.card.0.pagesHelper.index.sectionTwoPlantsLegend
+#| Plants
+msgid "schema.0.card.0.pagesHelper.index.sectionTwoPlantsLegend"
+msgstr "Plants"
+
+#. schema.0.card.0.pagesHelper.index.sectionTwoPlantsParagraph
+#: schema.0.card.0.pagesHelper.index.sectionTwoPlantsParagraph
+#| Cabbage, lettuce varieties, onions, corn, sugar beet, pumpkin, field bean, potato, canola, soybean, wheat...
+msgid "schema.0.card.0.pagesHelper.index.sectionTwoPlantsParagraph"
+msgstr "Cabbage, lettuce varieties, onions, corn, sugar beet, pumpkin, field bean, potato, canola, soybean, wheat..."
+
+#. schema.0.card.0.pagesHelper.index.sectionTwoPlantsTwoLegend
+#: schema.0.card.0.pagesHelper.index.sectionTwoPlantsTwoLegend
+#| Plant size
+msgid "schema.0.card.0.pagesHelper.index.sectionTwoPlantsTwoLegend"
+msgstr "Plant size"
+
+#. schema.0.card.0.pagesHelper.index.sectionTwoPlantsTwoParagraph
+#: schema.0.card.0.pagesHelper.index.sectionTwoPlantsTwoParagraph
+#| Distinguishes small plants (starting from cotyledon stage), day and night
+msgid "schema.0.card.0.pagesHelper.index.sectionTwoPlantsTwoParagraph"
+msgstr "Distinguishes small plants (starting from cotyledon stage), day and night"
+
+#. schema.0.card.0.pagesHelper.index.sectionTwoReabilityLegend
+#: schema.0.card.0.pagesHelper.index.sectionTwoReabilityLegend
+#| Reliability
+msgid "schema.0.card.0.pagesHelper.index.sectionTwoReabilityLegend"
+msgstr "Reliability"
+
+#. schema.0.card.0.pagesHelper.index.sectionTwoReabilityParagraph
+#: schema.0.card.0.pagesHelper.index.sectionTwoReabilityParagraph
+#| Largest annotated plant image database in the world
+msgid "schema.0.card.0.pagesHelper.index.sectionTwoReabilityParagraph"
+msgstr "Largest annotated plant image database in the world"
+
+#. schema.0.card.0.pagesHelper.index.sectionThreeTitle
+#: schema.0.card.0.pagesHelper.index.sectionThreeTitle
+#| Robust And Effective Weeding
+msgid "schema.0.card.0.pagesHelper.index.sectionThreeTitle"
+msgstr "Robust And Effective Weeding"
+
+#. schema.0.card.0.pagesHelper.index.sectionThreeHerbicideLegend
+#: schema.0.card.0.pagesHelper.index.sectionThreeHerbicideLegend
+#| Herbicide
+msgid "schema.0.card.0.pagesHelper.index.sectionThreeHerbicideLegend"
+msgstr "Herbicide"
+
+#. schema.0.card.0.pagesHelper.index.sectionThreeHerbicideParagraph
+#: schema.0.card.0.pagesHelper.index.sectionThreeHerbicideParagraph
+#| Fully mechanical treatment with rotating chopper for harshest conditions
+msgid "schema.0.card.0.pagesHelper.index.sectionThreeHerbicideParagraph"
+msgstr "Fully mechanical treatment with rotating chopper for harshest conditions"
+
+#. schema.0.card.0.pagesHelper.index.sectionThreeAccuracyLegend
+#: schema.0.card.0.pagesHelper.index.sectionThreeAccuracyLegend
+#| Accuracy
+msgid "schema.0.card.0.pagesHelper.index.sectionThreeAccuracyLegend"
+msgstr "Accuracy"
+
+#. schema.0.card.0.pagesHelper.index.sectionThreeAccuracyParagraph
+#: schema.0.card.0.pagesHelper.index.sectionThreeAccuracyParagraph
+#| Removal of weeds close to the crop, even when crops and weeds overlap
+msgid "schema.0.card.0.pagesHelper.index.sectionThreeAccuracyParagraph"
+msgstr "Removal of weeds close to the crop, even when crops and weeds overlap"
+
+#. schema.0.card.0.pagesHelper.index.sectionThreeWeedingLegend
+#: schema.0.card.0.pagesHelper.index.sectionThreeWeedingLegend
+#| Weeding
+msgid "schema.0.card.0.pagesHelper.index.sectionThreeWeedingLegend"
+msgstr "Weeding"
+
+#. schema.0.card.0.pagesHelper.index.sectionThreeWeedingParagraph
+#: schema.0.card.0.pagesHelper.index.sectionThreeWeedingParagraph
+#| In-row and inter-row weeding, large and small weeds, hard and sandy soils
+msgid "schema.0.card.0.pagesHelper.index.sectionThreeWeedingParagraph"
+msgstr "In-row and inter-row weeding, large and small weeds, hard and sandy soils"
+
+#. schema.0.card.0.pagesHelper.index.collaborations
+#: schema.0.card.0.pagesHelper.index.collaborations
+#| Collaborations
+msgid "schema.0.card.0.pagesHelper.index.collaborations"
+msgstr "Collaborations"
+
+#. schema.0.card.0.pagesHelper.index.joinTeam
+#: schema.0.card.0.pagesHelper.index.joinTeam
+#| Want To Join Our Team?
+msgid "schema.0.card.0.pagesHelper.index.joinTeam"
+msgstr "Want To Join Our Team?"
+
+#. schema.0.card.0.pagesHelper.index.foundedHistory
+#: schema.0.card.0.pagesHelper.index.foundedHistory
+#| Founded in 2020, As Casamenteiras has embraced a remote work culture from the very beginning. With flexible working hours and no central office, much of the development work can be done from your home or preferred location, without the hassle and costs of commuting. For everything that cannot be done remotely, we do have a varying number of testing locations in Germany, Spain and other parts of Europe. We are a young team of enthusiasts on a mission to make plant cultivation more sustainable.
+msgid "schema.0.card.0.pagesHelper.index.foundedHistory"
+msgstr "Founded in 2020, As Casamenteiras has embraced a remote work culture from the very beginning. With flexible working hours and no central office, much of the development work can be done from your home or preferred location, without the hassle and costs of commuting. For everything that cannot be done remotely, we do have a varying number of testing locations in Germany, Spain and other parts of Europe. We are a young team of enthusiasts on a mission to make plant cultivation more sustainable."
+
+#. schema.0.card.0.pagesHelper.index.openPosition
+#: schema.0.card.0.pagesHelper.index.openPosition
+#| See open position
+msgid "schema.0.card.0.pagesHelper.index.openPosition"
+msgstr "See open position"
+
+#. schema.0.card.0.pagesHelper.index.starRepo
+#: schema.0.card.0.pagesHelper.index.starRepo
+#| Star this repo
+msgid "schema.0.card.0.pagesHelper.index.starRepo"
+msgstr "Star this repo"
+
+
+
+
+
+
+

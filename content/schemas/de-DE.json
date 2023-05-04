@@ -1,0 +1,171 @@
+{
+  "locales": [
+    "pt-BR",
+    "en-US",
+    "de-DE",
+    "fr-FR",
+    "es-ES",
+    "nl-NL",
+    "ru-RU",
+    "jp-JP"
+  ],
+  "schema": [
+    {
+      "card": [
+        {
+          "brandAppVersion": "0.6.0",
+          "cardLocale": "de-DE",
+          "brandIntl": "pt-BR",
+          "brandPerson": "As Casamenteiras",
+          "brandName": "Equipe As Casamenteiras",
+          "brandAppName": "As Casamenteiras - Gatsby Theme",
+          "brandSlugName": "as-casamenteiras",
+          "brandShortName": "As Casamenteiras",
+          "brandPascalName": "AsCasamenteiras",
+          "brandDescription": "Die As Casamenteiras ist ein Unternehmen aus Ludwigsburg in Baden-Württemberg. Das Ziel ist es, den Landwirten - eine nachhaltige und gleichzeitig wirtschaftliche Alternative zur heutigen Unkrautbekämpfung zu eröffnen. Die Kernkompetenz des jungen Unternehmens besteht in einer robusten KI-basierten Pflanzenerkennung und effizienten elektromechanischen Hackaggregaten. Der As Casamenteiras ist das erste Produkt der Ludwigsburger - ein vollelektrischer Hackroboter mit Allradantrieb, der sicher und autonom die Bestände von Unkraut befreit.",
+          "brandUrl": "https://ascasamenteiras.com.br",
+          "brandLogo": "rectangular-logo.png",
+          "brandCardImage": "boilerplate-banner.jpg",
+          "brandLogoTransparent": "logo-fundo-transparent-900-w.png",
+          "brandPhone": "(16) 99245-2437",
+          "brandPhoneI18n": "+55 16 992452437",
+          "brandSeoDivisor": "-",
+          "brandHexMainColor": "#058b8c",
+          "brandHexHelperColor": "#373737",
+          "brandEmail": "cerimonial@ascasamenteiras.com.br",
+          "brandPromoEmail": "promo@ascasamenteiras.com.br",
+          "brandGithub": "https://github.com/ascasamenteiras/",
+          "brandAppRepo": "https://github.com/ascasamenteiras/web-site/",
+          "brandKeywords": [
+            "As Casamenteiras",
+            "assessoria em eventos",
+            "cerimonialista",
+            "casamentos",
+            "cerimonial",
+            "cerimonialista ribeirão preto",
+            "como montar um cerimonial de casamento",
+            "mini-wedding",
+            "wedding planner service",
+            "planner",
+            "cerimonial de casamento",
+            "mini wedding ribeirão preto",
+            "mini wedding",
+            "casamentos",
+            "casamento",
+            "casamenteiras"
+          ],
+          "brandLinkTree": {
+            "website": "https://ascasamenteiras.com.br/",
+            "github": "https://github.com/ascasamenteiras/web-site/"
+          },
+          "sameAs": {
+            "website": "https://ascasamenteiras.com.br/",
+            "instagram": "https://www.instagram.com/ascasamenteiras_",
+            "zankyou": "https://www.zankyou.com.br/f/as-casamenteiras-976737",
+            "casamentos": "https://www.casamentos.com.br/cerimonialista/as-casamenteiras--e192771",
+            "facebook": "https://www.facebook.com/pricerimonial",
+            "youtube": "https://www.youtube.com/@ascasamenteiras",
+            "github": "https://github.com/ascasamenteiras/web-site",
+            "deezer": "https://www.deezer.com/br/artist/181009227",
+            "spotify": "https://open.spotify.com/artist/5scJ7dkADVQQ52kLcRA1mV",
+            "itunes": "https://music.apple.com/br/artist/priscilla-barbosa/1641419117"
+          },
+          "brandHighlights": "null",
+          "fbAppID": "null",
+          "questions": [
+            "Você conhece As Casamenteiras?:A empresa oferece assessoria completa ou personalizada e consultorias avulsas. Priscilla Barbosa atua desde 2012, cursou gestão de eventos com grandes especialistas, é consultora na área. É formada em Gestão de Negócios pela USP-ESALQ."
+          ],
+          "brandPersonFamilyBio": "null",
+          "brandPersonBusinessHistory": "null",
+          "brandPersonBusinessBio": "null",
+          "brandTopologyDivName": "null",
+          "brandTopologyDivSlug": "null",
+          "brandVideoUrl": "null",
+          "brandVideoText": "null",
+          "datePublished": "06 de fevereiro de 2023",
+          "trailingSlash": "always",
+          "imageMaxWidth": 2200,
+          "imageQuality": 86,
+          "imageFormats": ["webp"],
+          "imageBreakPoints": [28, 44, 200, 350, 450, 750, 1080, 1200, 1920],
+          "contentPath": "content",
+          "staticImagesPath": "room-workspace/static/images/",
+          "themePath": "gatsby-theme-v5-boilerplate",
+          "postPerPage": 6,
+          "technicalOfficer": "As Casamenteiras<contato@ascasamenteiras.com.br>",
+          "pagesHelper": {
+            "globals": {
+              "footerLegend": "DEKOLONISIERE JETZT",
+              "copyright": "DEKOLONISIERE JETZT",
+              "privacyPolicy": "Copyright © As Casamenteiras",
+              "imprint": "Imprint",
+              "termsConditions": "Terms and conditions",
+              "contactUs": "Contact Us",
+              "notAvailableRedirectLocale": "en",
+              "notAvailableLocale": "Not all content is available in English.",
+              "openGerman": "Open site in German",
+              "datasheet": "Datenblatt"
+            },
+            "jobs": {
+              "mainTitle": "Open positions",
+              "tasksTitle": "Tasks and responsibilities",
+              "qualificationsTitle": "Required qualifications ",
+              "firstName": "First name",
+              "lastName": "Last name",
+              "email": "Email",
+              "phoneNumber": "Phone number",
+              "button": "View Openings",
+              "privacyPolicy": "as-casamenteiras.com is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. For information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our <a href='/en/privacy-policy'>privacy policy</a>.",
+              "applyButton": "Apply",
+              "acceptMission": "I adhere to the mission of As Casamenteiras to simplify ,sustainable agriculture and make it available for every farmer",
+              "acceptPrivacyPolicy": "I accept the privacy policy",
+              "sendApplicationButton": "Send application",
+              "applyPrintText": "Please apply online at <a href='https://ascasamenteiras.com.br/en/careers'>as-casamenteiras.com/en/careers</a>.",
+              "inOtherLanguages": "In other languages",
+              "formThankYou": "Thank you for submitting the form!",
+              "genders": "m/f/d"
+            },
+            "datasheet": {
+              "status": true,
+              "title": "Datasheet - As Casamenteiras"
+            },
+            "index": {
+              "SEO": {
+                "title": "Assessoria e Cerimonial de Casamento - As Casamenteiras, Todo Amor Importa!",
+                "description": "As Casamenteiras lança a sua primeira música de trabalho aos 35 anos, o compositor fez a sua primeira música aos 11 anos de idade falando sobre o provisório e o divino."
+              },
+              "sectionOneMainTitle": "Veranstaltungen",
+              "sectionOneTrackLegend": "Decolonize Jetzt! Musikvideo (akustisch)",
+              "sectionOneTrackParagraph": "Ribeirão Preto",
+              "sectionOneSlopesLegend": "Hanglage",
+              "sectionOneSlopesParagraph": "Allradantrieb​, Hundegang bei Seitenhang​, geringes Gewicht",
+              "sectionOneConsumptionLegend": "Verbrauch",
+              "sectionOneConsumptionParagraph": "Voll-elektrisch, leicht, geringe CO2-Bilanz, keine Ölhydraulik",
+              "sectionOneAutonomousLegend": "Autonom",
+              "sectionOneAutonomousParagraph": "Voll-autonom​, Fernüberwachung über Internet​, 30h Autonomie (durch Range-Extender)",
+              "sectionTwoTitle": "Shop",
+              "sectionTwoPlantsLegend": "Demnächst verfügbar",
+              "sectionTwoPlantsParagraph": "Erstaunliche, authentische und seltene Produkte.",
+              "sectionTwoPlantsTwoLegend": "Plant size",
+              "sectionTwoPlantsTwoParagraph": "Distinguishes small plants (starting from cotyledon stage), day and night",
+              "sectionTwoReabilityLegend": "Reliability",
+              "sectionTwoReabilityParagraph": "Largest annotated plant image database in the world",
+              "sectionThreeTitle": "Vergangene Veranstaltungen",
+              "sectionThreeHerbicideLegend": "Undefiniert",
+              "sectionThreeHerbicideParagraph": "Ribeirão Preto",
+              "sectionThreeAccuracyLegend": "Accuracy",
+              "sectionThreeAccuracyParagraph": "Removal of weeds close to the crop, even when crops and weeds overlap",
+              "sectionThreeWeedingLegend": "Weeding",
+              "sectionThreeWeedingParagraph": "In-row and inter-row weeding, large and small weeds, hard and sandy soils",
+              "collaborations": "Partner",
+              "joinTeam": "Möchten Sie mehr erfahren?",
+              "foundedHistory": "As Casamenteiras präsentiert ein akustisches Solomusikgenre des nationalen Rocks. Während des Auftritts wird der Künstler etwa 70 Minuten auf der Bühne stehen und Schreie des Widerstands gegen kolonialistische Effekte und Strukturen singen und interpretieren.",
+              "openPosition": "Folgen Sie @AsCasamenteiras_",
+              "starRepo": "Star this repo"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+schema: ["pages"]
+description: xxx
+slug: viva-magenta-cor-pantone-ano-2023
+helperI18n: ["pt-BR:/viva-magenta-cor-pantone-ano-2023/"]
 title: Viva Magenta - A Cor Pantone do Ano 2023
 headline: Encontre tudo o que você precisa saber sobre a cor Viva Magenta, a cor do ano 2023.
 date: 2022-12-12T02:30:00+00:00
