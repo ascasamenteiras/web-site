@@ -4,14 +4,13 @@ import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 import { navigate } from "gatsby";
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
-import * as moment from "moment";
+import moment from "moment";
 import "moment/locale/pt-br";
 import VMasker from "vanilla-masker";
 import HalfDivWrapper from "@Slices/HalfDivWrapper";
+import Cookies from "universal-cookie";
 
 require("moment-precise-range-plugin");
-
-
 
 function validateEmail(email) {
   if (email.slice(-1) === ".") {
@@ -41,8 +40,6 @@ function validateWhats(input) {
   }
 }
 
-
-
 const HalfDiv = ({ pageContext, location }) => {
   const [btnClick, setBtnClick] = useState(null);
   const [email, setEmail] = useState("");
@@ -53,7 +50,6 @@ const HalfDiv = ({ pageContext, location }) => {
   const [peopleASuccess, setPeopleASuccess] = useState(false);
   const [peopleB, setPeopleB] = useState("");
   const [peopleBSuccess, setPeopleBSuccess] = useState(false);
-  const [confirmDate, setConfirmDate] = useState(null);
   const [city, setCity] = useState("");
   const [citySuccess, setCitySuccess] = useState(false);
 
@@ -61,7 +57,6 @@ const HalfDiv = ({ pageContext, location }) => {
   const [peopleAWhatsSuccess, setPeopleAWhatsSuccess] = useState("");
 
   const [honey, setHoney] = useState("");
-  const [msg, setMsg] = useState("");
   const [success, setSuccess] = useState(null);
 
   const [countdown, setCountdown] = useState([12, 60, 60]);
@@ -82,7 +77,6 @@ const HalfDiv = ({ pageContext, location }) => {
   const refCity = useRef();
 
   // PageContext
-
   const {
     title,
     questions,
@@ -98,7 +92,6 @@ const HalfDiv = ({ pageContext, location }) => {
     imgHolder,
     bgPatternImg,
     boilerplateLogoSmall,
-    site,
     bandeiraWhats,
     bandeiraQuestion,
     dateImageButton,
@@ -108,12 +101,12 @@ const HalfDiv = ({ pageContext, location }) => {
     marcaImg,
     voucherImg,
     pdfImg,
-    schemasJSON
+    schemasJSON,
   } = useSiteMetadatas();
 
   const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
   const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
-  const defaultQuestions = ['site.siteMetadata.questions:opiriri'];
+  const defaultQuestions = ["site.siteMetadata.questions:opiriri"];
 
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogoSmall.childrenImageSharp[0]);
@@ -129,20 +122,41 @@ const HalfDiv = ({ pageContext, location }) => {
 
   let urlParams = null;
   let longDate = null;
-  let shortDate = null;
   let diffDays = null;
   let months = null;
   let condEndPromo = null;
-  // console.log('location?.search?.includes("success=1") ')
-  // console.log(location?.search?.includes("success=1") )
-  const successUrl = location?.search?.includes("success=1") 
-  
-  function handleSuccess(params) {
-    setSuccess(params);
-  }
-  // if (location?.search?.includes("success=1") && success !== true) {
-  //   handleSuccess(true)
-  // }
+
+  const cookies = new Cookies();
+
+  const hasSuccessCookies =
+    cookies.get("successValue") ||
+    cookies.set("successValue", null, {
+      path: "/",
+    });
+
+  const cookiesValues =
+    cookies.get("submitedValues") && hasSuccessCookies
+      ? cookies.get("submitedValues")
+      : cookies.set("submitedValues", null, {
+          path: "/",
+        });
+  console.log("cookiesValues ");
+  console.log(cookiesValues);
+  console.log("hasSuccessCookies");
+  console.log(hasSuccessCookies);
+
+  // vou gravar um obj disso e fazer
+  //  ?: success=1
+  //  &: fullDate=${date}
+  //  &: peopleA=${peopleA}
+  //  &: whatsPeopleA=${peopleAWhats}
+  //  &: emailPeopleA=${email}
+  //  &: peopleB=${peopleB}
+  //  &: city=${city}
+  //  &: confirmDate=${new Date()}`
+
+  const successUrl = location?.search?.includes("success=1");
+
   if (location?.search?.includes("success=1") && !condEndPromo) {
     urlParams = new Proxy(new URLSearchParams(location?.search), {
       get: (searchParams, prop) => searchParams.get(prop),
@@ -164,7 +178,7 @@ const HalfDiv = ({ pageContext, location }) => {
       year: "numeric",
     };
     longDate = casalDate.toLocaleString("pt-BR", options1);
-    shortDate = casalDate.toLocaleString("pt-BR", options2);
+
     const diffTime = Math.abs(casalDate - now);
     diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     const diffResult = Math.round((casalDate - now) / (1000 * 60 * 60 * 24));
@@ -233,7 +247,7 @@ const HalfDiv = ({ pageContext, location }) => {
   const handleHoneypotChange = honeyTyping => {
     setHoney(honeyTyping);
   };
-  
+
   function handleClick(e, clickedBtn) {
     if (e) {
       e.preventDefault();
@@ -320,7 +334,7 @@ const HalfDiv = ({ pageContext, location }) => {
   );
   const card = y[0].schema[0].card[0];
   const brandPromoEmail = card.brandPromoEmail;
-  const siteUrlf= card.brandUrl
+  const siteUrlf = card.brandUrl;
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -328,10 +342,8 @@ const HalfDiv = ({ pageContext, location }) => {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-    let siteUrl = myForm["searchUrl"].value; //xxx
     let landingUrl = myForm["landingUrl"].value;
     const botFieldPrevent = myForm["searchUrl"].value !== "" || false;
-    const siteUrlSlashCheck = siteUrl.slice(-1) === "/" || false;
     const landingSlashCheck = landingUrl.slice(-1) === "/" || false;
 
     if (!formData) {
@@ -346,9 +358,7 @@ const HalfDiv = ({ pageContext, location }) => {
     if (botFieldPrevent) {
       return console.log({ message: "Você não deveria estar aqui!" });
     }
-    if (siteUrlSlashCheck) {
-      siteUrl = siteUrl.slice(0, -1);
-    }
+
     if (landingSlashCheck) {
       landingUrl = landingUrl.slice(0, -1);
     }
@@ -359,42 +369,54 @@ const HalfDiv = ({ pageContext, location }) => {
       }?success=1&fullDate=${date}&peopleA=${peopleA}&whatsPeopleA=${peopleAWhats}&emailPeopleA=${email}&peopleB=${peopleB}&city=${city}&confirmDate=${new Date()}`
     );
 
-
-
     const payload = {
       from: brandPromoEmail,
       to: email,
       subject: `${peopleA}, confirme o seu e-mail - As Casamenteiras - Todo Amor Importa!`,
       parameters: {
         PROSPECT_NAME: peopleA,
-        LANDING_URL: fullUrl
+        LANDING_URL: fullUrl,
       },
     };
+    cookies.remove("submitedValues");
+    cookies.remove("successValue");
+
+    cookies.set("submitedValues", fullUrl, {
+      path: "/",
+    });
+    cookies.set("successValue", false, {
+      path: "/",
+    });
     //call to the Netlify Function you created
-    await fetch(
-      `${process.env.GATSBY_URL}/.netlify/functions/emails/maio`,
-      {
-        method: "POST",
-        headers: {
-          "netlify-emails-secret": process.env.GATSBY_NETLIFY_EMAILS_SECRET,
-        },
-        body: JSON.stringify(payload),
-      }
-    )
+    await fetch(`${process.env.GATSBY_URL}/.netlify/functions/emails/maio`, {
+      method: "POST",
+      headers: {
+        "netlify-emails-secret": process.env.GATSBY_NETLIFY_EMAILS_SECRET,
+      },
+      body: JSON.stringify(payload),
+    })
       .then(res => {
         if (res.status >= 400) {
           throw new Error("Bad response from server");
         }
         setLoadingForm(true);
+        cookies.set("successValue", true, {
+          path: "/",
+        });
+
         return navigate(`?success=0&email=${email}`);
       })
       .catch(err => {
         console.error(err);
       });
+
+    console.log("newww cookiesValues ");
+    console.log(cookiesValues);
+    console.log("newww hasSuccessCookies");
+    console.log(hasSuccessCookies);
   };
 
   return (
-
     <HalfDivWrapper
       backgroundImage={{
         src: bgPatternSrc,
@@ -414,7 +436,7 @@ const HalfDiv = ({ pageContext, location }) => {
         classes: success ? "half-div success" : "half-div",
         pageQuestions: questions || defaultQuestions,
         featuredImage:
-          'https://ascasamenteiras.com.br' +
+          "https://ascasamenteiras.com.br" +
           featuredImage.childrenImageSharp[0].gatsbyImageData.images.fallback
             .src,
         cardImage:
@@ -423,9 +445,9 @@ const HalfDiv = ({ pageContext, location }) => {
         articleBody: content,
         mainLogo: imgHolder,
         description: excerpt,
-        serverUrl: location?.origin || 'https://ascasamenteiras.com.br' || "/",
+        serverUrl: location?.origin || "https://ascasamenteiras.com.br" || "/",
         articleUrl: location?.href,
-        social: 'site.siteMetadata.social.twitter',
+        social: "site.siteMetadata.social.twitter",
         badgesWhats: (
           <GatsbyImage
             image={badgeWhats}
@@ -451,13 +473,7 @@ const HalfDiv = ({ pageContext, location }) => {
       }}
     >
       <main>
-        <div
-          className={
-            successUrl 
-            ? "hidden"
-            : "main-image"
-          }
-        >
+        <div className={successUrl ? "hidden" : "main-image"}>
           <GatsbyImage
             image={mainImage}
             alt={"Algo aqui"}
@@ -520,7 +536,10 @@ const HalfDiv = ({ pageContext, location }) => {
                       name='form-name'
                       value='ac-subscribe-landing-form'
                     />
-                    <input name='landingUrl' defaultValue={location?.pathname} />
+                    <input
+                      name='landingUrl'
+                      defaultValue={location?.pathname}
+                    />
                     <input name='searchUrl' defaultValue={location?.search} />
                     <input
                       name='logoImage'
@@ -545,7 +564,7 @@ const HalfDiv = ({ pageContext, location }) => {
                     <input name='CTABUTTON' defaultValue={emailCTA} />
                     <input
                       name='siteUrl'
-                      defaultValue={'https://ascasamenteiras.com.br'}
+                      defaultValue={"https://ascasamenteiras.com.br"}
                     />
                     <input name='nowDate' defaultValue={new Date()} />
                   </label>
@@ -605,36 +624,6 @@ const HalfDiv = ({ pageContext, location }) => {
                         >
                           OK
                         </button>
-                        {/* <input
-                        className='datepart '
-                        type='text'
-                        pattern='[0-9]*'
-                        placeholder='DD'
-                        size='2'
-                        maxLength='2'
-                        name='DATE1[day]'
-                        id='mce-DATE1-day'
-                      />
-                      <input
-                        className='datepart '
-                        type='text'
-                        pattern='[0-9]*'
-                        placeholder='MM'
-                        size='2'
-                        maxLength='2'
-                        name='DATE1[month]'
-                        id='mce-DATE1-month'
-                      />
-                      <input
-                        className='datepart '
-                        type='text'
-                        pattern='[0-9]*'
-                        placeholder='AAAA'
-                        size='4'
-                        maxLength='4'
-                        name='DATE1[year]'
-                        id='mce-DATE1-year'
-                      /> */}
                       </div>
                       <span
                         className='close-modal'
@@ -1115,7 +1104,6 @@ const HalfDiv = ({ pageContext, location }) => {
         </div>
       </main>
     </HalfDivWrapper>
-  
   );
 };
 export default HalfDiv;
