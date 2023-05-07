@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+schema: ["pages"]
+slug: vencemos-premio-zankyou-2022
+description: xxx
+helperI18n: ["pt-BR:/vencemos-premio-zankyou-2022/"]
 title: Vencemos o Prêmio Internacional Zankyou ZIWA Awards 2022
 headline: As Casamenteiras é a vencedora do Prêmio Internacional Zankyou ZIWA Awards 2022 na categoria Cerimonialista de Casamentos.
 date: 2022-12-01T09:30:00+00:00

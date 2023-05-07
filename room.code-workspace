@@ -14,7 +14,7 @@
     },
     {
       "name": "Promo - Conteúdo",
-      "path": "./content/landing"
+      "path": "./content/landings"
     },
     {
       "name": "Raiz",
@@ -65,7 +65,12 @@
     },
     "prettier.jsxSingleQuote": true,
     "prettier.arrowParens": "avoid",
+<<<<<<< HEAD
     "window.zoomLevel": 1,
     "workbench.colorTheme": "Edu4Dev Dark"
+=======
+    "window.zoomLevel": 2,
+    "workbench.colorTheme": "As Casamenteiras Dark"
+>>>>>>> feature/update-gatsby-v5
   }
 }

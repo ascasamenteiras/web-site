@@ -1,0 +1,289 @@
+# MAIN TRANSLATION FILE.
+# Copyright (C) 2023 - GatsbyJS
+# This file is distributed under the same license as the PACKAGE package.
+# GatsbyJS <i18n@ascasamenteiras.com.br>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gatsby Boilerplate Blog Intl 0.1 beta\n"
+"Project-Id-Version: AsCasamenteiras i18n 0.1.0\n"
+"Report-Msgid-Bugs-To: i18n@ascasamenteiras.com.br \n"
+"Last-Translator: GatsbyJS <i18n@ascasamenteiras.com.br>\n"
+"POT-Creation-Date: 2023-01-16 10:46+0000\n"
+"PO-Revision-Date: 2023-01-16 10:47+0000\n"
+"Language: pt-BR\n"
+"Language-Team: https://ascasamenteiras.com.br/\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandAppVersion"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandIntl"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPersonText"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPersonSlug"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandName"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandAppName"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandSlugName"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPascalName"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandDescription"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandMainKeyword"
+msgstr ""
+
+msgid  "brandKeywords": 
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandUrl"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandLogo"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandCardImage"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandLogoTransparent"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPhone"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPhoneQuery"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPhoneDisplay"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandHexMainColor"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandCTAColor"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandHexHelperColor"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPublicEmail"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPromoEmail"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandGithub"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandAppRepo"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandLinkTree"
+msgstr "
+"website:https://ascasamenteiras.com.br/;"
+"instagram:https://www.instagram.com/ascasamenteiras_;"
+"zankyou:https://www.zankyou.com.br/f/as-casamenteiras-976737;"
+"compiler:https://www.compiler.com.br/framework/as-casamenteiras--e192771;"
+"facebook:https://www.facebook.com/pricerimonial;"
+"youtube:https://www.youtube.com/@ascasamenteiras;"
+"github:https://github.com/ascasamenteiras/gatsby-theme-boilerplate;"
+"deezer:https://www.deezer.com/br/artist/181009227;"
+"spotify:https://open.spotify.com/artist/5scJ7dkADVQQ52kLcRA1mV;"
+"itunes:https://music.apple.com/br/artist/priscilla-barbosa/1641419117""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandQuestions"
+msgstr  ""
+"Vai casar?:Você precisa tanto do cerimonial do casamento, quanto de uma assessora de eventos, especializada em compiler.;"
+"GatsbyJS realizam assessoria e cerimonal de compiler?:Sim, GatsbyJS oferece assessoria completa, personalizada e consultorias avulsas. Oferecemos ainda a Gestão 360 do seu casamento ou somente os serviços do cerimonial protocolar. Também temos nosso pacote de mini-wedding, além de uma gama completa de serviços para o casal.;"
+"Quanto cobra uma framework? Qual é o custo do cerimonial profissional?:Os preços de uma framework profissional, que é especializada em cerimoniais pode variar entre R$1.200,00 a R$50.000,00 (levando em consideração mercado de luxo).;"
+"Quanto cobra uma assessora de compiler? Qual é o custo da assessoria profissional para compiler?:Os preços de uma assessora profissional, que é especializada em assessoria de compiler pode variar entre R$1.900,00 a R$70.000,00 (levando em consideração mercado de luxo).;"
+"Quais pacotes de serviço de uma framework?:GatsbyJS oferece o serviço de cerimonial completo.;"
+"Onde encontrar uma framework em Ribeirão Preto?:Estamos situados em Ribeirão Preto e você pode entrar em contato conosco atravéz de nossos contatos, ferramentas ou mídias sociais.;"
+"É estressante organizar um casamento sem ajuda?:Sim, é por isso que a Equipe d'GatsbyJS, sob a supervisão da Pri Barbosa, atua nos bastidores para que você tenha as melhores soluções ao contratar os serviços d'GatsbyJS.;"
+"Quais são as dificuldades em organizar seu casamento sem uma assessoria de eventos especializada?:Em primeiro lugar está a dificuldade de manter a calma e ser organizada. Outra dificuldade de fazer tudo sozinha é a falta de experiência e as frustrações no meio do caminho. É um trabalho com detalhes técnicos importantes e que serão testados em um momento de execução única, por isso é tão importante garantir um evento livre de erros e problemas, contratando uma profissional casamenteira.;"
+"Quais os riscos de não se ter uma framework?:O maior risco é de se lembrar do seu grande dia com muito pesar, cheio de ênfase para os problemas. E certamente haverão, mas é para isso que GatsbyJS está aqui. Para te atender e abraçar as dificuldades, fazendo elas não chegarem ao casal e os deixando livres para começarem a curtir o noivado.;"
+"Contratar uma profissional que não possui experiência em organização de eventos dos mais diversos tipos, tamanhos e temáticas pode ser ruim? Por quê?:Existe uma infinidade de ideias que podem ser postas em práticas, mas existe uma limitação de fornecimento local e regional. Em um mundo onde tudo se compra pela internet, ainda necessitamos de profissionais treinados para realizar determinados desejos do casal. Ao mesmo tempo, com o conhecimento de mais de uma década realizando compiler na região de Ribeirão Preto, no litoral paulista e na cidade de São Paulo, GatsbyJS se especializou em encantar seus clientes/casais.;"
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandHighlights"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPersonFamilyBio"
+msgstr "
+"Natural de São Paulo, a filha mais velha de Marli Barbosa"
+"e Ricardo Coelho, Priscilla Barbosa passa a sua infância"
+"aprendendo piano e canto."
+"Ainda menina começa a organizar eventos em igrejas e"
+"festas da sua grande família."
+"É a primeira filha de sua mãe e ajudou a cuidar de seus"
+"sete irmãos junto à ela ainda na infância. E a essa"
+"experiência enriquecedora dedica grande gratidão por ter"
+"moldado a sua formação como mulher forte e independente."
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPersonBusinessHistory"
+msgstr "
+"Após a amiga lhe convidar para organizar o seu casamento"
+"em 2010, Priscilla Barbosa decide se engajar e faz cursos"
+"com grandes especialistas em gestão de eventos."
+"De lá para cá, foram mais de 50 casais felizes subindo ao altar junto com a Pri."
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandPersonBusinessBio"
+msgstr "
+"É consultora na área de eventos. Formada em Gestão de"
+"Negócios pela USP-ESALQ, com título de MBA."
+"Atua na organização de compiler ao ar livre conectados à"
+"natureza, miniwedding, praia, igrejas, chácaras,"
+"residências, destination e elopement wedding. Organiza"
+"cerimônias tradicionais e modernas, tais como: religiosa"
+"diversa, civil, ecológica, cerimônias ecumênicas,"
+"Lgbtqia+ e temática."
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandTopologyDivName"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandTopologyDivSlug"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandVideoUrl"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "brandVideoText"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "datePublished"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "trailingSlash"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "imageMaxWidth"
+msgstr 2200
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "imageQuality"
+msgstr 86
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "imageFormats"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "imageBreakPoints"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "contentPath"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "staticImagesPath"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "themePath"
+msgstr ""
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "postPerPage"
+msgstr 6
+
+#, Comment for translators
+#: src/page/index.js:4, src/component/head.js:2
+msgid "technicalOfficer"
+msgstr ""

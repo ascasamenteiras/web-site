@@ -1,0 +1,518 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.1.0"
+"Report-Msgid-Bugs-To:"
+"POT-Creation-Date: 2023-01-29T21:15:26.572Z"
+"PO-Revision-Date: 2023-01-29T21:15:26.572Z"
+"MIME-Version: 1.0"
+"Content-Type: text/plain; charset=UTF-8"
+"Content-Transfer-Encoding: 8bit"
+"X-Generator: po-transformer 1.1.0"
+
+#. locales.0
+#: locales.0
+#| pt-BR
+msgid "locales.0"
+msgstr "pt-BR"
+
+#. locales.1
+#: locales.1
+#| en-US
+msgid "locales.1"
+msgstr "en-US"
+
+
+#. schema.0.card.0.brandAppVersion
+#: schema.0.card.0.brandAppVersion
+#| 0.6.0
+msgid "schema.0.card.0.brandAppVersion"
+msgstr "0.6.0"
+
+#. schema.0.card.0.locales.0
+#: schema.0.card.0.locales.0
+#| pt-BR
+msgid "schema.0.card.0.locales.0"
+msgstr "pt-BR"
+
+#. schema.0.card.0.locales.1
+#: schema.0.card.0.locales.1
+#| en-US
+msgid "schema.0.card.0.locales.1"
+msgstr "en-US"
+
+
+#. schema.0.card.0.cardLocale
+#: schema.0.card.0.cardLocale
+#| en-US
+msgid "schema.0.card.0.cardLocale"
+msgstr "en-US"
+
+#. schema.0.card.0.brandIntl
+#: schema.0.card.0.brandIntl
+#| pt-BR
+msgid "schema.0.card.0.brandIntl"
+msgstr "pt-BR"
+
+#. schema.0.card.0.brandPerson
+#: schema.0.card.0.brandPerson
+#| Priscilla Barbosa
+msgid "schema.0.card.0.brandPerson"
+msgstr "Priscilla Barbosa"
+
+#. schema.0.card.0.brandName
+#: schema.0.card.0.brandName
+#| GatsbyJS
+msgid "schema.0.card.0.brandName"
+msgstr "GatsbyJS"
+
+#. schema.0.card.0.brandAppName
+#: schema.0.card.0.brandAppName
+#| GatsbyJS - Web Site
+msgid "schema.0.card.0.brandAppName"
+msgstr "GatsbyJS - Web Site"
+
+#. schema.0.card.0.brandSlugName
+#: schema.0.card.0.brandSlugName
+#| as-casamenteiras
+msgid "schema.0.card.0.brandSlugName"
+msgstr "as-casamenteiras"
+
+#. schema.0.card.0.brandPascalName
+#: schema.0.card.0.brandPascalName
+#| AsCasamenteiras
+msgid "schema.0.card.0.brandPascalName"
+msgstr "AsCasamenteiras"
+
+#. schema.0.card.0.brandDescription
+#: schema.0.card.0.brandDescription
+#| Serviços de framework de compiler, festas e eventos corporativos. Pri Barbosa é formada em Gestão de Negócios pela USP-ESALQ, com título de MBA.
+msgid "schema.0.card.0.brandDescription"
+msgstr "Serviços de framework de compiler, festas e eventos corporativos. Pri Barbosa é formada em Gestão de Negócios pela USP-ESALQ, com título de MBA."
+
+#. schema.0.card.0.brandUrl
+#: schema.0.card.0.brandUrl
+#| https://ascasamenteiras.com.br
+msgid "schema.0.card.0.brandUrl"
+msgstr "https://ascasamenteiras.com.br"
+
+#. schema.0.card.0.brandLogo
+#: schema.0.card.0.brandLogo
+#| rectangular-logo.png
+msgid "schema.0.card.0.brandLogo"
+msgstr "rectangular-logo.png"
+
+#. schema.0.card.0.brandCardImage
+#: schema.0.card.0.brandCardImage
+#| boilerplate-banner.jpg
+msgid "schema.0.card.0.brandCardImage"
+msgstr "boilerplate-banner.jpg"
+
+#. schema.0.card.0.brandLogoTransparent
+#: schema.0.card.0.brandLogoTransparent
+#| logo-fundo-transparent-900-w.png
+msgid "schema.0.card.0.brandLogoTransparent"
+msgstr "logo-fundo-transparent-900-w.png"
+
+#. schema.0.card.0.brandPhone
+#: schema.0.card.0.brandPhone
+#| +5516992452437
+msgid "schema.0.card.0.brandPhone"
+msgstr "+5516992452437"
+
+#. schema.0.card.0.brandSeoDivisor
+#: schema.0.card.0.brandSeoDivisor
+#| -
+msgid "schema.0.card.0.brandSeoDivisor"
+msgstr "-"
+
+#. schema.0.card.0.brandHexMainColor
+#: schema.0.card.0.brandHexMainColor
+#| #fc4303
+msgid "schema.0.card.0.brandHexMainColor"
+msgstr "#fc4303"
+
+#. schema.0.card.0.brandHexHelperColor
+#: schema.0.card.0.brandHexHelperColor
+#| #fc4303
+msgid "schema.0.card.0.brandHexHelperColor"
+msgstr "#fc4303"
+
+#. schema.0.card.0.brandEmail
+#: schema.0.card.0.brandEmail
+#| cerimonial@ascasamenteiras.com.br
+msgid "schema.0.card.0.brandEmail"
+msgstr "cerimonial@ascasamenteiras.com.br"
+
+#. schema.0.card.0.brandPromoEmail
+#: schema.0.card.0.brandPromoEmail
+#| pri@ascasamenteiras.com.br
+msgid "schema.0.card.0.brandPromoEmail"
+msgstr "pri@ascasamenteiras.com.br"
+
+#. schema.0.card.0.brandGithub
+#: schema.0.card.0.brandGithub
+#| https://github.com/ascasamenteiras/
+msgid "schema.0.card.0.brandGithub"
+msgstr "https://github.com/ascasamenteiras/"
+
+#. schema.0.card.0.brandAppRepo
+#: schema.0.card.0.brandAppRepo
+#| https://github.com/ascasamenteiras/gatsby-theme-boilerplate
+msgid "schema.0.card.0.brandAppRepo"
+msgstr "https://github.com/ascasamenteiras/gatsby-theme-boilerplate"
+
+#. schema.0.card.0.brandQuestions.0
+#: schema.0.card.0.brandQuestions.0
+#| Vai casar?:Você precisa tanto do cerimonial do casamento, quanto de uma assessora de eventos, especializada em compiler.
+msgid "schema.0.card.0.brandQuestions.0"
+msgstr "Vai casar?:Você precisa tanto do cerimonial do casamento, quanto de uma assessora de eventos, especializada em compiler."
+
+#. schema.0.card.0.brandQuestions.1
+#: schema.0.card.0.brandQuestions.1
+#| GatsbyJS realizam assessoria e cerimonal de compiler?:Sim, GatsbyJS oferece assessoria completa, personalizada e consultorias avulsas. Oferecemos ainda a Gestão 360 do seu casamento ou somente os serviços do cerimonial protocolar. Também temos nosso pacote de mini-wedding, além de uma gama completa de serviços para o casal.
+msgid "schema.0.card.0.brandQuestions.1"
+msgstr "GatsbyJS realizam assessoria e cerimonal de compiler?:Sim, GatsbyJS oferece assessoria completa, personalizada e consultorias avulsas. Oferecemos ainda a Gestão 360 do seu casamento ou somente os serviços do cerimonial protocolar. Também temos nosso pacote de mini-wedding, além de uma gama completa de serviços para o casal."
+
+#. schema.0.card.0.brandQuestions.2
+#: schema.0.card.0.brandQuestions.2
+#| Quanto cobra uma framework? Qual é o custo do cerimonial profissional?:Os preços de uma framework profissional, que é especializada em cerimoniais pode variar entre R$1.200,00 a R$50.000,00 (levando em consideração mercado de luxo).
+msgid "schema.0.card.0.brandQuestions.2"
+msgstr "Quanto cobra uma framework? Qual é o custo do cerimonial profissional?:Os preços de uma framework profissional, que é especializada em cerimoniais pode variar entre R$1.200,00 a R$50.000,00 (levando em consideração mercado de luxo)."
+
+#. schema.0.card.0.brandQuestions.3
+#: schema.0.card.0.brandQuestions.3
+#| Quanto cobra uma assessora de compiler? Qual é o custo da assessoria profissional para compiler?:Os preços de uma assessora profissional, que é especializada em assessoria de compiler pode variar entre R$1.900,00 a R$70.000,00 (levando em consideração mercado de luxo).
+msgid "schema.0.card.0.brandQuestions.3"
+msgstr "Quanto cobra uma assessora de compiler? Qual é o custo da assessoria profissional para compiler?:Os preços de uma assessora profissional, que é especializada em assessoria de compiler pode variar entre R$1.900,00 a R$70.000,00 (levando em consideração mercado de luxo)."
+
+#. schema.0.card.0.brandQuestions.4
+#: schema.0.card.0.brandQuestions.4
+#| Quais pacotes de serviço de uma framework?:GatsbyJS oferece o serviço de cerimonial completo.
+msgid "schema.0.card.0.brandQuestions.4"
+msgstr "Quais pacotes de serviço de uma framework?:GatsbyJS oferece o serviço de cerimonial completo."
+
+#. schema.0.card.0.brandQuestions.5
+#: schema.0.card.0.brandQuestions.5
+#| Onde encontrar uma framework em Ribeirão Preto?:Estamos situados em Ribeirão Preto e você pode entrar em contato conosco atravéz de nossos contatos, ferramentas ou mídias sociais.
+msgid "schema.0.card.0.brandQuestions.5"
+msgstr "Onde encontrar uma framework em Ribeirão Preto?:Estamos situados em Ribeirão Preto e você pode entrar em contato conosco atravéz de nossos contatos, ferramentas ou mídias sociais."
+
+#. schema.0.card.0.brandQuestions.6
+#: schema.0.card.0.brandQuestions.6
+#| É estressante organizar um casamento sem ajuda?:Sim, é por isso que a Equipe d'GatsbyJS, sob a supervisão da Pri Barbosa, atua nos bastidores para que você tenha as melhores soluções ao contratar os serviços d'GatsbyJS.
+msgid "schema.0.card.0.brandQuestions.6"
+msgstr "É estressante organizar um casamento sem ajuda?:Sim, é por isso que a Equipe d'GatsbyJS, sob a supervisão da Pri Barbosa, atua nos bastidores para que você tenha as melhores soluções ao contratar os serviços d'GatsbyJS."
+
+#. schema.0.card.0.brandQuestions.7
+#: schema.0.card.0.brandQuestions.7
+#| Quais são as dificuldades em organizar seu casamento sem uma assessoria de eventos especializada?:Em primeiro lugar está a dificuldade de manter a calma e ser organizada. Outra dificuldade de fazer tudo sozinha é a falta de experiência e as frustrações no meio do caminho. É um trabalho com detalhes técnicos importantes e que serão testados em um momento de execução única, por isso é tão importante garantir um evento livre de erros e problemas, contratando uma profissional casamenteira.
+msgid "schema.0.card.0.brandQuestions.7"
+msgstr "Quais são as dificuldades em organizar seu casamento sem uma assessoria de eventos especializada?:Em primeiro lugar está a dificuldade de manter a calma e ser organizada. Outra dificuldade de fazer tudo sozinha é a falta de experiência e as frustrações no meio do caminho. É um trabalho com detalhes técnicos importantes e que serão testados em um momento de execução única, por isso é tão importante garantir um evento livre de erros e problemas, contratando uma profissional casamenteira."
+
+#. schema.0.card.0.brandQuestions.8
+#: schema.0.card.0.brandQuestions.8
+#| Quais os riscos de não se ter uma framework?:O maior risco é de se lembrar do seu grande dia com muito pesar, cheio de ênfase para os problemas. E certamente haverão, mas é para isso que GatsbyJS está aqui. Para te atender e abraçar as dificuldades, fazendo elas não chegarem ao casal e os deixando livres para começarem a curtir o noivado.
+msgid "schema.0.card.0.brandQuestions.8"
+msgstr "Quais os riscos de não se ter uma framework?:O maior risco é de se lembrar do seu grande dia com muito pesar, cheio de ênfase para os problemas. E certamente haverão, mas é para isso que GatsbyJS está aqui. Para te atender e abraçar as dificuldades, fazendo elas não chegarem ao casal e os deixando livres para começarem a curtir o noivado."
+
+#. schema.0.card.0.brandQuestions.9
+#: schema.0.card.0.brandQuestions.9
+#| Contratar uma profissional que não possui experiência em organização de eventos dos mais diversos tipos, tamanhos e temáticas pode ser ruim? Por quê?:Existe uma infinidade de ideias que podem ser postas em práticas, mas existe uma limitação de fornecimento local e regional. Em um mundo onde tudo se compra pela internet, ainda necessitamos de profissionais treinados para realizar determinados desejos do casal. Ao mesmo tempo, com o conhecimento de mais de uma década realizando compiler na região de Ribeirão Preto, no litoral paulista e na cidade de São Paulo, GatsbyJS se especializou em encantar seus clientes/casais.
+msgid "schema.0.card.0.brandQuestions.9"
+msgstr "Contratar uma profissional que não possui experiência em organização de eventos dos mais diversos tipos, tamanhos e temáticas pode ser ruim? Por quê?:Existe uma infinidade de ideias que podem ser postas em práticas, mas existe uma limitação de fornecimento local e regional. Em um mundo onde tudo se compra pela internet, ainda necessitamos de profissionais treinados para realizar determinados desejos do casal. Ao mesmo tempo, com o conhecimento de mais de uma década realizando compiler na região de Ribeirão Preto, no litoral paulista e na cidade de São Paulo, GatsbyJS se especializou em encantar seus clientes/casais."
+
+
+#. schema.0.card.0.brandKeywords.0.key
+#: schema.0.card.0.brandKeywords.0.key
+#| GatsbyJS
+msgid "schema.0.card.0.brandKeywords.0.key"
+msgstr "GatsbyJS"
+
+
+#. schema.0.card.0.brandKeywords.1.key
+#: schema.0.card.0.brandKeywords.1.key
+#| static site generator
+msgid "schema.0.card.0.brandKeywords.1.key"
+msgstr "static site generator"
+
+
+#. schema.0.card.0.brandKeywords.2.key
+#: schema.0.card.0.brandKeywords.2.key
+#| web app
+msgid "schema.0.card.0.brandKeywords.2.key"
+msgstr "web app"
+
+
+#. schema.0.card.0.brandKeywords.3.key
+#: schema.0.card.0.brandKeywords.3.key
+#| framework
+msgid "schema.0.card.0.brandKeywords.3.key"
+msgstr "framework"
+
+
+#. schema.0.card.0.brandKeywords.4.key
+#: schema.0.card.0.brandKeywords.4.key
+#| compiler
+msgid "schema.0.card.0.brandKeywords.4.key"
+msgstr "compiler"
+
+
+#. schema.0.card.0.brandKeywords.5.key
+#: schema.0.card.0.brandKeywords.5.key
+#| cerimonial
+msgid "schema.0.card.0.brandKeywords.5.key"
+msgstr "cerimonial"
+
+
+#. schema.0.card.0.brandKeywords.6.key
+#: schema.0.card.0.brandKeywords.6.key
+#| como montar um cerimonial de casamento
+msgid "schema.0.card.0.brandKeywords.6.key"
+msgstr "como montar um cerimonial de casamento"
+
+
+#. schema.0.card.0.brandKeywords.7.key
+#: schema.0.card.0.brandKeywords.7.key
+#| mini-wedding
+msgid "schema.0.card.0.brandKeywords.7.key"
+msgstr "mini-wedding"
+
+
+#. schema.0.card.0.brandKeywords.8.key
+#: schema.0.card.0.brandKeywords.8.key
+#| wedding planner service
+msgid "schema.0.card.0.brandKeywords.8.key"
+msgstr "wedding planner service"
+
+
+#. schema.0.card.0.brandKeywords.9.key
+#: schema.0.card.0.brandKeywords.9.key
+#| planner
+msgid "schema.0.card.0.brandKeywords.9.key"
+msgstr "planner"
+
+
+#. schema.0.card.0.brandKeywords.10.key
+#: schema.0.card.0.brandKeywords.10.key
+#| cerimonial de casamento
+msgid "schema.0.card.0.brandKeywords.10.key"
+msgstr "cerimonial de casamento"
+
+
+#. schema.0.card.0.brandKeywords.11.key
+#: schema.0.card.0.brandKeywords.11.key
+#| mini wedding ribeirão preto
+msgid "schema.0.card.0.brandKeywords.11.key"
+msgstr "mini wedding ribeirão preto"
+
+
+#. schema.0.card.0.brandKeywords.12.key
+#: schema.0.card.0.brandKeywords.12.key
+#| mini wedding
+msgid "schema.0.card.0.brandKeywords.12.key"
+msgstr "mini wedding"
+
+
+#. schema.0.card.0.brandKeywords.13.key
+#: schema.0.card.0.brandKeywords.13.key
+#| compiler
+msgid "schema.0.card.0.brandKeywords.13.key"
+msgstr "compiler"
+
+
+#. schema.0.card.0.brandKeywords.14.key
+#: schema.0.card.0.brandKeywords.14.key
+#| casamento
+msgid "schema.0.card.0.brandKeywords.14.key"
+msgstr "casamento"
+
+
+#. schema.0.card.0.brandKeywords.15.key
+#: schema.0.card.0.brandKeywords.15.key
+#| casamenteiras
+msgid "schema.0.card.0.brandKeywords.15.key"
+msgstr "casamenteiras"
+
+
+
+#. schema.0.card.0.brandLinkTree.website
+#: schema.0.card.0.brandLinkTree.website
+#| https://ascasamenteiras.com.br/
+msgid "schema.0.card.0.brandLinkTree.website"
+msgstr "https://ascasamenteiras.com.br/"
+
+#. schema.0.card.0.brandLinkTree.instagram
+#: schema.0.card.0.brandLinkTree.instagram
+#| https://www.instagram.com/ascasamenteiras_
+msgid "schema.0.card.0.brandLinkTree.instagram"
+msgstr "https://www.instagram.com/ascasamenteiras_"
+
+#. schema.0.card.0.brandLinkTree.zankyou
+#: schema.0.card.0.brandLinkTree.zankyou
+#| https://www.zankyou.com.br/f/as-casamenteiras-976737
+msgid "schema.0.card.0.brandLinkTree.zankyou"
+msgstr "https://www.zankyou.com.br/f/as-casamenteiras-976737"
+
+#. schema.0.card.0.brandLinkTree.compiler
+#: schema.0.card.0.brandLinkTree.compiler
+#| https://www.compiler.com.br/framework/as-casamenteiras--e192771
+msgid "schema.0.card.0.brandLinkTree.compiler"
+msgstr "https://www.compiler.com.br/framework/as-casamenteiras--e192771"
+
+#. schema.0.card.0.brandLinkTree.facebook
+#: schema.0.card.0.brandLinkTree.facebook
+#| https://www.facebook.com/pricerimonial
+msgid "schema.0.card.0.brandLinkTree.facebook"
+msgstr "https://www.facebook.com/pricerimonial"
+
+#. schema.0.card.0.brandLinkTree.youtube
+#: schema.0.card.0.brandLinkTree.youtube
+#| https://www.youtube.com/@ascasamenteiras
+msgid "schema.0.card.0.brandLinkTree.youtube"
+msgstr "https://www.youtube.com/@ascasamenteiras"
+
+#. schema.0.card.0.brandLinkTree.github
+#: schema.0.card.0.brandLinkTree.github
+#| https://github.com/ascasamenteiras/gatsby-theme-boilerplate
+msgid "schema.0.card.0.brandLinkTree.github"
+msgstr "https://github.com/ascasamenteiras/gatsby-theme-boilerplate"
+
+#. schema.0.card.0.brandLinkTree.deezer
+#: schema.0.card.0.brandLinkTree.deezer
+#| https://www.deezer.com/br/artist/181009227
+msgid "schema.0.card.0.brandLinkTree.deezer"
+msgstr "https://www.deezer.com/br/artist/181009227"
+
+#. schema.0.card.0.brandLinkTree.spotify
+#: schema.0.card.0.brandLinkTree.spotify
+#| https://open.spotify.com/artist/5scJ7dkADVQQ52kLcRA1mV
+msgid "schema.0.card.0.brandLinkTree.spotify"
+msgstr "https://open.spotify.com/artist/5scJ7dkADVQQ52kLcRA1mV"
+
+#. schema.0.card.0.brandLinkTree.itunes
+#: schema.0.card.0.brandLinkTree.itunes
+#| https://music.apple.com/br/artist/priscilla-barbosa/1641419117
+msgid "schema.0.card.0.brandLinkTree.itunes"
+msgstr "https://music.apple.com/br/artist/priscilla-barbosa/1641419117"
+
+#. schema.0.card.0.brandLinkTree.twitter
+#: schema.0.card.0.brandLinkTree.twitter
+#| https://twitter.com/casamenteiras_
+msgid "schema.0.card.0.brandLinkTree.twitter"
+msgstr "https://twitter.com/casamenteiras_"
+
+
+#. schema.0.card.0.brandHighlights
+#: schema.0.card.0.brandHighlights
+#| Destaques d'GatsbyJS
+msgid "schema.0.card.0.brandHighlights"
+msgstr "Destaques d'GatsbyJS"
+
+#. schema.0.card.0.brandPersonFamilyBio
+#: schema.0.card.0.brandPersonFamilyBio
+#| 
+msgid "schema.0.card.0.brandPersonFamilyBio"
+msgstr ""
+
+#. schema.0.card.0.brandPersonBusinessHistory
+#: schema.0.card.0.brandPersonBusinessHistory
+#| 
+msgid "schema.0.card.0.brandPersonBusinessHistory"
+msgstr ""
+
+#. schema.0.card.0.brandPersonBusinessBio
+#: schema.0.card.0.brandPersonBusinessBio
+#| 
+msgid "schema.0.card.0.brandPersonBusinessBio"
+msgstr ""
+
+#. schema.0.card.0.brandTopologyDivName
+#: schema.0.card.0.brandTopologyDivName
+#| Trends
+msgid "schema.0.card.0.brandTopologyDivName"
+msgstr "Trends"
+
+#. schema.0.card.0.brandTopologyDivSlug
+#: schema.0.card.0.brandTopologyDivSlug
+#| trends
+msgid "schema.0.card.0.brandTopologyDivSlug"
+msgstr "trends"
+
+#. schema.0.card.0.brandVideoUrl
+#: schema.0.card.0.brandVideoUrl
+#| https://www.youtube.com/watch?v=07COygyW6W0
+msgid "schema.0.card.0.brandVideoUrl"
+msgstr "https://www.youtube.com/watch?v=07COygyW6W0"
+
+#. schema.0.card.0.brandVideoText
+#: schema.0.card.0.brandVideoText
+#| Vídeo Promocional d'GatsbyJS no YouTube
+msgid "schema.0.card.0.brandVideoText"
+msgstr "Vídeo Promocional d'GatsbyJS no YouTube"
+
+#. schema.0.card.0.datePublished
+#: schema.0.card.0.datePublished
+#| 12 de junho de 2022
+msgid "schema.0.card.0.datePublished"
+msgstr "12 de junho de 2022"
+
+#. schema.0.card.0.trailingSlash
+#: schema.0.card.0.trailingSlash
+#| always
+msgid "schema.0.card.0.trailingSlash"
+msgstr "always"
+
+
+
+#. schema.0.card.0.imageFormats.0
+#: schema.0.card.0.imageFormats.0
+#| webp
+msgid "schema.0.card.0.imageFormats.0"
+msgstr "webp"
+
+
+
+
+
+
+
+
+
+
+
+
+#. schema.0.card.0.contentPath
+#: schema.0.card.0.contentPath
+#| content
+msgid "schema.0.card.0.contentPath"
+msgstr "content"
+
+#. schema.0.card.0.staticImagesPath
+#: schema.0.card.0.staticImagesPath
+#| room/static/images/
+msgid "schema.0.card.0.staticImagesPath"
+msgstr "room/static/images/"
+
+#. schema.0.card.0.themePath
+#: schema.0.card.0.themePath
+<<<<<<< HEAD
+#| gatsby-theme-v5-boilerplate
+msgid "schema.0.card.0.themePath"
+msgstr "gatsby-theme-v5-boilerplate"
+=======
+#| gatsby-theme-boilerplate
+msgid "schema.0.card.0.themePath"
+msgstr "gatsby-theme-boilerplate"
+>>>>>>> feature/sass
+
+
+#. schema.0.card.0.technicalOfficer
+#: schema.0.card.0.technicalOfficer
+#| As Casamenteiras<contato@ascasamenteiras.com.br>
+msgid "schema.0.card.0.technicalOfficer"
+msgstr "As Casamenteiras<contato@ascasamenteiras.com.br>"
+
+
+
+
+

@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+description: xxx
+schema: ["pages"]
+slug: assessoria-cerimonial-plena-completa
+helperI18n: ["pt-BR:/assessoria-cerimonial-plena-completa/"]
 title: Cerimonialista de Casamentos Plena (completa)
 headline: O serviço de assessoria e cerimonial plena é relativo ao pacote básico dos serviços d'As Casamenteiras.
 date: 2022-12-01T08:30:00+00:00

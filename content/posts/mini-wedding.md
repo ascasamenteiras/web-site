@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+schema: ["pages"]
+slug: mini-wedding
+description: xxx
+helperI18n: ["pt-BR:/mini-wedding/"]
 title: Mini Wedding
 headline: Está pensando em realizar um casamento ao estilo mini wedding? As Casamenteiras tem o serviço perfeito para você.
 date: 2022-12-01T09:00:00+00:00

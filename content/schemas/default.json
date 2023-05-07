@@ -1,0 +1,130 @@
+{
+  "locales": [
+    "pt-BR",
+    "en-US",
+    "de-DE",
+    "fr-FR",
+    "es-ES",
+    "nl-NL",
+    "ru-RU",
+    "jp-JP"
+  ],
+  "schema": [
+    {
+      "card": [
+        {
+          "brandAppVersion": "1.0.0",
+          "cardLocale": "pt-BR",
+          "brandIntl": "pt-BR",
+          "brandPerson": "As Casamenteiras",
+          "brandName": "Equipe As Casamenteiras",
+          "brandAppName": "As Casamenteiras - Gatsby Theme",
+          "brandSlugName": "as-casamenteiras",
+          "brandShortName": "As Casamenteiras",
+          "brandPascalName": "AsCasamenteiras",
+          "brandDescription": "Serviços de cerimonialista de casamentos para casamentos, produção de eventos festivos, cerimônias solenes e eventos corporativos. Realiza qualquer tipo de casamento, pois respeita todas as formas de amor. A empresa oferece assessoria completa ou personalizada e consultorias avulsas. Priscilla Barbosa atua desde 2012, cursou gestão de eventos com grandes especialistas, é consultora na área. É formada em Gestão de Negócios pela USP-ESALQ. Atua em organização de casamentos ao ar livre conectados à natureza, na praia (com especialistas), igrejas, chácaras, residências, destination e elopement wedding. Organiza cerimônias tradicionais e modernas, tais como: religiosa diversa, civil, ecológica, cerimônias ecumênicas , Lgbtqia+ e temática.",
+          "brandUrl": "https://ascasamenteiras.com.br",
+          "brandLogo": "rectangular-logo.png",
+          "brandCardImage": "boilerplate-banner.jpg",
+          "brandLogoTransparent": "logo-fundo-transparent-900-w.png",
+          "brandPhone": "(16) 99245-2437",
+          "brandPhoneI18n": "+55 16 992452437",
+          "brandSeoDivisor": "-",
+          "brandHexMainColor": "#058b8c",
+          "brandHexHelperColor": "#373737",
+          "brandEmail": "cerimonial@ascasamenteiras.com.br",
+          "brandPromoEmail": "cerimonial@ascasamenteiras.com.br",
+          "brandGithub": "https://github.com/ascasamenteiras/",
+          "brandAppRepo": "https://github.com/ascasamenteiras/web-site/",
+          "brandKeywords": [
+            "As Casamenteiras",
+            "assessoria em eventos",
+            "cerimonialista",
+            "casamentos",
+            "cerimonial",
+            "cerimonialista ribeirão preto",
+            "como montar um cerimonial de casamento",
+            "mini-wedding",
+            "wedding planner service",
+            "planner",
+            "cerimonial de casamento",
+            "mini wedding ribeirão preto",
+            "mini wedding",
+            "casamentos",
+            "casamento",
+            "casamenteiras"
+          ],
+          "brandLinkTree": {
+            "website": "https://ascasamenteiras.com.br/",
+            "github": "https://github.com/ascasamenteiras/web-site/"
+          },
+          "sameAs": {
+            "website": "https://ascasamenteiras.com.br/",
+            "instagram": "https://www.instagram.com/ascasamenteiras_",
+            "zankyou": "https://www.zankyou.com.br/f/as-casamenteiras-976737",
+            "casamentos": "https://www.casamentos.com.br/cerimonialista/as-casamenteiras--e192771",
+            "facebook": "https://www.facebook.com/pricerimonial",
+            "youtube": "https://www.youtube.com/@ascasamenteiras",
+            "github": "https://github.com/ascasamenteiras/web-site",
+            "deezer": "https://www.deezer.com/br/artist/181009227",
+            "spotify": "https://open.spotify.com/artist/5scJ7dkADVQQ52kLcRA1mV",
+            "itunes": "https://music.apple.com/br/artist/priscilla-barbosa/1641419117"
+          },
+          "musicGroup": {
+            "name": "As Casamenteiras",
+            "url": "https://ascasamenteiras.com.br",
+            "image": "https://ascasamenteiras.com.br/perfil.jpg"
+          },
+          "brandHighlights": "null",
+          "fbAppID": "null",
+          "questions": [
+            "Você conhece As Casamenteiras?:A empresa oferece assessoria completa ou personalizada e consultorias avulsas. Priscilla Barbosa atua desde 2012, cursou gestão de eventos com grandes especialistas, é consultora na área. É formada em Gestão de Negócios pela USP-ESALQ."
+          ],
+          "brandPersonFamilyBio": "null",
+          "brandPersonBusinessHistory": "null",
+          "brandPersonBusinessBio": "null",
+          "brandTopologyDivName": "null",
+          "brandTopologyDivSlug": "null",
+          "brandVideoUrl": "null",
+          "brandVideoText": "null",
+          "datePublished": "06 de maio de 2023",
+          "trailingSlash": "always",
+          "imageMaxWidth": 2200,
+          "imageQuality": 86,
+          "imageFormats": ["webp"],
+          "imageBreakPoints": [28, 44, 200, 350, 450, 750, 1080, 1200, 1920],
+          "contentPath": "content",
+          "staticImagesPath": "static/images/",
+          "themePath": "gatsby-theme-v5-boilerplate",
+          "postPerPage": 6,
+          "technicalOfficer": "As Casamenteiras<contato@ascasamenteiras.com.br>",
+          "pagesHelper": {
+            "globals": {
+              "footerLegend": "Todo Amor Importa!",
+              "copyright": "Copyright © Todos Direitos Reservados - As Casamenteiras",
+              "privacyPolicy": "Privacy Policy",
+              "imprint": "Imprint",
+              "termsConditions": "Terms and conditions",
+              "contactUs": "Contatos",
+              "notAvailableRedirectLocale": "pt",
+              "notAvailableLocale": "Not all content is available.",
+              "openGerman": "Open site in Portuguese",
+              "datasheet": "Datasheet"
+            },
+            "index": {
+              "sectionOneMainTitle": "Agenda",
+              "SEO": {
+                "title": "Assessoria e Cerimonial de Casamento - As Casamenteiras, Todo Amor Importa!",
+                "description": "As Casamenteiras lança a sua primeira música de trabalho aos 35 anos, o compositor fez a sua primeira música aos 11 anos de idade falando sobre o provisório e o divino."
+              },
+              "sectionOneTrackLegend": "Clipe Todo Amor Importa! (acústico)",
+              "sectionOneTrackParagraph": "Ribeirão Preto",
+              "foundedHistory": "As Casamenteiras apresenta solo musical acústico de gênero rock nacional. Durante o musical, o artista subirá ao palco por cerca de 70 minutos. Cantando e interpretando no violão gritos de resistência contra os efeitos e estruturas colonialistas.",
+              "starRepo": "Star this repo"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

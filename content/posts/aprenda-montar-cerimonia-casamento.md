@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: false
+agent: postPage
+description: xxx
+schema: ["pages"]
+slug: aprenda-montar-cerimonia-casamento
+helperI18n: ["pt-BR:/aprenda-montar-cerimonia-casamento/"]
 title: Passo a Passos - Aprenda a montar uma cerimônia de casamento
 headline: Os pré-moldades chegaram para ficar no meio industrial
 date: 2022-12-01T08:50:00+00:00

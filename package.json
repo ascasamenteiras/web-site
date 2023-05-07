@@ -1,34 +1,50 @@
 {
-  "name": "gatsby-theme-boilerplate-blog-workspace",
-  "version": "0.6.0",
+  "name": "gatsby-theme-v5-boilerplate-workspace",
+  "version": "0.8.0",
   "workspaces": [
-    "engine",
-    "gatsby-theme-boilerplate-blog"
+    "gatsby-theme-v5-boilerplate"
   ],
   "private": false,
-  "description": "Boilerplate Blog Theme",
-  "author": "Milton Bolonha <miltonbolonha@gmail.com>",
+  "description": "As Casamenteiras GatsbyJS Theme",
+  "author": "As Casamenteiras <contato@ascasamenteiras.com.br>",
   "keywords": [
+    "gatsby workspace",
+    "workspace engine",
+    "room workspace engine",
     "gatsby",
-    "gatsby-plugin",
-    "gatsby-layout",
-    "gatsby-builder",
-    "gatsby-theme-boilerplate",
-    "gatsby-theme-boilerplate-blog",
-    "layout-builder",
+    "gatsby plugin",
+    "gatsby layout",
+    "gatsby builder",
+    "gatsby theme boilerplate",
+    "gatsby theme As Casamenteiras",
+    "layout builder",
     "seo",
     "builder"
   ],
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"No test specified\"",
     "build": "npm run build -w gatsby-theme-boilerplate-blog",
     "clean": "npm run clean -w engine",
     "develop": "npm run dev --workspace=engine",
+=======
+    "test": "jest",
+    "test:unit": "jest --passWithNoTests",
+    "test:unit:coverage": "npm run test:unit -- --coverage",
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "build": "npm run build -w gatsby-theme-v5-boilerplate",
+    "serve": "npm run serve -w gatsby-theme-v5-boilerplate",
+    "clean": "npm run clean -w gatsby-theme-v5-boilerplate",
+    "develop": "npm run dev --workspace=gatsby-theme-v5-boilerplate",
+    "extract": "npx po-transformer po --input ./content/schemas/default.json --output ./content/i18n/default.po && npx po-transformer po --input ./content/schemas/de-DE.json --output ./content/i18n/de-DE.po && npx po-transformer po --input ./content/schemas/es-ES.json --output ./content/i18n/es-ES.po && npx po-transformer po --input ./content/schemas/fr-FR.json --output ./content/i18n/fr-FR.po && npx po-transformer po --input ./content/schemas/nl-NL.json --output ./content/i18n/nl-NL.po && npx po-transformer po --input ./content/schemas/pt-PT.json --output ./content/i18n/pt-PT.po && npx po-transformer po --input ./content/schemas/ru-RU.json --output ./content/i18n/ru-RU.po",
+    "emails": "echo 'Enter email' && read email && MESSAGEONE='Compiling template: ' && MESSAGETWO='./content/emails/' && echo $MESSAGEONE $MESSAGETWO$email'/index.mjml' && mjml ./content/emails/$email/index.mjml -o ./content/emails/$email/index.html",
+    "compile": "lingui compile",
+>>>>>>> feature/update-gatsby-v5
     "version": "./build-docs && git add docs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miltonbolonha/as-casamenteiras.git"
+    "url": "git+https://github.com/ascasamenteiras/web-site"
   },
   "license": "MIT",
   "publishConfig": {
@@ -41,10 +57,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
-    "babel-preset-gatsby": "^2.11.1",
-    "identity-obj-proxy": "^3.0.0"
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "babel-jest": "^29.3.1",
+    "babel-preset-gatsby": "^2.25.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1"
   },
   "bugs": {
-    "url": "https://github.com/miltonbolonha/as-casamenteiras/issues"
+    "url": "https://github.com/ascasamenteiras/as-casamenteiras/issues"
   }
 }

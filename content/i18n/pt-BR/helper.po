@@ -1,0 +1,157 @@
+# HELPER TRANSLATION FILE.
+# Copyright (C) 2023 - GatsbyJS
+# This file is distributed under the same license as the PACKAGE package.
+# GatsbyJS <i18n@ascasamenteiras.com.br>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gatsby Boilerplate Blog Intl 0.1 beta\n"
+"Project-Id-Version: AsCasamenteiras i18n 0.1.0\n"
+"Report-Msgid-Bugs-To: i18n@ascasamenteiras.com.br \n"
+"Last-Translator: GatsbyJS <i18n@ascasamenteiras.com.br>\n"
+"POT-Creation-Date: 2023-01-16 10:46+0000\n"
+"PO-Revision-Date: 2023-01-16 10:47+0000\n"
+"Language: pt-BR\n"
+"Language-Team: https://ascasamenteiras.com.br/\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "phoneMask"
+msgstr "(99) 99999-9999"
+
+msgid "dateMask"
+msgstr "99/99/9999"
+
+msgid "getOutHereText"
+msgstr "Você não deveria estar aqui!"
+
+msgid "loadingAnswer"
+msgstr "CARREGANDO RESPOSTA"
+
+msgid "robotHoneyPotText"
+msgstr "Don't fill this out if you're human."
+
+msgid "loadMore"
+msgstr "Ler Mais"
+
+msgid "updates"
+msgstr "Atualizações"
+
+msgid "hacktivism"
+msgstr "Hackativismo"
+
+msgid "localCommerce"
+msgstr "Comércio Local"
+
+msgid "womanEmpowerment"
+msgstr "Empreendedorismo Feminino"
+
+msgid "lgbtqiapLove"
+msgstr "Amor LGBTQIAP+"
+
+msgid "blackLivesMatter"
+msgstr "Vidas Negras Importam"
+
+msgid "myFamily"
+msgstr "Minha Família"
+
+msgid "Occupation"
+msgstr "Profissão"
+
+msgid "history"
+msgstr "Histórico"
+
+msgid "family"
+msgstr "Família"
+
+msgid "plusInfoBioLink"
+msgstr "+ Info"
+
+msgid "plusFollowMainSocialMidiaFollow"
+msgstr "+ Seguir"
+
+msgid "mainProfileImage"
+msgstr "Imagem principal de perfil"
+
+msgid "mainProfileBackground"
+msgstr "Imagem de fundo do perfil inicial"
+
+msgid "servicesPerformed"
+msgstr "compiler Realizados"
+
+msgid "servicesInProgress"
+msgstr "compiler em Andamento"
+
+msgid "yearsExp"
+msgstr "Anos de Experiência"
+
+msgid "yearsLabel"
+msgstr "anos"
+
+msgid "minutesAgoUpdated"
+msgstr "Atualizado à minutos atrás"
+
+msgid "termsService"
+msgstr "Termos de Uso"
+
+msgid "userContract"
+msgstr "Contrato do Usuário"
+
+msgid "cookiePolicy"
+msgstr "Política de Cookies"
+
+msgid "privacyPolicy"
+msgstr "Política de Privacidade"
+
+msgid "authorRightsPolicies"
+msgstr "Política de Direitos Autorais"
+
+msgid "SecurityLabel"
+msgstr "Segurança"
+
+msgid "securityPolicy"
+msgstr "Política de Segurança"
+
+msgid "reliabilityLabel"
+msgstr "Confiança"
+
+msgid "professionalismLabel"
+msgstr "Profissionalismo"
+
+msgid "faqBtn"
+msgstr "Botão de Perguntas Frequentes"
+
+msgid "whatsBtn"
+msgstr "Botão do Whats"
+
+msgid "logoBusiness"
+msgstr "Logotipo d'GatsbyJS"
+
+msgid "socialMidiaIcon"
+msgstr "Ícone de Rede Social"
+
+msgid "linkTreePageText"
+msgstr "Entre em contato por um de seus canais favoritos abaixo ou pelo nosso número de telefone:"
+
+msgid "contactLabel"
+msgstr "Contato"
+
+msgid "linkTreeLabel"
+msgstr "Árvore de Links"
+
+msgid "errorPageText"
+msgstr ""
+"Hmm - Os pais do noivo se perderam? Procure a equipe do cerimonial.\n"
+"Vamos para a ::page::Página Inicial::page:: começar de novo."
+
+msgid "createStartup"
+msgstr "Crie a sua startup"
+
+msgid "querieOk"
+msgstr "Deu certo sem querie."
+
+msgid "customerService"
+msgstr "Serviço Ao Cliente"

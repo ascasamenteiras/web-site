@@ -1,6 +1,9 @@
 ---
 topology: pages
 status: true
+agent: singlePage
+schema: ["pages"]
+helperI18n: ["pt-BR:/xxx/"]
 title: Casamentos
 description: Depoimentos dos nossos casais sobre o cerimonial e assessoria d'As Casamenteiras.
 slug: casamentos
