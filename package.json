@@ -22,12 +22,6 @@
     "builder"
   ],
   "scripts": {
-<<<<<<< HEAD
-    "test": "echo \"No test specified\"",
-    "build": "npm run build -w gatsby-theme-boilerplate-blog",
-    "clean": "npm run clean -w engine",
-    "develop": "npm run dev --workspace=engine",
-=======
     "test": "jest",
     "test:unit": "jest --passWithNoTests",
     "test:unit:coverage": "npm run test:unit -- --coverage",
@@ -39,7 +33,6 @@
     "extract": "npx po-transformer po --input ./content/schemas/default.json --output ./content/i18n/default.po && npx po-transformer po --input ./content/schemas/de-DE.json --output ./content/i18n/de-DE.po && npx po-transformer po --input ./content/schemas/es-ES.json --output ./content/i18n/es-ES.po && npx po-transformer po --input ./content/schemas/fr-FR.json --output ./content/i18n/fr-FR.po && npx po-transformer po --input ./content/schemas/nl-NL.json --output ./content/i18n/nl-NL.po && npx po-transformer po --input ./content/schemas/pt-PT.json --output ./content/i18n/pt-PT.po && npx po-transformer po --input ./content/schemas/ru-RU.json --output ./content/i18n/ru-RU.po",
     "emails": "echo 'Enter email' && read email && MESSAGEONE='Compiling template: ' && MESSAGETWO='./content/emails/' && echo $MESSAGEONE $MESSAGETWO$email'/index.mjml' && mjml ./content/emails/$email/index.mjml -o ./content/emails/$email/index.html",
     "compile": "lingui compile",
->>>>>>> feature/update-gatsby-v5
     "version": "./build-docs && git add docs"
   },
   "repository": {
