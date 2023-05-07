@@ -71,7 +71,7 @@ const SinglePostBlock = ({
                 </Row>
               </Row>
             </div>
-            <div className='post-categories-wrapper'>
+            {/* <div className='post-categories-wrapper'>
               <p>Trends</p>
               {categories.map((e, i) => {
                 return (
@@ -84,7 +84,7 @@ const SinglePostBlock = ({
                   </Link>
                 );
               })}
-            </div>
+            </div> */}
             <div>
               <GatsbyImage
                 image={imageHighlightQuery}

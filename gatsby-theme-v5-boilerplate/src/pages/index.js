@@ -439,7 +439,7 @@ const IndexPage = ({ pageContext, location }) => {
                     </Link>
                   </h1>
 
-                  <span className='heading-categorie'>
+                  {/* <span className='heading-categorie'>
                     {homeHighlightPost[0]?.node.frontmatter.categories.map(
                       (el, key) => {
                         return (
@@ -453,7 +453,7 @@ const IndexPage = ({ pageContext, location }) => {
                         );
                       }
                     )}
-                  </span>
+                  </span> */}
                 </div>
                 {countOneDay === false ? (
                   <p>
