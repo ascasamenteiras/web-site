@@ -62,7 +62,7 @@ const HalfDiv = ({ pageContext, location }) => {
 
   const [honey, setHoney] = useState("");
   const [msg, setMsg] = useState("");
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState(null);
 
   const [countdown, setCountdown] = useState([12, 60, 60]);
   const [promoEnd, setPromoEnd] = useState(false);
@@ -133,8 +133,18 @@ const HalfDiv = ({ pageContext, location }) => {
   let diffDays = null;
   let months = null;
   let condEndPromo = null;
-  if (location.search.includes("success=1") && !condEndPromo) {
-    urlParams = new Proxy(new URLSearchParams(location.search), {
+  // console.log('location?.search?.includes("success=1") ')
+  // console.log(location?.search?.includes("success=1") )
+  const successUrl = location?.search?.includes("success=1") 
+  
+  function handleSuccess(params) {
+    setSuccess(params);
+  }
+  // if (location?.search?.includes("success=1") && success !== true) {
+  //   handleSuccess(true)
+  // }
+  if (location?.search?.includes("success=1") && !condEndPromo) {
+    urlParams = new Proxy(new URLSearchParams(location?.search), {
       get: (searchParams, prop) => searchParams.get(prop),
     });
     const dateNow = urlParams.fullDate.split("/");
@@ -162,7 +172,7 @@ const HalfDiv = ({ pageContext, location }) => {
   }
 
   let queries = [];
-  const urlQueries = decodeURI(location.search).slice(1).split("&");
+  const urlQueries = decodeURI(location?.search).slice(1).split("&");
   urlQueries.map((e, i) => {
     const splitE = e.split("=");
     queries[splitE[0]] = splitE[1];
@@ -223,7 +233,7 @@ const HalfDiv = ({ pageContext, location }) => {
   const handleHoneypotChange = honeyTyping => {
     setHoney(honeyTyping);
   };
-
+  
   function handleClick(e, clickedBtn) {
     if (e) {
       e.preventDefault();
@@ -242,8 +252,8 @@ const HalfDiv = ({ pageContext, location }) => {
   };
   useEffect(() => {
     if (
-      !location.search.includes("success=1") &&
-      !location.search.includes("success=0")
+      !location?.search?.includes("success=1") &&
+      !location?.search?.includes("success=0")
     ) {
       VMasker(document.querySelector('input[name="PHONE"')).maskPattern(
         "(99) 99999-9999"
@@ -271,8 +281,8 @@ const HalfDiv = ({ pageContext, location }) => {
     if (btnClick === "city") {
       refCity.current.focus();
     }
-    if (location.search.includes("success=1") && !promoEnd) {
-      setSuccess("success");
+    if (location?.search?.includes("success=1") && !promoEnd) {
+      setSuccess(true);
       let promoDate = new Date(urlParams.confirmDate);
       promoDate.setHours(promoDate.getHours() + 12);
       const nowDate = new Date();
@@ -282,6 +292,7 @@ const HalfDiv = ({ pageContext, location }) => {
         handleCountDown([0, 0, 0]);
       } else {
         const diffMoment = moment.preciseDiff(nowDate, promoDate, true);
+        // look for cookie, if not, try record
         setTimeout(
           () =>
             handleCountDown([
@@ -297,7 +308,7 @@ const HalfDiv = ({ pageContext, location }) => {
 
   // halfdiv working begin
   const regex = /\/(\w{2})\//;
-  const locationUrl = location.pathname.match(regex);
+  const locationUrl = location?.pathname?.match(regex);
   const logoLocationUrl = locationUrl ? locationUrl[1] : "";
 
   const i =
@@ -309,7 +320,7 @@ const HalfDiv = ({ pageContext, location }) => {
   );
   const card = y[0].schema[0].card[0];
   const brandPromoEmail = card.brandPromoEmail;
-
+  const siteUrlf= card.brandUrl
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -317,7 +328,7 @@ const HalfDiv = ({ pageContext, location }) => {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-    let siteUrl = myForm["searchUrl"].value;
+    let siteUrl = myForm["searchUrl"].value; //xxx
     let landingUrl = myForm["landingUrl"].value;
     const botFieldPrevent = myForm["searchUrl"].value !== "" || false;
     const siteUrlSlashCheck = siteUrl.slice(-1) === "/" || false;
@@ -344,7 +355,7 @@ const HalfDiv = ({ pageContext, location }) => {
 
     const fullUrl = encodeURI(
       `${
-        siteUrl + landingUrl
+        siteUrlf + landingUrl
       }?success=1&fullDate=${date}&peopleA=${peopleA}&whatsPeopleA=${peopleAWhats}&emailPeopleA=${email}&peopleB=${peopleB}&city=${city}&confirmDate=${new Date()}`
     );
 
@@ -374,10 +385,8 @@ const HalfDiv = ({ pageContext, location }) => {
         if (res.status >= 400) {
           throw new Error("Bad response from server");
         }
-        return res.json();
-      })
-      .then(user => {
-        console.log(user);
+        setLoadingForm(true);
+        return navigate(`?success=0&email=${email}`);
       })
       .catch(err => {
         console.error(err);
@@ -414,8 +423,8 @@ const HalfDiv = ({ pageContext, location }) => {
         articleBody: content,
         mainLogo: imgHolder,
         description: excerpt,
-        serverUrl: location.origin || 'https://ascasamenteiras.com.br' || "/",
-        articleUrl: location.href,
+        serverUrl: location?.origin || 'https://ascasamenteiras.com.br' || "/",
+        articleUrl: location?.href,
         social: 'site.siteMetadata.social.twitter',
         badgesWhats: (
           <GatsbyImage
@@ -444,10 +453,9 @@ const HalfDiv = ({ pageContext, location }) => {
       <main>
         <div
           className={
-            !location.search.includes("success=1") &&
-            !location.search.includes("success=0")
-              ? "main-image"
-              : "hidden"
+            successUrl 
+            ? "hidden"
+            : "main-image"
           }
         >
           <GatsbyImage
@@ -463,7 +471,7 @@ const HalfDiv = ({ pageContext, location }) => {
         </div>
         <div
           className={
-            !location.search.includes("success=0")
+            !location?.search?.includes("success=0")
               ? "main-content"
               : "main-content success"
           }
@@ -477,21 +485,11 @@ const HalfDiv = ({ pageContext, location }) => {
             critical='true'
             className={"logo-half-div"}
           />
-
-          {/* {msg ? (
-            <p
-              className={
-                success === "success" ? "successHTMLstyle" : "errorHTMLstyle"
-              }
-            >
-              {msg}
-            </p>
-          ) : null} */}
-          {loadingForm === false && !location.search.includes("success")
+          {loadingForm === false && !location?.search?.includes("success")
             ? "CARREGANDO RESPOSTA ..."
             : null}
-          {success !== "success" &&
-          !location.search.includes("success=0") &&
+          {success !== true &&
+          !location?.search?.includes("success=0") &&
           !loadingForm ? (
             <>
               <div
@@ -499,9 +497,7 @@ const HalfDiv = ({ pageContext, location }) => {
                 dangerouslySetInnerHTML={{ __html: content }}
               ></div>
               <form
-                // onSubmit={e => handleChangeForm(e)}
-              onSubmit={handleSubmit}
-
+                onSubmit={handleSubmit}
                 method='POST'
                 id='ac-subscribe-landing-form'
                 name='ac-subscribe-landing-form'
@@ -509,7 +505,6 @@ const HalfDiv = ({ pageContext, location }) => {
                 data-netlify='true'
                 netlify-honeypot='botField'
                 // target='_blank'
-                // onSubmit={e => handleSuccess(e, email, honey)}
                 noValidate
               >
                 <p className='hidden'>
@@ -525,8 +520,8 @@ const HalfDiv = ({ pageContext, location }) => {
                       name='form-name'
                       value='ac-subscribe-landing-form'
                     />
-                    <input name='landingUrl' defaultValue={location.pathname} />
-                    <input name='searchUrl' defaultValue={location.search} />
+                    <input name='landingUrl' defaultValue={location?.pathname} />
+                    <input name='searchUrl' defaultValue={location?.search} />
                     <input
                       name='logoImage'
                       defaultValue={logoQuery.images.fallback.src}
@@ -992,7 +987,7 @@ const HalfDiv = ({ pageContext, location }) => {
                 <br />
               </form>
             </>
-          ) : location.search.includes("success=1") ? (
+          ) : location?.search?.includes("success=1") ? (
             <>
               <div className='success-email-check'>
                 <p>
@@ -1106,7 +1101,7 @@ const HalfDiv = ({ pageContext, location }) => {
                   <p>
                     Procure o email da{" "}
                     <i>
-                      <strong>pri@ascasamenteiras.com.br</strong>
+                      <strong>cerimonial@ascasamenteiras.com.br</strong>
                     </i>
                     .
                   </p>
