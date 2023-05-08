@@ -259,7 +259,8 @@ const HalfDiv = ({ pageContext, location }) => {
     //  &: city=${city}
     //  &: confirmDate=${new Date()}`
   }
-
+  console.log("process.env.GATSBY_URL");
+  console.log(process.env.GATSBY_URL);
   const handlePeopleAWhatsChange = peopleAWhatsTyping => {
     const whatsValidated = validateWhats(peopleAWhatsTyping);
     setPeopleAWhats(peopleAWhatsTyping);
@@ -1060,14 +1061,19 @@ const HalfDiv = ({ pageContext, location }) => {
               <div className='halfdiv-choose-options'>
                 <div className='row-me'>
                   <div className='halfdiv-btn'>
-                    <GatsbyImage
-                      image={pdf}
-                      alt={"Algo aqui"}
-                      width={80}
-                      layout='contain'
-                      placeholder={"NONE"}
-                      className={`halfdiv-voucher`}
-                    />
+                    <a
+                      href='https://ascasamenteiras.com.br/docs/catalogo-PriBarb-As-Casamenteiras-2023-24.pdf'
+                      download
+                    >
+                      <GatsbyImage
+                        image={pdf}
+                        alt={"Algo aqui"}
+                        width={80}
+                        layout='contain'
+                        placeholder={"NONE"}
+                        className={`halfdiv-voucher`}
+                      />
+                    </a>
                     <p>
                       <strong>Clique aqui</strong> e baixe o seu catálogo.
                     </p>

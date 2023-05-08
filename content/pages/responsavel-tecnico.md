@@ -19,9 +19,7 @@ helperI18n:
 ---
 
 As Casamenteiras  
-Groenerstr. 9 | 71636 Ludwigsburg | Germany  
-cerimonial@ascasamenteiras.com.br | Phone +49 1520 777 2850  
+Rua Onze de Agosto, 1134, Campos Elíseos | Ribeirão Preto - SP | Brasil
+cerimonial@ascasamenteiras.com.br | Phone +55 (16) 98106-2959
 Legally responsible for the editorial content of the website
-Dr. Roland Leidenfrost, Maurice Gohlke  
-Registration Court: District Court Suttgart HRB 771830  
-VAT-ID: DE328116817
+Priscilla Barbosa, Milton Bolonha
