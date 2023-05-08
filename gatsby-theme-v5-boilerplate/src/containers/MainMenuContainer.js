@@ -42,11 +42,6 @@ const MainMenuContainer = ({
             isMobile={isMobile}
           />
         ))}
-        <li>
-          <Link to='/' onClick={e => handleRefLocaleState(e)}>
-            English
-          </Link>
-        </li>
       </ul>
     </nav>
   );
