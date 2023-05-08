@@ -633,7 +633,7 @@ const IndexPage = ({ pageContext, location }) => {
                 <Row
                   opt={{
                     isBoxed: true,
-                    bgColor: "white",
+                    bgColor: "#fff",
                     classes: "home-profile-bottom home-profile-width",
                   }}
                 >

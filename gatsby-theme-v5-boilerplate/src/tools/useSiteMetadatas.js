@@ -49,25 +49,6 @@ export const useSiteMetadatas = () =>
                 postPerPage
                 technicalOfficer
                 pagesHelper {
-                  jobs {
-                    mainTitle
-                    tasksTitle
-                    qualificationsTitle
-                    firstName
-                    lastName
-                    email
-                    phoneNumber
-                    button
-                    privacyPolicy
-                    applyButton
-                    acceptMission
-                    acceptPrivacyPolicy
-                    sendApplicationButton
-                    applyPrintText
-                    inOtherLanguages
-                    formThankYou
-                    genders
-                  }
                   globals {
                     contactUs
                     copyright
@@ -80,38 +61,11 @@ export const useSiteMetadatas = () =>
                     termsConditions
                     datasheet
                   }
-                  datasheet {
-                    status
-                    title
-                  }
                   index {
-                    collaborations
                     foundedHistory
-                    joinTeam
-                    openPosition
-                    sectionOneAutonomousLegend
-                    sectionOneAutonomousParagraph
-                    sectionOneConsumptionLegend
-                    sectionOneConsumptionParagraph
                     sectionOneMainTitle
-                    sectionOneSlopesLegend
-                    sectionOneSlopesParagraph
                     sectionOneTrackLegend
                     starRepo
-                    sectionTwoTitle
-                    sectionTwoReabilityParagraph
-                    sectionTwoReabilityLegend
-                    sectionTwoPlantsTwoParagraph
-                    sectionTwoPlantsTwoLegend
-                    sectionTwoPlantsParagraph
-                    sectionTwoPlantsLegend
-                    sectionThreeWeedingParagraph
-                    sectionThreeWeedingLegend
-                    sectionThreeHerbicideParagraph
-                    sectionThreeTitle
-                    sectionThreeHerbicideLegend
-                    sectionThreeAccuracyParagraph
-                    sectionThreeAccuracyLegend
                     sectionOneTrackParagraph
                   }
                 }

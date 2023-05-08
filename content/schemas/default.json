@@ -1,14 +1,5 @@
 {
-  "locales": [
-    "pt-BR",
-    "en-US",
-    "de-DE",
-    "fr-FR",
-    "es-ES",
-    "nl-NL",
-    "ru-RU",
-    "jp-JP"
-  ],
+  "locales": ["pt-BR"],
   "schema": [
     {
       "card": [

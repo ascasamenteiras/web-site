@@ -7,6 +7,7 @@ import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import moment from "moment";
 import "moment/locale/pt-br";
 import VMasker from "vanilla-masker";
+import addToMailchimp from "gatsby-plugin-mailchimp";
 import HalfDivWrapper from "@Slices/HalfDivWrapper";
 import Cookies from "universal-cookie";
 
@@ -140,20 +141,37 @@ const HalfDiv = ({ pageContext, location }) => {
       : cookies.set("submitedValues", null, {
           path: "/",
         });
+
+  const sentMCCookies =
+    cookies.get("cookiesSentMC") ||
+    cookies.set("cookiesSentMC", null, {
+      path: "/",
+    });
+
   console.log("cookiesValues ");
   console.log(cookiesValues);
   console.log("hasSuccessCookies");
   console.log(hasSuccessCookies);
 
-  // vou gravar um obj disso e fazer
-  //  ?: success=1
-  //  &: fullDate=${date}
-  //  &: peopleA=${peopleA}
-  //  &: whatsPeopleA=${peopleAWhats}
-  //  &: emailPeopleA=${email}
-  //  &: peopleB=${peopleB}
-  //  &: city=${city}
-  //  &: confirmDate=${new Date()}`
+  const addToMC = async x =>
+    await addToMailchimp(x.EMAIL, {
+      EMAIL: x.EMAIL,
+      PEOPLEA: x.PEOPLEA,
+      PEOPLEB: x.PEOPLEB,
+      PHONE: x.PHONE,
+      DATE1: x.DATE,
+      CITY: x.CITY,
+    }).then(({ msg, result }) => {
+      cookies.remove("cookiesSentMC");
+      cookies.set("cookiesSentMC", true);
+    });
+
+  let queries = [];
+  const urlQueries = decodeURI(location?.search).slice(1).split("&");
+  urlQueries.map((e, i) => {
+    const splitE = e.split("=");
+    queries[splitE[0]] = splitE[1];
+  });
 
   const successUrl = location?.search?.includes("success=1");
 
@@ -172,25 +190,36 @@ const HalfDiv = ({ pageContext, location }) => {
       month: "long",
       day: "numeric",
     };
-    const options2 = {
-      day: "numeric",
-      month: "numeric",
-      year: "numeric",
-    };
+
     longDate = casalDate.toLocaleString("pt-BR", options1);
 
     const diffTime = Math.abs(casalDate - now);
     diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     const diffResult = Math.round((casalDate - now) / (1000 * 60 * 60 * 24));
     months = Math.floor(diffResult / 30);
-  }
+    const yt = sentMCCookies && successUrl;
 
-  let queries = [];
-  const urlQueries = decodeURI(location?.search).slice(1).split("&");
-  urlQueries.map((e, i) => {
-    const splitE = e.split("=");
-    queries[splitE[0]] = splitE[1];
-  });
+    if (yt) {
+      addToMC({
+        EMAIL: queries.email,
+        PEOPLEA: queries.peopleA,
+        PEOPLEB: queries.peopleB,
+        PHONE: queries.whatsPeopleA,
+        DATE1: queries.fullDate,
+        CITY: queries.city,
+      });
+    }
+
+    // vou gravar um obj disso e fazer
+    //  ?: success=1
+    //  &: fullDate=${date}
+    //  &: peopleA=${peopleA}
+    //  &: whatsPeopleA=${peopleAWhats}
+    //  &: emailPeopleA=${email}
+    //  &: peopleB=${peopleB}
+    //  &: city=${city}
+    //  &: confirmDate=${new Date()}`
+  }
 
   const handlePeopleAWhatsChange = peopleAWhatsTyping => {
     const whatsValidated = validateWhats(peopleAWhatsTyping);
