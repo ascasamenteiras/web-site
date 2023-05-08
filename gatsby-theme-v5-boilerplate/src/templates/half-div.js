@@ -40,7 +40,17 @@ function validateWhats(input) {
     }
   }
 }
-
+function toISOString(string, callback) {
+  try {
+    if (new Date(string) == "Invalid Date") {
+      callback("1900-01-01T00:00:00.000Z");
+    } else {
+      callback(new Date(string).toISOString());
+    }
+  } catch (err) {
+    callback("1900-01-01T00:00:00.000Z");
+  }
+}
 const HalfDiv = ({ pageContext, location }) => {
   const [btnClick, setBtnClick] = useState(null);
   const [email, setEmail] = useState("");
@@ -152,6 +162,8 @@ const HalfDiv = ({ pageContext, location }) => {
   console.log(cookiesValues);
   console.log("hasSuccessCookies");
   console.log(hasSuccessCookies);
+  console.log("sentMCCookies");
+  console.log(sentMCCookies);
 
   const addToMC = async x =>
     await addToMailchimp(x.EMAIL, {
@@ -159,11 +171,21 @@ const HalfDiv = ({ pageContext, location }) => {
       PEOPLEA: x.PEOPLEA,
       PEOPLEB: x.PEOPLEB,
       PHONE: x.PHONE,
-      DATE1: x.DATE,
+      DATE1: x.DATE1,
       CITY: x.CITY,
     }).then(({ msg, result }) => {
-      cookies.remove("cookiesSentMC");
-      cookies.set("cookiesSentMC", true);
+      if (result === "error") {
+        cookies.remove("cookiesSentMC");
+        cookies.set("cookiesSentMC", false);
+        return console.log(`Error message: ${msg}`);
+      } else {
+        console.log("result");
+        console.log(result);
+        console.log("msg");
+        console.log(msg);
+        cookies.remove("cookiesSentMC");
+        cookies.set("cookiesSentMC", true);
+      }
     });
 
   let queries = [];
@@ -197,17 +219,34 @@ const HalfDiv = ({ pageContext, location }) => {
     diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     const diffResult = Math.round((casalDate - now) / (1000 * 60 * 60 * 24));
     months = Math.floor(diffResult / 30);
-    const yt = sentMCCookies && successUrl;
-
+    const yt = !sentMCCookies && successUrl;
+    const oo =
+      queries.fullDate.split("/")[2] +
+      "-" +
+      queries.fullDate.split("/")[1] +
+      "-" +
+      queries.fullDate.split("/")[0] +
+      "T00:00:00.001Z";
+    console.log({
+      EMAIL: queries.emailPeopleA,
+      PEOPLEA: queries.peopleA,
+      PEOPLEB: queries.peopleB,
+      PHONE: queries.whatsPeopleA,
+      DATE1: oo,
+      CITY: queries.city,
+    });
     if (yt) {
+      console.log("adding it to MC");
       addToMC({
-        EMAIL: queries.email,
+        EMAIL: queries.emailPeopleA,
         PEOPLEA: queries.peopleA,
         PEOPLEB: queries.peopleB,
         PHONE: queries.whatsPeopleA,
-        DATE1: queries.fullDate,
+        DATE1: oo,
         CITY: queries.city,
       });
+    } else {
+      console.log("cookies detected, not sent");
     }
 
     // vou gravar um obj disso e fazer
