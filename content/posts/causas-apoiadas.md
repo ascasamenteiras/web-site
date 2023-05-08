@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+schema: ["pages"]
+description: xxx
+slug: causas-apoiadas
+helperI18n: ["pt-BR:/causas-apoiadas/"]
 title: Causas que apoiamos
 headline: Nós d'As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
 date: 2022-12-01T08:30:00+00:00

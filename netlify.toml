@@ -1,7 +1,6 @@
 [build]
-    command = "GATSBY_CONCURRENT_DOWNLOAD=25 yarn workspace engine build"
-  	functions = "engine/src/api"
-    publish = "engine/public"
+    command = "GATSBY_CONCURRENT_DOWNLOAD=25 npm run build --workspace=gatsby-theme-v5-boilerplate"
+    publish = "gatsby-theme-v5-boilerplate/public"
 
 [build.environment]
   NODE_VERSION = "18.12.1"
@@ -11,3 +10,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-local-install-core"
+
+[[plugins]]
+  package = "@netlify/plugin-emails"

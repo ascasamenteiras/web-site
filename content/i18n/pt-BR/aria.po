@@ -1,0 +1,29 @@
+# ARIA TRANSLATION FILE.
+# Copyright (C) 2023 - GatsbyJS
+# This file is distributed under the same license as the PACKAGE package.
+# GatsbyJS <i18n@ascasamenteiras.com.br>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gatsby Boilerplate Blog Intl 0.1 beta\n"
+"Project-Id-Version: AsCasamenteiras i18n 0.1.0\n"
+"Report-Msgid-Bugs-To: i18n@ascasamenteiras.com.br \n"
+"Last-Translator: GatsbyJS <i18n@ascasamenteiras.com.br>\n"
+"POT-Creation-Date: 2023-01-16 10:46+0000\n"
+"PO-Revision-Date: 2023-01-16 10:47+0000\n"
+"Language: pt-BR\n"
+"Language-Team: https://ascasamenteiras.com.br/\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "ariaLabelExternalLink"
+msgstr "Acesso a página: ::label::, fora do websítio da EMPRESA"
+
+msgid "ariaLabelInternalLink"
+msgstr "Acesso a página: ::label::, no websítio da EMPRESA"
+
+msgid "ariaLabelMenuToggle"
+msgstr "Alternar visibilidade do menu"

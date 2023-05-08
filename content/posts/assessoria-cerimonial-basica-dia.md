@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+schema: ["pages"]
+description: xxx
+slug: assessoria-cerimonial-basica-dia
+helperI18n: ["pt-BR:/assessoria-cerimonial-basica-dia/"]
 title: Assessoria e Cerimonial de Casamentos Do Dia (básica)
 headline: O serviço de assessoria e cerimonial do dia é relativo ao pacote básico dos serviços d'As Casamenteiras.
 date: 2022-12-01T08:35:00+00:00

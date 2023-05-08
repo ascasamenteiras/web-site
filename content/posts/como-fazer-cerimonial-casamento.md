@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+description: xxx
+schema: ["pages"]
+slug: como-fazer-cerimonial-casamento
+helperI18n: ["pt-BR:/como-fazer-cerimonial-casamento/"]
 title: Como fazer um cerimonial de casamento?
 headline: Os pré-moldades chegaram para ficar no meio industrial
 date: 2022-12-01T08:50:00+00:00

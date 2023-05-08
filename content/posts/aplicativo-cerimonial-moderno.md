@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+description: xxx
+schema: ["pages"]
+helperI18n: ["pt-BR:/aplicativo-cerimonial-moderno/"]
+slug: aplicativo-cerimonial-moderno
 title: Aplicativo para cerimonial moderno
 headline: Com um aplicativo moderno o casal tem acesso a todas as informações do evento, centralizadas em um só lugar.
 date: 2022-12-01T08:40:00+00:00

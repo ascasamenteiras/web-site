@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+description: xxx
+schema: ["pages"]
+slug: codigo-livre-aberto-internet-descentralizada
+helperI18n: ["pt-BR:/codigo-livre-aberto-internet-descentralizada/"]
 title: Hackativismo - o código aberto e a descentralização da internet
 headline: Nós d'As Casamenteiras apoiamos as causas que são encontradas na sociedade e vivem pulsantes em cada cidade do nosso país.
 date: 2022-08-01T08:30:00+00:00

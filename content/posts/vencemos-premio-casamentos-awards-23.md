@@ -1,6 +1,11 @@
 ---
 topology: posts
 status: true
+agent: postPage
+schema: ["pages"]
+description: xxx
+slug: vencemos-premio-casamentos-awards-23
+helperI18n: ["pt-BR:/vencemos-premio-casamentos-awards-23/"]
 title: Vencemos o Prêmio Casamentos Awards 2023
 headline: As Casamenteiras é a vencedora do Prêmio Casamentos Awards 2023 na categoria Cerimonialista de Casamentos.
 date: 2023-01-31T09:30:00+00:00
