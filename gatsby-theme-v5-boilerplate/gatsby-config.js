@@ -58,7 +58,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-transformer-json`,
-
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-P9ZZXPV",
+      },
+    },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {

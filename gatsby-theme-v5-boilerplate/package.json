@@ -32,6 +32,7 @@
     "gatsby": "^5.9.0",
     "gatsby-business-in-build": "^0.2.1",
     "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-google-tagmanager": "^5.9.0",
     "gatsby-plugin-image": "^3.5.0",
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-manifest": "^5.5.0",
