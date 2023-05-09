@@ -94,6 +94,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `pdf`,
+        path: path.resolve(rootDir, "content/landings/pdf/"),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: path.resolve(rootDir, "content/pages/images/"),
       },

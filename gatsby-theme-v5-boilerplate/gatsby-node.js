@@ -51,8 +51,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 
 exports.onCreateNode = async ({ node, getNode, getNodesByType, actions }) => {
   const { createNodeField } = actions;
-  // const markdownNodes = getNodesByType(`MarkdownRemark`);
-
   if (node.internal.type === "SitePage") {
     createNodeField({
       node,
@@ -1107,13 +1105,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           `gatsby-theme-v5-boilerplate/src/templates/half-div.js`
         ),
         context: {
-          title: title,
+          title,
           content: landing.html,
-          headline: headline,
-          questions: questions,
+          headline,
+          questions,
           excerpt: landing.excerpt,
-          featuredImage: featuredImage,
-          emailCTA: emailCTA,
+          featuredImage,
+          emailCTA,
         },
       });
     });

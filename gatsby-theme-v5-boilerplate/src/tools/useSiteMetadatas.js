@@ -144,11 +144,17 @@ export const useSiteMetadatas = () =>
             gatsbyImageData(width: 450, quality: 100)
           }
         }
+
         boilerplateLogoSmall: file(
           relativePath: { eq: "logo-fundo-transparent-900-w.png" }
         ) {
           childrenImageSharp {
             gatsbyImageData(width: 200, quality: 100)
+          }
+        }
+        spinWaitGif: file(relativePath: { eq: "spinWaitGif.gif" }) {
+          childrenImageSharp {
+            gatsbyImageData(width: 64, quality: 100)
           }
         }
 
