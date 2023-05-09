@@ -178,10 +178,7 @@ const HalfDiv = ({ pageContext, location }) => {
   const cookies = new Cookies();
 
   const hasSuccessCookies =
-    cookies.get("successValue") ||
-    cookies.set("successValue", null, {
-      path: "/",
-    });
+    cookies.get("successValue") || cookies.set("successValue", null);
 
   const cookiesValues =
     cookies.get("submitedValues") && hasSuccessCookies
@@ -191,10 +188,7 @@ const HalfDiv = ({ pageContext, location }) => {
         });
 
   const sentMCCookies =
-    cookies.get("cookiesSentMC") ||
-    cookies.set("cookiesSentMC", null, {
-      path: "/",
-    });
+    cookies.get("cookiesSentMC") || cookies.set("cookiesSentMC", null);
 
   console.log("cookiesValues ");
   console.log(cookiesValues);
@@ -510,9 +504,7 @@ const HalfDiv = ({ pageContext, location }) => {
     cookies.remove("submitedValues");
     cookies.remove("successValue");
 
-    cookies.set("submitedValues", fullUrl, {
-      path: "/",
-    });
+    cookies.set("submitedValues", fullUrl);
 
     //call to the Netlify Function you created
     await fetch(`${process.env.GATSBY_URL}/.netlify/functions/emails/maio`, {
