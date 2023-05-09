@@ -46,6 +46,7 @@ export const useSiteMetadatas = () =>
                 contentPath
                 staticImagesPath
                 themePath
+                questions
                 postPerPage
                 technicalOfficer
                 pagesHelper {

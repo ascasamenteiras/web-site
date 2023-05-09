@@ -303,6 +303,7 @@ const IndexPage = ({ pageContext, location }) => {
   );
   const cardY = y[0].schema[0].card[0];
   const indexSubs = cardY?.pagesHelper?.index;
+  const indexQuestions = cardY?.questions;
   const globalSubs = y?.pagesHelper?.globals;
   const whipala = brandImages?.nodes?.filter(
     brandImgs => brandImgs.relativePath === "whipala.png"
@@ -810,55 +811,22 @@ const IndexPage = ({ pageContext, location }) => {
 
 export default IndexPage;
 
-// export const queryAtividade = graphql`
-// query {
-//   allMarkdownRemark(
-//     sort: { fields: frontmatter___date, order: DESC }
-//     filter: {
-//       frontmatter: { createdAt: { lt: "null" }, status: { eq: true } }
-//     }
-//     limit: 900
-//   ) {
-//     edges {
-//       node {
-//         fields {
-//           slug
-//         }
-//         frontmatter {
-//           updatedAt(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
-//           created: createdAt(
-//             formatString: "DD [de] MMMM [de] YYYY"
-//             locale: "pt-br"
-//           )
-//           updated: updatedAt
-//           updatedModified: updatedAt(formatString: "YYYY-MM-DDTHH:mm:SS")
-//           title
-//           headline
-//           categories
-//           featuredPost
-//           homeHighlight
-//           homeHighlightRelated
-//           homeHighlightRelatedList
-//           featuredImage {
-//             childrenImageSharp {
-//               gatsbyImageData(
-//                 width: 350
-//                 height: 175
-//                 placeholder: DOMINANT_COLOR
-//                 quality: 80
-//               )
-//             }
-//           }
-//         }
-//         excerpt(pruneLength: 200)
-//       }
-//     }
-//   }
-// }
-// `;
+export const Head = ({ pageContext, location }) => {
+  const { schemasJSON } = useSiteMetadatas();
 
-export const Head = ({ pageContext }) => {
-  // console.log("pageContext");
-  // console.log(pageContext);
+  const regex = /\/(\w{2})\//;
+  const locationUrl = location.pathname.match(regex);
+  const logoLocationUrl = locationUrl ? locationUrl[1] : "";
+
+  const i =
+    logoLocationUrl && logoLocationUrl !== undefined && logoLocationUrl !== ""
+      ? locationUrl[1]
+      : "pt-BR";
+  const y = schemasJSON.nodes.filter(sch =>
+    sch.schema[0].card[0].cardLocale.includes(i)
+  );
+  const cardY = y[0].schema[0].card[0];
+  const indexQuestions = cardY?.questions;
+  pageContext.SEO.questions = indexQuestions;
   return <Seo data={pageContext.SEO} killSeo={false} />;
 };
