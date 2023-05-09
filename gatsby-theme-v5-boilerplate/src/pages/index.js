@@ -424,7 +424,7 @@ const IndexPage = ({ pageContext, location }) => {
         urlLocale: logoLocationUrl,
       }}
     >
-      <main className='main-container' id='site-content' role='list'>
+      <main className='main-container' id='site-content'>
         <HeadingBlock classes='m30auto hack' importance={10} width={350}>
           Cerimonialista de Casamentos
         </HeadingBlock>

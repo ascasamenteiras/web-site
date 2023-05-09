@@ -174,7 +174,10 @@ const Seo = ({ data, killSeo, className }) => {
         content={data.brandCardImage || data.featuredImage}
       />
       <meta name='theme-color' content={data.themeColor || "#FF0081"} />
-      <link rel='canonical' href={data.siteUrl + "/" + data.slug} />
+      <link
+        rel='canonical'
+        href={data.siteUrl + (data.slug === "/" ? "/" : "/" + data.slug)}
+      />
       {data.fbAppID ? (
         <meta property='fb:app_id' content={data.social.fbAppID} />
       ) : null}
