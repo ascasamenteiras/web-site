@@ -119,72 +119,6 @@ const Seo = ({ data, killSeo, className }) => {
       },
     });
   });
-  const musicGroupSchema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "MusicGroup",
-      genre: ["rock", "brazilian rock", "rock nacional"],
-      "@id": "As Casamenteiras",
-      name: "As Casamenteiras",
-      foundingDate: "2023-04-06",
-      slogan: "Todo Amor Importa!",
-      telephone: "+5512981062959",
-      email: "contato@ascasamenteiras.com.br",
-      url: data.siteUrl,
-      sameAs: socialValues,
-    },
-  ];
-  const musicAlbumSchema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "MusicAlbum",
-      "@id": data.album?.id || "",
-      citation: data.album?.citation || "",
-      copyrightNotice: data.album?.copyrightNotice || "",
-      copyrightYear: data.album?.copyrightYear || "",
-      creditText: data.album?.creditText || "",
-      dateCreated: data.album?.dateCreated || "",
-      datePublished: data.album?.datePublished || "",
-      description: data.album?.description || "",
-      genre: data.album?.genre || "",
-      image: data.album?.image || "",
-      inLanguage: data.album?.inLanguage || "",
-      isAccessibleForFree: true,
-      isFamilyFriendly: true,
-      keywords: data.album?.keyword || "",
-      name: data.album?.name || "",
-      numTracks: data.album?.numTracks || "",
-      sameAs: data.album?.sameAs || "",
-      thumbnailUrl: data.album?.thumbnailUrl || "",
-      typicalAgeRange: data.album?.typicalAgeRange || "",
-      track: {
-        "@type": "MusicRecording",
-        name: "Todo Amor Importa! - Uma História de Amor",
-        url: "https://ascasamenteiras.com.br/decolonize-ja/",
-      },
-    },
-  ];
-  const musicTrackSchema = [
-    {
-      "@context": "http://schema.org",
-      "@type": "MusicRecording",
-      name: data.track?.name || "",
-      url: data.track?.url || "",
-      image: data.track?.image || "",
-      inAlbum: data.track?.inAlbum || "",
-      duration: data.track?.duration || "",
-      description: data.track?.description || "",
-      byArtist: {
-        "@type": "MusicGroup",
-        name: data.title,
-        audio: {
-          "@type": "AudioObject",
-          embedUrl: data.siteUrl,
-        },
-      },
-      genre: data.track?.genre || "",
-    },
-  ];
 
   const questionSchema = [
     {
@@ -273,7 +207,7 @@ const Seo = ({ data, killSeo, className }) => {
         ""
       )}
       {/* Schema.org tags */}
-      {data.topology === "pages" ? (
+      {data.topology === "article" ? (
         <script type='application/ld+json' data-schema='Article'>
           {JSON.stringify(articleSchema)}
         </script>
@@ -287,23 +221,6 @@ const Seo = ({ data, killSeo, className }) => {
       <script type='application/ld+json'>
         {JSON.stringify(questionSchema)}
       </script>
-      <script type='application/ld+json'>
-        {JSON.stringify(musicGroupSchema)}
-      </script>
-      {data.album ? (
-        <script type='application/ld+json'>
-          {JSON.stringify(musicAlbumSchema)}
-        </script>
-      ) : (
-        ""
-      )}
-      {data.track ? (
-        <script type='application/ld+json'>
-          {JSON.stringify(musicTrackSchema)}
-        </script>
-      ) : (
-        ""
-      )}
     </>
   );
 };

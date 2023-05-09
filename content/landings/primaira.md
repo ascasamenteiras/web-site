@@ -4,9 +4,9 @@ title: Primaira
 headline: Olha só que coisa não?
 status: true
 date: 2022-12-01T08:40:00+00:00
-featuredImage: ../landings/images/HalfDiv.png
+featuredImage: ../landings/images/halfDiv.jpg
 backgroundImageColor: "#444444"
-sharedFile: ../landing/pdf/HalfDiv.pdf
+sharedFile: ../landings/pdf/catalogo-PriBarb-As-Casamenteiras-2023-24.pdf
 landingCTA: Receber Catálogo
 emailCTA: Baixar Catálogo
 questions:
