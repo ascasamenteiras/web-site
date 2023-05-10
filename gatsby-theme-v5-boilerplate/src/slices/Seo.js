@@ -111,8 +111,7 @@ const Seo = ({ data, killSeo, className }) => {
   let arrayQuestions = [];
 
   let questionsArray = [];
-  console.log("data?.questions");
-  console.log(data?.questions);
+
   data?.questions?.forEach(q => {
     questionsArray.push(q.split(":"));
   });

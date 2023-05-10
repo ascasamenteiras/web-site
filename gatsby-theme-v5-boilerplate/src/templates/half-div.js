@@ -40,7 +40,17 @@ function validateWhats(input) {
     }
   }
 }
-
+function toISOString(string, callback) {
+  try {
+    if (new Date(string) == "Invalid Date") {
+      callback("1900-01-01T00:00:00.000Z");
+    } else {
+      callback(new Date(string).toISOString());
+    }
+  } catch (err) {
+    callback("1900-01-01T00:00:00.000Z");
+  }
+}
 const HalfDiv = ({ pageContext, location }) => {
   const [btnClick, setBtnClick] = useState(null);
   const [email, setEmail] = useState("");
@@ -86,16 +96,13 @@ const HalfDiv = ({ pageContext, location }) => {
     emailCTA,
     content,
     excerpt,
-    sharedFile,
   } = pageContext;
-  console.log("landingCTA");
-  console.log(landingCTA);
+
   // handle Images
   const {
     imgHolder,
     bgPatternImg,
     boilerplateLogoSmall,
-    spinWaitGif,
     bandeiraWhats,
     bandeiraQuestion,
     dateImageButton,
@@ -113,7 +120,6 @@ const HalfDiv = ({ pageContext, location }) => {
   const defaultQuestions = ["site.siteMetadata.questions:opiriri"];
 
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
-  const spinWait = getImage(spinWaitGif.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogoSmall.childrenImageSharp[0]);
   const floralCima = getImage(floralCimaImg.childrenImageSharp[0]);
   const floralMeio = getImage(floralMeioImg.childrenImageSharp[0]);
@@ -131,54 +137,13 @@ const HalfDiv = ({ pageContext, location }) => {
   let months = null;
   let condEndPromo = null;
 
-  const loadRes = (
-    <>
-      <GatsbyImage
-        image={spinWait}
-        alt={"Logotipo d'As Casamenteiras"}
-        width={200}
-        placeholder={"NONE"}
-        critical='true'
-        className={""}
-      />
-      <h3 className='loanding-res'>Carregando Resposta...</h3>
-    </>
-  );
-
-  const promoEndMSG = x =>
-    x
-      ? `Perdeu a Promoção? Clique aqui e receba um desconto de 5%`
-      : `Resgatar VOUCHER agora !`;
-
-  const successMailMSG = email => (
-    <>
-      <p>
-        Cheque o seu e-mail: <strong>{email}</strong>.
-      </p>
-      <p>
-        Enviamos um e-mail de segurança para evitar robôs (<em>SPAM</em>) no
-        nosso sistema.
-      </p>
-      <p>
-        Procure o email da{" "}
-        <i>
-          <strong>cerimonial@ascasamenteiras.com.br</strong>
-        </i>
-        .
-      </p>
-      <p>E clique no botão "Baixar Catálogo".</p>
-    </>
-  );
-  const expiredVoucherMSG = (
-    <>
-      Voucher <strong>EXPIRADO</strong>!
-    </>
-  );
-  // container begin
   const cookies = new Cookies();
 
   const hasSuccessCookies =
-    cookies.get("successValue") || cookies.set("successValue", null);
+    cookies.get("successValue") ||
+    cookies.set("successValue", null, {
+      path: "/",
+    });
 
   const cookiesValues =
     cookies.get("submitedValues") && hasSuccessCookies
@@ -188,7 +153,10 @@ const HalfDiv = ({ pageContext, location }) => {
         });
 
   const sentMCCookies =
-    cookies.get("cookiesSentMC") || cookies.set("cookiesSentMC", null);
+    cookies.get("cookiesSentMC") ||
+    cookies.set("cookiesSentMC", null, {
+      path: "/",
+    });
 
   console.log("cookiesValues ");
   console.log(cookiesValues);
@@ -291,28 +259,6 @@ const HalfDiv = ({ pageContext, location }) => {
     //  &: city=${city}
     //  &: confirmDate=${new Date()}`
   }
-
-  const whatsMSG = (peopleA, peopleB) =>
-    `https://web.whatsapp.com/send?phone=5516992452437&text=${encodeURI(
-      "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘\n\n" +
-        "🥂Oi Pri!🥂 \n\nMeu nome é *" +
-        peopleA +
-        "* 💍 e vou casar com *" +
-        peopleB +
-        "* 💍 e a data: \n\n*" +
-        longDate.charAt(0).toUpperCase() +
-        longDate.slice(1) +
-        "* 🕑 (faltam " +
-        months +
-        " meses," +
-        diffDays +
-        " dias).\n\n" +
-        mensagem +
-        "\n\nComo faço para você ser a cerimonialista do meu casamento?\n" +
-        "Também preciso de ajuda com diversos fornecedores.\n\n" +
-        "😍 Você poderia me ajudar? 😍\n\n" +
-        "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘"
-    )}`;
   console.log("process.env.GATSBY_URL");
   console.log(process.env.GATSBY_URL);
   const handlePeopleAWhatsChange = peopleAWhatsTyping => {
@@ -504,8 +450,12 @@ const HalfDiv = ({ pageContext, location }) => {
     cookies.remove("submitedValues");
     cookies.remove("successValue");
 
-    cookies.set("submitedValues", fullUrl);
-
+    cookies.set("submitedValues", fullUrl, {
+      path: "/",
+    });
+    cookies.set("successValue", false, {
+      path: "/",
+    });
     //call to the Netlify Function you created
     await fetch(`${process.env.GATSBY_URL}/.netlify/functions/emails/maio`, {
       method: "POST",
@@ -516,9 +466,6 @@ const HalfDiv = ({ pageContext, location }) => {
     })
       .then(res => {
         if (res.status >= 400) {
-          cookies.set("successValue", false, {
-            path: "/",
-          });
           throw new Error("Bad response from server");
         }
         setLoadingForm(true);
@@ -595,15 +542,12 @@ const HalfDiv = ({ pageContext, location }) => {
       }}
     >
       <main>
-        <div
-          className={
-            location?.search?.includes("success=") ? "hidden" : "main-image"
-          }
-        >
+        <div className={successUrl ? "hidden" : "main-image"}>
           <GatsbyImage
             image={mainImage}
-            alt={"Mês das Noivas"}
+            alt={"Algo aqui"}
             width={923}
+            height={1050}
             layout='contain'
             placeholder={"NONE"}
             critical='true'
@@ -627,7 +571,7 @@ const HalfDiv = ({ pageContext, location }) => {
             className={"logo-half-div"}
           />
           {loadingForm === false && !location?.search?.includes("success")
-            ? loadRes
+            ? "CARREGANDO RESPOSTA ..."
             : null}
           {success !== true &&
           !location?.search?.includes("success=0") &&
@@ -1101,7 +1045,7 @@ const HalfDiv = ({ pageContext, location }) => {
                 <br />
               </form>
             </>
-          ) : location?.search?.includes("success=1") && queries ? (
+          ) : location?.search?.includes("success=1") ? (
             <>
               <div className='success-email-check'>
                 <p>
@@ -1135,32 +1079,50 @@ const HalfDiv = ({ pageContext, location }) => {
                     </p>
                   </div>
                   <div className='halfdiv-btn'>
-                    <a
-                      href={whatsMSG(queries.peopleA, queries.peopleB)}
-                      className='voucher-btn-whats'
-                    >
-                      <GatsbyImage
-                        image={voucher}
-                        alt={"Algo aqui"}
-                        width={80}
-                        layout='contain'
-                        placeholder={"NONE"}
-                        className={`halfdiv-voucher`}
-                      />
-                      <p>
-                        Você ganhou: 01 (um) VOUCHER de{" "}
-                        <strong>R$500,00</strong>
-                      </p>
-                    </a>
+                    <GatsbyImage
+                      image={voucher}
+                      alt={"Algo aqui"}
+                      width={80}
+                      layout='contain'
+                      placeholder={"NONE"}
+                      className={`halfdiv-voucher`}
+                    />
+                    <p>
+                      Você ganhou: 01 (um) VOUCHER de <strong>R$500,00</strong>
+                    </p>
                   </div>
                 </div>
                 <div>
-                  <a
-                    href={whatsMSG(queries.peopleA, queries.peopleB)}
-                    className='voucher-btn-whats'
-                  >
-                    {promoEndMSG(promoEnd)}
-                  </a>
+                  {queries ? (
+                    <a
+                      href={`https://web.whatsapp.com/send?phone=5516992452437&text=${encodeURI(
+                        "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘\n\n" +
+                          "🥂Oi Pri!🥂 \n\nMeu nome é *" +
+                          queries.peopleA +
+                          "* 💍 e vou casar com *" +
+                          queries.peopleB +
+                          "* 💍 e a data: \n\n*" +
+                          longDate.charAt(0).toUpperCase() +
+                          longDate.slice(1) +
+                          "* 🕑 (faltam " +
+                          months +
+                          " meses," +
+                          diffDays +
+                          " dias).\n\n" +
+                          mensagem +
+                          "\n\nComo faço para você ser a cerimonialista do meu casamento?\n" +
+                          "Também preciso de ajuda com diversos fornecedores.\n\n" +
+                          "😍 Você poderia me ajudar? 😍\n\n" +
+                          "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘"
+                      )}`}
+                      className='voucher-btn-whats'
+                    >
+                      {promoEnd
+                        ? `Perdeu a Promoção? Clique aqui e receba um desconto de 5%`
+                        : `Resgatar VOUCHER agora !`}
+                    </a>
+                  ) : null}
+
                   <p>Esse VOUCHER expira em:</p>
                   {!promoEnd ? (
                     <p className='countdown-promo'>
@@ -1189,7 +1151,29 @@ const HalfDiv = ({ pageContext, location }) => {
               </div>
             </>
           ) : (
-            <>{queries ? successMailMSG(queries.email) : expiredVoucherMSG}</>
+            <>
+              {queries ? (
+                <>
+                  <p>
+                    Cheque o seu e-mail: <strong>{queries.email}</strong>.
+                  </p>
+                  <p>
+                    Enviamos um e-mail de segurança para evitar robôs (
+                    <em>SPAM</em>) no nosso sistema.
+                  </p>
+                  <p>
+                    Procure o email da{" "}
+                    <i>
+                      <strong>cerimonial@ascasamenteiras.com.br</strong>
+                    </i>
+                    .
+                  </p>
+                  <p>E clique no botão "Baixar Catálogo".</p>
+                </>
+              ) : (
+                "Deu certo sem querie."
+              )}
+            </>
           )}
         </div>
       </main>

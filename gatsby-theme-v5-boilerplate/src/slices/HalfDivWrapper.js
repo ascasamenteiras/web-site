@@ -1,7 +1,7 @@
 import React from "react";
 
 import BodyBlock from "@Slices/BodyBlock";
-// import BadgesButtonsBlock from "@BlockBuilder/BadgesButtonsBlock";
+import BadgesButtonsBlock from "@Slices/BadgesButtonsBlock";
 
 const HalfDivWrapper = ({ children, classes, logo, backgroundImage, opt }) => {
   return (
@@ -10,12 +10,11 @@ const HalfDivWrapper = ({ children, classes, logo, backgroundImage, opt }) => {
         classes: classes,
         bgImg: backgroundImage.src,
         options: opt,
-        topRibbonImg: null,
       }}
       killSEO={true}
     >
       {children}
-      {/* <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} /> */}
+      <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} />
     </BodyBlock>
   );
 };

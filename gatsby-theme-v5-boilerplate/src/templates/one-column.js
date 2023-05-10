@@ -21,12 +21,6 @@ const OneColumn = ({ location, pageContext }) => {
     });
   });
   const { title, description, content } = pageContext;
-  const whipala = brandImages?.nodes?.filter(
-    brandImgs => brandImgs.relativePath === "whipala.png"
-  );
-  const bgWhipala = whipala
-    ? whipala[0]?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
-    : null;
 
   const pattern = brandImages?.nodes?.filter(
     brandImgs => brandImgs.relativePath === "PATTERN-bg.png"
@@ -56,7 +50,6 @@ const OneColumn = ({ location, pageContext }) => {
         badgesWhats: "badgeWhats",
         badgesQuestion: "badgeQuestion",
         globalSubs: globalSubs,
-        topRibbonImg: bgWhipala,
         flags: flags,
         urlLocale: logoLocationUrl,
       }}

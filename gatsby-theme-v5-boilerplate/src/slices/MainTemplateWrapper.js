@@ -3,6 +3,7 @@ import React from "react";
 import BodyBlock from "@Slices/BodyBlock";
 import HeaderBlock from "@Slices/HeaderBlock";
 import FooterBlock from "@Slices/FooterBlock";
+import BadgesButtonsBlock from "@Slices/BadgesButtonsBlock";
 
 const MainTemplateWrapper = ({
   children,
@@ -16,7 +17,6 @@ const MainTemplateWrapper = ({
       opt={{
         classes: classes + " MainTemplateWrapper",
         bgImg: backgroundImage?.src || null,
-        topRibbonImg: opt?.topRibbonImg || null,
         options: opt,
       }}
     >
@@ -25,12 +25,12 @@ const MainTemplateWrapper = ({
         opt={{
           classes: classes + " MainTemplateWrapper",
           bgImg: backgroundImage?.src || null,
-          topRibbonImg: opt?.topRibbonImg || null,
           options: opt,
         }}
       />
       {children}
       <FooterBlock logo={logo} globalSubs={opt?.globalSubs || null} />
+      <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} />
     </BodyBlock>
   );
 };

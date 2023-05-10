@@ -176,7 +176,6 @@ const SinglePost = ({ location, pageContext }) => {
         badgesWhats: "badgeWhats",
         badgesQuestion: "badgeQuestion",
         globalSubs: globalSubs,
-        topRibbonImg: "bgWhipala",
         flags: flags,
         urlLocale: logoLocationUrl,
       }}

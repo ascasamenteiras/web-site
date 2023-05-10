@@ -95,7 +95,6 @@ const IndexPage = ({ pageContext, location }) => {
   `);
   const data = dataIndex?.allMarkdownRemark;
   const posts = data?.edges;
-  const defaultQuestions = dataIndex?.site?.siteMetadata.questions;
   const findItemFeatured = postsList => {
     let x = null;
 
@@ -305,12 +304,7 @@ const IndexPage = ({ pageContext, location }) => {
   const indexSubs = cardY?.pagesHelper?.index;
   const indexQuestions = cardY?.questions;
   const globalSubs = y?.pagesHelper?.globals;
-  const whipala = brandImages?.nodes?.filter(
-    brandImgs => brandImgs.relativePath === "whipala.png"
-  );
-  const bgWhipala = whipala
-    ? whipala[0]?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
-    : null;
+  console.log(indexQuestions);
 
   const pattern = brandImages?.nodes?.filter(
     brandImgs => brandImgs.relativePath === "PATTERN-bg.png"
@@ -407,7 +401,7 @@ const IndexPage = ({ pageContext, location }) => {
       }}
       opt={{
         titleSeo: `As Casamenteiras`,
-        pageQuestions: "defaultQuestions",
+        pageQuestions: indexQuestions,
         classes: "blog-list",
         schemaType: "blog",
         topology: "index",
@@ -416,10 +410,29 @@ const IndexPage = ({ pageContext, location }) => {
         mainLogo: "imgHolder",
         cardImage: "cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null",
         serverUrl: "props.location.href",
-        badgesWhats: "badgeWhats",
-        badgesQuestion: "badgeQuestion",
+        badgesWhats: (
+          <GatsbyImage
+            image={badgeWhats}
+            alt={"Botão do Whats"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+            width={70}
+            height={70}
+          />
+        ),
+        badgesQuestion: (
+          <GatsbyImage
+            image={badgeQuestion}
+            alt={"Botão de Perguntas Frequentes"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+            width={70}
+            height={70}
+          />
+        ),
         globalSubs: globalSubs,
-        topRibbonImg: bgWhipala,
         flags: flags,
         urlLocale: logoLocationUrl,
       }}
