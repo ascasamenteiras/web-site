@@ -47,6 +47,7 @@ const NotFoundPage = ({ location }) => {
             className={"whatsMe"}
             width={70}
             height={70}
+            id='btn-whats-api'
           />
         ),
         badgesQuestion: (

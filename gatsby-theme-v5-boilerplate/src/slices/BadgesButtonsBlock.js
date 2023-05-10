@@ -80,7 +80,6 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
           rel='noopener noreferrer'
           target={"_blank"}
           className={"badge-whats desktop-only"}
-          id='btn-whats-web'
         >
           {opt.badgesWhats}
         </a>
@@ -89,7 +88,6 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
           rel='noopener noreferrer'
           target={"_blank"}
           className={"badge-whats mobile-only"}
-          id='btn-whats-api'
         >
           {opt.badgesWhats}
         </a>
