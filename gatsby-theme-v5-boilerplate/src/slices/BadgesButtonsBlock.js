@@ -82,7 +82,6 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
           className={"badge-whats desktop-only"}
           id='btn-whats-web'
         >
-          Whats Btn
           {opt.badgesWhats}
         </a>
         <a
@@ -92,7 +91,6 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
           className={"badge-whats mobile-only"}
           id='btn-whats-api'
         >
-          Whats Btn
           {opt.badgesWhats}
         </a>
       </div>
