@@ -1,16 +1,16 @@
 ---
 topology: pages
-agent: singlePage
-schema: ["pages"]
-template: linkTree.js
 status: true
 title: Contatos
+agent: singlePage
+template: linkTree.js
+schema: ["pages"]
+helperI18n: ["pt-BR:/contatos/"]
 description: Nosso tea.
 slug: contatos
 featuredImage: ../pages/images/singles.png
 date: 2023-04-06T08:30:00+00:00
 questions: ["Question?:Answer!"]
-helperI18n: ["pt-BR:/contatos/"]
 ---
 
   <main>

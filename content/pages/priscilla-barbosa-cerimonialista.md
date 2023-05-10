@@ -1,6 +1,7 @@
 ---
 topology: pages
 status: true
+template: one-column.js
 agent: singlePage
 schema: ["pages"]
 helperI18n: ["pt-BR:/xxx/"]

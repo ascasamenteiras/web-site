@@ -3,6 +3,7 @@ topology: pages
 status: true
 title: Cerimonialistas
 agent: singlePage
+template: one-column.js
 schema: ["pages"]
 helperI18n: ["pt-BR:/xxx/"]
 description: Nosso time de cerimonialistas é comandado por Pri Barbosa que possui mais de 10 anos de experiência na área.

@@ -2,6 +2,7 @@
 topology: pages
 status: true
 agent: singlePage
+template: one-column.js
 schema: ["pages"]
 helperI18n: ["pt-BR:/xxx/"]
 title: Cerimonialista de Casamentos

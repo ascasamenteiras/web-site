@@ -8,7 +8,16 @@ import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 import Seo from "@Slices/Seo";
 
 const OneColumn = ({ location, pageContext }) => {
-  const { schemasJSON, brandImages, generalImages } = useSiteMetadatas();
+  const {
+    schemasJSON,
+    brandImages,
+    bandeiraWhats,
+    bandeiraQuestion,
+    generalImages,
+  } = useSiteMetadatas();
+  const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+  const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
+
   const regex = /\/(\w{2})\//;
   const locationUrl = location.pathname.match(regex);
   const logoLocationUrl = locationUrl ? locationUrl[1] : "";
@@ -21,7 +30,9 @@ const OneColumn = ({ location, pageContext }) => {
     });
   });
   const { title, description, content } = pageContext;
-
+  const { questions } = pageContext.SEO;
+  console.log("questions");
+  console.log(questions);
   const pattern = brandImages?.nodes?.filter(
     brandImgs => brandImgs.relativePath === "PATTERN-bg.png"
   );
@@ -38,7 +49,7 @@ const OneColumn = ({ location, pageContext }) => {
       }}
       opt={{
         titleSeo: `As Casamenteiras`,
-        pageQuestions: "defaultQuestions",
+        pageQuestions: questions,
         classes: "one-column",
         schemaType: "blog",
         topology: "index",
@@ -47,8 +58,28 @@ const OneColumn = ({ location, pageContext }) => {
         mainLogo: "imgHolder",
         cardImage: "cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null",
         serverUrl: "props.location.href",
-        badgesWhats: "badgeWhats",
-        badgesQuestion: "badgeQuestion",
+        badgesWhats: (
+          <GatsbyImage
+            image={badgeWhats}
+            alt={"Botão do Whats"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+            width={70}
+            height={70}
+          />
+        ),
+        badgesQuestion: (
+          <GatsbyImage
+            image={badgeQuestion}
+            alt={"Botão de Perguntas Frequentes"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+            width={70}
+            height={70}
+          />
+        ),
         globalSubs: globalSubs,
         flags: flags,
         urlLocale: logoLocationUrl,

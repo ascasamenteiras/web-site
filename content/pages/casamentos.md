@@ -3,6 +3,7 @@ topology: pages
 status: true
 agent: singlePage
 schema: ["pages"]
+template: one-column.js
 helperI18n: ["pt-BR:/xxx/"]
 title: Casamentos
 description: Depoimentos dos nossos casais sobre o cerimonial e assessoria d'As Casamenteiras.

@@ -1,18 +1,35 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
-import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
+// import { Link } from "gatsby";
+// import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import { Row } from "@Components/InsertRow";
-import HeadingBlock from "@Slices/HeadingBlock";
+// import HeadingBlock from "@Slices/HeadingBlock";
 import MainTemplateWrapper from "@Slices/MainTemplateWrapper";
 
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 const OneColumn = ({ location, pageContext }) => {
-  const { brandImages, generalImages, schemasJSON } = useSiteMetadatas();
+  const {
+    brandImages,
+    generalImages,
+    schemasJSON,
+    bandeiraWhats,
+    bandeiraQuestion,
+  } = useSiteMetadatas();
+  const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+  const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
+
   const regex = /\/(\w{2})\//;
   const locationUrl = location.pathname.match(regex);
   const logoLocationUrl = locationUrl ? locationUrl[1] : "";
-
+  const i =
+    logoLocationUrl && logoLocationUrl !== undefined && logoLocationUrl !== ""
+      ? locationUrl[1]
+      : "pt-BR";
+  const y = schemasJSON.nodes.filter(sch =>
+    sch.schema[0].card[0].cardLocale.includes(i)
+  );
+  const cardY = y[0].schema[0].card[0];
+  const indexQuestions = cardY?.questions;
   const flags = [];
   Object.entries(pageContext.helperI18n).forEach(transl => {
     // console.log("transl");
@@ -22,8 +39,6 @@ const OneColumn = ({ location, pageContext }) => {
       slug: transl[1].split(":")[1],
     });
   });
-  console.log("flags");
-  console.log(flags);
 
   const { title, description, content } = pageContext;
 
@@ -35,6 +50,7 @@ const OneColumn = ({ location, pageContext }) => {
     : null;
   const genImgsNodes = generalImages?.nodes;
   const globalSubs = schemasJSON?.pagesHelper?.globals;
+
   return (
     <MainTemplateWrapper
       logo={"darkLogo.publicURL"}
@@ -43,7 +59,7 @@ const OneColumn = ({ location, pageContext }) => {
       }}
       opt={{
         titleSeo: `As Casamenteiras`,
-        pageQuestions: "defaultQuestions",
+        pageQuestions: indexQuestions,
         classes: "blog-list",
         schemaType: "blog",
         topology: "index",
@@ -52,8 +68,28 @@ const OneColumn = ({ location, pageContext }) => {
         mainLogo: "imgHolder",
         cardImage: "cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null",
         serverUrl: "props.location.href",
-        badgesWhats: "badgeWhats",
-        badgesQuestion: "badgeQuestion",
+        badgesWhats: (
+          <GatsbyImage
+            image={badgeWhats}
+            alt={"Botão do Whats"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+            width={70}
+            height={70}
+          />
+        ),
+        badgesQuestion: (
+          <GatsbyImage
+            image={badgeQuestion}
+            alt={"Botão de Perguntas Frequentes"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+            width={70}
+            height={70}
+          />
+        ),
         globalSubs: globalSubs,
         flags: flags,
         urlLocale: logoLocationUrl,

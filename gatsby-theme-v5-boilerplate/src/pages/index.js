@@ -301,10 +301,10 @@ const IndexPage = ({ pageContext, location }) => {
     sch.schema[0].card[0].cardLocale.includes(i)
   );
   const cardY = y[0].schema[0].card[0];
-  const indexSubs = cardY?.pagesHelper?.index;
   const indexQuestions = cardY?.questions;
+
+  const indexSubs = cardY?.pagesHelper?.index;
   const globalSubs = y?.pagesHelper?.globals;
-  console.log(indexQuestions);
 
   const pattern = brandImages?.nodes?.filter(
     brandImgs => brandImgs.relativePath === "PATTERN-bg.png"
@@ -312,37 +312,7 @@ const IndexPage = ({ pageContext, location }) => {
   const bgPattern = pattern
     ? pattern[0]?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
     : null;
-  const patternDark = brandImages?.nodes?.filter(
-    brandImgs => brandImgs.relativePath === "PATTERN-bg-dark.png"
-  );
-  const bgPatternDark = patternDark
-    ? patternDark[0]?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
-    : null;
 
-  const patternFooterGrafism = brandImages?.nodes?.filter(
-    brandImgs => brandImgs.relativePath === "PATTERN-bg-2.png"
-  );
-  const patternFooterGrafismImg = patternFooterGrafism
-    ? patternFooterGrafism[0]?.childImageSharp?.gatsbyImageData?.images
-        ?.fallback?.src
-    : null;
-
-  const patternFooterGrafismDark = brandImages?.nodes?.filter(
-    brandImgs => brandImgs.relativePath === "PATTERN-bg-2-dark.png"
-  );
-  const patternFooterGrafismImgDark = patternFooterGrafismDark
-    ? patternFooterGrafismDark[0]?.childImageSharp?.gatsbyImageData
-    : null;
-  const toproof = generalImages?.nodes?.filter(
-    generalImgs => generalImgs?.relativePath === "mb-left-mic-guitar.jpg"
-  );
-  const treatmentNodes = treatmentImages?.nodes;
-  const partnersNodes = partnerImages?.nodes;
-  const getSectionOneImg = toproof
-    ? toproof[0]?.childImageSharp?.gatsbyImageData
-    : null;
-  // console.log("featuredPosts");
-  // console.log(featuredPosts);
   return (
     // <MainTemplateWrapper
     //   backgroundImage={{

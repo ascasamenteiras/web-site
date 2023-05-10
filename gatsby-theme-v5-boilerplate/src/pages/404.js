@@ -6,15 +6,30 @@ import HeadingBlock from "@Slices/HeadingBlock";
 import MainTemplateWrapper from "@Slices/MainTemplateWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-const NotFoundPage = ({ pageContext }) => {
-  const { schemasJSON } = useSiteMetadatas();
+const NotFoundPage = ({ location }) => {
+  const { schemasJSON, bandeiraWhats, bandeiraQuestion } = useSiteMetadatas();
   const globalSubs = schemasJSON?.pagesHelper?.globals;
+  const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+  const badgeQuestion = getImage(bandeiraQuestion.childrenImageSharp[0]);
+  const regex = /\/(\w{2})\//;
+  const locationUrl = location.pathname.match(regex);
+  const logoLocationUrl = locationUrl ? locationUrl[1] : "";
+  const i =
+    logoLocationUrl && logoLocationUrl !== undefined && logoLocationUrl !== ""
+      ? locationUrl[1]
+      : "pt-BR";
+  const y = schemasJSON.nodes.filter(sch =>
+    sch.schema[0].card[0].cardLocale.includes(i)
+  );
+  const cardY = y[0].schema[0].card[0];
+  const indexQuestions = cardY?.questions;
+
   return (
     <MainTemplateWrapper
       logo={"darkLogo.publicURL"}
       opt={{
         titleSeo: `As Casamenteiras`,
-        pageQuestions: "defaultQuestions",
+        pageQuestions: indexQuestions,
         classes: "blog-list",
         schemaType: "blog",
         topology: "index",
@@ -23,8 +38,28 @@ const NotFoundPage = ({ pageContext }) => {
         mainLogo: "imgHolder",
         cardImage: "cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null",
         serverUrl: "props.location.href",
-        badgesWhats: "badgeWhats",
-        badgesQuestion: "badgeQuestion",
+        badgesWhats: (
+          <GatsbyImage
+            image={badgeWhats}
+            alt={"Botão do Whats"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+            width={70}
+            height={70}
+          />
+        ),
+        badgesQuestion: (
+          <GatsbyImage
+            image={badgeQuestion}
+            alt={"Botão de Perguntas Frequentes"}
+            placeholder={"NONE"}
+            critical='true'
+            className={"whatsMe"}
+            width={70}
+            height={70}
+          />
+        ),
         globalSubs: globalSubs,
       }}
     >

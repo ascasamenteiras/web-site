@@ -2,6 +2,8 @@ import React, { useState } from "react";
 const BadgesButtonsBlock = ({ opt, questions }) => {
   const [questionState, setQuestionState] = useState(false);
   const [choosedQuestionState, setChoosedQuestionState] = useState(0);
+  console.log("questions");
+  console.log(questions);
   function handleQuestionBadgeClick(e) {
     e.preventDefault();
     setQuestionState(!questionState);
