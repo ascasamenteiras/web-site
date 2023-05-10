@@ -194,7 +194,30 @@ const HalfDiv = ({ pageContext, location }) => {
     const splitE = e.split("=");
     queries[splitE[0]] = splitE[1];
   });
-
+  const whatsMSG = (peopleA, peopleB, longDate, months, diffDays, mensagem) =>
+    encodeURI(
+      "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘\n\n" +
+        "🥂Oi Pri!🥂 \n\nMeu nome é *" +
+        peopleA +
+        "* 💍 e vou casar com *" +
+        peopleB +
+        "* 💍 e a data: \n\n*" +
+        longDate.charAt(0).toUpperCase() +
+        longDate.slice(1) +
+        "* 🕑 (faltam " +
+        months +
+        " meses," +
+        diffDays +
+        " dias).\n\n" +
+        mensagem +
+        "\n\nComo faço para você ser a cerimonialista do meu casamento?\n" +
+        "Também preciso de ajuda com diversos fornecedores.\n\n" +
+        "😍 Você poderia me ajudar? 😍\n\n" +
+        "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘"
+    );
+  const promoEndMSG = promoEnd
+    ? `Perdeu a Promoção? Clique aqui e receba um desconto de 5%`
+    : `Resgatar VOUCHER agora !`;
   const successUrl = location?.search?.includes("success=1");
 
   if (location?.search?.includes("success=1") && !condEndPromo) {
@@ -1094,33 +1117,34 @@ const HalfDiv = ({ pageContext, location }) => {
                 </div>
                 <div>
                   {queries ? (
-                    <a
-                      href={`https://web.whatsapp.com/send?phone=5516992452437&text=${encodeURI(
-                        "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘\n\n" +
-                          "🥂Oi Pri!🥂 \n\nMeu nome é *" +
-                          queries.peopleA +
-                          "* 💍 e vou casar com *" +
-                          queries.peopleB +
-                          "* 💍 e a data: \n\n*" +
-                          longDate.charAt(0).toUpperCase() +
-                          longDate.slice(1) +
-                          "* 🕑 (faltam " +
-                          months +
-                          " meses," +
-                          diffDays +
-                          " dias).\n\n" +
-                          mensagem +
-                          "\n\nComo faço para você ser a cerimonialista do meu casamento?\n" +
-                          "Também preciso de ajuda com diversos fornecedores.\n\n" +
-                          "😍 Você poderia me ajudar? 😍\n\n" +
-                          "🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘 ❤️ 🆘"
-                      )}`}
-                      className='voucher-btn-whats'
-                    >
-                      {promoEnd
-                        ? `Perdeu a Promoção? Clique aqui e receba um desconto de 5%`
-                        : `Resgatar VOUCHER agora !`}
-                    </a>
+                    <>
+                      <a
+                        href={`https://web.whatsapp.com/send?phone=5516992452437&text=${whatsMSG(
+                          queries.peopleA,
+                          queries.peopleB,
+                          longDate,
+                          months,
+                          diffDays,
+                          mensagem
+                        )}`}
+                        className='voucher-btn-whats desktop-only'
+                      >
+                        {promoEndMSG}
+                      </a>
+                      <a
+                        href={`https://api.whatsapp.com/send?phone=5516992452437&text=${whatsMSG(
+                          queries.peopleA,
+                          queries.peopleB,
+                          longDate,
+                          months,
+                          diffDays,
+                          mensagem
+                        )}`}
+                        className='voucher-btn-whats mobile-only'
+                      >
+                        {promoEndMSG}
+                      </a>
+                    </>
                   ) : null}
 
                   <p>Esse VOUCHER expira em:</p>
