@@ -69,4 +69,4 @@ As Casamenteiras tem o orgulho de estar à frente junto às novas tendências pa
 
 Nós cuidamos para que todos os principais serviços estejam contemplados e bem descritos dentro do nosso orçamento para o casal, pois pensamos em vocês que são as pessoas que realmente nos importam.
 
-Começem o planejamento do seu casamento de vocês, entrem em contato pelo nosso **Whatsapp**: [_16 99245-2437_](https://web.whatsapp.com/send?phone=5516992452437)
+Começem o planejamento do seu casamento de vocês, entrem em contato pelo nosso **Whatsapp**: [_16 99199-7935_](https://web.whatsapp.com/send?phone=5516991997935)

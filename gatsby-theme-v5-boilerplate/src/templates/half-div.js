@@ -1119,7 +1119,7 @@ const HalfDiv = ({ pageContext, location }) => {
                   {queries ? (
                     <>
                       <a
-                        href={`https://web.whatsapp.com/send?phone=5516992452437&text=${whatsMSG(
+                        href={`https://web.whatsapp.com/send?phone=5516991997935&text=${whatsMSG(
                           queries.peopleA,
                           queries.peopleB,
                           longDate,
@@ -1132,7 +1132,7 @@ const HalfDiv = ({ pageContext, location }) => {
                         {promoEndMSG}
                       </a>
                       <a
-                        href={`https://api.whatsapp.com/send?phone=5516992452437&text=${whatsMSG(
+                        href={`https://api.whatsapp.com/send?phone=5516991997935&text=${whatsMSG(
                           queries.peopleA,
                           queries.peopleB,
                           longDate,

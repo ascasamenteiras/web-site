@@ -138,7 +138,7 @@ Para a empresa é importante que você selecione as cores certas, validadas com 
 
 ## Como faço para saber mais sobre os serviços premiados d'As Casamenteiras?
 
-Para saber mais sobre todos os nossos serviços, sinta-se à vontade em nos enviar a sua pergunta. Entre em contato com a nossa equipe pelo _Whats_ 16 9 9245-2437 ou por [e-mail](mailto:cerimonial@ascasamenteiras.com.br).
+Para saber mais sobre todos os nossos serviços, sinta-se à vontade em nos enviar a sua pergunta. Entre em contato com a nossa equipe pelo _Whats_ 16 9 9199-7935 ou por [e-mail](mailto:cerimonial@ascasamenteiras.com.br).
 
 Nos siga também no [Instagram](https://instagram.com/ascasamenteiras_).
 
