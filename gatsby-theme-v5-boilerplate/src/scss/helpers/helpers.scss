@@ -1451,6 +1451,13 @@ ul.contact-link-tree-wrapper {
 	cursor: pointer;
 	&:hover {
 		opacity: 1;
+		& :first-child a.locales {
+			filter: unset;
+		}
+		height: auto;
+		.plus-locales {
+			display: none;
+		}
 	}
 	li:not(:last-child) {
 		margin-bottom: 15px;
@@ -1474,13 +1481,29 @@ ul.contact-link-tree-wrapper {
 		text-align: center;
 		margin-top: -22px;
 	}
-	&:hover {
-		& :first-child a.locales {
-			filter: unset;
-		}
-		height: auto;
-		.plus-locales {
-			display: none;
+}
+.contato .main-container ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	& > li a {
+		display: block;
+		font-size: 20px;
+		background: $cta__color;
+		border: 2px solid $primary_ultradark;
+		padding: 7px 15px;
+		border-radius: 20px;
+		margin: 0 0 10px 0;
+		width: 300px;
+		text-align: center;
+		font-family: $second__font;
+		color: $cta__colorLink;
+		box-shadow: 2px 2px 0 0 $primary_ultradark;
+		font-weight: 900;
+		&:hover {
+			background: $cta__colorLink;
+			color: $primary_ultradark;
+			border: 2px dashed $primary_ultradark;
 		}
 	}
 }

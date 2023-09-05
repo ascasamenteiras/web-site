@@ -41,6 +41,8 @@ const OneColumn = ({ location, pageContext }) => {
     : null;
   const genImgsNodes = generalImages?.nodes;
   const globalSubs = schemasJSON?.pagesHelper?.globals;
+  console.log("pageContext");
+  console.log(pageContext);
   return (
     <MainTemplateWrapper
       logo={"darkLogo.publicURL"}
@@ -48,16 +50,16 @@ const OneColumn = ({ location, pageContext }) => {
         src: bgPattern,
       }}
       opt={{
-        titleSeo: `As Casamenteiras`,
+        titleSeo: `${pageContext} - As Casamenteiras`,
         pageQuestions: questions,
-        classes: "one-column",
+        classes: `one-column ${pageContext.slug}`,
         schemaType: "blog",
         topology: "index",
         blogListing: "posts?.slice(0, 9)",
-        articleUrl: "props.location.href",
+        articleUrl: location.href,
         mainLogo: "imgHolder",
         cardImage: "cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null",
-        serverUrl: "props.location.href",
+        serverUrl: location.href,
         badgesWhats: (
           <GatsbyImage
             image={badgeWhats}
