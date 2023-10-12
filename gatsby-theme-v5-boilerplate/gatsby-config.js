@@ -204,6 +204,30 @@ module.exports = {
         path: path.resolve(rootDir, contentPath + "/slices/components"),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `weddings`,
+        path: path.resolve(rootDir, contentPath + "/weddings"),
+        ignore: [`**/\.jpg`, `**/\.png`], // ignore files starting with a dot
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `tasks`,
+        path: path.resolve(rootDir, contentPath + "/tasks"),
+        ignore: [`**/\.jpg`, `**/\.png`], // ignore files starting with a dot
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `glossary`,
+        path: path.resolve(rootDir, contentPath + "/glossary"),
+        ignore: [`**/\.jpg`, `**/\.png`], // ignore files starting with a dot
+      },
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,

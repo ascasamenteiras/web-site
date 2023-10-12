@@ -1,37 +1,38 @@
 import React, { useState, useEffect } from "react";
-import fetch from "cross-fetch";
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
-import { Link, navigate } from "gatsby";
-import Cors from "cors";
-
-const cors = Cors();
+// import fetch from "cross-fetch";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+// import { Link, navigate } from "gatsby";
 
 import moment from "moment";
 import "moment/locale/pt-br";
-import { ClerkProvider } from "@clerk/clerk-react";
+// import { ClerkProvider } from "@clerk/clerk-react";
 
-import {
-  SignIn,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  useUser,
-} from "gatsby-plugin-clerk";
+// import {
+//   SignIn,
+//   SignedIn,
+//   SignedOut,
+//   UserButton,
+//   useUser,
+// } from "gatsby-plugin-clerk";
 // import { SignedIn, SignedOut, useAuth, useClerk } from "@clerk/clerk-react";
-import { ptBR } from "@clerk/localizations";
+// import { ptBR } from "@clerk/localizations";
 
 import { Row } from "@Components/InsertRow";
 import MainTemplateWrapper from "@Slices/MainTemplateWrapper";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-const { Configuration, OpenAIApi } = require("openai");
+import OpenAI from "openai";
 const _ = require("lodash");
 
-const configuration = new Configuration({
-  apiKey: process.env.GATSBY_OPENAI_API_KEY,
+console.log("process.env.GATSBY_OPENAI_API_KEY");
+console.log(process.env.GATSBY_OPENAI_API_KEY);
+// delete configuration.baseOptions.headers["User-Agent"];
+const openai = new OpenAI({
+  apiKey: process.env.GATSBY_OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
+  dangerouslyAllowBrowser: true,
 });
-delete configuration.baseOptions.headers["User-Agent"];
-const openai = new OpenAIApi(configuration);
+
+// const openai = new OpenAI(configuration);
 
 const userInfos = {
   finalCountDown: "2024-06-03",
@@ -82,8 +83,19 @@ const Chat = ({ pageContext, location }) => {
   ]);
   const [textInput, setTextInput] = useState("");
   const [chating, setChating] = useState(false);
+  const [person, setPerson] = useState(0);
   const [userPrompt, setUserPrompt] = useState([]);
-  const { isSignedIn, user, isLoaded } = useUser();
+
+  const handleChating = async param => {
+    if (!chating && !userInfos) {
+      return null;
+    }
+    return setChating(param);
+  };
+  console.log(pageContext);
+  // const { isSignedIn, user, isLoaded } = useUser();
+  // console.log("user");
+  // console.log(user);
   // TODO: Profile btn with useClerk
   // TODO: user img default state plus useeffect change to user clerk img
   // TODO: Handle profile btn: Clerk.redirectToSignUp()
@@ -285,73 +297,91 @@ const Chat = ({ pageContext, location }) => {
   );
   console.log("userPrompt");
   console.log(userQuestions);*/
+
   const handleSubmit = async event => {
     event.preventDefault();
-    setChating(true);
+    handleChating(true);
     handleUserPrompt(event.target[0].value);
     handleUserQuestions(event.target[0].value);
     handleTextInput("");
-    const response = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      stop: ['"""'],
-      stream: false,
-      temperature: 0.5,
-      max_tokens: 400,
-      top_p: 0.4,
-      frequency_penalty: 0.1,
-      presence_penalty: 0.1,
-      messages: [
-        {
-          role: "system",
-          content:
-            "Você é uma Assessora de Casamentos, chamada Prix e trabalha para a empresa Abóbora Cerimonial. Você e a empresa tem a missão de assessoras todas as configurações de casais, sem distinção nenhuma, à organizarem o casamento deles. Você é sempre muito educada e conversa sempre com uma noiva, ou noivo. Você sempre está conversando sobre casamentos e responde sobre o casamento do casal em específico. Você é interessada em ajudar a resolver tarefas sobre o evento do casal. Há diversas tarefas para serem feitas, eis as categorias gerais das tarefas: Alianças, Acessórios da Cerimônia, Cerimonial, Celebrantes, Beleza & Moda do Casamento, Locais & Decor, Alimentação, Festa, Papelaria de Casamento, Convidados, Recordações e Lembrancinhas, Diversos, Serviços de Entretenimento e Lua de Mel.Sempre chame os casais pelo nome do usuário.",
-        },
-        {
-          role: "system",
-          content: `Quando alguém agradecer, seja educada e na resposta acrescente algo como 'de nada'.`,
-        },
-        {
-          role: "system",
-          content: `Esse é um objeto JSON.stringify contendo as informações do casal: ${JSON.stringify(
-            userInfos
-          )}`,
-        },
-        {
-          role: "system",
-          content: `O usuário é sempre parte de um casal que está noivo, a conta está sendo usada pelo cônjuge: ${userInfos.couple.a}. O nome do outro cônjugê: ${userInfos.couple.b}. De vez enquando, nas respostas, use os nomes dos casais, isso os faz sentir felizes.`,
-        },
-        {
-          role: "system",
-          content: `Você só responde em português do Brasil. Você segue o horário padrão de Brasília. A data atual é: ${new Date()}. Não responda temas aleatórios. Não responda perguntas que não são diretamente sobre casamento. Esses são os únicos assuntos permitidos abordar na Abóbora Cerimonial: Alianças, Acessórios da Cerimônia, Cerimonial, Celebrantes, Beleza & Moda do Casamento, Locais & Decor, Alimentação, Festa, Papelaria de Casamento, Convidados, Recordações e Lembrancinhas, Diversos, Serviços de Entretenimento e Lua de Mel. Você nunca deve tentar supôr ou advinhar o nome do usuário. Ele sempre irá se identificar a cada pergunta. Existe um desenho de mascote de você Prix. A descrição é que você é jovem negra, com piercing, aparelho auditivo, macacão cor bege e camisa laranja, assim como é o laranja da Abóbora Cerimonial. É proibido responder qualquer tipo de linguagem de programação e dar respostas contendo códigos. Nem mesmo quando o código parecer algo relacionado a casamentos. Nunca me gere nenhum código de computador e linguagem de programação, mesmo que o usuário peça.`,
-        },
-        {
-          role: "system",
-          content: `Se perguntarem qual a diferença entre a data atual de hoje e a data do casamento, você deve responder seguindo as seguintes orientações: Faltam ${diff.months()} meses; Faltam ${diff.weeks()} semanas; Faltam ${
-            diff.days() % 7
-          } dias.`,
-        },
-        {
-          role: "system",
-          content: `FYK: A pergunta anterior que o usuário fez foi: ${userQuestions.at(
-            -2
-          )}.`,
-        },
-        { role: "user", content: "O meu nome é Bianca." },
-        {
-          role: "user",
-          content: `${event.target[0].value}`,
-        },
-      ],
-    });
-    changeAnswer([response.data.choices[0].message.content]);
+    const response = await openai.chat.completions
+      .create({
+        model: "gpt-3.5-turbo",
+        stop: ['"""'],
+        stream: false,
+        temperature: 0.5,
+        max_tokens: 400,
+        top_p: 0.4,
+        frequency_penalty: 0.1,
+        presence_penalty: 0.1,
+        messages: [
+          {
+            role: "system",
+            content:
+              "Você é uma Assessora de Casamentos, chamada Prix e trabalha para a empresa As Casamenteiras. Você e a empresa tem a missão de assessoras todas as configurações de casais, sem distinção nenhuma, à organizarem o casamento deles. Você é sempre muito educada e conversa sempre com uma noiva, ou noivo. Você sempre está conversando sobre casamentos e responde sobre o casamento do casal em específico. Você é interessada em ajudar a resolver tarefas sobre o evento do casal. Há diversas tarefas para serem feitas, eis as categorias gerais das tarefas: Alianças, Acessórios da Cerimônia, Cerimonial, Celebrantes, Beleza & Moda do Casamento, Locais & Decor, Alimentação, Festa, Papelaria de Casamento, Convidados, Recordações e Lembrancinhas, Diversos, Serviços de Entretenimento e Lua de Mel.Sempre chame os casais pelo nome do usuário.",
+          },
+          {
+            role: "system",
+            content: `Quando alguém agradecer, seja educada e na resposta acrescente algo como 'de nada'.`,
+          },
+          {
+            role: "system",
+            content: `Esse é um objeto JSON.stringify contendo as informações do casal: ${JSON.stringify(
+              pageContext
+            )}`,
+          },
+          {
+            role: "system",
+            content: `O usuário é sempre parte de um casal que está noivo, a conta está sendo usada pelo cônjuge: ${pageContext.partnerA}. O nome do outro cônjugê: ${pageContext.partnerB}. De vez enquando, nas respostas, use os nomes dos casais, isso os faz sentir felizes.`,
+          },
+          {
+            role: "system",
+            content: `Você só responde em português do Brasil. Você segue o horário padrão de Brasília. A data atual é: ${new Date()}. Não responda temas aleatórios. Não responda perguntas que não são diretamente sobre casamento. Esses são os únicos assuntos permitidos abordar na As Casamenteiras: Alianças, Acessórios da Cerimônia, Cerimonial, Celebrantes, Beleza & Moda do Casamento, Locais & Decor, Alimentação, Festa, Papelaria de Casamento, Convidados, Recordações e Lembrancinhas, Diversos, Serviços de Entretenimento e Lua de Mel. Você nunca deve tentar supôr ou advinhar o nome do usuário. Ele sempre irá se identificar a cada pergunta. Existe um desenho de mascote de você Prix. A descrição é que você é jovem negra, com piercing, aparelho auditivo, macacão cor bege e camisa laranja, assim como é o laranja da As Casamenteiras. É proibido responder qualquer tipo de linguagem de programação e dar respostas contendo códigos. Nem mesmo quando o código parecer algo relacionado a casamentos. Nunca me gere nenhum código de computador e linguagem de programação, mesmo que o usuário peça.`,
+          },
+          {
+            role: "system",
+            content: `Se perguntarem qual a diferença entre a data atual de hoje e a data do casamento, você deve responder seguindo as seguintes orientações: Faltam ${diff.months()} meses; Faltam ${diff.weeks()} semanas; Faltam ${
+              diff.days() % 7
+            } dias.`,
+          },
+          {
+            role: "system",
+            content: `FYK: A pergunta anterior que o usuário fez foi: ${userQuestions.at(
+              -2
+            )}.`,
+          },
+          {
+            role: "user",
+            content: `O meu nome é ${
+              person === 0 ? pageContext.partnerA : pageContext.partnerB
+            }.`,
+          },
+          {
+            role: "user",
+            content: `${event.target[0].value}`,
+          },
+        ],
+      })
+      .catch(err => {
+        if (err instanceof OpenAI.APIError) {
+          console.log(err.status); // 400
+          console.log(err.name); // BadRequestError
 
-    return setChating(false);
+          console.log(err.headers); // {server: 'nginx', ...}
+        } else {
+          throw err;
+        }
+      });
+    console.log(response);
+    changeAnswer([response?.choices[0]?.message?.content || null]);
+
+    return handleChating(false);
   };
 
-  const formattedData = pageContext.tasks.map((obj, i) => ({
-    ...obj,
-    userData: userMetas[i],
-  }));
+  // const formattedData = pageContext.tasks.map((obj, i) => ({
+  //   ...obj,
+  //   userData: userMetas[i],
+  // }));
 
   function bMath(mts) {
     const pta = [];
@@ -388,31 +418,31 @@ const Chat = ({ pageContext, location }) => {
     // document.getElementById("tt").innerHTML = t;
     // document.getElementById("tts").innerHTML = tA.toString();
   }
-  bMath(formattedData);
-  useEffect(async () => {
+  // bMath(formattedData);
+  useEffect(() => {
     if (chating && userInfos) {
-      return setChating(true);
+      handleChating(true);
     }
-    if (isLoaded || isSignedIn) {
-      /*console.log("user.emailAddresses[0].emailAddress:::");
+    // if (isLoaded || isSignedIn) {
+    /*console.log("user.emailAddresses[0].emailAddress:::");
       console.log(user.emailAddresses[0].emailAddress);
       console.log("user::::");
       console.log(user);*/
-      // const fetchData = async () =>
-      //   await fetch(`/api/hello`, {
-      //     method: "GET",
-      //   }).then(resp => {
-      //     console.log("resp isss:");
-      //     console.log(resp);
-      //   });
-      // const jsonData = async () => await fetchData?.json();
-      // console.log(jsonData);
-    }
+    // const fetchData = async () =>
+    //   await fetch(`/api/hello`, {
+    //     method: "GET",
+    //   }).then(resp => {
+    //     console.log("resp isss:");
+    //     console.log(resp);
+    //   });
+    // const jsonData = async () => await fetchData?.json();
+    // console.log(jsonData);
+    // }
   }, [chating]);
-  if (!isLoaded || !isSignedIn) {
-    const isBrowser = typeof window !== "undefined";
-    return isBrowser ? navigate("/") : null;
-  }
+  // if (!isLoaded || !isSignedIn) {
+  //   const isBrowser = typeof window !== "undefined";
+  //   return isBrowser ? navigate("/") : null;
+  // }
   // console.log("ptBRptBRptBRptBR");
   // console.log(ptBR);
 
@@ -423,7 +453,7 @@ const Chat = ({ pageContext, location }) => {
         src: bgPattern,
       }}
       opt={{
-        titleSeo: `Abóbora Cerimonial`,
+        titleSeo: `As Casamenteiras`,
         pageQuestions: questions,
         classes: "chat-page",
         schemaType: "blog",
@@ -475,7 +505,7 @@ const Chat = ({ pageContext, location }) => {
           <div className='top-chat wrapper-chat'>
             <div className='user-input'>
               <div className='user-bubble'>
-                <ClerkProvider
+                {/* <ClerkProvider
                   localization={ptBR}
                   publishableKey={clerk_pub_key}
                   navigate={to => navigate(to)}
@@ -491,7 +521,7 @@ const Chat = ({ pageContext, location }) => {
                   <SignedIn>
                     <UserButton />
                   </SignedIn>
-                </ClerkProvider>
+                </ClerkProvider> */}
               </div>
               <form onSubmit={handleSubmit}>
                 <input
@@ -514,7 +544,7 @@ const Chat = ({ pageContext, location }) => {
               </form>
             </div>
             <div className='goals-wrapper'>
-              {formattedData.map((goal, idx) => {
+              {/* {formattedData.map((goal, idx) => {
                 const o = 1 + idx;
                 return (
                   <p key={o}>
@@ -528,7 +558,7 @@ const Chat = ({ pageContext, location }) => {
                     <span>{goal.frontmatter.title}</span>
                   </p>
                 );
-              })}
+              })} */}
             </div>
           </div>
           <div className='wrapper-chat'>
@@ -662,7 +692,7 @@ const Chat = ({ pageContext, location }) => {
               /> */}
             </div>
           </div>
-          <div className='bottom-chat'>Powered by: Milton Bolonha</div>
+          <div className='bottom-chat'>Powered by: As Casamenteiras</div>
         </Row>
       </main>
     </MainTemplateWrapper>

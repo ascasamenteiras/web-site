@@ -117,6 +117,17 @@ export const useSiteMetadatas = () =>
             }
           }
         }
+        markLogo: allFile(
+          filter: { relativePath: { eq: "as-casamenteiras-icon.png" } }
+        ) {
+          nodes {
+            relativePath
+            publicURL
+            childImageSharp {
+              gatsbyImageData(width: 125, height: 125, quality: 100)
+            }
+          }
+        }
         whiteLogoMark: allFile(
           filter: { relativePath: { eq: "F_Logo_White.png" } }
         ) {

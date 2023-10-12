@@ -3,7 +3,7 @@ topology: pages
 status: true
 title: Contatos
 agent: singlePage
-template: linkTree.js
+template: one-column.js
 schema: ["pages"]
 helperI18n: ["pt-BR:/contatos/"]
 description: Nosso tea.

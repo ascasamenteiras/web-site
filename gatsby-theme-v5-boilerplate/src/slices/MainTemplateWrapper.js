@@ -20,14 +20,16 @@ const MainTemplateWrapper = ({
         options: opt,
       }}
     >
-      <HeaderBlock
-        logotipoSvg={logo}
-        opt={{
-          classes: classes + " MainTemplateWrapper",
-          bgImg: backgroundImage?.src || null,
-          options: opt,
-        }}
-      />
+      {opt.hasHeader === false ? null : (
+        <HeaderBlock
+          logotipoSvg={logo}
+          opt={{
+            classes: classes + " MainTemplateWrapper",
+            bgImg: backgroundImage?.src || null,
+            options: opt,
+          }}
+        />
+      )}
       {children}
       <FooterBlock logo={logo} globalSubs={opt?.globalSubs || null} />
       <BadgesButtonsBlock opt={opt} questions={opt.pageQuestions} />

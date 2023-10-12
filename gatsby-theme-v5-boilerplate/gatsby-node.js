@@ -129,17 +129,10 @@ exports.onCreateNode = async ({ node, getNode, getNodesByType, actions }) => {
               e.split(".")[0] === slugTitle
           );
           const arrayI18n = [];
-          mdLocale.forEach(
-            async el =>
-              arrayI18n.push(
-                `${
-                  locales.filter(d => d.split("-")[0] === el.split(".")[1])[0]
-                }`
-              )
-            // console.log("markdownNodes.filter(nod=>nod.fileAbsolutePath===el)"),
-            // console.log(
-            //   markdownNodes.filter(nod => nod.fileAbsolutePath === el)
-            // )
+          mdLocale.forEach(async el =>
+            arrayI18n.push(
+              `${locales.filter(d => d.split("-")[0] === el.split(".")[1])[0]}`
+            )
           );
           arrayI18n.push(locales[0]);
           await createNodeField({
@@ -288,10 +281,6 @@ exports.onCreatePage = async ({ page, actions }) => {
           brandPhone: cardElement.brandPhone,
         },
       };
-      // console.log("");
-      // console.log("cardElement.pagesHelper.index.SEO.title");
-      // console.log(cardElement.pagesHelper.index.SEO.title);
-      // console.log("");
 
       if (
         newPage.path === "/" ||
@@ -300,21 +289,6 @@ exports.onCreatePage = async ({ page, actions }) => {
       ) {
         createPage(newPage);
       }
-      // await fs.readdir(pageSiteFolder, (err, files) => {
-      //   files.map((file, ind) => {
-
-      //   });
-      // });
-
-      // if (
-      //   isDefaultLanguage &&
-      //   isDefaultSchema &&
-      //   newPage.path === "/dev-404-page/" &&
-      //   newPage.path === "/404/" &&
-      //   newPage.path === "404.html"
-      // ) {
-      //   createPage(newPage);
-      // }
     }
   };
 
@@ -344,8 +318,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const isIndex = page === "index.js" ? true : false;
       const is404 = page === "404.js" ? true : false;
       const localePathQuery = isDefaultI18n ? "" : schemaFile.slice(0, 2);
-      // console.log("fileName");
-      // console.log(fileName);
       let pathQuery = isIndex && !is404 ? "" : fileName + "/";
 
       const pathExtended = isDefaultI18n
@@ -392,16 +364,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             pageSiteObj("/" + "dev-404-page" + "/", errorComponent)
           );
           await createPage(pageSiteObj("/" + "404" + ".html", errorComponent));
-          // console.log("");
-          // console.log("404 criada");
-          // console.log(element.split("-")[0]);
-          // console.log("");
         }
       }
       if (isDefaultI18n || (isIndex && isDefaultI18n)) {
-        // console.log("");
-        // console.log("criada pagina isDefaultI18n || isIndex");
-        // console.log("");
         await createPage({
           path: pathExtended,
           component: pageSiteFolder + "/" + page,
@@ -410,9 +375,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           },
         });
       } else {
-        // console.log("");
-        // console.log("criada pagina contraria a isDefaultI18n || isIndex");
-        // console.log("");
         await createPage({
           path: pathExtended,
           component: pageSiteFolder + "/" + page,
@@ -451,6 +413,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             title
             agent
             schema
+            template
             status
             slug
             topology
@@ -614,6 +577,106 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
 
+      allWeddings: allMarkdownRemark(
+        filter: { frontmatter: { topology: { eq: "weddings" } } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            agent
+            schema
+            template
+            status
+            slug
+            topology
+            description
+            date
+            questions
+            helperI18n
+            partnerA
+            partnerB
+            totalInvestment
+            guests
+            consultancy
+            consultancyContact
+            consultancyEmail
+            spouseAPronoun
+            spouseBPronoun
+            spouseASocial
+            spouseBSocial
+            ceremonyLocation
+            receptionLocation
+            weddingRings
+            band
+            dj
+            drinksBar
+            beautyAndBridalDay
+            weddingFavors
+            inflatableToys
+            catering
+            officiant
+            stationeryAndInvitations
+            decoration
+            gourmetSweets
+            photography
+            videography
+            powerGenerator
+            orchestra
+            iceCream
+            robes
+            groomsShoes
+            bridesShoes
+            websiteAndGiftRegistry
+            tents
+            groomsAttire
+            bridesDress
+            bridesVeil
+            featuredImage {
+              childrenImageSharp {
+                gatsbyImageData(
+                  width: 1200
+                  height: 627
+                  placeholder: NONE
+                  quality: 80
+                )
+              }
+            }
+          }
+          html
+          htmlAst
+          excerpt(pruneLength: 200)
+          fileAbsolutePath
+        }
+      }
+
+      AllTasks: allMarkdownRemark(
+        filter: { frontmatter: { topology: { eq: "tasks" } } }
+      ) {
+        nodes {
+          frontmatter {
+            importance
+            title
+            supplier
+            limitDate
+            warningRange
+            isAccessory
+            topo
+            description
+          }
+        }
+      }
+
+      AllTerms: allMarkdownRemark(
+        filter: { frontmatter: { topology: { eq: "terms" } } }
+      ) {
+        nodes {
+          frontmatter {
+            letter
+            terms
+          }
+        }
+      }
+
       storiesA: file(relativePath: { eq: "stories-ante-final.png" }) {
         childrenImageSharp {
           gatsbyImageData(width: 900, height: 675, quality: 80)
@@ -634,37 +697,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       ? results.data.allPages.nodes
       : console.log("Page Error");
 
-    const npages = results.data.allPages.nodes.reduce((acc, node) => {
-      const { slug, i18n } = node.fields;
-      if (!acc[slug]) {
-        acc[slug] = [];
-      }
-      acc[slug].push(`${i18n}:${slug}`);
-      return acc;
-    }, {});
-
-    // Object.entries(npages).forEach(([slug, translations]) => {
-    //   console.log({
-    //     path: slug,
-    //     context: translations,
-    //   });
-    // });
-
     const posts = results.data?.allPosts?.nodes
       ? results.data.allPosts.nodes
       : console.log("posts com erro");
 
-    // const categories = results?.data?.categoriesGroup?.group
-    //   ? results.data.categoriesGroup.group
-    //   : console.log("categoriesGroup com eero");
-
     const landings = results?.data?.AllLandings?.nodes
       ? results.data.AllLandings.nodes
       : console.log("AllLandings com eero");
-    // console.log("landings");
-    // console.log(landings);
-    // console.log("results.data.AllLandings");
-    // console.log(results.data.AllLandings);
+
+    const weddings = results.data?.allWeddings?.nodes
+      ? results.data.allWeddings.nodes
+      : console.log("Page Error");
+
+    const tasks = results?.data?.AllTasks?.nodes
+      ? results.data.AllTasks.nodes
+      : console.log("AllTasks com eero");
+
+    const terms = results?.data?.AllTerms?.nodes
+      ? results.data.AllTerms.nodes
+      : console.log("AllTerms com eero");
+
     let imgsPageObj = [];
     let allPages = [];
 
@@ -841,8 +893,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             brandKeywords: h.brandKeywords,
             brandEmail: h.brandEmail,
             brandPhone: h.brandPhone,
-            track: null,
-            album: null,
           },
         },
 
@@ -891,6 +941,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         date,
         description,
         helperI18n,
+        template,
         questions,
         featuredImage,
         agent,
@@ -1009,7 +1060,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         path: slug,
         component: path.resolve(
           rootDir,
-          `gatsby-theme-v5-boilerplate/src/templates/one-column.js`
+          `gatsby-theme-v5-boilerplate/src/templates/${template}`
         ),
         context: {
           ...page.pageContext,
@@ -1084,8 +1135,143 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       });
     });
 
+    await weddings.forEach(async wedding => {
+      if (!wedding) {
+        return console.log("wedding: deu erro muito");
+      }
+      if (wedding.frontmatter === null) {
+        return console.log("wedding: deu erro");
+      }
+      // const { slug, availableI18n, i18n } = wedding.fields;
+      const {
+        title,
+        date,
+        description,
+        helperI18n,
+        template,
+        questions,
+        featuredImage,
+        agent,
+        schema,
+        slug,
+        estimatedBudget,
+        totalInvestment,
+        guests,
+        consultancy,
+        consultancyContact,
+        consultancyEmail,
+        spouseAPronoun,
+        spouseBPronoun,
+        spouseASocial,
+        spouseBSocial,
+        ceremonyLocation,
+        receptionLocation,
+        weddingRings,
+        band,
+        dj,
+        drinksBar,
+        beautyAndBridalDay,
+        weddingFavors,
+        inflatableToys,
+        catering,
+        officiant,
+        stationeryAndInvitations,
+        decoration,
+        gourmetSweets,
+        photography,
+        videography,
+        powerGenerator,
+        orchestra,
+        iceCream,
+        robes,
+        groomsShoes,
+        bridesShoes,
+        websiteAndGiftRegistry,
+        tents,
+        groomsAttire,
+        bridesDress,
+        bridesVeil,
+        partnerA,
+        partnerB,
+      } = wedding.frontmatter;
+
+      // Use the fields created in exports.onCreatepage
+
+      createPage({
+        path: slug,
+        component: path.resolve(
+          rootDir,
+          `gatsby-theme-v5-boilerplate/src/templates/${template}`
+        ),
+        context: {
+          ...wedding.pageContext,
+          title,
+          content: wedding.html,
+          description,
+          helperI18n,
+          slug,
+          tasks,
+          terms,
+          partnerA,
+          partnerB,
+
+          estimatedBudget,
+          totalInvestment,
+          guests,
+          consultancy,
+          consultancyContact,
+          consultancyEmail,
+          spouseAPronoun,
+          spouseBPronoun,
+          spouseASocial,
+          spouseBSocial,
+          ceremonyLocation,
+          receptionLocation,
+          weddingRings,
+          band,
+          dj,
+          drinksBar,
+          beautyAndBridalDay,
+          weddingFavors,
+          inflatableToys,
+          catering,
+          officiant,
+          stationeryAndInvitations,
+          decoration,
+          gourmetSweets,
+          photography,
+          videography,
+          powerGenerator,
+          orchestra,
+          iceCream,
+          robes,
+          groomsShoes,
+          bridesShoes,
+          websiteAndGiftRegistry,
+          tents,
+          groomsAttire,
+          bridesDress,
+          bridesVeil,
+          SEO: {
+            agent: agent,
+            schema: schema,
+            topology: "pages",
+            dateCreated: date,
+            datePublished: date,
+            slug: slug,
+            articleUrl: "/" + slug,
+            title: title,
+            description: description,
+            articleBody: wedding.html,
+            questions: questions,
+            featuredImage: featuredImage,
+          },
+        },
+      });
+    });
+
     // dealing with nodes
-    landings?.forEach(landing => {
+    await landings?.forEach(landing => {
       if (!landing) {
         return console.log("landing: deu erro muito");
       }
@@ -1115,342 +1301,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       });
     });
-
-    // new cat N landings
-
-    // // Make category pages
-    // categories?.forEach(async edges => {
-    //   if (!edges) {
-    //     return console.log("edges deu ruim");
-    //   }
-    //   console.log(edges);
-    //   if (!edges) {
-    //     return console.log("edges: deu muito ruim");
-    //   }
-    //   if (edges.fieldValue === null) {
-    //     return console.log("category: fieldValue deu muito ruim");
-    //   }
-
-    //   if (edges.edges === null) {
-    //     return console.log("category: edges deu muito ruim");
-    //   }
-    //   // console.log("aqui dentrooooooooooo");
-    //   // const { slug, availableI18n, i18n } = edges.category.node.fields;
-    //   // const { title, helperI18n, questions, featuredImage } =
-    //   //   edges.category.node.frontmatter;
-    //   // const h = await require(`${schemasPath}/${
-    //   //   i18n === locales[0] ? "default" : i18n
-    //   // }.json`).schema[0].card[0];
-
-    //   // // Use the fields created in exports.onCreatepage
-    //   // const regex = /\/([^/]+)\.md$/;
-    //   // const localesSlugs = [];
-
-    //   // if (availableI18n && availableI18n.length > 1) {
-    //   //   posts.filter(async currPage => {
-    //   //     const slugTitleTwo = currPage.fileAbsolutePath
-    //   //       .match(regex)[1]
-    //   //       .includes(".")
-    //   //       ? currPage.fileAbsolutePath.match(regex)[1].split(".")[0]
-    //   //       : currPage.fileAbsolutePath.match(regex)[1];
-    //   //     const slugLocale = currPage.fileAbsolutePath
-    //   //       .match(regex)[1]
-    //   //       .split(".")[1];
-    //   //     // const frontmatterSlug = currPage?.frontmatter?.slug
-    //   //     //   ? currPage.frontmatter.slug
-    //   //     //   : slugTitleTwo;
-    //   //     // const isI18n = currPage.fileAbsolutePath
-    //   //     //   .match(regex)[1]
-    //   //     //   .includes(".");
-    //   //     // const isLocale = isI18n && slugLocale !== "";
-    //   //     // const finalSlug = isLocale
-    //   //     //   ? "/" + slugLocale + "/" + frontmatterSlug + "/"
-    //   //     //   : currPage.fileAbsolutePath.match(regex)[1];
-    //   //     const schemasFiles = await fs.readdir(schemasPath);
-    //   //     const localesWithouDefault = [];
-    //   //     for (const element of schemasFiles) {
-    //   //       if (element !== "default.json") {
-    //   //         localesWithouDefault.push(element);
-    //   //       }
-    //   //     }
-    //   //     const MDPagesFolder = path.resolve(rootDir, `content/posts`);
-    //   //     const MDFiles = await fs.readdir(MDPagesFolder);
-    //   //     const regexTranslation = /\.([a-z0-9-]{2})\.md$/i;
-
-    //   //     const translations = MDFiles.filter(
-    //   //       md =>
-    //   //         md.match(regexTranslation) &&
-    //   //         md.split(".").length > 1 &&
-    //   //         md.split(".")[0] === slugTitleTwo
-    //   //     );
-
-    //   //     const defaultsMds = MDFiles.filter(
-    //   //       md =>
-    //   //         !md.match(regexTranslation) &&
-    //   //         md.split(".").length > 1 &&
-    //   //         md.split(".")[0] === slugTitleTwo
-    //   //     );
-
-    //   //     if (
-    //   //       !currPage.fileAbsolutePath.match(regex)[1].includes(".") &&
-    //   //       translations.length > 0
-    //   //     ) {
-    //   //       defaultsMds.forEach(async md => {
-    //   //         if (
-    //   //           md.split(".").length > 1 &&
-    //   //           md.split(".")[0] === slugTitleTwo
-    //   //         ) {
-    //   //           const mdLocale = MDFiles.filter(
-    //   //             e =>
-    //   //               e.match(regexTranslation) &&
-    //   //               e.split(".").length > 1 &&
-    //   //               e.split(".")[0] === slugTitleTwo
-    //   //           );
-    //   //           const arrayI18n = [];
-    //   //           mdLocale.forEach(async el => arrayI18n.push(el));
-    //   //         }
-    //   //       });
-    //   //     }
-
-    //   //     if (translations.length > 0) {
-    //   //       translations.forEach(async md => {
-    //   //         if (
-    //   //           md.split(".").length > 1 &&
-    //   //           md.split(".")[0] === slugTitleTwo
-    //   //         ) {
-    //   //           const mdLocale = MDFiles.filter(
-    //   //             e =>
-    //   //               e.match(regexTranslation) &&
-    //   //               e.split(".").length > 1 &&
-    //   //               e.split(".")[0] === slugTitleTwo
-    //   //           );
-    //   //           const arrayI18n = [];
-    //   //           mdLocale.forEach(async el => arrayI18n.push(el));
-    //   //         }
-    //   //       });
-    //   //     }
-
-    //   //     let foundedLocale = localesWithouDefault.filter(e =>
-    //   //       e.includes(slugLocale)
-    //   //     );
-    //   //     if (!foundedLocale || foundedLocale === "") {
-    //   //       foundedLocale === locales[0];
-    //   //     } else {
-    //   //       foundedLocale == null;
-    //   //     }
-    //   //     // const i18nFounded = foundedLocale ? foundedLocale : locales[0];
-    //   //     // const finalI18n =
-    //   //     //   i18nFounded && Array.isArray(i18nFounded) && i18nFounded[0]
-    //   //     //     ? i18nFounded[0].split(".")[0]
-    //   //     //     : locales[0];
-    //   //   });
-    //   // }
-
-    //   // Use the fields created in exports.onCreateNode
-    //   // console.log("category: TA INDOOO");
-    //   // console.log(edges.fieldValue);
-    //   // console.log(_.kebabCase(edges.fieldValue));
-    //   // console.log("category: TA INDOOO");
-    //   createPage({
-    //     path: `/trends/${_.kebabCase(edges.fieldValue)}/`,
-    //     component: path.resolve(
-    //       rootDir,
-    //       "gatsby-theme-v5-boilerplate/src/templates/category-list-page.js"
-    //     ),
-    //     context: {
-    //       categories: edges.fieldValue,
-    //     },
-    //   });
-    //   console.log("category: FOIIIIII");
-    //   console.log("category: FOIIIIII");
-    //   console.log("category: FOIIIIII");
-    // });
-
-    // dealing with nodes
-    // landings?.forEach(async landing => {
-    //   if (!landing) {
-    //     return console.log("landing: deu erro muito");
-    //   }
-    //   if (landing.node.frontmatter === null) {
-    //     return console.log("landing: deu erro");
-    //   }
-    //   const { slug, availableI18n, i18n } = landing.node.fields;
-    //   const {
-    //     title,
-    //     headline,
-    //     featuredImage,
-    //     emailCTA,
-    //     helperI18n,
-    //     questions,
-    //   } = landing.node.frontmatter;
-
-    //   // const { slug, availableI18n, i18n } = category.node.fields;
-    //   // const {
-    //   //   title,
-    //   //   date,
-    //   //   description,
-    //   //   helperI18n,
-    //   //   questions,
-    //   //   featuredImage,
-    //   // } = category.node.frontmatter;
-
-    //   const h = await require(`${schemasPath}/${
-    //     i18n === locales[0] ? "default" : i18n
-    //   }.json`).schema[0].card[0];
-    //   // Use the fields created in exports.onCreateNode
-
-    //   // Use the fields created in exports.onCreatepage
-    //   const regex = /\/([^/]+)\.md$/;
-    //   const localesSlugs = [];
-
-    //   if (availableI18n && availableI18n.length > 1) {
-    //     landings.filter(async currPage => {
-    //       const slugTitleTwo = currPage.fileAbsolutePath
-    //         .match(regex)[1]
-    //         .includes(".")
-    //         ? currPage.fileAbsolutePath.match(regex)[1].split(".")[0]
-    //         : currPage.fileAbsolutePath.match(regex)[1];
-    //       const slugLocale = currPage.fileAbsolutePath
-    //         .match(regex)[1]
-    //         .split(".")[1];
-    //       // const frontmatterSlug = currPage?.frontmatter?.slug
-    //       //   ? currPage.frontmatter.slug
-    //       //   : slugTitleTwo;
-    //       // const isI18n = currPage.fileAbsolutePath
-    //       //   .match(regex)[1]
-    //       //   .includes(".");
-    //       // const isLocale = isI18n && slugLocale !== "";
-    //       // const finalSlug = isLocale
-    //       //   ? "/" + slugLocale + "/" + frontmatterSlug + "/"
-    //       //   : currPage.fileAbsolutePath.match(regex)[1];
-    //       const schemasFiles = await fs.readdir(schemasPath);
-    //       const localesWithouDefault = [];
-    //       for (const element of schemasFiles) {
-    //         if (element !== "default.json") {
-    //           localesWithouDefault.push(element);
-    //         }
-    //       }
-    //       const MDPagesFolder = path.resolve(rootDir, `content/landings`);
-    //       const MDFiles = await fs.readdir(MDPagesFolder);
-    //       const regexTranslation = /\.([a-z0-9-]{2})\.md$/i;
-
-    //       const translations = MDFiles.filter(
-    //         md =>
-    //           md.match(regexTranslation) &&
-    //           md.split(".").length > 1 &&
-    //           md.split(".")[0] === slugTitleTwo
-    //       );
-
-    //       const defaultsMds = MDFiles.filter(
-    //         md =>
-    //           !md.match(regexTranslation) &&
-    //           md.split(".").length > 1 &&
-    //           md.split(".")[0] === slugTitleTwo
-    //       );
-
-    //       if (
-    //         !currPage.fileAbsolutePath.match(regex)[1].includes(".") &&
-    //         translations.length > 0
-    //       ) {
-    //         defaultsMds.forEach(async md => {
-    //           if (
-    //             md.split(".").length > 1 &&
-    //             md.split(".")[0] === slugTitleTwo
-    //           ) {
-    //             const mdLocale = MDFiles.filter(
-    //               e =>
-    //                 e.match(regexTranslation) &&
-    //                 e.split(".").length > 1 &&
-    //                 e.split(".")[0] === slugTitleTwo
-    //             );
-    //             const arrayI18n = [];
-    //             mdLocale.forEach(async el => arrayI18n.push(el));
-    //           }
-    //         });
-    //       }
-
-    //       if (translations.length > 0) {
-    //         translations.forEach(async md => {
-    //           if (
-    //             md.split(".").length > 1 &&
-    //             md.split(".")[0] === slugTitleTwo
-    //           ) {
-    //             const mdLocale = MDFiles.filter(
-    //               e =>
-    //                 e.match(regexTranslation) &&
-    //                 e.split(".").length > 1 &&
-    //                 e.split(".")[0] === slugTitleTwo
-    //             );
-    //             const arrayI18n = [];
-    //             mdLocale.forEach(async el => arrayI18n.push(el));
-    //           }
-    //         });
-    //       }
-
-    //       let foundedLocale = localesWithouDefault.filter(e =>
-    //         e.includes(slugLocale)
-    //       );
-    //       if (!foundedLocale || foundedLocale === "") {
-    //         foundedLocale === locales[0];
-    //       } else {
-    //         foundedLocale == null;
-    //       }
-    //     });
-    //   }
-
-    //   createPage({
-    //     path: slug,
-    //     component: path.resolve(
-    //       rootDir,
-    //       `gatsby-theme-v5-boilerplate/src/templates/half-div.js`
-    //     ),
-    //     context: {
-    //       title: title,
-    //       content: landing.node.html,
-    //       headline: headline,
-    //       questions: questions,
-    //       excerpt: landing.node.excerpt,
-    //       featuredImage: featuredImage,
-    //       emailCTA: emailCTA,
-    //       availableI18n,
-    //       i18n,
-    //       theLocales: localesSlugs,
-    //       helperI18n,
-    //       slug,
-
-    //       SEO: {
-    //         i18n: i18n,
-    //         agent: agent,
-    //         schema: null,
-    //         topology: "landings",
-    //         dateCreated: null,
-    //         datePublished: null,
-    //         slug: slug,
-    //         siteUrl: h.brandUrl,
-    //         articleUrl: h.brandUrl + "/" + slug,
-    //         title: title,
-    //         description: "landings",
-    //         keywords: h.brandKeywords,
-    //         author: h.brandName,
-    //         social: h.sameAs,
-    //         articleBody: landing.node.html,
-    //         questions: null,
-    //         brandLogo: h.brandLogo,
-    //         brandCardImage: h.brandCardImage,
-    //         featuredImage: featuredImage,
-    //         fbAppID: h.fbAppID,
-    //         themeColor: h.brandHexMainColor,
-    //         brandName: h.brandName,
-    //         brandDescription: h.brandDescription,
-    //         brandKeywords: h.brandKeywords,
-    //         brandEmail: h.brandEmail,
-    //         brandPhone: h.brandPhone,
-    //         track: null,
-    //         album: null,
-    //       },
-    //     },
-    //   });
-    // });
 
     // TEMPLATES
     // xml pages
@@ -1508,38 +1358,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   
       </urlset>
       `;
-
-    // const theXML = `<?xml version="1.0" encoding="UTF-8"?>
-    //   <?xml-stylesheet type="text/xsl" href="/template.xsl"?>
-    //     <urlset
-    //       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    //       xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
-    //       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    //       ${allFeed.map(item => {
-    //         return `<url>
-    //         <loc>${card.brandUrl}${item.slug}</loc>
-    //         <lastmod>${item.date}</lastmod>
-    //         <image:image>
-    //           <image:loc>${item.imageSrc}</image:loc>
-    //         </image:image>
-
-    //         ${
-    //           item.insideImgs
-    //             ? item.insideImgs.map(img => {
-    //                 return `<image:image>
-    //         <image:loc>${
-    //           img[0].substring(0, 4) === "http"
-    //             ? img[0]
-    //             : card.brandUrl + img[0]
-    //         }</image:loc>
-    //       </image:image>`;
-    //               })
-    //             : ""
-    //         }
-    //       </url>`;
-    //       })}
-    //   </urlset>
-    //   `;
 
     const theStoriesXML = `<?xml version="1.0" encoding="UTF-8"?>
       <?xml-stylesheet type="text/xsl" href="/template.xsl"?>
@@ -1799,3 +1617,366 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
+
+// new cat N landings
+
+// // Make category pages
+// categories?.forEach(async edges => {
+//   if (!edges) {
+//     return console.log("edges deu ruim");
+//   }
+//   console.log(edges);
+//   if (!edges) {
+//     return console.log("edges: deu muito ruim");
+//   }
+//   if (edges.fieldValue === null) {
+//     return console.log("category: fieldValue deu muito ruim");
+//   }
+
+//   if (edges.edges === null) {
+//     return console.log("category: edges deu muito ruim");
+//   }
+//   // const { slug, availableI18n, i18n } = edges.category.node.fields;
+//   // const { title, helperI18n, questions, featuredImage } =
+//   //   edges.category.node.frontmatter;
+//   // const h = await require(`${schemasPath}/${
+//   //   i18n === locales[0] ? "default" : i18n
+//   // }.json`).schema[0].card[0];
+
+//   // // Use the fields created in exports.onCreatepage
+//   // const regex = /\/([^/]+)\.md$/;
+//   // const localesSlugs = [];
+
+//   // if (availableI18n && availableI18n.length > 1) {
+//   //   posts.filter(async currPage => {
+//   //     const slugTitleTwo = currPage.fileAbsolutePath
+//   //       .match(regex)[1]
+//   //       .includes(".")
+//   //       ? currPage.fileAbsolutePath.match(regex)[1].split(".")[0]
+//   //       : currPage.fileAbsolutePath.match(regex)[1];
+//   //     const slugLocale = currPage.fileAbsolutePath
+//   //       .match(regex)[1]
+//   //       .split(".")[1];
+//   //     // const frontmatterSlug = currPage?.frontmatter?.slug
+//   //     //   ? currPage.frontmatter.slug
+//   //     //   : slugTitleTwo;
+//   //     // const isI18n = currPage.fileAbsolutePath
+//   //     //   .match(regex)[1]
+//   //     //   .includes(".");
+//   //     // const isLocale = isI18n && slugLocale !== "";
+//   //     // const finalSlug = isLocale
+//   //     //   ? "/" + slugLocale + "/" + frontmatterSlug + "/"
+//   //     //   : currPage.fileAbsolutePath.match(regex)[1];
+//   //     const schemasFiles = await fs.readdir(schemasPath);
+//   //     const localesWithouDefault = [];
+//   //     for (const element of schemasFiles) {
+//   //       if (element !== "default.json") {
+//   //         localesWithouDefault.push(element);
+//   //       }
+//   //     }
+//   //     const MDPagesFolder = path.resolve(rootDir, `content/posts`);
+//   //     const MDFiles = await fs.readdir(MDPagesFolder);
+//   //     const regexTranslation = /\.([a-z0-9-]{2})\.md$/i;
+
+//   //     const translations = MDFiles.filter(
+//   //       md =>
+//   //         md.match(regexTranslation) &&
+//   //         md.split(".").length > 1 &&
+//   //         md.split(".")[0] === slugTitleTwo
+//   //     );
+
+//   //     const defaultsMds = MDFiles.filter(
+//   //       md =>
+//   //         !md.match(regexTranslation) &&
+//   //         md.split(".").length > 1 &&
+//   //         md.split(".")[0] === slugTitleTwo
+//   //     );
+
+//   //     if (
+//   //       !currPage.fileAbsolutePath.match(regex)[1].includes(".") &&
+//   //       translations.length > 0
+//   //     ) {
+//   //       defaultsMds.forEach(async md => {
+//   //         if (
+//   //           md.split(".").length > 1 &&
+//   //           md.split(".")[0] === slugTitleTwo
+//   //         ) {
+//   //           const mdLocale = MDFiles.filter(
+//   //             e =>
+//   //               e.match(regexTranslation) &&
+//   //               e.split(".").length > 1 &&
+//   //               e.split(".")[0] === slugTitleTwo
+//   //           );
+//   //           const arrayI18n = [];
+//   //           mdLocale.forEach(async el => arrayI18n.push(el));
+//   //         }
+//   //       });
+//   //     }
+
+//   //     if (translations.length > 0) {
+//   //       translations.forEach(async md => {
+//   //         if (
+//   //           md.split(".").length > 1 &&
+//   //           md.split(".")[0] === slugTitleTwo
+//   //         ) {
+//   //           const mdLocale = MDFiles.filter(
+//   //             e =>
+//   //               e.match(regexTranslation) &&
+//   //               e.split(".").length > 1 &&
+//   //               e.split(".")[0] === slugTitleTwo
+//   //           );
+//   //           const arrayI18n = [];
+//   //           mdLocale.forEach(async el => arrayI18n.push(el));
+//   //         }
+//   //       });
+//   //     }
+
+//   //     let foundedLocale = localesWithouDefault.filter(e =>
+//   //       e.includes(slugLocale)
+//   //     );
+//   //     if (!foundedLocale || foundedLocale === "") {
+//   //       foundedLocale === locales[0];
+//   //     } else {
+//   //       foundedLocale == null;
+//   //     }
+//   //     // const i18nFounded = foundedLocale ? foundedLocale : locales[0];
+//   //     // const finalI18n =
+//   //     //   i18nFounded && Array.isArray(i18nFounded) && i18nFounded[0]
+//   //     //     ? i18nFounded[0].split(".")[0]
+//   //     //     : locales[0];
+//   //   });
+//   // }
+
+//   // Use the fields created in exports.onCreateNode
+//   createPage({
+//     path: `/trends/${_.kebabCase(edges.fieldValue)}/`,
+//     component: path.resolve(
+//       rootDir,
+//       "gatsby-theme-v5-boilerplate/src/templates/category-list-page.js"
+//     ),
+//     context: {
+//       categories: edges.fieldValue,
+//     },
+//   });
+//   console.log("category: FOIIIIII");
+//   console.log("category: FOIIIIII");
+//   console.log("category: FOIIIIII");
+// });
+
+// dealing with nodes
+// landings?.forEach(async landing => {
+//   if (!landing) {
+//     return console.log("landing: deu erro muito");
+//   }
+//   if (landing.node.frontmatter === null) {
+//     return console.log("landing: deu erro");
+//   }
+//   const { slug, availableI18n, i18n } = landing.node.fields;
+//   const {
+//     title,
+//     headline,
+//     featuredImage,
+//     emailCTA,
+//     helperI18n,
+//     questions,
+//   } = landing.node.frontmatter;
+
+//   // const { slug, availableI18n, i18n } = category.node.fields;
+//   // const {
+//   //   title,
+//   //   date,
+//   //   description,
+//   //   helperI18n,
+//   //   questions,
+//   //   featuredImage,
+//   // } = category.node.frontmatter;
+
+//   const h = await require(`${schemasPath}/${
+//     i18n === locales[0] ? "default" : i18n
+//   }.json`).schema[0].card[0];
+//   // Use the fields created in exports.onCreateNode
+
+//   // Use the fields created in exports.onCreatepage
+//   const regex = /\/([^/]+)\.md$/;
+//   const localesSlugs = [];
+
+//   if (availableI18n && availableI18n.length > 1) {
+//     landings.filter(async currPage => {
+//       const slugTitleTwo = currPage.fileAbsolutePath
+//         .match(regex)[1]
+//         .includes(".")
+//         ? currPage.fileAbsolutePath.match(regex)[1].split(".")[0]
+//         : currPage.fileAbsolutePath.match(regex)[1];
+//       const slugLocale = currPage.fileAbsolutePath
+//         .match(regex)[1]
+//         .split(".")[1];
+//       // const frontmatterSlug = currPage?.frontmatter?.slug
+//       //   ? currPage.frontmatter.slug
+//       //   : slugTitleTwo;
+//       // const isI18n = currPage.fileAbsolutePath
+//       //   .match(regex)[1]
+//       //   .includes(".");
+//       // const isLocale = isI18n && slugLocale !== "";
+//       // const finalSlug = isLocale
+//       //   ? "/" + slugLocale + "/" + frontmatterSlug + "/"
+//       //   : currPage.fileAbsolutePath.match(regex)[1];
+//       const schemasFiles = await fs.readdir(schemasPath);
+//       const localesWithouDefault = [];
+//       for (const element of schemasFiles) {
+//         if (element !== "default.json") {
+//           localesWithouDefault.push(element);
+//         }
+//       }
+//       const MDPagesFolder = path.resolve(rootDir, `content/landings`);
+//       const MDFiles = await fs.readdir(MDPagesFolder);
+//       const regexTranslation = /\.([a-z0-9-]{2})\.md$/i;
+
+//       const translations = MDFiles.filter(
+//         md =>
+//           md.match(regexTranslation) &&
+//           md.split(".").length > 1 &&
+//           md.split(".")[0] === slugTitleTwo
+//       );
+
+//       const defaultsMds = MDFiles.filter(
+//         md =>
+//           !md.match(regexTranslation) &&
+//           md.split(".").length > 1 &&
+//           md.split(".")[0] === slugTitleTwo
+//       );
+
+//       if (
+//         !currPage.fileAbsolutePath.match(regex)[1].includes(".") &&
+//         translations.length > 0
+//       ) {
+//         defaultsMds.forEach(async md => {
+//           if (
+//             md.split(".").length > 1 &&
+//             md.split(".")[0] === slugTitleTwo
+//           ) {
+//             const mdLocale = MDFiles.filter(
+//               e =>
+//                 e.match(regexTranslation) &&
+//                 e.split(".").length > 1 &&
+//                 e.split(".")[0] === slugTitleTwo
+//             );
+//             const arrayI18n = [];
+//             mdLocale.forEach(async el => arrayI18n.push(el));
+//           }
+//         });
+//       }
+
+//       if (translations.length > 0) {
+//         translations.forEach(async md => {
+//           if (
+//             md.split(".").length > 1 &&
+//             md.split(".")[0] === slugTitleTwo
+//           ) {
+//             const mdLocale = MDFiles.filter(
+//               e =>
+//                 e.match(regexTranslation) &&
+//                 e.split(".").length > 1 &&
+//                 e.split(".")[0] === slugTitleTwo
+//             );
+//             const arrayI18n = [];
+//             mdLocale.forEach(async el => arrayI18n.push(el));
+//           }
+//         });
+//       }
+
+//       let foundedLocale = localesWithouDefault.filter(e =>
+//         e.includes(slugLocale)
+//       );
+//       if (!foundedLocale || foundedLocale === "") {
+//         foundedLocale === locales[0];
+//       } else {
+//         foundedLocale == null;
+//       }
+//     });
+//   }
+
+//   createPage({
+//     path: slug,
+//     component: path.resolve(
+//       rootDir,
+//       `gatsby-theme-v5-boilerplate/src/templates/half-div.js`
+//     ),
+//     context: {
+//       title: title,
+//       content: landing.node.html,
+//       headline: headline,
+//       questions: questions,
+//       excerpt: landing.node.excerpt,
+//       featuredImage: featuredImage,
+//       emailCTA: emailCTA,
+//       availableI18n,
+//       i18n,
+//       theLocales: localesSlugs,
+//       helperI18n,
+//       slug,
+
+//       SEO: {
+//         i18n: i18n,
+//         agent: agent,
+//         schema: null,
+//         topology: "landings",
+//         dateCreated: null,
+//         datePublished: null,
+//         slug: slug,
+//         siteUrl: h.brandUrl,
+//         articleUrl: h.brandUrl + "/" + slug,
+//         title: title,
+//         description: "landings",
+//         keywords: h.brandKeywords,
+//         author: h.brandName,
+//         social: h.sameAs,
+//         articleBody: landing.node.html,
+//         questions: null,
+//         brandLogo: h.brandLogo,
+//         brandCardImage: h.brandCardImage,
+//         featuredImage: featuredImage,
+//         fbAppID: h.fbAppID,
+//         themeColor: h.brandHexMainColor,
+//         brandName: h.brandName,
+//         brandDescription: h.brandDescription,
+//         brandKeywords: h.brandKeywords,
+//         brandEmail: h.brandEmail,
+//         brandPhone: h.brandPhone,
+//         track: null,
+//         album: null,
+//       },
+//     },
+//   });
+// });
+
+// const theXML = `<?xml version="1.0" encoding="UTF-8"?>
+//   <?xml-stylesheet type="text/xsl" href="/template.xsl"?>
+//     <urlset
+//       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+//       xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
+//       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+//       ${allFeed.map(item => {
+//         return `<url>
+//         <loc>${card.brandUrl}${item.slug}</loc>
+//         <lastmod>${item.date}</lastmod>
+//         <image:image>
+//           <image:loc>${item.imageSrc}</image:loc>
+//         </image:image>
+
+//         ${
+//           item.insideImgs
+//             ? item.insideImgs.map(img => {
+//                 return `<image:image>
+//         <image:loc>${
+//           img[0].substring(0, 4) === "http"
+//             ? img[0]
+//             : card.brandUrl + img[0]
+//         }</image:loc>
+//       </image:image>`;
+//               })
+//             : ""
+//         }
+//       </url>`;
+//       })}
+//   </urlset>
+//   `;
