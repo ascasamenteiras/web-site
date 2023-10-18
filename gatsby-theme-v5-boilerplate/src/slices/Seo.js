@@ -1,7 +1,9 @@
 import React from "react";
 const Seo = ({ data, killSeo, className }) => {
-  // console.log("data");
-  // console.log(data);
+  console.log("data");
+  console.log(data);
+  console.log("data");
+
   // console.log(data ? data : "nada");
   if (killSeo) {
     return (

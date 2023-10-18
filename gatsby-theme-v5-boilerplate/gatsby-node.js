@@ -649,34 +649,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
 
-      AllTasks: allMarkdownRemark(
-        filter: { frontmatter: { topology: { eq: "tasks" } } }
-      ) {
-        nodes {
-          frontmatter {
-            importance
-            title
-            supplier
-            limitDate
-            warningRange
-            isAccessory
-            topo
-            description
-          }
-        }
-      }
-
-      AllTerms: allMarkdownRemark(
-        filter: { frontmatter: { topology: { eq: "terms" } } }
-      ) {
-        nodes {
-          frontmatter {
-            letter
-            terms
-          }
-        }
-      }
-
       storiesA: file(relativePath: { eq: "stories-ante-final.png" }) {
         childrenImageSharp {
           gatsbyImageData(width: 900, height: 675, quality: 80)
@@ -709,13 +681,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       ? results.data.allWeddings.nodes
       : console.log("Page Error");
 
-    const tasks = results?.data?.AllTasks?.nodes
-      ? results.data.AllTasks.nodes
-      : console.log("AllTasks com eero");
+    // const tasks = results?.data?.AllTasks?.nodes
+    //   ? results.data.AllTasks.nodes
+    //   : console.log("AllTasks com eero");
 
-    const terms = results?.data?.AllTerms?.nodes
-      ? results.data.AllTerms.nodes
-      : console.log("AllTerms com eero");
+    // const terms = results?.data?.AllTerms?.nodes
+    //   ? results.data.AllTerms.nodes
+    //   : console.log("AllTerms com eero");
 
     let imgsPageObj = [];
     let allPages = [];
@@ -894,12 +866,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             brandEmail: h.brandEmail,
             brandPhone: h.brandPhone,
           },
-        },
-
-        slices: {
-          // Any time `<Slice alias="seo">` is seen on this post,
-          // use the `seo-${language}` id
-          seo: `seo-${slug}`,
         },
       });
 
@@ -1103,12 +1069,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             album: null,
           },
         },
-
-        slices: {
-          // Any time `<Slice alias="seo">` is seen on this page,
-          // use the `seo-${language}` id
-          seo: `seo-${slug}`,
-        },
       });
 
       // post create pages xml builder
@@ -1210,11 +1170,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           description,
           helperI18n,
           slug,
-          tasks,
-          terms,
           partnerA,
           partnerB,
-
           estimatedBudget,
           totalInvestment,
           guests,

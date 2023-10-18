@@ -811,6 +811,8 @@ export const Head = ({ pageContext, location }) => {
   );
   const cardY = y[0].schema[0].card[0];
   const indexQuestions = cardY?.questions;
+  console.log("pageContext");
+  console.log(pageContext);
   pageContext.SEO.questions = indexQuestions;
   return <Seo data={pageContext.SEO} killSeo={false} />;
 };
