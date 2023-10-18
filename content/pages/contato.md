@@ -19,7 +19,7 @@ questions: ["Question?:Answer!"]
                   pelo nosso número de telefone:
                 </p>
                 <h2>
-                  <strong>(16) 99199-7935</strong>
+                  <strong>(16) 99245-2437</strong>
                 </h2>
                 <ul>
                   <li>

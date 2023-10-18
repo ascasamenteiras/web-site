@@ -115,9 +115,9 @@ msgstr "logo-fundo-transparent-900-w.png"
 
 #. schema.0.card.0.brandPhone
 #: schema.0.card.0.brandPhone
-#| +5516991997935
+#| +5516992452437
 msgid "schema.0.card.0.brandPhone"
-msgstr "+5516991997935"
+msgstr "+5516992452437"
 
 #. schema.0.card.0.brandSeoDivisor
 #: schema.0.card.0.brandSeoDivisor

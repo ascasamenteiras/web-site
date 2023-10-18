@@ -94,7 +94,7 @@ const FooterBlock = ({ logo, globalSubs }) => {
           )}
           {socialMe(
             whatsGetImg,
-            "https://api.whatsapp.com/send?phone=5516991997935"
+            "https://api.whatsapp.com/send?phone=5516992452437"
           )}
           {socialMe(
             githubGetImg,

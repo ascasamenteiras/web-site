@@ -140,17 +140,17 @@ msgstr ""
 #: src/page/index.js:4, src/component/head.js:2
 #, Comment for translators
 #~ msgid "brandPhone"
-#~ msgstr "+5516991997935\","
+#~ msgstr "+5516992452437\","
 
 #: src/page/index.js:4, src/component/head.js:2
 #, Comment for translators
 #~ msgid "brandPhoneDisplay"
-#~ msgstr "(16) 99199-7935\","
+#~ msgstr "(16) 99245-2437\","
 
 #: src/page/index.js:4, src/component/head.js:2
 #, Comment for translators
 #~ msgid "brandPhoneQuery"
-#~ msgstr "5516991997935\","
+#~ msgstr "5516992452437\","
 
 #: src/page/index.js:4, src/component/head.js:2
 #, Comment for translators

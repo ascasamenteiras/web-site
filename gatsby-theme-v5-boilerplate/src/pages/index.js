@@ -520,7 +520,7 @@ const IndexPage = ({ pageContext, location }) => {
                     )}
                     {printMySocial(
                       whatsGetImg,
-                      "https://web.whatsapp.com/send?phone=5516991997935"
+                      "https://web.whatsapp.com/send?phone=5516992452437"
                     )}
                     {printMySocial(
                       youTubeGetImg,
