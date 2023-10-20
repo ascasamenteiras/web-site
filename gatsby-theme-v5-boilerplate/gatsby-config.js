@@ -204,22 +204,22 @@ module.exports = {
     //     path: path.resolve(rootDir, contentPath + "/slices/components"),
     //   },
     // },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `weddings`,
-        path: path.resolve(rootDir, contentPath + "/weddings"),
-        ignore: [`**/\.jpg`, `**/\.png`], // ignore files starting with a dot
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `glossary`,
-        path: path.resolve(rootDir, contentPath + "/glossary"),
-        ignore: [`**/\.jpg`, `**/\.png`], // ignore files starting with a dot
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `weddings`,
+    //     path: path.resolve(rootDir, contentPath + "/weddings"),
+    //     ignore: [`**/\.jpg`, `**/\.png`], // ignore files starting with a dot
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `glossary`,
+    //     path: path.resolve(rootDir, contentPath + "/glossary"),
+    //     ignore: [`**/\.jpg`, `**/\.png`], // ignore files starting with a dot
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -284,13 +284,13 @@ module.exports = {
         extensions: ["js", "scss"],
       },
     },
-    {
-      resolve: "gatsby-plugin-mailchimp",
-      options: {
-        endpoint: process.env.MC_ENDPOINT, // string; add your MC list endpoint here; see instructions below
-        timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-mailchimp",
+    //   options: {
+    //     endpoint: process.env.MC_ENDPOINT, // string; add your MC list endpoint here; see instructions below
+    //     timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+    //   },
+    // },
     {
       resolve: `gatsby-business-in-build`,
       options: {

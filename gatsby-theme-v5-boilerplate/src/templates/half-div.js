@@ -7,7 +7,7 @@ import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 import moment from "moment";
 import "moment/locale/pt-br";
 import VMasker from "vanilla-masker";
-import addToMailchimp from "gatsby-plugin-mailchimp";
+// import addToMailchimp from "gatsby-plugin-mailchimp";
 import HalfDivWrapper from "@Slices/HalfDivWrapper";
 import Cookies from "universal-cookie";
 
@@ -165,28 +165,28 @@ const HalfDiv = ({ pageContext, location }) => {
   console.log("sentMCCookies");
   console.log(sentMCCookies);
 
-  const addToMC = async x =>
-    await addToMailchimp(x.EMAIL, {
-      EMAIL: x.EMAIL,
-      PEOPLEA: x.PEOPLEA,
-      PEOPLEB: x.PEOPLEB,
-      PHONE: x.PHONE,
-      DATE1: x.DATE1,
-      CITY: x.CITY,
-    }).then(({ msg, result }) => {
-      if (result === "error") {
-        cookies.remove("cookiesSentMC");
-        cookies.set("cookiesSentMC", false);
-        return console.log(`Error message: ${msg}`);
-      } else {
-        console.log("result");
-        console.log(result);
-        console.log("msg");
-        console.log(msg);
-        cookies.remove("cookiesSentMC");
-        cookies.set("cookiesSentMC", true);
-      }
-    });
+  // const addToMC = async x =>
+  //   await addToMailchimp(x.EMAIL, {
+  //     EMAIL: x.EMAIL,
+  //     PEOPLEA: x.PEOPLEA,
+  //     PEOPLEB: x.PEOPLEB,
+  //     PHONE: x.PHONE,
+  //     DATE1: x.DATE1,
+  //     CITY: x.CITY,
+  //   }).then(({ msg, result }) => {
+  //     if (result === "error") {
+  //       cookies.remove("cookiesSentMC");
+  //       cookies.set("cookiesSentMC", false);
+  //       return console.log(`Error message: ${msg}`);
+  //     } else {
+  //       console.log("result");
+  //       console.log(result);
+  //       console.log("msg");
+  //       console.log(msg);
+  //       cookies.remove("cookiesSentMC");
+  //       cookies.set("cookiesSentMC", true);
+  //     }
+  //   });
 
   let queries = [];
   const urlQueries = decodeURI(location?.search).slice(1).split("&");
@@ -260,14 +260,14 @@ const HalfDiv = ({ pageContext, location }) => {
     });
     if (yt) {
       console.log("adding it to MC");
-      addToMC({
-        EMAIL: queries.emailPeopleA,
-        PEOPLEA: queries.peopleA,
-        PEOPLEB: queries.peopleB,
-        PHONE: queries.whatsPeopleA,
-        DATE1: oo,
-        CITY: queries.city,
-      });
+      // addToMC({
+      //   EMAIL: queries.emailPeopleA,
+      //   PEOPLEA: queries.peopleA,
+      //   PEOPLEB: queries.peopleB,
+      //   PHONE: queries.whatsPeopleA,
+      //   DATE1: oo,
+      //   CITY: queries.city,
+      // });
     } else {
       console.log("cookies detected, not sent");
     }
