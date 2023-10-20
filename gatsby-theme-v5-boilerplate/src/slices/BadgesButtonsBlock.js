@@ -29,25 +29,25 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
     ""
   );
   const msgEncoded = `Oi, Pri 💖 Muito prazer! 🌼 Aqui é a [SEU NOME] 😄🌷.
-  Eu gostaria de sua ajuda com o meu casamento. Vou te mandar nossas informações.
+Eu gostaria de sua ajuda com o meu casamento. Vou te mandar nossas informações.
 
-  Nome do casal 💑
+Nome do casal 💑
   
-  Data do casamento 🗓️
+Data do casamento 🗓️
   
-  Local e cidade do casamento 🏞️🌆
+Local e cidade do casamento 🏞️🌆
   
-  Número estimado de convidados 💃👰🤵🎉
+Número estimado de convidados 💃👰🤵🎉
   
-  O valor (em reais) estimado do orçamento/budget para o casamento inteiro é de... 💰
+O valor (em reais) estimado do orçamento/budget para o casamento inteiro é de... 💰
   
-  Minha principal dificuldade que você encontrei no processo de organização do meu casamento foi... 🤔
+Minha principal dificuldade que você encontrei no processo de organização do meu casamento foi... 🤔
   
-  Eu prefiro a [**Assessoria Completa** 😃🌸🤩] ou [**Assessoria apenas para o dia** 💼😌🌟] do casamento. Porque...
+Eu prefiro a [**Assessoria Completa** 😃🌸🤩] ou [**Assessoria apenas para o dia** 💼😌🌟] do casamento. Porque...
   
-  Nós achamos o perfil d'As Casamenteiras [no Google, Instagram, Casamentos.com]  🌟🤝🔍
+Nós achamos o perfil d'As Casamenteiras [no Google, Instagram, Casamentos.com]  🌟🤝🔍
   
-  Aguardo 😊📸 a sua resposta 😍💬 para darmos encaminhamento 🌟💖 para a minha proposta 😊💌🌷 de casamento perfeito! 💍💒🌼🎉`;
+Aguardo 😊📸 a sua resposta 😍💬 para darmos encaminhamento ao meu casamento perfeito! 💍💒🌼🎉`;
   return (
     <>
       <div
