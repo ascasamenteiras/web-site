@@ -28,41 +28,26 @@ const BadgesButtonsBlock = ({ opt, questions }) => {
   ) : (
     ""
   );
-  const msgEncoded = `Oi. 💖 Muito prazer! 🌼 Aqui é a Priscilla Barbosa 😄🌷 d'As Casamenteiras 😍😎.
+  const msgEncoded = `Oi, Pri 💖 Muito prazer! 🌼 Aqui é a [SEU NOME] 😄🌷.
+  Eu gostaria de sua ajuda com o meu casamento. Vou te mandar nossas informações.
 
-  Que bom que nos encontrou! 😃 Estamos aqui 🌸 para tornar esse processo mais leve pra vocês! 😁 Somos uma empresa 🎉 de Assessoria e Cerimonial 😊💫, especializada em Casamentos 💒👰💍. Independentemente do formato (Mini Wedding 🏡💐, ao ar livre 🏞️🌤️, em chácaras 🏡🌿, salões 🏛️🌟, restaurantes 🍽️🥂, praias 🏖️🌊), vocês idealizam 😄 e nós tornamos tudo em realidade. 💫💪😃
+  Nome do casal 💑
   
-  Estamos no universo 🌟 de casamentos há mais de 10 anos 😎💍. Recentemente fomos premiadas 🏆😍 na categoria de melhor empresa de cerimonial 🎉🌷 pelo Casamentos Awards 🏆😊 e Zankyou. 🌟👏
+  Data do casamento 🗓️
   
-  Já foram mais de 80 casais subindo ao altar 💒👰🤵 junto com As Casamenteiras 🥂🌈💖. Será um prazer 😊💖 poder fazer parte da organização 💪💫 do seu casamento!
+  Local e cidade do casamento 🏞️🌆
   
-  Temos uma quedinha por casamentos fora do tradicional 😄🌈, autênticos e cheios de personalidade 😍💃. Vamos fazer um casamento lindo 😃💐 e inesquecível para vocês, seus convidados e familiares! 💍👰🤵🎉
+  Número estimado de convidados 💃👰🤵🎉
   
-  Nós temos uma lista de fornecedores 🌟💼 locais ativos, com mais de 1.000 (um mil) empresas parceiras 🤝💪 que prestam serviços especializados em casamentos 💖💼 para compartilhar com vocês.
+  O valor (em reais) estimado do orçamento/budget para o casamento inteiro é de... 💰
   
-  Dê uma stalkeada 😎👀 no nosso Instagram 📸💍 e acompanhe o nosso trabalho: 📸💕
+  Minha principal dificuldade que você encontrei no processo de organização do meu casamento foi... 🤔
   
-  https://www.instagram.com/ascasamenteiras_
+  Eu prefiro a [**Assessoria Completa** 😃🌸🤩] ou [**Assessoria apenas para o dia** 💼😌🌟] do casamento. Porque...
   
-  Perguntas 😊🤝 para elaboração de proposta 🌷😍:
+  Nós achamos o perfil d'As Casamenteiras [no Google, Instagram, Casamentos.com]  🌟🤝🔍
   
-  Qual o nome do casal? 💑
-  
-  Qual a data do seu casamento? 🗓️
-  
-  Qual o local e cidade do casamento? 🏞️🌆
-  
-  Para quantos convidados será a festa de casamento? 💃👰🤵🎉
-  
-  Qual o budget estimado para o casamento? 💰
-  
-  Qual a principal dificuldade que você encontrou no processo de organização do casamento? 🤔
-  
-  Para o bom andamento do casamento e você ter tranquilidade 😄💒😌, você optaria pela Assessoria Completa de casamento 😃🌸🤩 ou Assessoria apenas para o dia 💼😌🌟 do casamento? Por quê?
-  
-  Onde você nos conheceu? 🌟🤝🔍
-  
-  Aguardo 😊📸 as suas respostas 😍💬 para darmos encaminhamento 🌟💖 para uma proposta 😊💌🌷 de casamento perfeito! 💍💒🌼🎉`;
+  Aguardo 😊📸 a sua resposta 😍💬 para darmos encaminhamento 🌟💖 para a minha proposta 😊💌🌷 de casamento perfeito! 💍💒🌼🎉`;
   return (
     <>
       <div
