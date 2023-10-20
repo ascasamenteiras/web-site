@@ -1054,7 +1054,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             author: h.brandName,
             social: h.sameAs,
             articleBody: page.html,
-            questions: questions,
+            questions: questions || ["teste?:testado"],
             brandLogo: h.brandLogo,
             brandCardImage: h.brandCardImage,
             featuredImage: featuredImage,
