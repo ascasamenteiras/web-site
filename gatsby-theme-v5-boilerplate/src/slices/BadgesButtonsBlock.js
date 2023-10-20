@@ -42,12 +42,10 @@ Número estimado de convidados 💃👰🤵🎉
 O valor (em reais) estimado do orçamento/budget para o casamento inteiro é de... 💰
   
 Minha principal dificuldade que você encontrei no processo de organização do meu casamento foi... 🤔
-  
-Eu prefiro a [**Assessoria Completa** 😃🌸🤩] ou [**Assessoria apenas para o dia** 💼😌🌟] do casamento. Porque...
-  
+    
 Nós achamos o perfil d'As Casamenteiras [no Google, Instagram, Casamentos.com]  🌟🤝🔍
   
-Aguardo 😊📸 a sua resposta 😍💬 para darmos encaminhamento ao meu casamento perfeito! 💍💒🌼🎉`;
+Aguardo 😊📸 a sua resposta 😍💬 para darmos encaminhamento 🌟💖 ao meu casamento perfeito! 💍💒🌼🎉`;
   return (
     <>
       <div
